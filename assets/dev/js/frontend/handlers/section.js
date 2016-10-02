@@ -49,11 +49,11 @@ var BackgroundVideo = function( $, $backgroundVideoContainer ) {
 			}
 		} );
 
-		$( elementorFrontend.getScopeWindow() ).on( 'resize', changeVideoSize );
+		$( wroterFrontend.getScopeWindow() ).on( 'resize', changeVideoSize );
 	};
 
 	var initElements = function() {
-		elements.$backgroundVideo = $backgroundVideoContainer.children( '.elementor-background-video' );
+		elements.$backgroundVideo = $backgroundVideoContainer.children( '.wroter-background-video' );
 	};
 
 	var run = function() {
@@ -62,7 +62,7 @@ var BackgroundVideo = function( $, $backgroundVideoContainer ) {
 		if ( videoID ) {
 			isYTVideo = true;
 
-			elementorFrontend.utils.onYoutubeApiReady( function( YT ) {
+			wroterFrontend.utils.onYoutubeApiReady( function( YT ) {
 				setTimeout( function() {
 					prepareYTVideo( YT, videoID );
 				}, 1 );
@@ -91,7 +91,7 @@ var StretchedSection = function( $, $section ) {
 			'left': '0'
 		} );
 
-		if ( ! $section.hasClass( 'elementor-section-stretched' ) ) {
+		if ( ! $section.hasClass( 'wroter-section-stretched' ) ) {
 			return;
 		}
 
@@ -122,12 +122,12 @@ var StretchedSection = function( $, $section ) {
 	};
 
 	var initSettings = function() {
-		settings.sectionContainerSelector = elementorFrontend.config.stretchedSectionContainer;
-		settings.is_rtl = elementorFrontend.config.is_rtl;
+		settings.sectionContainerSelector = wroterFrontend.config.stretchedSectionContainer;
+		settings.is_rtl = wroterFrontend.config.is_rtl;
 	};
 
 	var initElements = function() {
-		elements.scopeWindow = elementorFrontend.getScopeWindow();
+		elements.scopeWindow = wroterFrontend.getScopeWindow();
 		elements.$scopeWindow = $( elements.scopeWindow );
 		elements.$sectionContainer = $( elements.scopeWindow.document ).find( settings.sectionContainerSelector );
 	};
@@ -149,7 +149,7 @@ var StretchedSection = function( $, $section ) {
 module.exports = function( $ ) {
 	new StretchedSection( $, this );
 
-	var $backgroundVideoContainer = this.find( '.elementor-background-video-container' );
+	var $backgroundVideoContainer = this.find( '.wroter-background-video-container' );
 
 	if ( $backgroundVideoContainer ) {
 		new BackgroundVideo( $, $backgroundVideoContainer );

@@ -1,13 +1,13 @@
 var TemplateLibrarySaveTemplateView;
 
 TemplateLibrarySaveTemplateView = Marionette.ItemView.extend( {
-	id: 'elementor-template-library-save-template',
+	id: 'wroter-template-library-save-template',
 
-	template: '#tmpl-elementor-template-library-save-template',
+	template: '#tmpl-wroter-template-library-save-template',
 
 	ui: {
-		form: '#elementor-template-library-save-template-form',
-		submitButton: '#elementor-template-library-save-template-submit'
+		form: '#wroter-template-library-save-template-form',
+		submitButton: '#wroter-template-library-save-template-submit'
 	},
 
 	events: {
@@ -23,8 +23,8 @@ TemplateLibrarySaveTemplateView = Marionette.ItemView.extend( {
 	onFormSubmit: function( event ) {
 		event.preventDefault();
 
-		var formData = this.ui.form.elementorSerializeObject(),
-			elementsData = elementor.helpers.cloneObject( elementor.elements.toJSON() ),
+		var formData = this.ui.form.wroterSerializeObject(),
+			elementsData = wroter.helpers.cloneObject( wroter.elements.toJSON() ),
 			sectionID = this.getOption( 'sectionID' ),
 			saveType = sectionID ? 'section' : 'page';
 
@@ -38,19 +38,19 @@ TemplateLibrarySaveTemplateView = Marionette.ItemView.extend( {
 			type: saveType
 		} );
 
-		this.ui.submitButton.addClass( 'elementor-button-state' );
+		this.ui.submitButton.addClass( 'wroter-button-state' );
 
-		elementor.ajax.send( 'save_template', {
+		wroter.ajax.send( 'save_template', {
 			data: formData,
 			success: function( data ) {
-				elementor.templates.getTemplatesCollection().add( data );
+				wroter.templates.getTemplatesCollection().add( data );
 
-				elementor.templates.setTemplatesSource( 'local' );
+				wroter.templates.setTemplatesSource( 'local' );
 
-				elementor.templates.showTemplates();
+				wroter.templates.showTemplates();
 			},
 			error: function( data ) {
-				elementor.templates.showErrorDialog( data.message );
+				wroter.templates.showErrorDialog( data.message );
 			}
 		} );
 	}

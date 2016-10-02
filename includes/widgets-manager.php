@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -11,8 +11,8 @@ class Widgets_Manager {
 	protected $_registered_widgets = null;
 
 	private function _init_widgets() {
-		include_once( ELEMENTOR_PATH . 'includes/elements/base.php' );
-		include( ELEMENTOR_PATH . 'includes/widgets/base.php' );
+		include_once( WROTER_PATH . 'includes/elements/base.php' );
+		include( WROTER_PATH . 'includes/widgets/base.php' );
 
 		$build_widgets_filename = [
 			'heading',
@@ -46,7 +46,7 @@ class Widgets_Manager {
 
 		$this->_registered_widgets = [];
 		foreach ( $build_widgets_filename as $widget_filename ) {
-			include( ELEMENTOR_PATH . 'includes/widgets/' . $widget_filename . '.php' );
+			include( WROTER_PATH . 'includes/widgets/' . $widget_filename . '.php' );
 
 			$class_name = ucwords( $widget_filename );
 			$class_name = str_replace( '-', '_', $class_name );
@@ -56,13 +56,13 @@ class Widgets_Manager {
 
 		$this->_register_wp_widgets();
 
-		do_action( 'elementor/widgets/widgets_registered' );
+		do_action( 'wroter/widgets/widgets_registered' );
 	}
 
 	private function _register_wp_widgets() {
 		global $wp_widget_factory;
 
-		include( ELEMENTOR_PATH . 'includes/widgets/wordpress.php' );
+		include( WROTER_PATH . 'includes/widgets/wordpress.php' );
 
 		foreach ( $wp_widget_factory->widgets as $widget_class => $widget_obj ) {
 			// Skip Pojo widgets
@@ -136,7 +136,7 @@ class Widgets_Manager {
 	}
 
 	public function ajax_render_widget() {
-		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'elementor-editing' ) ) {
+		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'wroter-editing' ) ) {
 			wp_send_json_error( new \WP_Error( 'token_expired' ) );
 		}
 
@@ -171,7 +171,7 @@ class Widgets_Manager {
 	}
 
 	public function ajax_get_wp_widget_form() {
-		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'elementor-editing' ) ) {
+		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'wroter-editing' ) ) {
 			die;
 		}
 
@@ -194,7 +194,7 @@ class Widgets_Manager {
 	}
 
 	public function __construct() {
-		add_action( 'wp_ajax_elementor_render_widget', [ $this, 'ajax_render_widget' ] );
-		add_action( 'wp_ajax_elementor_editor_get_wp_widget_form', [ $this, 'ajax_get_wp_widget_form' ] );
+		add_action( 'wp_ajax_wroter_render_widget', [ $this, 'ajax_render_widget' ] );
+		add_action( 'wp_ajax_wroter_editor_get_wp_widget_form', [ $this, 'ajax_get_wp_widget_form' ] );
 	}
 }

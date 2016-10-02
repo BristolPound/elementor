@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Heading extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Heading', 'elementor' );
+		return __( 'Heading', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'section_title',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,10 +29,10 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter your title', 'elementor' ),
-				'default' => __( 'This is heading element', 'elementor' ),
+				'placeholder' => __( 'Enter your title', 'wroter' ),
+				'default' => __( 'This is heading element', 'wroter' ),
 				'section' => 'section_title',
 			]
 		);
@@ -40,7 +40,7 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor' ),
+				'label' => __( 'Link', 'wroter' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => 'http://your-link.com',
 				'default' => [
@@ -54,16 +54,16 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label' => __( 'Size', 'elementor' ),
+				'label' => __( 'Size', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Default', 'elementor' ),
-					'small' => __( 'Small', 'elementor' ),
-					'medium' => __( 'Medium', 'elementor' ),
-					'large' => __( 'Large', 'elementor' ),
-					'xl' => __( 'XL', 'elementor' ),
-					'xxl' => __( 'XXL', 'elementor' ),
+					'default' => __( 'Default', 'wroter' ),
+					'small' => __( 'Small', 'wroter' ),
+					'medium' => __( 'Medium', 'wroter' ),
+					'large' => __( 'Large', 'wroter' ),
+					'xl' => __( 'XL', 'wroter' ),
+					'xxl' => __( 'XXL', 'wroter' ),
 				],
 				'section' => 'section_title',
 			]
@@ -72,18 +72,18 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'header_size',
 			[
-				'label' => __( 'HTML Tag', 'elementor' ),
+				'label' => __( 'HTML Tag', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'h1' => __( 'H1', 'elementor' ),
-					'h2' => __( 'H2', 'elementor' ),
-					'h3' => __( 'H3', 'elementor' ),
-					'h4' => __( 'H4', 'elementor' ),
-					'h5' => __( 'H5', 'elementor' ),
-					'h6' => __( 'H6', 'elementor' ),
-					'div' => __( 'div', 'elementor' ),
-					'span' => __( 'span', 'elementor' ),
-					'p' => __( 'p', 'elementor' ),
+					'h1' => __( 'H1', 'wroter' ),
+					'h2' => __( 'H2', 'wroter' ),
+					'h3' => __( 'H3', 'wroter' ),
+					'h4' => __( 'H4', 'wroter' ),
+					'h5' => __( 'H5', 'wroter' ),
+					'h6' => __( 'H6', 'wroter' ),
+					'div' => __( 'div', 'wroter' ),
+					'span' => __( 'span', 'wroter' ),
+					'p' => __( 'p', 'wroter' ),
 				],
 				'default' => 'h2',
 				'section' => 'section_title',
@@ -93,23 +93,23 @@ class Widget_Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'wroter' ),
 						'icon' => 'align-justify',
 					],
 				],
@@ -124,7 +124,7 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_title',
@@ -134,7 +134,7 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'section_title_style',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -143,7 +143,7 @@ class Widget_Heading extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
 				    'type' => Scheme_Color::get_type(),
@@ -152,7 +152,7 @@ class Widget_Heading extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-heading-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-heading-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -164,7 +164,7 @@ class Widget_Heading extends Widget_Base {
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
-				'selector' => '{{WRAPPER}} .elementor-heading-title',
+				'selector' => '{{WRAPPER}} .wroter-heading-title',
 			]
 		);
 	}
@@ -173,10 +173,10 @@ class Widget_Heading extends Widget_Base {
 		if ( empty( $instance['title'] ) )
 			return;
 
-		$this->add_render_attribute( 'heading', 'class', 'elementor-heading-title' );
+		$this->add_render_attribute( 'heading', 'class', 'wroter-heading-title' );
 
 		if ( ! empty( $instance['size'] ) ) {
-			$this->add_render_attribute( 'heading', 'class', 'elementor-size-' . $instance['size'] );
+			$this->add_render_attribute( 'heading', 'class', 'wroter-size-' . $instance['size'] );
 		}
 
 		if ( ! empty( $instance['link']['url'] ) ) {
@@ -193,11 +193,11 @@ class Widget_Heading extends Widget_Base {
 		?>
 		<#
 		if ( '' !== settings.title ) {
-			var title_html = '<' + settings.header_size  + ' class="elementor-heading-title elementor-size-' + settings.size + '">' + settings.title + '</' + settings.header_size + '>';
+			var title_html = '<' + settings.header_size  + ' class="wroter-heading-title wroter-size-' + settings.size + '">' + settings.title + '</' + settings.header_size + '>';
 		}
 		
 		if ( '' !== settings.link.url ) {
-			var title_html = '<' + settings.header_size  + ' class="elementor-heading-title elementor-size-' + settings.size + '"><a href="' + settings.link.url + '">' + title_html + '</a></' + settings.header_size + '>';
+			var title_html = '<' + settings.header_size  + ' class="wroter-heading-title wroter-size-' + settings.size + '"><a href="' + settings.link.url + '">' + title_html + '</a></' + settings.header_size + '>';
 		}
 
 		print( title_html );

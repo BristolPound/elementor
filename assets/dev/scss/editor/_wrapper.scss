@@ -44,18 +44,18 @@ body {
 		}
 	}
 
-	&.elementor-editor-active {
+	&.wroter-editor-active {
 
-		#elementor-preview {
+		#wroter-preview {
 			@include start(280px);
 			@include end(0);
 		}
 
-		#elementor-panel {
+		#wroter-panel {
 			@include start(0);
 		}
 
-		#elementor-mode-switcher-preview {
+		#wroter-mode-switcher-preview {
 
 			.fa {
 				&:before {
@@ -65,13 +65,13 @@ body {
 		}
 	}
 
-	&.elementor-editor-preview {
+	&.wroter-editor-preview {
 
-		#elementor-preview {
+		#wroter-preview {
 			left: 0;
 		}
 
-		#elementor-panel {
+		#wroter-panel {
 			@include start(-280px);
 
 			> .ui-resizable-e, > .ui-resizable-w {
@@ -79,7 +79,7 @@ body {
 			}
 		}
 
-		#elementor-mode-switcher-preview {
+		#wroter-mode-switcher-preview {
 
 			.fa {
 				&:before {
@@ -90,7 +90,7 @@ body {
 	}
 }
 
-#elementor-preview, #elementor-panel {
+#wroter-preview, #wroter-panel {
 
 	&:not(.ui-resizable-resizing) {
 		transition: $start .5s, width 0.5s;

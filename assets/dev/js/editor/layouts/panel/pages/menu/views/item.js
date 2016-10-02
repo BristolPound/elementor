@@ -1,9 +1,9 @@
 var PanelMenuItemView;
 
 PanelMenuItemView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-panel-menu-item',
+	template: '#tmpl-wroter-panel-menu-item',
 
-	className: 'elementor-panel-menu-item',
+	className: 'wroter-panel-menu-item',
 
 	triggers: {
 		click: 'click'

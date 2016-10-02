@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Image_Gallery extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Image Gallery', 'elementor' );
+		return __( 'Image Gallery', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'section_gallery',
 			[
-				'label' => __( 'Image Gallery', 'elementor' ),
+				'label' => __( 'Image Gallery', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,7 +29,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'wp_gallery',
 			[
-				'label' => __( 'Add Images', 'elementor' ),
+				'label' => __( 'Add Images', 'wroter' ),
 				'type' => Controls_Manager::GALLERY,
 				'section' => 'section_gallery',
 			]
@@ -50,7 +50,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'gallery_columns',
 			[
-				'label' => __( 'Columns', 'elementor' ),
+				'label' => __( 'Columns', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 4,
 				'options' => $gallery_columns,
@@ -61,14 +61,14 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'gallery_link',
 			[
-				'label' => __( 'Link to', 'elementor' ),
+				'label' => __( 'Link to', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'file',
 				'section' => 'section_gallery',
 				'options' => [
-					'file' => __( 'Media File', 'elementor' ),
-					'attachment' => __( 'Attachment Page', 'elementor' ),
-					'none' => __( 'None', 'elementor' ),
+					'file' => __( 'Media File', 'wroter' ),
+					'attachment' => __( 'Attachment Page', 'wroter' ),
+					'none' => __( 'None', 'wroter' ),
 				],
 			]
 		);
@@ -76,12 +76,12 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'gallery_rand',
 			[
-				'label' => __( 'Ordering', 'elementor' ),
+				'label' => __( 'Ordering', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_gallery',
 				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'rand' => __( 'Random', 'elementor' ),
+					'' => __( 'Default', 'wroter' ),
+					'rand' => __( 'Random', 'wroter' ),
 				],
 				'default' => '',
 			]
@@ -90,7 +90,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_gallery',
@@ -100,7 +100,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'section_gallery_images',
 			[
-				'label' => __( 'Images', 'elementor' ),
+				'label' => __( 'Images', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -109,13 +109,13 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'image_spacing',
 			[
-				'label' => __( 'Spacing', 'elementor' ),
+				'label' => __( 'Spacing', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_gallery_images',
 				'tab' => self::TAB_STYLE,
 				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'custom' => __( 'Custom', 'elementor' ),
+					'' => __( 'Default', 'wroter' ),
+					'custom' => __( 'Custom', 'wroter' ),
 				],
 				'prefix_class' => 'gallery-spacing-',
 				'default' => '',
@@ -128,7 +128,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'image_spacing_custom',
 			[
-				'label' => __( 'Image Spacing', 'elementor' ),
+				'label' => __( 'Image Spacing', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'section' => 'section_gallery_images',
 				'tab' => self::TAB_STYLE,
@@ -155,7 +155,7 @@ class Widget_Image_Gallery extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border',
-				'label' => __( 'Image Border', 'elementor' ),
+				'label' => __( 'Image Border', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_gallery_images',
 				'selector' => '{{WRAPPER}} .gallery-item img',
@@ -165,7 +165,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'tab' => self::TAB_STYLE,
@@ -179,7 +179,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'section_caption',
 			[
-				'label' => __( 'Caption', 'elementor' ),
+				'label' => __( 'Caption', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -188,14 +188,14 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'gallery_display_caption',
 			[
-				'label' => __( 'Display', 'elementor' ),
+				'label' => __( 'Display', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_caption',
 				'tab' => self::TAB_STYLE,
 				'default' => '',
 				'options' => [
-					'' => __( 'Show', 'elementor' ),
-					'none' => __( 'Hide', 'elementor' ),
+					'' => __( 'Show', 'wroter' ),
+					'none' => __( 'Hide', 'wroter' ),
 				],
 				'selectors' => [
 					'{{WRAPPER}} .gallery-item .gallery-caption' => 'display: {{VALUE}};',
@@ -206,25 +206,25 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_caption',
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'wroter' ),
 						'icon' => 'align-justify',
 					],
 				],
@@ -241,7 +241,7 @@ class Widget_Image_Gallery extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_caption',
@@ -259,7 +259,7 @@ class Widget_Image_Gallery extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'typography',
-				'label' => __( 'Typography', 'elementor' ),
+				'label' => __( 'Typography', 'wroter' ),
 				'scheme' => Scheme_Typography::TYPOGRAPHY_4,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_caption',
@@ -293,7 +293,7 @@ class Widget_Image_Gallery extends Widget_Base {
 			$this->add_render_attribute( 'shortcode', 'orderby', $instance['gallery_rand'] );
 		}
 		?>
-		<div class="elementor-image-gallery">
+		<div class="wroter-image-gallery">
 			<?php echo do_shortcode( '[gallery ' . $this->get_render_attribute_string( 'shortcode' ) . ']' ); ?>
 		</div>
 		<?php

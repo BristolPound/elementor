@@ -1,14 +1,14 @@
 var PanelHeaderItemView;
 
 PanelHeaderItemView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-panel-header',
+	template: '#tmpl-wroter-panel-header',
 
-	id: 'elementor-panel-header',
+	id: 'wroter-panel-header',
 
 	ui: {
-		menuButton: '#elementor-panel-header-menu-button',
-		title: '#elementor-panel-header-title',
-		addButton: '#elementor-panel-header-add-button'
+		menuButton: '#wroter-panel-header-menu-button',
+		title: '#wroter-panel-header-title',
+		addButton: '#wroter-panel-header-add-button'
 	},
 
 	events: {
@@ -21,11 +21,11 @@ PanelHeaderItemView = Marionette.ItemView.extend( {
 	},
 
 	onClickAdd: function() {
-		elementor.getPanelView().setPage( 'elements' );
+		wroter.getPanelView().setPage( 'elements' );
 	},
 
 	onClickMenu: function() {
-		var panel = elementor.getPanelView(),
+		var panel = wroter.getPanelView(),
 			currentPanelPageName = panel.getCurrentPageName(),
 			nextPage = 'menu' === currentPanelPageName ? 'elements' : 'menu';
 

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Progress extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Progress Bar', 'elementor' );
+		return __( 'Progress Bar', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'section_progress',
 			[
-				'label' => __( 'Progress Bar', 'elementor' ),
+				'label' => __( 'Progress Bar', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,10 +29,10 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter your title', 'elementor' ),
-				'default' => __( 'My Skill', 'elementor' ),
+				'placeholder' => __( 'Enter your title', 'wroter' ),
+				'default' => __( 'My Skill', 'wroter' ),
 				'label_block' => true,
 				'section' => 'section_progress',
 			]
@@ -41,16 +41,16 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'progress_type',
 			[
-				'label' => __( 'Type', 'elementor' ),
+				'label' => __( 'Type', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'section' => 'section_progress',
 				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'info' => __( 'Info', 'elementor' ),
-					'success' => __( 'Success', 'elementor' ),
-					'warning' => __( 'Warning', 'elementor' ),
-					'danger' => __( 'Danger', 'elementor' ),
+					'' => __( 'Default', 'wroter' ),
+					'info' => __( 'Info', 'wroter' ),
+					'success' => __( 'Success', 'wroter' ),
+					'warning' => __( 'Warning', 'wroter' ),
+					'danger' => __( 'Danger', 'wroter' ),
 				],
 			]
 		);
@@ -58,7 +58,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'percent',
 			[
-				'label' => __( 'Percentage', 'elementor' ),
+				'label' => __( 'Percentage', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 50,
@@ -72,13 +72,13 @@ class Widget_Progress extends Widget_Base {
 	    $this->add_control(
 	        'display_percentage',
 	        [
-	            'label' => __( 'Display Percentage', 'elementor' ),
+	            'label' => __( 'Display Percentage', 'wroter' ),
 	            'type' => Controls_Manager::SELECT,
 	            'default' => 'show',
 	            'section' => 'section_progress',
 	            'options' => [
-	                'show' => __( 'Show', 'elementor' ),
-	                'hide' => __( 'Hide', 'elementor' ),
+	                'show' => __( 'Show', 'wroter' ),
+	                'hide' => __( 'Hide', 'wroter' ),
 	            ],
 	        ]
 	    );
@@ -86,10 +86,10 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'inner_text',
 			[
-				'label' => __( 'Inner Text', 'elementor' ),
+				'label' => __( 'Inner Text', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'e.g. Web Designer', 'elementor' ),
-				'default' => __( 'Web Designer', 'elementor' ),
+				'placeholder' => __( 'e.g. Web Designer', 'wroter' ),
+				'default' => __( 'Web Designer', 'wroter' ),
 				'label_block' => true,
 				'section' => 'section_progress',
 			]
@@ -98,7 +98,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_progress',
@@ -108,7 +108,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'section_progress_style',
 			[
-				'label' => __( 'Progress Bar', 'elementor' ),
+				'label' => __( 'Progress Bar', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -117,7 +117,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'bar_color',
 			[
-				'label' => __( 'Bar Color', 'elementor' ),
+				'label' => __( 'Bar Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'scheme' => [
@@ -126,7 +126,7 @@ class Widget_Progress extends Widget_Base {
 				],
 				'section' => 'section_progress_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-progress-wrapper .elementor-progress-bar' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-progress-wrapper .wroter-progress-bar' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -134,12 +134,12 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'bar_bg_color',
 			[
-				'label' => __( 'Bar Background Color', 'elementor' ),
+				'label' => __( 'Bar Background Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_progress_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-progress-wrapper' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-progress-wrapper' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -147,12 +147,12 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'bar_inline_color',
 			[
-				'label' => __( 'Inner Text Color', 'elementor' ),
+				'label' => __( 'Inner Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_progress_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-progress-wrapper .elementor-progress-inner-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-progress-wrapper .wroter-progress-inner-text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -160,7 +160,7 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'section_title',
 			[
-				'label' => __( 'Title Style', 'elementor' ),
+				'label' => __( 'Title Style', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -169,12 +169,12 @@ class Widget_Progress extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-title' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -189,7 +189,7 @@ class Widget_Progress extends Widget_Base {
 				'name' => 'typography',
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title',
-				'selector' => '{{WRAPPER}} .elementor-title',
+				'selector' => '{{WRAPPER}} .wroter-title',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -198,19 +198,19 @@ class Widget_Progress extends Widget_Base {
 	protected function render( $instance = [] ) {
 		$html = '';
 
-		$this->add_render_attribute( 'wrapper', 'class', 'elementor-progress-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'wroter-progress-wrapper' );
 
 		if ( ! empty( $instance['progress_type'] ) ) {
 			$this->add_render_attribute( 'wrapper', 'class', 'progress-' . $instance['progress_type'] );
 		}
 
 		if ( ! empty( $instance['title'] ) ) {
-			$html .= '<span class="elementor-title">' . $instance['title'] . '</span>';
+			$html .= '<span class="wroter-title">' . $instance['title'] . '</span>';
 		}
 
 		$html .= '<div ' . $this->get_render_attribute_string( 'wrapper' ) . ' role="timer">';
 
-		$html .= '<span class="elementor-progress-bar" data-max="' . $instance['percent']['size'] . '"></span>';
+		$html .= '<span class="wroter-progress-bar" data-max="' . $instance['percent']['size'] . '"></span>';
 
 		if ( ! empty( $instance['inner_text'] ) ) {
 			$data_inner = ' data-inner="' . $instance['inner_text'] . '"';
@@ -218,12 +218,12 @@ class Widget_Progress extends Widget_Base {
 			$data_inner = '';
 		}
 
-		$html .= '<span class="elementor-progress-inner-text"' . $data_inner . '>';
+		$html .= '<span class="wroter-progress-inner-text"' . $data_inner . '>';
 
-		$html .= '<span class="elementor-progress-text"></span>';
+		$html .= '<span class="wroter-progress-text"></span>';
 
 		if ( 'hide' !== $instance['display_percentage'] ) {
-			$html .= '<span class="elementor-progress-percentage"></span>';
+			$html .= '<span class="wroter-progress-percentage"></span>';
 		}
 
 		$html .= '</span></div>';
@@ -237,12 +237,12 @@ class Widget_Progress extends Widget_Base {
 		var html = '';
 
 		if ( '' !== settings.title ) {
-			html += '<span class="elementor-title">' + settings.title + '</span>';
+			html += '<span class="wroter-title">' + settings.title + '</span>';
 		}
 
-		html += '<div class="elementor-progress-wrapper progress-' + settings.progress_type + '" role="timer">';
+		html += '<div class="wroter-progress-wrapper progress-' + settings.progress_type + '" role="timer">';
 
-		html += '<span class="elementor-progress-bar" data-max="' + settings.percent.size + '"></span>';
+		html += '<span class="wroter-progress-bar" data-max="' + settings.percent.size + '"></span>';
 
 		if ( '' !== settings.sub_title ) {
 			var data_inner = ' data-inner="' + settings.inner_text + '"';
@@ -250,11 +250,11 @@ class Widget_Progress extends Widget_Base {
 			var data_inner = '';
 		}
 
-		html += '<span class="elementor-progress-inner-text"' + data_inner + '>';
-		html += '<span class="elementor-progress-text"></span>';
+		html += '<span class="wroter-progress-inner-text"' + data_inner + '>';
+		html += '<span class="wroter-progress-text"></span>';
 
 		if ( 'hide' !== settings.display_percentage ) {
-			html += '<span class="elementor-progress-percentage"></span>';
+			html += '<span class="wroter-progress-percentage"></span>';
 		}
 
 		html += '</span></div>';

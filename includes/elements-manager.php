@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -11,32 +11,32 @@ class Elements_Manager {
 	protected $_registered_elements = null;
 
 	private function _init_elements() {
-		include_once( ELEMENTOR_PATH . 'includes/elements/base.php' );
+		include_once( WROTER_PATH . 'includes/elements/base.php' );
 
-		include( ELEMENTOR_PATH . 'includes/elements/column.php' );
-		include( ELEMENTOR_PATH . 'includes/elements/section.php' );
+		include( WROTER_PATH . 'includes/elements/column.php' );
+		include( WROTER_PATH . 'includes/elements/section.php' );
 
 		$this->_registered_elements = [];
 
 		$this->register_element( __NAMESPACE__ . '\Element_Column' );
 		$this->register_element( __NAMESPACE__ . '\Element_Section' );
 
-		do_action( 'elementor/elements/elements_registered' );
+		do_action( 'wroter/elements/elements_registered' );
 	}
 
 	public function get_categories() {
 		// TODO: Need to filter
 		return [
 			'basic' => [
-				'title' => __( 'Elements', 'elementor' ),
+				'title' => __( 'Elements', 'wroter' ),
 				'icon' => 'font',
 			],
 			'pojo' => [
-				'title' => __( 'Pojo Themes', 'elementor' ),
+				'title' => __( 'Pojo Themes', 'wroter' ),
 				'icon' => 'pojome',
 			],
 			'wordpress' => [
-				'title' => __( 'WordPress', 'elementor' ),
+				'title' => __( 'WordPress', 'wroter' ),
 				'icon' => 'wordpress',
 			],
 		];
@@ -99,7 +99,7 @@ class Elements_Manager {
 	}
 
 	public function ajax_save_builder() {
-		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'elementor-editing' ) ) {
+		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'wroter-editing' ) ) {
 			wp_send_json_error( new \WP_Error( 'token_expired' ) );
 		}
 
@@ -124,6 +124,6 @@ class Elements_Manager {
 	}
 
 	public function __construct() {
-		add_action( 'wp_ajax_elementor_save_builder', [ $this, 'ajax_save_builder' ] );
+		add_action( 'wp_ajax_wroter_save_builder', [ $this, 'ajax_save_builder' ] );
 	}
 }

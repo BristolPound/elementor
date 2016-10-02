@@ -4,7 +4,7 @@
 
 // For the all elements with icon options
 
-.elementor-icon {
+.wroter-icon {
 	display: inline-block;
 	line-height: 1;
 	transition: $transition-hover;
@@ -21,28 +21,28 @@
 	}
 }
 
-.elementor-view-stacked {
+.wroter-view-stacked {
 
-	.elementor-icon {
+	.wroter-icon {
 		background-color: $gray;
 		color: #fff;
 	}
 }
 
-.elementor-view-framed {
+.wroter-view-framed {
 
-	.elementor-icon {
+	.wroter-icon {
 		color: $gray;
 		border: 3px solid $gray;
 		background-color: transparent;
 	}
 }
 
-.elementor-shape- {
+.wroter-shape- {
 
 	&circle {
 
-		.elementor-icon {
+		.wroter-icon {
 			border-radius: 50%;
 		}
 	}

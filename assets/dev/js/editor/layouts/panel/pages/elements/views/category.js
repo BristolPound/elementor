@@ -3,9 +3,9 @@ var PanelElementsElementView = require( './element' ),
 	PanelElementsCategoryView;
 
 PanelElementsCategoryView = Marionette.CompositeView.extend( {
-	template: '#tmpl-elementor-panel-elements-category',
+	template: '#tmpl-wroter-panel-elements-category',
 
-	className: 'elementor-panel-category',
+	className: 'wroter-panel-category',
 
 	childView: PanelElementsElementView,
 

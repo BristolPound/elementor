@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Divider extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Divider', 'elementor' );
+		return __( 'Divider', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'section_divider',
 			[
-				'label' => __( 'Divider', 'elementor' ),
+				'label' => __( 'Divider', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,18 +29,18 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'style',
 			[
-				'label' => __( 'Style', 'elementor' ),
+				'label' => __( 'Style', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_divider',
 				'options' => [
-					'solid' => __( 'Solid', 'elementor' ),
-					'double' => __( 'Double', 'elementor' ),
-					'dotted' => __( 'Dotted', 'elementor' ),
-					'dashed' => __( 'Dashed', 'elementor' ),
+					'solid' => __( 'Solid', 'wroter' ),
+					'double' => __( 'Double', 'wroter' ),
+					'dotted' => __( 'Dotted', 'wroter' ),
+					'dashed' => __( 'Dashed', 'wroter' ),
 				],
 				'default' => 'solid',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider-separator' => 'border-top-style: {{VALUE}};',
+					'{{WRAPPER}} .wroter-divider-separator' => 'border-top-style: {{VALUE}};',
 				],
 			]
 		);
@@ -48,7 +48,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'weight',
 			[
-				'label' => __( 'Weight', 'elementor' ),
+				'label' => __( 'Weight', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'section' => 'section_divider',
 				'default' => [
@@ -61,7 +61,7 @@ class Widget_Divider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider-separator' => 'border-top-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-divider-separator' => 'border-top-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -69,7 +69,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'color',
 			[
-				'label' => __( 'Color', 'elementor' ),
+				'label' => __( 'Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'section' => 'section_divider',
 				'default' => '',
@@ -78,7 +78,7 @@ class Widget_Divider extends Widget_Base {
 					'value' => Scheme_Color::COLOR_3,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider-separator' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-divider-separator' => 'border-top-color: {{VALUE}};',
 				],
 			]
 		);
@@ -86,7 +86,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'width',
 			[
-				'label' => __( 'Width', 'elementor' ),
+				'label' => __( 'Width', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 100,
@@ -94,7 +94,7 @@ class Widget_Divider extends Widget_Base {
 				],
 				'section' => 'section_divider',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider-separator' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-divider-separator' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -102,26 +102,26 @@ class Widget_Divider extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'section' => 'section_divider',
 				'options' => [
 					'left'    => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .wroter-divider' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -129,7 +129,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'gap',
 			[
-				'label' => __( 'Gap', 'elementor' ),
+				'label' => __( 'Gap', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 15,
@@ -142,7 +142,7 @@ class Widget_Divider extends Widget_Base {
 				],
 				'section' => 'section_divider',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-divider' => 'padding-top: {{SIZE}}{{UNIT}}; padding-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-divider' => 'padding-top: {{SIZE}}{{UNIT}}; padding-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -150,7 +150,7 @@ class Widget_Divider extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_divider',
@@ -160,16 +160,16 @@ class Widget_Divider extends Widget_Base {
 
 	protected function render( $instance = [] ) {
 		?>
-		<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
+		<div class="wroter-divider">
+			<span class="wroter-divider-separator"></span>
 		</div>
 		<?php
 	}
 
 	protected function content_template() {
 		?>
-		<div class="elementor-divider">
-			<span class="elementor-divider-separator"></span>
+		<div class="wroter-divider">
+			<span class="wroter-divider-separator"></span>
 		</div>
 		<?php
 	}

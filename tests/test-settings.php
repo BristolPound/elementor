@@ -1,9 +1,9 @@
 <?php
 
-class Elementor_Test_Settings extends WP_UnitTestCase {
+class Wroter_Test_Settings extends WP_UnitTestCase {
 
 	public function test_validationsCheckboxList() {
-		$this->assertEquals( [], \Elementor\Settings_Validations::checkbox_list( null ) );
-		$this->assertEquals( [ 'a', 'b' ], \Elementor\Settings_Validations::checkbox_list( [ 'a', 'b' ] ) );
+		$this->assertEquals( [], \Wroter\Settings_Validations::checkbox_list( null ) );
+		$this->assertEquals( [ 'a', 'b' ], \Wroter\Settings_Validations::checkbox_list( [ 'a', 'b' ] ) );
 	}
 }

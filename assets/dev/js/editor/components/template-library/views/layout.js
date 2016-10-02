@@ -1,18 +1,18 @@
-var TemplateLibraryHeaderView = require( 'elementor-templates/views/parts/header' ),
-	TemplateLibraryHeaderLogoView = require( 'elementor-templates/views/parts/header-parts/logo' ),
-	TemplateLibraryHeaderSaveView = require( 'elementor-templates/views/parts/header-parts/save' ),
-	TemplateLibraryHeaderMenuView = require( 'elementor-templates/views/parts/header-parts/menu' ),
-	TemplateLibraryHeaderPreviewView = require( 'elementor-templates/views/parts/header-parts/preview' ),
-	TemplateLibraryHeaderBackView = require( 'elementor-templates/views/parts/header-parts/back' ),
-	TemplateLibraryLoadingView = require( 'elementor-templates/views/parts/loading' ),
-	TemplateLibraryCollectionView = require( 'elementor-templates/views/parts/templates' ),
-	TemplateLibrarySaveTemplateView = require( 'elementor-templates/views/parts/save-template' ),
-	TemplateLibraryImportView = require( 'elementor-templates/views/parts/import' ),
-	TemplateLibraryPreviewView = require( 'elementor-templates/views/parts/preview' ),
+var TemplateLibraryHeaderView = require( 'wroter-templates/views/parts/header' ),
+	TemplateLibraryHeaderLogoView = require( 'wroter-templates/views/parts/header-parts/logo' ),
+	TemplateLibraryHeaderSaveView = require( 'wroter-templates/views/parts/header-parts/save' ),
+	TemplateLibraryHeaderMenuView = require( 'wroter-templates/views/parts/header-parts/menu' ),
+	TemplateLibraryHeaderPreviewView = require( 'wroter-templates/views/parts/header-parts/preview' ),
+	TemplateLibraryHeaderBackView = require( 'wroter-templates/views/parts/header-parts/back' ),
+	TemplateLibraryLoadingView = require( 'wroter-templates/views/parts/loading' ),
+	TemplateLibraryCollectionView = require( 'wroter-templates/views/parts/templates' ),
+	TemplateLibrarySaveTemplateView = require( 'wroter-templates/views/parts/save-template' ),
+	TemplateLibraryImportView = require( 'wroter-templates/views/parts/import' ),
+	TemplateLibraryPreviewView = require( 'wroter-templates/views/parts/preview' ),
 	TemplateLibraryLayoutView;
 
 TemplateLibraryLayoutView = Marionette.LayoutView.extend( {
-	el: '#elementor-template-library-modal',
+	el: '#wroter-template-library-modal',
 
 	regions: {
 		modalContent: '.dialog-message',

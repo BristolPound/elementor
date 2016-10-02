@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Counter extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Counter', 'elementor' );
+		return __( 'Counter', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'section_counter',
 			[
-				'label' => __( 'Counter', 'elementor' ),
+				'label' => __( 'Counter', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,7 +29,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'starting_number',
 			[
-				'label' => __( 'Starting Number', 'elementor' ),
+				'label' => __( 'Starting Number', 'wroter' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 0,
 				'default' => 0,
@@ -40,7 +40,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'ending_number',
 			[
-				'label' => __( 'Ending Number', 'elementor' ),
+				'label' => __( 'Ending Number', 'wroter' ),
 				'type' => Controls_Manager::NUMBER,
 				'min' => 100,
 				'default' => 100,
@@ -51,7 +51,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'prefix',
 			[
-				'label' => __( 'Number Prefix', 'elementor' ),
+				'label' => __( 'Number Prefix', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
 				'placeholder' => 1,
@@ -62,10 +62,10 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'suffix',
 			[
-				'label' => __( 'Number Suffix', 'elementor' ),
+				'label' => __( 'Number Suffix', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
-				'placeholder' => __( 'Plus', 'elementor' ),
+				'placeholder' => __( 'Plus', 'wroter' ),
 				'section' => 'section_counter',
 			]
 		);
@@ -73,7 +73,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'duration',
 			[
-				'label' => __( 'Animation Duration', 'elementor' ),
+				'label' => __( 'Animation Duration', 'wroter' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => 2000,
 				'min' => 100,
@@ -85,11 +85,11 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default' => __( 'Cool Number', 'elementor' ),
-				'placeholder' => __( 'Cool Number', 'elementor' ),
+				'default' => __( 'Cool Number', 'wroter' ),
+				'placeholder' => __( 'Cool Number', 'wroter' ),
 				'section' => 'section_counter',
 			]
 		);
@@ -97,7 +97,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_counter',
@@ -107,7 +107,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'section_number',
 			[
-				'label' => __( 'Number', 'elementor' ),
+				'label' => __( 'Number', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -116,7 +116,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'number_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -125,7 +125,7 @@ class Widget_Counter extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_number',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-counter-number-wrapper' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-counter-number-wrapper' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -137,14 +137,14 @@ class Widget_Counter extends Widget_Base {
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_number',
-				'selector' => '{{WRAPPER}} .elementor-counter-number-wrapper',
+				'selector' => '{{WRAPPER}} .wroter-counter-number-wrapper',
 			]
 		);
 
 		$this->add_control(
 			'section_title',
 			[
-				'label' => __( 'Title', 'elementor' ),
+				'label' => __( 'Title', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -153,7 +153,7 @@ class Widget_Counter extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -162,7 +162,7 @@ class Widget_Counter extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-counter-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-counter-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -174,34 +174,34 @@ class Widget_Counter extends Widget_Base {
 				'scheme' => Scheme_Typography::TYPOGRAPHY_2,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title',
-				'selector' => '{{WRAPPER}} .elementor-counter-title',
+				'selector' => '{{WRAPPER}} .wroter-counter-title',
 			]
 		);
 	}
 
 	protected function content_template() {
 		?>
-		<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
+		<div class="wroter-counter">
+			<div class="wroter-counter-number-wrapper">
 				<#
 				var prefix = '',
 					suffix = '';
 
 				if ( settings.prefix ) {
-					prefix = '<span class="elementor-counter-number-prefix">' + settings.prefix + '</span>';
+					prefix = '<span class="wroter-counter-number-prefix">' + settings.prefix + '</span>';
 				}
 
-				var duration = '<span class="elementor-counter-number" data-duration="' + settings.duration + '" data-to_value="' + settings.ending_number + '">' + settings.starting_number + '</span>';
+				var duration = '<span class="wroter-counter-number" data-duration="' + settings.duration + '" data-to_value="' + settings.ending_number + '">' + settings.starting_number + '</span>';
 
 				if ( settings.suffix ) {
-					suffix = '<span class="elementor-counter-number-suffix">' + settings.suffix + '</span>';
+					suffix = '<span class="wroter-counter-number-suffix">' + settings.suffix + '</span>';
 				}
 
 				print( prefix + duration + suffix );
 				#>
 			</div>
 			<# if ( settings.title ) { #>
-				<div class="elementor-counter-title">{{{ settings.title }}}</div>
+				<div class="wroter-counter-title">{{{ settings.title }}}</div>
 			<# } #>
 		</div>
 		<?php
@@ -209,26 +209,26 @@ class Widget_Counter extends Widget_Base {
 
 	public function render( $instance = [] ) {
 		?>
-		<div class="elementor-counter">
-			<div class="elementor-counter-number-wrapper">
+		<div class="wroter-counter">
+			<div class="wroter-counter-number-wrapper">
 				<?php
 				$prefix = $suffix = '';
 
 				if ( $instance['prefix'] ) {
-					$prefix = '<span class="elementor-counter-number-prefix">' . $instance['prefix'] . '</span>';
+					$prefix = '<span class="wroter-counter-number-prefix">' . $instance['prefix'] . '</span>';
 				}
 
-				$duration = '<span class="elementor-counter-number" data-duration="' . $instance['duration'] . '" data-to_value="' . $instance['ending_number'] . '">' . $instance['starting_number'] . '</span>';
+				$duration = '<span class="wroter-counter-number" data-duration="' . $instance['duration'] . '" data-to_value="' . $instance['ending_number'] . '">' . $instance['starting_number'] . '</span>';
 
 				if ( $instance['suffix'] ) {
-					$suffix = '<span class="elementor-counter-number-suffix">' . $instance['suffix'] . '</span>';
+					$suffix = '<span class="wroter-counter-number-suffix">' . $instance['suffix'] . '</span>';
 				}
 
 				echo $prefix . $duration . $suffix;
 				?>
 			</div>
 			<?php if ( $instance['title'] ) : ?>
-				<div class="elementor-counter-title"><?php echo $instance['title']; ?></div>
+				<div class="wroter-counter-title"><?php echo $instance['title']; ?></div>
 			<?php endif; ?>
 		</div>
 		<?php

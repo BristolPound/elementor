@@ -2,22 +2,22 @@
 // Repeater
 //
 
-.elementor-control-type-repeater {
+.wroter-control-type-repeater {
 
-	&, .elementor-control {
+	&, .wroter-control {
 		padding: 0 10px 15px;
 	}
 
-	.elementor-control {
+	.wroter-control {
 
 		&:before {
 			display: none;
 		}
 	}
 
-	&.elementor-repeater-has-minimum-rows {
+	&.wroter-repeater-has-minimum-rows {
 
-		.elementor-repeater-tool-remove {
+		.wroter-repeater-tool-remove {
 			display: none;
 		}
 	}
@@ -26,7 +26,7 @@
 		margin: 10px 0;
 	}
 
-	.elementor-repeater-row-controls {
+	.wroter-repeater-row-controls {
 		border: 1px solid $editor-lightest;
 		border-top-width: 0;
 		padding-top: 15px;
@@ -36,7 +36,7 @@
 		}
 	}
 
-	.elementor-repeater-row-tools {
+	.wroter-repeater-row-tools {
 		display: table;
 		table-layout: fixed;
 		width: 100%;
@@ -56,7 +56,7 @@
 			vertical-align: middle;
 			cursor: pointer;
 
-			&:not(.elementor-repeater-row-handle-sortable) {
+			&:not(.wroter-repeater-row-handle-sortable) {
 				background-color: #fff;
 			}
 
@@ -65,7 +65,7 @@
 			}
 		}
 
-		.elementor-repeater-row-item-title {
+		.wroter-repeater-row-item-title {
 			text-align: $start;
 			padding: 0 20px;
 			white-space: nowrap;
@@ -73,23 +73,23 @@
 			text-overflow: ellipsis;
 		}
 
-		.elementor-repeater-row-tool {
+		.wroter-repeater-row-tool {
 			width: 40px;
 		}
 
-		.elementor-repeater-row-handle-sortable {
+		.wroter-repeater-row-handle-sortable {
 			cursor: move;
 			width: 10px;
 			color: #fff;
 		}
 	}
 
-	.elementor-button-wrapper {
+	.wroter-button-wrapper {
 		text-align: center;
 		padding: 10px;
 	}
 
-	.elementor-repeater-add {
+	.wroter-repeater-add {
 		background-color: $editor-light;
 		color: #fff;
 		font-size: 11px;

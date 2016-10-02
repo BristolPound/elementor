@@ -1,5 +1,5 @@
-var TemplateLibraryLayoutView = require( 'elementor-templates/views/layout' ),
-	TemplateLibraryCollection = require( 'elementor-templates/collections/templates' ),
+var TemplateLibraryLayoutView = require( 'wroter-templates/views/layout' ),
+	TemplateLibraryCollection = require( 'wroter-templates/collections/templates' ),
 	TemplateLibraryManager;
 
 TemplateLibraryManager = function() {
@@ -18,7 +18,7 @@ TemplateLibraryManager = function() {
 		var dialog = self.getDeleteDialog();
 
 		dialog.onConfirm = function() {
-			elementor.ajax.send( 'delete_template', {
+			wroter.ajax.send( 'delete_template', {
 				data: {
 					source: templateModel.get( 'source' ),
 					template_id: templateModel.get( 'template_id' )
@@ -37,16 +37,16 @@ TemplateLibraryManager = function() {
 	this.importTemplate = function( templateModel ) {
 		layout.showLoadingView();
 
-		elementor.ajax.send( 'get_template_content', {
+		wroter.ajax.send( 'get_template_content', {
 			data: {
 				source: templateModel.get( 'source' ),
-				post_id: elementor.config.post_id,
+				post_id: wroter.config.post_id,
 				template_id: templateModel.get( 'template_id' )
 			},
 			success: function( data ) {
 				self.getModal().hide();
 
-				elementor.getRegion( 'sections' ).currentView.addChildModel( data );
+				wroter.getRegion( 'sections' ).currentView.addChildModel( data );
 			},
 			error: function( data ) {
 				self.showErrorDialog( data.message );
@@ -56,12 +56,12 @@ TemplateLibraryManager = function() {
 
 	this.getDeleteDialog = function() {
 		if ( ! deleteDialog ) {
-			deleteDialog = elementor.dialogsManager.createWidget( 'confirm', {
-				id: 'elementor-template-library-delete-dialog',
-				headerMessage: elementor.translate( 'delete_template' ),
-				message: elementor.translate( 'delete_template_confirm' ),
+			deleteDialog = wroter.dialogsManager.createWidget( 'confirm', {
+				id: 'wroter-template-library-delete-dialog',
+				headerMessage: wroter.translate( 'delete_template' ),
+				message: wroter.translate( 'delete_template_confirm' ),
 				strings: {
-					confirm: elementor.translate( 'delete' )
+					confirm: wroter.translate( 'delete' )
 				}
 			} );
 		}
@@ -71,9 +71,9 @@ TemplateLibraryManager = function() {
 
 	this.getErrorDialog = function() {
 		if ( ! errorDialog ) {
-			errorDialog = elementor.dialogsManager.createWidget( 'alert', {
-				id: 'elementor-template-library-error-dialog',
-				headerMessage: elementor.translate( 'an_error_occurred' )
+			errorDialog = wroter.dialogsManager.createWidget( 'alert', {
+				id: 'wroter-template-library-error-dialog',
+				headerMessage: wroter.translate( 'an_error_occurred' )
 			} );
 		}
 
@@ -82,8 +82,8 @@ TemplateLibraryManager = function() {
 
 	this.getModal = function() {
 		if ( ! modal ) {
-			modal = elementor.dialogsManager.createWidget( 'elementor-modal', {
-				id: 'elementor-template-library-modal',
+			modal = wroter.dialogsManager.createWidget( 'wroter-modal', {
+				id: 'wroter-template-library-modal',
 				closeButton: false
 			} );
 		}
@@ -108,7 +108,7 @@ TemplateLibraryManager = function() {
 			return;
 		}
 
-		elementor.ajax.send( 'get_templates', {
+		wroter.ajax.send( 'get_templates', {
 			success: function( data ) {
 				templatesCollection = new TemplateLibraryCollection( data );
 
@@ -138,7 +138,7 @@ TemplateLibraryManager = function() {
 	};
 
 	this.setTemplatesSource = function( source, trigger ) {
-		var channel = elementor.channels.templates;
+		var channel = wroter.channels.templates;
 
 		channel.reply( 'filter:source', source );
 
@@ -153,7 +153,7 @@ TemplateLibraryManager = function() {
 
 	this.showErrorDialog = function( errorMessage ) {
 		self.getErrorDialog()
-		    .setMessage( elementor.translate( 'templates_request_error' ) + '<div id="elementor-template-library-error-info">' + errorMessage + '</div>' )
+		    .setMessage( wroter.translate( 'templates_request_error' ) + '<div id="wroter-template-library-error-info">' + errorMessage + '</div>' )
 		    .show();
 	};
 };

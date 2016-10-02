@@ -1,19 +1,19 @@
-var BaseElementView = require( 'elementor-views/base-element' ),
-	ElementEmptyView = require( 'elementor-views/element-empty' ),
-	WidgetView = require( 'elementor-views/widget' ),
+var BaseElementView = require( 'wroter-views/base-element' ),
+	ElementEmptyView = require( 'wroter-views/element-empty' ),
+	WidgetView = require( 'wroter-views/widget' ),
 	ColumnView;
 
 ColumnView = BaseElementView.extend( {
-	template: Marionette.TemplateCache.get( '#tmpl-elementor-element-column-content' ),
+	template: Marionette.TemplateCache.get( '#tmpl-wroter-element-column-content' ),
 
 	elementEvents: {
-		'click > .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-remove': 'onClickRemove',
+		'click > .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-remove': 'onClickRemove',
 		'click @ui.listTriggers': 'onClickTrigger'
 	},
 
 	getChildView: function( model ) {
 		if ( 'section' === model.get( 'elType' ) ) {
-			return require( 'elementor-views/section' ); // We need to require the section dynamically
+			return require( 'wroter-views/section' ); // We need to require the section dynamically
 		}
 
 		return WidgetView;
@@ -22,63 +22,63 @@ ColumnView = BaseElementView.extend( {
 	emptyView: ElementEmptyView,
 
 	className: function() {
-		var classes = 'elementor-column',
+		var classes = 'wroter-column',
 			type = this.isInner() ? 'inner' : 'top';
 
-		classes += ' elementor-' + type + '-column';
+		classes += ' wroter-' + type + '-column';
 
 		return classes;
 	},
 
-	childViewContainer: '> .elementor-column-wrap > .elementor-widget-wrap',
+	childViewContainer: '> .wroter-column-wrap > .wroter-widget-wrap',
 
 	triggers: {
-		'click > .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-add': 'click:new',
-		'click > .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-edit': 'click:edit',
-		'click > .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-trigger': 'click:edit',
-		'click > .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-duplicate': 'click:duplicate'
+		'click > .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-add': 'click:new',
+		'click > .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-edit': 'click:edit',
+		'click > .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-trigger': 'click:edit',
+		'click > .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-duplicate': 'click:duplicate'
 	},
 
 	ui: {
 		columnTitle: '.column-title',
-		columnInner: '> .elementor-column-wrap',
-		listTriggers: '> .elementor-element-overlay .elementor-editor-element-trigger'
+		columnInner: '> .wroter-column-wrap',
+		listTriggers: '> .wroter-element-overlay .wroter-editor-element-trigger'
 	},
 
 	behaviors: {
 		Sortable: {
-			behaviorClass: require( 'elementor-behaviors/sortable' ),
+			behaviorClass: require( 'wroter-behaviors/sortable' ),
 			elChildType: 'widget'
 		},
 		Resizable: {
-			behaviorClass: require( 'elementor-behaviors/resizable' )
+			behaviorClass: require( 'wroter-behaviors/resizable' )
 		},
 		HandleDuplicate: {
-			behaviorClass: require( 'elementor-behaviors/handle-duplicate' )
+			behaviorClass: require( 'wroter-behaviors/handle-duplicate' )
 		},
 		HandleEditor: {
-			behaviorClass: require( 'elementor-behaviors/handle-editor' )
+			behaviorClass: require( 'wroter-behaviors/handle-editor' )
 		},
 		HandleEditMode: {
-			behaviorClass: require( 'elementor-behaviors/handle-edit-mode' )
+			behaviorClass: require( 'wroter-behaviors/handle-edit-mode' )
 		},
 		HandleAddMode: {
-			behaviorClass: require( 'elementor-behaviors/duplicate' )
+			behaviorClass: require( 'wroter-behaviors/duplicate' )
 		},
 		HandleElementsRelation: {
-			behaviorClass: require( 'elementor-behaviors/elements-relation' )
+			behaviorClass: require( 'wroter-behaviors/elements-relation' )
 		}
 	},
 
 	initialize: function() {
 		BaseElementView.prototype.initialize.apply( this, arguments );
 
-		this.listenTo( elementor.channels.data, 'widget:drag:start', this.onWidgetDragStart );
-		this.listenTo( elementor.channels.data, 'widget:drag:end', this.onWidgetDragEnd );
+		this.listenTo( wroter.channels.data, 'widget:drag:start', this.onWidgetDragStart );
+		this.listenTo( wroter.channels.data, 'widget:drag:end', this.onWidgetDragEnd );
 	},
 
 	isDroppingAllowed: function( side, event ) {
-		var elementView = elementor.channels.panelElements.request( 'element:selected' ),
+		var elementView = wroter.channels.panelElements.request( 'element:selected' ),
 			elType = elementView.model.get( 'elType' );
 
 		if ( 'section' === elType ) {
@@ -100,8 +100,8 @@ ColumnView = BaseElementView.extend( {
 
 	getSortableOptions: function() {
 		return {
-			connectWith: '.elementor-widget-wrap',
-			items: '> .elementor-element'
+			connectWith: '.wroter-widget-wrap',
+			items: '> .wroter-element'
 		};
 	},
 
@@ -113,8 +113,8 @@ ColumnView = BaseElementView.extend( {
 	},
 
 	changeChildContainerClasses: function() {
-		var emptyClass = 'elementor-element-empty',
-			populatedClass = 'elementor-element-populated';
+		var emptyClass = 'wroter-element-empty',
+			populatedClass = 'wroter-element-populated';
 
 		if ( this.collection.isEmpty() ) {
 			this.ui.columnInner.removeClass( populatedClass ).addClass( emptyClass );
@@ -130,12 +130,12 @@ ColumnView = BaseElementView.extend( {
 		self.changeSizeUI();
 
 		self.$el.html5Droppable( {
-			items: ' > .elementor-column-wrap > .elementor-widget-wrap > .elementor-element, >.elementor-column-wrap > .elementor-widget-wrap > .elementor-empty-view > .elementor-first-add',
+			items: ' > .wroter-column-wrap > .wroter-widget-wrap > .wroter-element, >.wroter-column-wrap > .wroter-widget-wrap > .wroter-empty-view > .wroter-first-add',
 			axis: [ 'vertical' ],
-			groups: [ 'elementor-element' ],
+			groups: [ 'wroter-element' ],
 			isDroppingAllowed: _.bind( self.isDroppingAllowed, self ),
 			onDragEnter: function() {
-				self.$el.addClass( 'elementor-dragging-on-child' );
+				self.$el.addClass( 'wroter-dragging-on-child' );
 			},
 			onDragging: function( side, event ) {
 				event.stopPropagation();
@@ -145,14 +145,14 @@ ColumnView = BaseElementView.extend( {
 				}
 			},
 			onDragLeave: function() {
-				self.$el.removeClass( 'elementor-dragging-on-child' );
+				self.$el.removeClass( 'wroter-dragging-on-child' );
 
 				Backbone.$( this ).removeAttr( 'data-side' );
 			},
 			onDropping: function( side, event ) {
 				event.stopPropagation();
 
-				var elementView = elementor.channels.panelElements.request( 'element:selected' ),
+				var elementView = wroter.channels.panelElements.request( 'element:selected' ),
 					newIndex = Backbone.$( this ).index();
 
 				if ( 'bottom' === side ) {
@@ -160,7 +160,7 @@ ColumnView = BaseElementView.extend( {
 				}
 
 				var itemData = {
-					id: elementor.helpers.getUniqueID(),
+					id: wroter.helpers.getUniqueID(),
 					elType: elementView.model.get( 'elType' )
 				};
 
@@ -182,21 +182,21 @@ ColumnView = BaseElementView.extend( {
 		event.preventDefault();
 
 		var $trigger = this.$( event.currentTarget ),
-			isTriggerActive = $trigger.hasClass( 'elementor-active' );
+			isTriggerActive = $trigger.hasClass( 'wroter-active' );
 
-		this.ui.listTriggers.removeClass( 'elementor-active' );
+		this.ui.listTriggers.removeClass( 'wroter-active' );
 
 		if ( ! isTriggerActive ) {
-			$trigger.addClass( 'elementor-active' );
+			$trigger.addClass( 'wroter-active' );
 		}
 	},
 
 	onWidgetDragStart: function() {
-		this.$el.addClass( 'elementor-dragging' );
+		this.$el.addClass( 'wroter-dragging' );
 	},
 
 	onWidgetDragEnd: function() {
-		this.$el.removeClass( 'elementor-dragging' );
+		this.$el.removeClass( 'wroter-dragging' );
 	}
 } );
 

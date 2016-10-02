@@ -5,7 +5,7 @@ Schemes = function() {
 		styleRules = {},
 		schemes = {},
 		settings = {
-			selectorWrapperPrefix: '.elementor-widget-'
+			selectorWrapperPrefix: '.wroter-widget-'
 		},
 		elements = {};
 
@@ -15,14 +15,14 @@ Schemes = function() {
 
 	var initElements = function() {
 		elements.$style = Backbone.$( '<style>', {
-			id: 'elementor-style-scheme'
+			id: 'wroter-style-scheme'
 		});
 
-		elements.$previewHead = elementor.$previewContents.find( 'head' );
+		elements.$previewHead = wroter.$previewContents.find( 'head' );
 	};
 
 	var initSchemes = function() {
-		schemes = elementor.helpers.cloneObject( elementor.config.schemes.items );
+		schemes = wroter.helpers.cloneObject( wroter.config.schemes.items );
 	};
 
 	var addStyleRule = function( selector, property ) {
@@ -44,7 +44,7 @@ Schemes = function() {
 			}
 
 			outputSelector = selector.replace( /\{\{WRAPPER\}\}/g, settings.selectorWrapperPrefix + widgetType );
-			outputCssProperty = elementor.getControlItemView().replaceStyleValues( cssProperty, currentSchemeValue.value );
+			outputCssProperty = wroter.getControlItemView().replaceStyleValues( cssProperty, currentSchemeValue.value );
 
 			addStyleRule( outputSelector, outputCssProperty );
 		} );
@@ -59,7 +59,7 @@ Schemes = function() {
 	};
 
 	var fetchAllWidgetsSchemesStyle = function() {
-		_.each( elementor.config.widgets, function( widget, widgetType ) {
+		_.each( wroter.config.widgets, function( widget, widgetType ) {
 			fetchWidgetControlsStyles(  widget, widgetType  );
 		} );
 	};
@@ -97,7 +97,7 @@ Schemes = function() {
 	};
 
 	this.getEnabledSchemesTypes = function() {
-		return elementor.config.schemes.enabled_schemes;
+		return wroter.config.schemes.enabled_schemes;
 	};
 
 	this.getScheme = function( schemeType ) {
@@ -113,7 +113,7 @@ Schemes = function() {
 			schemeValue = scheme.items[ value ];
 
 		if ( key && _.isObject( schemeValue ) ) {
-			var clonedSchemeValue = elementor.helpers.cloneObject( schemeValue );
+			var clonedSchemeValue = wroter.helpers.cloneObject( schemeValue );
 
 			clonedSchemeValue.value = schemeValue.value[ key ];
 
@@ -131,17 +131,17 @@ Schemes = function() {
 	};
 
 	this.resetSchemes = function( schemeName ) {
-		schemes[ schemeName ] = elementor.helpers.cloneObject( elementor.config.schemes.items[ schemeName ] );
+		schemes[ schemeName ] = wroter.helpers.cloneObject( wroter.config.schemes.items[ schemeName ] );
 
 		this.onSchemeChange();
 	};
 
 	this.saveScheme = function( schemeName ) {
-		elementor.config.schemes.items[ schemeName ].items = elementor.helpers.cloneObject( schemes[ schemeName ].items );
+		wroter.config.schemes.items[ schemeName ].items = wroter.helpers.cloneObject( schemes[ schemeName ].items );
 
 		NProgress.start();
 
-		elementor.ajax.send( 'apply_scheme', {
+		wroter.ajax.send( 'apply_scheme', {
 			data: {
 				scheme_name: schemeName,
 				data: JSON.stringify( schemes[ schemeName ].items )

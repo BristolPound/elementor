@@ -1,5 +1,5 @@
 <?php
-namespace Elementor\System_Info\Helpers;
+namespace Wroter\System_Info\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

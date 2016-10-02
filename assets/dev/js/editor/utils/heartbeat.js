@@ -15,8 +15,8 @@ heartbeat = {
 
 		Backbone.$( document ).on( {
 			'heartbeat-send': function( event, data ) {
-				data.elementor_post_lock = {
-					post_ID: elementor.config.post_id
+				data.wroter_post_lock = {
+					post_ID: wroter.config.post_id
 				};
 			},
 			'heartbeat-tick': function( event, response ) {
@@ -26,23 +26,23 @@ heartbeat = {
 					heartbeat.getModal().hide();
 				}
 
-				elementor.config.nonce = response.elementor_nonce;
+				wroter.config.nonce = response.wroter_nonce;
 			}
 		} );
 
-		if ( elementor.config.locked_user ) {
-			heartbeat.showLockMessage( elementor.config.locked_user );
+		if ( wroter.config.locked_user ) {
+			heartbeat.showLockMessage( wroter.config.locked_user );
 		}
 	},
 
 	initModal: function() {
-		var modal = elementor.dialogsManager.createWidget( 'options', {
-			headerMessage: elementor.translate( 'take_over' )
+		var modal = wroter.dialogsManager.createWidget( 'options', {
+			headerMessage: wroter.translate( 'take_over' )
 		} );
 
 		modal.addButton( {
 			name: 'go_back',
-			text: elementor.translate( 'go_back' ),
+			text: wroter.translate( 'go_back' ),
 			callback: function() {
 				parent.history.go( -1 );
 			}
@@ -50,9 +50,9 @@ heartbeat = {
 
 		modal.addButton( {
 			name: 'take_over',
-			text: elementor.translate( 'take_over' ),
+			text: wroter.translate( 'take_over' ),
 			callback: function() {
-				wp.heartbeat.enqueue( 'elementor_force_post_lock', true );
+				wp.heartbeat.enqueue( 'wroter_force_post_lock', true );
 				wp.heartbeat.connectNow();
 			}
 		} );
@@ -64,7 +64,7 @@ heartbeat = {
 		var modal = heartbeat.getModal();
 
 		modal
-			.setMessage( elementor.translate( 'dialog_user_taken_over', [ lockedUser ] ) )
+			.setMessage( wroter.translate( 'dialog_user_taken_over', [ lockedUser ] ) )
 		    .show();
 	}
 };

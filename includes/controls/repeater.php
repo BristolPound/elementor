@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -35,11 +35,11 @@ class Control_Repeater extends Control_Base {
 	public function content_template() {
 		?>
 		<label>
-			<span class="elementor-control-title">{{{ data.label }}}</span>
+			<span class="wroter-control-title">{{{ data.label }}}</span>
 		</label>
-		<div class="elementor-repeater-fields"></div>
-		<div class="elementor-button-wrapper">
-			<button class="elementor-button elementor-repeater-add"><span class="eicon-plus"></span><?php _e( 'Add Item', 'elementor' ); ?></button>
+		<div class="wroter-repeater-fields"></div>
+		<div class="wroter-button-wrapper">
+			<button class="wroter-button wroter-repeater-add"><span class="eicon-plus"></span><?php _e( 'Add Item', 'wroter' ); ?></button>
 		</div>
 		<?php
 	}

@@ -1,10 +1,10 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlFontItemView;
 
 ControlFontItemView = ControlBaseItemView.extend( {
 	onReady: function() {
 		this.ui.select.select2( {
-			dir: elementor.config.is_rtl ? 'rtl' : 'ltr'
+			dir: wroter.config.is_rtl ? 'rtl' : 'ltr'
 		} );
 	},
 

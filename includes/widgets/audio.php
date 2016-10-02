@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -11,7 +11,7 @@ class Widget_Audio extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'SoundCloud', 'elementor' );
+		return __( 'SoundCloud', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -22,7 +22,7 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'section_audio',
 			[
-				'label' => __( 'SoundCloud', 'elementor' ),
+				'label' => __( 'SoundCloud', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -30,7 +30,7 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor' ),
+				'label' => __( 'Link', 'wroter' ),
 				'type' => Controls_Manager::URL,
 				'default' => [
 					'url' => 'https://soundcloud.com/shchxango/john-coltrane-1963-my-favorite',
@@ -43,12 +43,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'visual',
 			[
-				'label' => __( 'Visual Player', 'elementor' ),
+				'label' => __( 'Visual Player', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'no',
 				'options' => [
-					'yes' => __( 'Yes', 'elementor' ),
-					'no' => __( 'No', 'elementor' ),
+					'yes' => __( 'Yes', 'wroter' ),
+					'no' => __( 'No', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -57,7 +57,7 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'section_sc_options',
 			[
-				'label' => __( 'Additional Options', 'elementor' ),
+				'label' => __( 'Additional Options', 'wroter' ),
 				'type' => Controls_Manager::HEADING,
 				'section' => 'section_audio',
 				'separator' => 'before',
@@ -67,12 +67,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_auto_play',
 			[
-				'label' => __( 'Autoplay', 'elementor' ),
+				'label' => __( 'Autoplay', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'no',
 				'options' => [
-					'yes' => __( 'Yes', 'elementor' ),
-					'no' => __( 'No', 'elementor' ),
+					'yes' => __( 'Yes', 'wroter' ),
+					'no' => __( 'No', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -81,12 +81,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_buying',
 			[
-				'label' => __( 'Buy Button', 'elementor' ),
+				'label' => __( 'Buy Button', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -95,12 +95,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_liking',
 			[
-				'label' => __( 'Like Button', 'elementor' ),
+				'label' => __( 'Like Button', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -109,12 +109,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_download',
 			[
-				'label' => __( 'Download Button', 'elementor' ),
+				'label' => __( 'Download Button', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -123,12 +123,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_sharing',
 			[
-				'label' => __( 'Share Button', 'elementor' ),
+				'label' => __( 'Share Button', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -137,12 +137,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_show_comments',
 			[
-				'label' => __( 'Comments', 'elementor' ),
+				'label' => __( 'Comments', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -151,12 +151,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_show_playcount',
 			[
-				'label' => __( 'Play Counts', 'elementor' ),
+				'label' => __( 'Play Counts', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -165,12 +165,12 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_show_user',
 			[
-				'label' => __( 'Username', 'elementor' ),
+				'label' => __( 'Username', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'show',
 				'options' => [
-					'show' => __( 'Show', 'elementor' ),
-					'hide' => __( 'Hide', 'elementor' ),
+					'show' => __( 'Show', 'wroter' ),
+					'hide' => __( 'Hide', 'wroter' ),
 				],
 				'section' => 'section_audio',
 			]
@@ -179,7 +179,7 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'sc_color',
 			[
-				'label' => __( 'Controls Color', 'elementor' ),
+				'label' => __( 'Controls Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'section' => 'section_audio',
 			]
@@ -188,7 +188,7 @@ class Widget_Audio extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'soundcloud',
 				'section' => 'section_audio',
@@ -207,7 +207,7 @@ class Widget_Audio extends Widget_Base {
 		remove_filter( 'oembed_result', [ $this, 'filter_oembed_result' ], 50 );
 
 		if ( $video_html ) : ?>
-			<div class="elementor-soundcloud-wrapper">
+			<div class="wroter-soundcloud-wrapper">
 				<?php echo $video_html; ?>
 			</div>
 		<?php endif;

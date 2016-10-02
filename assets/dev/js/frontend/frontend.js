@@ -1,27 +1,27 @@
-/* global elementorFrontendConfig */
+/* global wroterFrontendConfig */
 ( function( $ ) {
-	var ElementsHandler = require( 'elementor-frontend/elements-handler' ),
-	    Utils = require( 'elementor-frontend/utils' );
+	var ElementsHandler = require( 'wroter-frontend/elements-handler' ),
+	    Utils = require( 'wroter-frontend/utils' );
 
-	var ElementorFrontend = function() {
+	var WroterFrontend = function() {
 		var self = this,
 			scopeWindow = window;
 
 		var elementsDefaultHandlers = {
-			accordion: require( 'elementor-frontend/handlers/accordion' ),
-			alert: require( 'elementor-frontend/handlers/alert' ),
-			counter: require( 'elementor-frontend/handlers/counter' ),
-			'image-carousel': require( 'elementor-frontend/handlers/image-carousel' ),
-			'menu-anchor': require( 'elementor-frontend/handlers/menu-anchor' ),
-			progress: require( 'elementor-frontend/handlers/progress' ),
-			section: require( 'elementor-frontend/handlers/section' ),
-			tabs: require( 'elementor-frontend/handlers/tabs' ),
-			toggle: require( 'elementor-frontend/handlers/toggle' ),
-			video: require( 'elementor-frontend/handlers/video' )
+			accordion: require( 'wroter-frontend/handlers/accordion' ),
+			alert: require( 'wroter-frontend/handlers/alert' ),
+			counter: require( 'wroter-frontend/handlers/counter' ),
+			'image-carousel': require( 'wroter-frontend/handlers/image-carousel' ),
+			'menu-anchor': require( 'wroter-frontend/handlers/menu-anchor' ),
+			progress: require( 'wroter-frontend/handlers/progress' ),
+			section: require( 'wroter-frontend/handlers/section' ),
+			tabs: require( 'wroter-frontend/handlers/tabs' ),
+			toggle: require( 'wroter-frontend/handlers/toggle' ),
+			video: require( 'wroter-frontend/handlers/video' )
 		};
 
 		var addGlobalHandlers = function() {
-			self.elementsHandler.addGlobalHandler( require( 'elementor-frontend/handlers/global' ) );
+			self.elementsHandler.addGlobalHandler( require( 'wroter-frontend/handlers/global' ) );
 		};
 
 		var addElementsHandlers = function() {
@@ -31,12 +31,12 @@
 		};
 
 		var runElementsHandlers = function() {
-			$( '.elementor-element' ).each( function() {
+			$( '.wroter-element' ).each( function() {
 				self.elementsHandler.runReadyTrigger( $( this ) );
 			} );
 		};
 
-		this.config = elementorFrontendConfig;
+		this.config = wroterFrontendConfig;
 
 		this.getScopeWindow = function() {
 			return scopeWindow;
@@ -110,11 +110,11 @@
 		};
 	};
 
-	window.elementorFrontend = new ElementorFrontend();
+	window.wroterFrontend = new WroterFrontend();
 } )( jQuery );
 
 jQuery( function() {
-	if ( ! elementorFrontend.isEditMode() ) {
-		elementorFrontend.init();
+	if ( ! wroterFrontend.isEditMode() ) {
+		wroterFrontend.init();
 	}
 } );

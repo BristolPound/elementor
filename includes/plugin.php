@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -17,7 +17,7 @@ class Plugin {
 	 * @return string
 	 */
 	public function get_version() {
-		return ELEMENTOR_VERSION;
+		return WROTER_VERSION;
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Plugin {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wroter' ), '1.0.0' );
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Plugin {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'elementor' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'wroter' ), '1.0.0' );
 	}
 
 	/**
@@ -59,43 +59,43 @@ class Plugin {
 	 * Register the CPTs with our Editor support.
 	 */
 	public function init() {
-		$cpt_support = get_option( 'elementor_cpt_support', [ 'page', 'post' ] );
+		$cpt_support = get_option( 'wroter_cpt_support', [ 'page', 'post' ] );
 
 		foreach ( $cpt_support as $cpt_slug ) {
-			add_post_type_support( $cpt_slug, 'elementor' );
+			add_post_type_support( $cpt_slug, 'wroter' );
 		}
 
-		do_action( 'elementor/init' );
+		do_action( 'wroter/init' );
 	}
 
 	private function _includes() {
-		include( ELEMENTOR_PATH . 'includes/maintenance.php' );
-		include( ELEMENTOR_PATH . 'includes/upgrades.php' );
-		include( ELEMENTOR_PATH . 'includes/api.php' );
-		include( ELEMENTOR_PATH . 'includes/utils.php' );
-		include( ELEMENTOR_PATH . 'includes/user.php' );
-		include( ELEMENTOR_PATH . 'includes/fonts.php' );
-		include( ELEMENTOR_PATH . 'includes/compatibility.php' );
+		include( WROTER_PATH . 'includes/maintenance.php' );
+		include( WROTER_PATH . 'includes/upgrades.php' );
+		include( WROTER_PATH . 'includes/api.php' );
+		include( WROTER_PATH . 'includes/utils.php' );
+		include( WROTER_PATH . 'includes/user.php' );
+		include( WROTER_PATH . 'includes/fonts.php' );
+		include( WROTER_PATH . 'includes/compatibility.php' );
 
-		include( ELEMENTOR_PATH . 'includes/db.php' );
-		include( ELEMENTOR_PATH . 'includes/controls-manager.php' );
-		include( ELEMENTOR_PATH . 'includes/schemes-manager.php' );
-		include( ELEMENTOR_PATH . 'includes/elements-manager.php' );
-		include( ELEMENTOR_PATH . 'includes/widgets-manager.php' );
-		include( ELEMENTOR_PATH . 'includes/settings/settings.php' );
-		include( ELEMENTOR_PATH . 'includes/editor.php' );
-		include( ELEMENTOR_PATH . 'includes/preview.php' );
-		include( ELEMENTOR_PATH . 'includes/frontend.php' );
-		include( ELEMENTOR_PATH . 'includes/heartbeat.php' );
-		include( ELEMENTOR_PATH . 'includes/responsive.php' );
-		include( ELEMENTOR_PATH . 'includes/stylesheet.php' );
+		include( WROTER_PATH . 'includes/db.php' );
+		include( WROTER_PATH . 'includes/controls-manager.php' );
+		include( WROTER_PATH . 'includes/schemes-manager.php' );
+		include( WROTER_PATH . 'includes/elements-manager.php' );
+		include( WROTER_PATH . 'includes/widgets-manager.php' );
+		include( WROTER_PATH . 'includes/settings/settings.php' );
+		include( WROTER_PATH . 'includes/editor.php' );
+		include( WROTER_PATH . 'includes/preview.php' );
+		include( WROTER_PATH . 'includes/frontend.php' );
+		include( WROTER_PATH . 'includes/heartbeat.php' );
+		include( WROTER_PATH . 'includes/responsive.php' );
+		include( WROTER_PATH . 'includes/stylesheet.php' );
 
-		include( ELEMENTOR_PATH . 'includes/settings/system-info/main.php' );
-		include( ELEMENTOR_PATH . 'includes/tracker.php' );
-		include( ELEMENTOR_PATH . 'includes/template-library/manager.php' );
+		include( WROTER_PATH . 'includes/settings/system-info/main.php' );
+		include( WROTER_PATH . 'includes/tracker.php' );
+		include( WROTER_PATH . 'includes/template-library/manager.php' );
 
 		if ( is_admin() ) {
-			include( ELEMENTOR_PATH . 'includes/admin.php' );
+			include( WROTER_PATH . 'includes/admin.php' );
 		}
 	}
 
@@ -129,11 +129,11 @@ class Plugin {
 			new Admin();
 		}
 
-		do_action( 'elementor/loaded' );
+		do_action( 'wroter/loaded' );
 	}
 }
 
-if ( ! defined( 'ELEMENTOR_TESTS' ) ) {
+if ( ! defined( 'WROTER_TESTS' ) ) {
 	// In tests we run the instance manually.
 	Plugin::instance();
 }

@@ -1,4 +1,4 @@
-var TemplateLibraryTemplateModel = require( 'elementor-templates/models/template' ),
+var TemplateLibraryTemplateModel = require( 'wroter-templates/models/template' ),
 	TemplateLibraryCollection;
 
 TemplateLibraryCollection = Backbone.Collection.extend( {

@@ -1,4 +1,4 @@
-/* global ElementorConfig */
+/* global WroterConfig */
 var App;
 
 Marionette.TemplateCache.prototype.compileTemplate = function( rawTemplate, options ) {
@@ -12,22 +12,22 @@ Marionette.TemplateCache.prototype.compileTemplate = function( rawTemplate, opti
 };
 
 App = Marionette.Application.extend( {
-	helpers: require( 'elementor-utils/helpers' ),
-	heartbeat: require( 'elementor-utils/heartbeat' ),
-	schemes: require( 'elementor-utils/schemes' ),
-	presetsFactory: require( 'elementor-utils/presets-factory' ),
-	modals: require( 'elementor-utils/modals' ),
-	introduction: require( 'elementor-utils/introduction' ),
-	templates: require( 'elementor-templates/manager' ),
-	ajax: require( 'elementor-utils/ajax' ),
+	helpers: require( 'wroter-utils/helpers' ),
+	heartbeat: require( 'wroter-utils/heartbeat' ),
+	schemes: require( 'wroter-utils/schemes' ),
+	presetsFactory: require( 'wroter-utils/presets-factory' ),
+	modals: require( 'wroter-utils/modals' ),
+	introduction: require( 'wroter-utils/introduction' ),
+	templates: require( 'wroter-templates/manager' ),
+	ajax: require( 'wroter-utils/ajax' ),
 
 	channels: {
-		editor: Backbone.Radio.channel( 'ELEMENTOR:editor' ),
-		data: Backbone.Radio.channel( 'ELEMENTOR:data' ),
-		panelElements: Backbone.Radio.channel( 'ELEMENTOR:panelElements' ),
-		dataEditMode: Backbone.Radio.channel( 'ELEMENTOR:editmode' ),
-		deviceMode: Backbone.Radio.channel( 'ELEMENTOR:deviceMode' ),
-		templates: Backbone.Radio.channel( 'ELEMENTOR:templates' )
+		editor: Backbone.Radio.channel( 'WROTER:editor' ),
+		data: Backbone.Radio.channel( 'WROTER:data' ),
+		panelElements: Backbone.Radio.channel( 'WROTER:panelElements' ),
+		dataEditMode: Backbone.Radio.channel( 'WROTER:editmode' ),
+		deviceMode: Backbone.Radio.channel( 'WROTER:deviceMode' ),
+		templates: Backbone.Radio.channel( 'WROTER:templates' )
 	},
 
 	// Private Members
@@ -77,31 +77,31 @@ App = Marionette.Application.extend( {
 	getControlItemView: function( controlType ) {
 		if ( null === this._controlsItemView ) {
 			this._controlsItemView = {
-				color: require( 'elementor-views/controls/color' ),
-				dimensions: require( 'elementor-views/controls/dimensions' ),
-				image_dimensions: require( 'elementor-views/controls/image-dimensions' ),
-				media: require( 'elementor-views/controls/media' ),
-				slider: require( 'elementor-views/controls/slider' ),
-				wysiwyg: require( 'elementor-views/controls/wysiwyg' ),
-				choose: require( 'elementor-views/controls/choose' ),
-				url: require( 'elementor-views/controls/url' ),
-				font: require( 'elementor-views/controls/font' ),
-				section: require( 'elementor-views/controls/section' ),
-				repeater: require( 'elementor-views/controls/repeater' ),
-				wp_widget: require( 'elementor-views/controls/wp_widget' ),
-				icon: require( 'elementor-views/controls/icon' ),
-				gallery: require( 'elementor-views/controls/gallery' ),
-				select2: require( 'elementor-views/controls/select2' ),
-				box_shadow: require( 'elementor-views/controls/box-shadow' ),
-				structure: require( 'elementor-views/controls/structure' ),
-				animation: require( 'elementor-views/controls/animation' ),
-				hover_animation: require( 'elementor-views/controls/animation' )
+				color: require( 'wroter-views/controls/color' ),
+				dimensions: require( 'wroter-views/controls/dimensions' ),
+				image_dimensions: require( 'wroter-views/controls/image-dimensions' ),
+				media: require( 'wroter-views/controls/media' ),
+				slider: require( 'wroter-views/controls/slider' ),
+				wysiwyg: require( 'wroter-views/controls/wysiwyg' ),
+				choose: require( 'wroter-views/controls/choose' ),
+				url: require( 'wroter-views/controls/url' ),
+				font: require( 'wroter-views/controls/font' ),
+				section: require( 'wroter-views/controls/section' ),
+				repeater: require( 'wroter-views/controls/repeater' ),
+				wp_widget: require( 'wroter-views/controls/wp_widget' ),
+				icon: require( 'wroter-views/controls/icon' ),
+				gallery: require( 'wroter-views/controls/gallery' ),
+				select2: require( 'wroter-views/controls/select2' ),
+				box_shadow: require( 'wroter-views/controls/box-shadow' ),
+				structure: require( 'wroter-views/controls/structure' ),
+				animation: require( 'wroter-views/controls/animation' ),
+				hover_animation: require( 'wroter-views/controls/animation' )
 			};
 
 			this.channels.editor.trigger( 'editor:controls:initialize' );
 		}
 
-		return this._controlsItemView[ controlType ] || require( 'elementor-views/controls/base' );
+		return this._controlsItemView[ controlType ] || require( 'wroter-views/controls/base' );
 	},
 
 	getPanelView: function() {
@@ -121,11 +121,11 @@ App = Marionette.Application.extend( {
 	},
 
 	initPreview: function() {
-		this.$previewWrapper = Backbone.$( '#elementor-preview' );
+		this.$previewWrapper = Backbone.$( '#wroter-preview' );
 
-		this.$previewResponsiveWrapper = Backbone.$( '#elementor-preview-responsive-wrapper' );
+		this.$previewResponsiveWrapper = Backbone.$( '#wroter-preview-responsive-wrapper' );
 
-		var previewIframeId = 'elementor-preview-iframe';
+		var previewIframeId = 'wroter-preview-iframe';
 
 		// Make sure the iFrame does not exist.
 		if ( ! Backbone.$( '#' + previewIframeId ).length ) {
@@ -143,24 +143,24 @@ App = Marionette.Application.extend( {
 	},
 
 	initFrontend: function() {
-		elementorFrontend.setScopeWindow( this.$preview[0].contentWindow );
+		wroterFrontend.setScopeWindow( this.$preview[0].contentWindow );
 
-		elementorFrontend.init();
+		wroterFrontend.init();
 	},
 
 	onStart: function() {
 		NProgress.start();
 		NProgress.inc( 0.2 );
 
-		this.config = ElementorConfig;
+		this.config = WroterConfig;
 
 		Backbone.Radio.DEBUG = false;
-		Backbone.Radio.tuneIn( 'ELEMENTOR' );
+		Backbone.Radio.tuneIn( 'WROTER' );
 
 		this.initComponents();
 
 		// Init Base elements collection from the server
-		var ElementModel = require( 'elementor-models/element' );
+		var ElementModel = require( 'wroter-models/element' );
 
 		this.elements = new ElementModel.Collection( this.config.data );
 
@@ -178,19 +178,19 @@ App = Marionette.Application.extend( {
 
 		this.$previewContents = this.$preview.contents();
 
-		var SectionsCollectionView = require( 'elementor-views/sections' ),
-			PanelLayoutView = require( 'elementor-layouts/panel/panel' );
+		var SectionsCollectionView = require( 'wroter-views/sections' ),
+			PanelLayoutView = require( 'wroter-layouts/panel/panel' );
 
-		var $previewElementorEl = this.$previewContents.find( '#elementor' );
+		var $previewWroterEl = this.$previewContents.find( '#wroter' );
 
-		if ( ! $previewElementorEl.length ) {
+		if ( ! $previewWroterEl.length ) {
 			this.onPreviewElNotFound();
 			return;
 		}
 
 		var iframeRegion = new Marionette.Region( {
 			// Make sure you get the DOM object out of the jQuery object
-			el: $previewElementorEl[0]
+			el: $previewWroterEl[0]
 		} );
 
 		this.schemes.init();
@@ -198,11 +198,11 @@ App = Marionette.Application.extend( {
 
 		this.$previewContents.on( 'click', function( event ) {
 			var $target = Backbone.$( event.target ),
-				editMode = elementor.channels.dataEditMode.request( 'activeMode' ),
-				isClickInsideElementor = !! $target.closest( '#elementor' ).length,
+				editMode = wroter.channels.dataEditMode.request( 'activeMode' ),
+				isClickInsideWroter = !! $target.closest( '#wroter' ).length,
 				isTargetInsideDocument = this.contains( $target[0] );
 
-			if ( isClickInsideElementor && 'preview' !== editMode || ! isTargetInsideDocument ) {
+			if ( isClickInsideWroter && 'preview' !== editMode || ! isTargetInsideDocument ) {
 				return;
 			}
 
@@ -210,14 +210,14 @@ App = Marionette.Application.extend( {
 				event.preventDefault();
 			}
 
-			if ( ! isClickInsideElementor ) {
-				elementor.getPanelView().setPage( 'elements' );
+			if ( ! isClickInsideWroter ) {
+				wroter.getPanelView().setPage( 'elements' );
 			}
 		} );
 
 		this.addRegions( {
 			sections: iframeRegion,
-			panel: '#elementor-panel'
+			panel: '#wroter-panel'
 		} );
 
 		this.getRegion( 'sections' ).show( new SectionsCollectionView( {
@@ -228,18 +228,18 @@ App = Marionette.Application.extend( {
 
 		this.$previewContents
 		    .children() // <html>
-		    .addClass( 'elementor-html' )
+		    .addClass( 'wroter-html' )
 		    .children( 'body' )
-		    .addClass( 'elementor-editor-active' );
+		    .addClass( 'wroter-editor-active' );
 
 		this.setResizablePanel();
 
 		this.changeDeviceMode( this._defaultDeviceMode );
 
-		Backbone.$( '#elementor-loading' ).fadeOut( 600 );
+		Backbone.$( '#wroter-loading' ).fadeOut( 600 );
 
 		_.defer( function() {
-			elementorFrontend.getScopeWindow().jQuery.holdReady( false );
+			wroterFrontend.getScopeWindow().jQuery.holdReady( false );
 		} );
 
 		this.enqueueTypographyFonts();
@@ -250,7 +250,7 @@ App = Marionette.Application.extend( {
 	},
 
 	onEditModeSwitched: function() {
-		var activeMode = elementor.channels.dataEditMode.request( 'activeMode' );
+		var activeMode = wroter.channels.dataEditMode.request( 'activeMode' );
 
 		if ( 'preview' === activeMode ) {
 			this.enterPreviewMode();
@@ -261,19 +261,19 @@ App = Marionette.Application.extend( {
 
 	onPreviewElNotFound: function() {
 		var dialog = this.dialogsManager.createWidget( 'confirm', {
-			id: 'elementor-fatal-error-dialog',
-			headerMessage: elementor.translate( 'preview_el_not_found_header' ),
-			message: elementor.translate( 'preview_el_not_found_message' ),
+			id: 'wroter-fatal-error-dialog',
+			headerMessage: wroter.translate( 'preview_el_not_found_header' ),
+			message: wroter.translate( 'preview_el_not_found_message' ),
 			position: {
 				my: 'center center',
 				at: 'center center'
 			},
             strings: {
-				confirm: elementor.translate( 'learn_more' ),
-				cancel: elementor.translate( 'go_back' )
+				confirm: wroter.translate( 'learn_more' ),
+				cancel: wroter.translate( 'go_back' )
             },
 			onConfirm: function() {
-				open( elementor.config.help_the_content_url, '_blank' );
+				open( wroter.config.help_the_content_url, '_blank' );
 			},
 			onCancel: function() {
 				parent.history.go( -1 );
@@ -285,28 +285,28 @@ App = Marionette.Application.extend( {
 	},
 
 	setFlagEditorChange: function( status ) {
-		elementor.channels.editor.reply( 'editor:changed', status );
-		elementor.channels.editor.trigger( 'editor:changed', status );
+		wroter.channels.editor.reply( 'editor:changed', status );
+		wroter.channels.editor.trigger( 'editor:changed', status );
 	},
 
 	isEditorChanged: function() {
-		return ( true === elementor.channels.editor.request( 'editor:changed' ) );
+		return ( true === wroter.channels.editor.request( 'editor:changed' ) );
 	},
 
 	setWorkSaver: function() {
 		Backbone.$( window ).on( 'beforeunload', function() {
-			if ( elementor.isEditorChanged() ) {
-				return elementor.translate( 'before_unload_alert' );
+			if ( wroter.isEditorChanged() ) {
+				return wroter.translate( 'before_unload_alert' );
 			}
 		} );
 	},
 
 	setResizablePanel: function() {
 		var self = this,
-			side = elementor.config.is_rtl ? 'right' : 'left';
+			side = wroter.config.is_rtl ? 'right' : 'left';
 
 		self.panel.$el.resizable( {
-			handles: elementor.config.is_rtl ? 'w' : 'e',
+			handles: wroter.config.is_rtl ? 'w' : 'e',
 			minWidth: 200,
 			maxWidth: 500,
 			start: function() {
@@ -319,7 +319,7 @@ App = Marionette.Application.extend( {
 					.removeClass( 'ui-resizable-resizing' )
 					.css( 'pointer-events', '' );
 
-				elementor.channels.data.trigger( 'scrollbar:update' );
+				wroter.channels.data.trigger( 'scrollbar:update' );
 			},
 			resize: function( event, ui ) {
 				self.$previewWrapper
@@ -332,11 +332,11 @@ App = Marionette.Application.extend( {
 		this.$previewContents
 		    .find( 'body' )
 		    .add( 'body' )
-		    .removeClass( 'elementor-editor-active' )
-		    .addClass( 'elementor-editor-preview' );
+		    .removeClass( 'wroter-editor-active' )
+		    .addClass( 'wroter-editor-preview' );
 
 		// Handle panel resize
-		this.$previewWrapper.css( elementor.config.is_rtl ? 'right' : 'left', '' );
+		this.$previewWrapper.css( wroter.config.is_rtl ? 'right' : 'left', '' );
 
 		this.panel.$el.css( 'width', '' );
 	},
@@ -345,8 +345,8 @@ App = Marionette.Application.extend( {
 		this.$previewContents
 		    .find( 'body' )
 		    .add( 'body' )
-		    .removeClass( 'elementor-editor-preview' )
-		    .addClass( 'elementor-editor-active' );
+		    .removeClass( 'wroter-editor-preview' )
+		    .addClass( 'wroter-editor-active' );
 	},
 
 	saveBuilder: function( options ) {
@@ -361,12 +361,12 @@ App = Marionette.Application.extend( {
 	        data: {
 		        post_id: this.config.post_id,
 		        revision: options.revision,
-		        data: JSON.stringify( elementor.elements.toJSON() )
+		        data: JSON.stringify( wroter.elements.toJSON() )
 	        },
 			success: function( data ) {
 				NProgress.done();
 
-				elementor.setFlagEditorChange( false );
+				wroter.setFlagEditorChange( false );
 
 				if ( _.isFunction( options.onSuccess ) ) {
 					options.onSuccess.call( this, data );
@@ -383,8 +383,8 @@ App = Marionette.Application.extend( {
 		}
 
 		Backbone.$( 'body' )
-			.removeClass( 'elementor-device-' + oldDeviceMode )
-			.addClass( 'elementor-device-' + newDeviceMode );
+			.removeClass( 'wroter-device-' + oldDeviceMode )
+			.addClass( 'wroter-device-' + newDeviceMode );
 
 		this.channels.deviceMode
 			.reply( 'previousMode', oldDeviceMode )
@@ -418,4 +418,4 @@ App = Marionette.Application.extend( {
 	}
 } );
 
-module.exports = ( window.elementor = new App() ).start();
+module.exports = ( window.wroter = new App() ).start();

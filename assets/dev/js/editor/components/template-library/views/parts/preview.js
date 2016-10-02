@@ -1,9 +1,9 @@
 var TemplateLibraryPreviewView;
 
 TemplateLibraryPreviewView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-template-library-preview',
+	template: '#tmpl-wroter-template-library-preview',
 
-	id: 'elementor-template-library-preview',
+	id: 'wroter-template-library-preview',
 
 	ui: {
 		iframe: '> iframe'

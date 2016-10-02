@@ -1,24 +1,24 @@
 var PanelFooterItemView;
 
 PanelFooterItemView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-panel-footer-content',
+	template: '#tmpl-wroter-panel-footer-content',
 
 	tagName: 'nav',
 
-	id: 'elementor-panel-footer-tools',
+	id: 'wroter-panel-footer-tools',
 
 	possibleRotateModes: [ 'portrait', 'landscape' ],
 
 	ui: {
-		menuButtons: '.elementor-panel-footer-tool',
-		deviceModeIcon: '#elementor-panel-footer-responsive > i',
-		deviceModeButtons: '#elementor-panel-footer-responsive .elementor-panel-footer-sub-menu-item',
-		buttonSave: '#elementor-panel-footer-save',
-		buttonSaveButton: '#elementor-panel-footer-save .elementor-button',
-		buttonPublish: '#elementor-panel-footer-publish',
-		watchTutorial: '#elementor-panel-footer-watch-tutorial',
-		showTemplates: '#elementor-panel-footer-templates-modal',
-		saveTemplate: '#elementor-panel-footer-save-template'
+		menuButtons: '.wroter-panel-footer-tool',
+		deviceModeIcon: '#wroter-panel-footer-responsive > i',
+		deviceModeButtons: '#wroter-panel-footer-responsive .wroter-panel-footer-sub-menu-item',
+		buttonSave: '#wroter-panel-footer-save',
+		buttonSaveButton: '#wroter-panel-footer-save .wroter-button',
+		buttonPublish: '#wroter-panel-footer-publish',
+		watchTutorial: '#wroter-panel-footer-watch-tutorial',
+		showTemplates: '#wroter-panel-footer-templates-modal',
+		saveTemplate: '#wroter-panel-footer-save-template'
 	},
 
 	events: {
@@ -33,8 +33,8 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 	initialize: function() {
 		this._initDialog();
 
-		this.listenTo( elementor.channels.editor, 'editor:changed', this.onEditorChanged )
-			.listenTo( elementor.channels.deviceMode, 'change', this.onDeviceModeChange );
+		this.listenTo( wroter.channels.editor, 'editor:changed', this.onEditorChanged )
+			.listenTo( wroter.channels.deviceMode, 'change', this.onDeviceModeChange );
 	},
 
 	_initDialog: function() {
@@ -44,18 +44,18 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 			if ( ! dialog ) {
 				var $ = Backbone.$,
 					$dialogMessage = $( '<div>', {
-						'class': 'elementor-dialog-message'
+						'class': 'wroter-dialog-message'
 					} ),
 					$messageIcon = $( '<i>', {
 						'class': 'fa fa-check-circle'
 					} ),
 					$messageText = $( '<div>', {
-						'class': 'elementor-dialog-message-text'
-					} ).text( elementor.translate( 'saved' ) );
+						'class': 'wroter-dialog-message-text'
+					} ).text( wroter.translate( 'saved' ) );
 
 				$dialogMessage.append( $messageIcon, $messageText );
 
-				dialog = elementor.dialogsManager.createWidget( 'popup', {
+				dialog = wroter.dialogsManager.createWidget( 'popup', {
 					hide: {
 						delay: 1500
 					}
@@ -76,17 +76,17 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 			onSuccess: function() {
 				self.getDialog().show();
 
-				self.ui.buttonSaveButton.removeClass( 'elementor-button-state' );
+				self.ui.buttonSaveButton.removeClass( 'wroter-button-state' );
 			}
 		};
 
-		self.ui.buttonSaveButton.addClass( 'elementor-button-state' );
+		self.ui.buttonSaveButton.addClass( 'wroter-button-state' );
 
-		elementor.saveBuilder( options );
+		wroter.saveBuilder( options );
 	},
 
 	_saveBuilderDraft: function() {
-		elementor.saveBuilder();
+		wroter.saveBuilder();
 	},
 
 	getDeviceModeButton: function( deviceMode ) {
@@ -95,29 +95,29 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 
 	onPanelClick: function( event ) {
 		var $target = Backbone.$( event.target ),
-			isClickInsideOfTool = $target.closest( '.elementor-panel-footer-sub-menu-wrapper' ).length;
+			isClickInsideOfTool = $target.closest( '.wroter-panel-footer-sub-menu-wrapper' ).length;
 
 		if ( isClickInsideOfTool ) {
 			return;
 		}
 
-		var $tool = $target.closest( '.elementor-panel-footer-tool' ),
-			isClosedTool = $tool.length && ! $tool.hasClass( 'elementor-open' );
+		var $tool = $target.closest( '.wroter-panel-footer-tool' ),
+			isClosedTool = $tool.length && ! $tool.hasClass( 'wroter-open' );
 
-		this.ui.menuButtons.removeClass( 'elementor-open' );
+		this.ui.menuButtons.removeClass( 'wroter-open' );
 
 		if ( isClosedTool ) {
-			$tool.addClass( 'elementor-open' );
+			$tool.addClass( 'wroter-open' );
 		}
 	},
 
 	onEditorChanged: function() {
-		this.ui.buttonSave.toggleClass( 'elementor-save-active', elementor.isEditorChanged() );
+		this.ui.buttonSave.toggleClass( 'wroter-save-active', wroter.isEditorChanged() );
 	},
 
 	onDeviceModeChange: function() {
-		var previousDeviceMode = elementor.channels.deviceMode.request( 'previousMode' ),
-			currentDeviceMode = elementor.channels.deviceMode.request( 'currentMode' );
+		var previousDeviceMode = wroter.channels.deviceMode.request( 'previousMode' ),
+			currentDeviceMode = wroter.channels.deviceMode.request( 'currentMode' );
 
 		this.getDeviceModeButton( previousDeviceMode ).removeClass( 'active' );
 
@@ -143,22 +143,22 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 		var $clickedButton = this.$( event.currentTarget ),
 			newDeviceMode = $clickedButton.data( 'device-mode' );
 
-		elementor.changeDeviceMode( newDeviceMode );
+		wroter.changeDeviceMode( newDeviceMode );
 	},
 
 	onClickWatchTutorial: function() {
-		elementor.introduction.startIntroduction();
+		wroter.introduction.startIntroduction();
 	},
 
 	onClickShowTemplates: function() {
-		elementor.templates.startModal( function() {
-			elementor.templates.showTemplates();
+		wroter.templates.startModal( function() {
+			wroter.templates.showTemplates();
 		} );
 	},
 
 	onClickSaveTemplate: function() {
-		elementor.templates.startModal( function() {
-			elementor.templates.getLayout().showSaveTemplateView();
+		wroter.templates.startModal( function() {
+			wroter.templates.getLayout().showSaveTemplateView();
 		} );
 	},
 
@@ -166,7 +166,7 @@ PanelFooterItemView = Marionette.ItemView.extend( {
 		var self = this;
 
 		_.defer( function() {
-			elementor.getPanelView().$el.on( 'click', _.bind( self.onPanelClick, self ) );
+			wroter.getPanelView().$el.on( 'click', _.bind( self.onPanelClick, self ) );
 		} );
 	}
 } );

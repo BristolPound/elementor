@@ -1,9 +1,9 @@
 var PanelElementsElementView;
 
 PanelElementsElementView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-element-library-element',
+	template: '#tmpl-wroter-element-library-element',
 
-	className: 'elementor-element-wrapper',
+	className: 'wroter-element-wrapper',
 
 	onRender: function() {
 		var self = this;
@@ -11,16 +11,16 @@ PanelElementsElementView = Marionette.ItemView.extend( {
 		this.$el.html5Draggable( {
 
 			onDragStart: function() {
-				elementor.channels.panelElements
+				wroter.channels.panelElements
 					.reply( 'element:selected', self )
 					.trigger( 'element:drag:start' );
 			},
 
 			onDragEnd: function() {
-				elementor.channels.panelElements.trigger( 'element:drag:end' );
+				wroter.channels.panelElements.trigger( 'element:drag:end' );
 			},
 
-			groups: [ 'elementor-element' ]
+			groups: [ 'wroter-element' ]
 		} );
 	}
 } );

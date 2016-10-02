@@ -2,11 +2,11 @@ var PanelSchemeItemView;
 
 PanelSchemeItemView = Marionette.ItemView.extend( {
 	getTemplate: function() {
-		return Marionette.TemplateCache.get( '#tmpl-elementor-panel-scheme-' + this.model.get( 'type' ) + '-item' );
+		return Marionette.TemplateCache.get( '#tmpl-wroter-panel-scheme-' + this.model.get( 'type' ) + '-item' );
 	},
 
 	className: function() {
-		return 'elementor-panel-scheme-item';
+		return 'wroter-panel-scheme-item';
 	}
 } );
 

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -54,14 +54,14 @@ abstract class Element_Base {
 	private static function _get_available_tabs_controls() {
 		if ( ! self::$_available_tabs_controls ) {
 			self::$_available_tabs_controls = [
-				self::TAB_CONTENT => __( 'Content', 'elementor' ),
-				self::TAB_STYLE => __( 'Style', 'elementor' ),
-				self::TAB_ADVANCED => __( 'Advanced', 'elementor' ),
-				self::TAB_RESPONSIVE => __( 'Responsive', 'elementor' ),
-				self::TAB_LAYOUT => __( 'Layout', 'elementor' ),
+				self::TAB_CONTENT => __( 'Content', 'wroter' ),
+				self::TAB_STYLE => __( 'Style', 'wroter' ),
+				self::TAB_ADVANCED => __( 'Advanced', 'wroter' ),
+				self::TAB_RESPONSIVE => __( 'Responsive', 'wroter' ),
+				self::TAB_LAYOUT => __( 'Layout', 'wroter' ),
 			];
 
-			self::$_available_tabs_controls = apply_filters( 'elementor/elements/get_available_tabs_controls', self::$_available_tabs_controls );
+			self::$_available_tabs_controls = apply_filters( 'wroter/elements/get_available_tabs_controls', self::$_available_tabs_controls );
 		}
 
 		return self::$_available_tabs_controls;
@@ -81,32 +81,32 @@ abstract class Element_Base {
 
 	protected function render_settings() {
 		?>
-		<div class="elementor-element-overlay">
-			<div class="elementor-editor-element-settings elementor-editor-<?php echo esc_attr( $this->get_type() ); ?>-settings elementor-editor-<?php echo esc_attr( $this->get_id() ); ?>-settings">
-				<ul class="elementor-editor-element-settings-list">
-					<li class="elementor-editor-element-setting elementor-editor-element-add">
-						<a href="#" title="<?php _e( 'Add Widget', 'elementor' ); ?>">
-							<span class="elementor-screen-only"><?php _e( 'Add', 'elementor' ); ?></span>
+		<div class="wroter-element-overlay">
+			<div class="wroter-editor-element-settings wroter-editor-<?php echo esc_attr( $this->get_type() ); ?>-settings wroter-editor-<?php echo esc_attr( $this->get_id() ); ?>-settings">
+				<ul class="wroter-editor-element-settings-list">
+					<li class="wroter-editor-element-setting wroter-editor-element-add">
+						<a href="#" title="<?php _e( 'Add Widget', 'wroter' ); ?>">
+							<span class="wroter-screen-only"><?php _e( 'Add', 'wroter' ); ?></span>
 							<i class="fa fa-plus"></i>
 						</a>
 					</li>
 					<?php /* Temp removing for better UI
-					<li class="elementor-editor-element-setting elementor-editor-element-edit">
-						<a href="#" title="<?php _e( 'Edit Widget', 'elementor' ); ?>">
-							<span class="elementor-screen-only"><?php _e( 'Edit', 'elementor' ); ?></span>
+					<li class="wroter-editor-element-setting wroter-editor-element-edit">
+						<a href="#" title="<?php _e( 'Edit Widget', 'wroter' ); ?>">
+							<span class="wroter-screen-only"><?php _e( 'Edit', 'wroter' ); ?></span>
 							<i class="fa fa-pencil"></i>
 						</a>
 					</li>
 					*/ ?>
-					<li class="elementor-editor-element-setting elementor-editor-element-duplicate">
-						<a href="#" title="<?php _e( 'Duplicate Widget', 'elementor' ); ?>">
-							<span class="elementor-screen-only"><?php _e( 'Duplicate', 'elementor' ); ?></span>
+					<li class="wroter-editor-element-setting wroter-editor-element-duplicate">
+						<a href="#" title="<?php _e( 'Duplicate Widget', 'wroter' ); ?>">
+							<span class="wroter-screen-only"><?php _e( 'Duplicate', 'wroter' ); ?></span>
 							<i class="fa fa-files-o"></i>
 						</a>
 					</li>
-					<li class="elementor-editor-element-setting elementor-editor-element-remove">
-						<a href="#" title="<?php _e( 'Remove Widget', 'elementor' ); ?>">
-							<span class="elementor-screen-only"><?php _e( 'Remove', 'elementor' ); ?></span>
+					<li class="wroter-editor-element-setting wroter-editor-element-remove">
+						<a href="#" title="<?php _e( 'Remove Widget', 'wroter' ); ?>">
+							<span class="wroter-screen-only"><?php _e( 'Remove', 'wroter' ); ?></span>
 							<i class="fa fa-trash-o"></i>
 						</a>
 					</li>
@@ -117,7 +117,7 @@ abstract class Element_Base {
 	}
 
 	public function add_group_control( $group_name, $args = [] ) {
-		do_action_ref_array( 'elementor/elements/add_group_control/' . $group_name, [ $this, $args ] );
+		do_action_ref_array( 'wroter/elements/add_group_control/' . $group_name, [ $this, $args ] );
 	}
 
 	public function add_responsive_control( $id, $args = [] ) {
@@ -325,13 +325,13 @@ abstract class Element_Base {
 		$this->content_template();
 		$content_template = ob_get_clean();
 
-		$content_template = apply_filters( 'elementor/elements/print_template', $content_template,  $this );
+		$content_template = apply_filters( 'wroter/elements/print_template', $content_template,  $this );
 
 		if ( empty( $content_template ) ) {
 			return;
 		}
 		?>
-		<script type="text/html" id="tmpl-elementor-<?php echo $this->get_type(); ?>-<?php echo esc_attr( $this->get_id() ); ?>-content">
+		<script type="text/html" id="tmpl-wroter-<?php echo $this->get_type(); ?>-<?php echo esc_attr( $this->get_id() ); ?>-content">
 			<?php $this->render_settings(); ?>
 			<?php echo $content_template; ?>
 		</script>
@@ -339,14 +339,14 @@ abstract class Element_Base {
 	}
 
 	function start_controls_section( $id, $args ) {
-		do_action( 'elementor/element/before_section_start', $this, $id, $args );
+		do_action( 'wroter/element/before_section_start', $this, $id, $args );
 
 		$args['type'] = Controls_Manager::SECTION;
 
 		$this->add_control( $id, $args );
 
 		if ( null !== $this->_current_section ) {
-			wp_die( sprintf( 'Elementor: You can\'t start a section before the end of the previous section: `%s`', $this->_current_section['section'] ) );
+			wp_die( sprintf( 'Wroter: You can\'t start a section before the end of the previous section: `%s`', $this->_current_section['section'] ) );
 		}
 
 		$this->_current_section = [
@@ -354,7 +354,7 @@ abstract class Element_Base {
 			'tab' => $this->_controls[ $id ]['tab'],
 		];
 
-		do_action( 'elementor/element/after_section_start', $this, $id, $args );
+		do_action( 'wroter/element/after_section_start', $this, $id, $args );
 	}
 
 	function end_controls_section() {
@@ -363,7 +363,7 @@ abstract class Element_Base {
 
 		$this->_current_section = null;
 
-		do_action( 'elementor/element/after_section_end', $this, $current_section['section'], [ 'tab' => $current_section['tab'] ] );
+		do_action( 'wroter/element/after_section_end', $this, $current_section['section'], [ 'tab' => $current_section['tab'] ] );
 	}
 
 	public function __construct( $args = [] ) {

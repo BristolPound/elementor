@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -13,14 +13,14 @@ class Group_Control_Border extends Group_Control_Base {
 		$controls = [];
 
 		$controls['border'] = [
-			'label' => _x( 'Border Type', 'Border Control', 'elementor' ),
+			'label' => _x( 'Border Type', 'Border Control', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'options' => [
-				'' => __( 'None', 'elementor' ),
-				'solid' => _x( 'Solid', 'Border Control', 'elementor' ),
-				'double' => _x( 'Double', 'Border Control', 'elementor' ),
-				'dotted' => _x( 'Dotted', 'Border Control', 'elementor' ),
-				'dashed' => _x( 'Dashed', 'Border Control', 'elementor' ),
+				'' => __( 'None', 'wroter' ),
+				'solid' => _x( 'Solid', 'Border Control', 'wroter' ),
+				'double' => _x( 'Double', 'Border Control', 'wroter' ),
+				'dotted' => _x( 'Dotted', 'Border Control', 'wroter' ),
+				'dashed' => _x( 'Dashed', 'Border Control', 'wroter' ),
 			],
 			'selectors' => [
 				$args['selector'] => 'border-style: {{VALUE}};',
@@ -29,7 +29,7 @@ class Group_Control_Border extends Group_Control_Base {
 		];
 
 		$controls['width'] = [
-			'label' => _x( 'Width', 'Border Control', 'elementor' ),
+			'label' => _x( 'Width', 'Border Control', 'wroter' ),
 			'type' => Controls_Manager::DIMENSIONS,
 			'selectors' => [
 				$args['selector'] => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
@@ -40,7 +40,7 @@ class Group_Control_Border extends Group_Control_Base {
 		];
 
 		$controls['color'] = [
-			'label' => _x( 'Color', 'Border Control', 'elementor' ),
+			'label' => _x( 'Color', 'Border Control', 'wroter' ),
 			'type' => Controls_Manager::COLOR,
 			'default' => '',
 			'tab' => $args['tab'],

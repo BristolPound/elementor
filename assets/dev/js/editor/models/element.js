@@ -1,8 +1,8 @@
-var BaseSettingsModel = require( 'elementor-models/base-settings' ),
-	WidgetSettingsModel = require( 'elementor-models/widget-settings' ),
-	ColumnSettingsModel = require( 'elementor-models/column-settings' ),
-	RowSettingsModel = require( 'elementor-models/row-settings' ),
-	SectionSettingsModel = require( 'elementor-models/section-settings' ),
+var BaseSettingsModel = require( 'wroter-models/base-settings' ),
+	WidgetSettingsModel = require( 'wroter-models/widget-settings' ),
+	ColumnSettingsModel = require( 'wroter-models/column-settings' ),
+	RowSettingsModel = require( 'wroter-models/row-settings' ),
+	SectionSettingsModel = require( 'wroter-models/section-settings' ),
 
 	ElementModel,
 	ElementCollection;
@@ -127,13 +127,13 @@ ElementModel = Backbone.Model.extend( {
 	},
 
 	getTitle: function() {
-		var elementData = elementor.getElementData( this );
+		var elementData = wroter.getElementData( this );
 
 		return ( elementData ) ? elementData.title : 'Unknown';
 	},
 
 	getIcon: function() {
-		var elementData = elementor.getElementData( this );
+		var elementData = wroter.getElementData( this );
 
 		return ( elementData ) ? elementData.icon : 'unknown';
 	},
@@ -153,11 +153,11 @@ ElementModel = Backbone.Model.extend( {
 
 		var data = this.toJSON();
 
-		this._jqueryXhr = elementor.ajax.send( 'render_widget', {
+		this._jqueryXhr = wroter.ajax.send( 'render_widget', {
 			data: {
-				post_id: elementor.config.post_id,
+				post_id: wroter.config.post_id,
 				data: JSON.stringify( data ),
-				_nonce: elementor.config.nonce
+				_nonce: wroter.config.nonce
 			},
 			success: _.bind( this.onRemoteGetHtml, this )
 		} );
@@ -170,7 +170,7 @@ ElementModel = Backbone.Model.extend( {
 
 	clone: function() {
 		var newModel = Backbone.Model.prototype.clone.apply( this, arguments );
-		newModel.set( 'id', elementor.helpers.getUniqueID() );
+		newModel.set( 'id', wroter.helpers.getUniqueID() );
 
 		newModel.setHtmlCache( this.getHtmlCache() );
 

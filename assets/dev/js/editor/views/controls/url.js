@@ -1,11 +1,11 @@
-var ControlMultipleBaseItemView = require( 'elementor-views/controls/base-multiple' ),
+var ControlMultipleBaseItemView = require( 'wroter-views/controls/base-multiple' ),
 	ControlUrlItemView;
 
 ControlUrlItemView = ControlMultipleBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlMultipleBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.btnExternal = 'button.elementor-control-url-target';
+		ui.btnExternal = 'button.wroter-control-url-target';
 
 		return ui;
 	},

@@ -1,11 +1,11 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlStructureItemView;
 
 ControlStructureItemView = ControlBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.resetStructure = '.elementor-control-structure-reset';
+		ui.resetStructure = '.wroter-control-structure-reset';
 
 		return ui;
 	},
@@ -23,15 +23,15 @@ ControlStructureItemView = ControlBaseItemView.extend( {
 	},
 
 	getCurrentEditedSection: function() {
-		var editor = elementor.getPanelView().getCurrentPageView();
+		var editor = wroter.getPanelView().getCurrentPageView();
 
 		return editor.getOption( 'editedElementView' );
 	},
 
 	getMorePresets: function() {
-		var parsedStructure = elementor.presetsFactory.getParsedStructure( this.getControlValue() );
+		var parsedStructure = wroter.presetsFactory.getParsedStructure( this.getControlValue() );
 
-		return elementor.presetsFactory.getPresets( parsedStructure.columnsCount );
+		return wroter.presetsFactory.getPresets( parsedStructure.columnsCount );
 	},
 
 	onInputChange: function() {

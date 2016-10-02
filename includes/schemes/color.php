@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -15,19 +15,19 @@ class Scheme_Color extends Scheme_Base {
 	}
 
 	public function get_title() {
-		return __( 'Colors', 'elementor' );
+		return __( 'Colors', 'wroter' );
 	}
 
 	public function get_disabled_title() {
-		return __( 'Color Palettes', 'elementor' );
+		return __( 'Color Palettes', 'wroter' );
 	}
 
 	public function get_scheme_titles() {
 		return [
-			self::COLOR_1 => __( 'Primary', 'elementor' ),
-			self::COLOR_2 => __( 'Secondary', 'elementor' ),
-			self::COLOR_3 => __( 'Text', 'elementor' ),
-			self::COLOR_4 => __( 'Accent', 'elementor' ),
+			self::COLOR_1 => __( 'Primary', 'wroter' ),
+			self::COLOR_2 => __( 'Secondary', 'wroter' ),
+			self::COLOR_3 => __( 'Text', 'wroter' ),
+			self::COLOR_4 => __( 'Accent', 'wroter' ),
 		];
 	}
 

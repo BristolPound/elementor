@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Social_Icons extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Social Icons', 'elementor' );
+		return __( 'Social Icons', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'section_social_icon',
 			[
-				'label' => __( 'Social Icons', 'elementor' ),
+				'label' => __( 'Social Icons', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,7 +29,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'social_icon_list',
 			[
-				'label' => __( 'Social Icons', 'elementor' ),
+				'label' => __( 'Social Icons', 'wroter' ),
 				'type' => Controls_Manager::REPEATER,
 				'default' => [
 					[
@@ -46,7 +46,7 @@ class Widget_Social_Icons extends Widget_Base {
 				'fields' => [
 					[
 						'name' => 'social',
-						'label' => __( 'Icon', 'elementor' ),
+						'label' => __( 'Icon', 'wroter' ),
 						'type' => Controls_Manager::ICON,
 						'label_block' => true,
 						'default' => 'fa fa-wordpress',
@@ -81,14 +81,14 @@ class Widget_Social_Icons extends Widget_Base {
 					],
 					[
 						'name' => 'link',
-						'label' => __( 'Link', 'elementor' ),
+						'label' => __( 'Link', 'wroter' ),
 						'type' => Controls_Manager::URL,
 						'label_block' => true,
 						'default' => [
 							'url' => '',
 							'is_external' => 'true',
 						],
-						'placeholder' => __( 'http://your-link.com', 'elementor' ),
+						'placeholder' => __( 'http://your-link.com', 'wroter' ),
 					],
 				],
 				'title_field' => 'social',
@@ -98,36 +98,36 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'shape',
 			[
-				'label' => __( 'Shape', 'elementor' ),
+				'label' => __( 'Shape', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_social_icon',
 				'default' => 'rounded',
 				'options' => [
-					'rounded' => __( 'Rounded', 'elementor' ),
-					'square' => __( 'Square', 'elementor' ),
-					'circle' => __( 'Circle', 'elementor' ),
+					'rounded' => __( 'Rounded', 'wroter' ),
+					'square' => __( 'Square', 'wroter' ),
+					'circle' => __( 'Circle', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-shape-',
+				'prefix_class' => 'wroter-shape-',
 			]
 		);
 
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'section' => 'section_social_icon',
 				'options' => [
 					'left'    => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
@@ -141,7 +141,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_icon',
@@ -151,7 +151,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'section_social_style',
 			[
-				'label' => __( 'Icon', 'elementor' ),
+				'label' => __( 'Icon', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -160,14 +160,14 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'elementor' ),
+				'label' => __( 'Icon Color', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Official Color', 'elementor' ),
-					'custom' => __( 'Custom', 'elementor' ),
+					'default' => __( 'Official Color', 'wroter' ),
+					'custom' => __( 'Custom', 'wroter' ),
 				],
 			]
 		);
@@ -175,7 +175,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_primary_color',
 			[
-				'label' => __( 'Primary Color', 'elementor' ),
+				'label' => __( 'Primary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
@@ -183,7 +183,7 @@ class Widget_Social_Icons extends Widget_Base {
 					'icon_color' => 'custom',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-social-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-social-icon' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -191,7 +191,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_secondary_color',
 			[
-				'label' => __( 'Secondary Color', 'elementor' ),
+				'label' => __( 'Secondary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
@@ -199,7 +199,7 @@ class Widget_Social_Icons extends Widget_Base {
 					'icon_color' => 'custom',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-social-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-social-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -207,7 +207,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_size',
 			[
-				'label' => __( 'Icon Size', 'elementor' ),
+				'label' => __( 'Icon Size', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
@@ -218,7 +218,7 @@ class Widget_Social_Icons extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-social-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-social-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -226,12 +226,12 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_padding',
 			[
-				'label' => __( 'Icon Padding', 'elementor' ),
+				'label' => __( 'Icon Padding', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-social-icon' => 'padding: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-social-icon' => 'padding: {{SIZE}}{{UNIT}};',
 				],
 				'default' => [
 					'unit' => 'em',
@@ -249,7 +249,7 @@ class Widget_Social_Icons extends Widget_Base {
 		$this->add_control(
 			'icon_spacing',
 			[
-				'label' => __( 'Icon Spacing', 'elementor' ),
+				'label' => __( 'Icon Spacing', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
@@ -260,7 +260,7 @@ class Widget_Social_Icons extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-social-icon:not(:last-child)' => $icon_spacing,
+					'{{WRAPPER}} .wroter-social-icon:not(:last-child)' => $icon_spacing,
 				],
 			]
 		);
@@ -271,20 +271,20 @@ class Widget_Social_Icons extends Widget_Base {
 				'name' => 'image_border',
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
-				'selector' => '{{WRAPPER}} .elementor-social-icon',
+				'selector' => '{{WRAPPER}} .wroter-social-icon',
 			]
 		);
 
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_social_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -292,12 +292,12 @@ class Widget_Social_Icons extends Widget_Base {
 
 	protected function render( $instance = [] ) {
 		?>
-		<div class="elementor-social-icons-wrapper">
+		<div class="wroter-social-icons-wrapper">
 			<?php foreach ( $instance['social_icon_list'] as $item ) :
 				$social = str_replace( 'fa fa-', '', $item['social'] );
 				$target = $item['link']['is_external'] ? ' target="_blank"' : '';
 				?>
-				<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo esc_attr( $social ); ?>" href="<?php echo esc_attr( $item['link']['url'] ); ?>"<?php echo $target; ?>>
+				<a class="wroter-icon wroter-social-icon wroter-social-icon-<?php echo esc_attr( $social ); ?>" href="<?php echo esc_attr( $item['link']['url'] ); ?>"<?php echo $target; ?>>
 					<i class="<?php echo $item['social']; ?>"></i>
 				</a>
 			<?php endforeach; ?>
@@ -307,11 +307,11 @@ class Widget_Social_Icons extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<div class="elementor-social-icons-wrapper">
+		<div class="wroter-social-icons-wrapper">
 			<# _.each( settings.social_icon_list, function( item ) {
 				var link = item.link ? item.link.url : '',
 					social = item.social.replace( 'fa fa-', '' ); #>
-				<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }}" href="{{ link }}">
+				<a class="wroter-icon wroter-social-icon wroter-social-icon-{{ social }}" href="{{ link }}">
 					<i class="{{ item.social }}"></i>
 				</a>
 			<# } ); #>

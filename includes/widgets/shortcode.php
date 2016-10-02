@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Shortcode extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Shortcode', 'elementor' );
+		return __( 'Shortcode', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Shortcode extends Widget_Base {
 		$this->add_control(
 			'section_shortcode',
 			[
-				'label' => __( 'Shortcode', 'elementor' ),
+				'label' => __( 'Shortcode', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,7 +29,7 @@ class Widget_Shortcode extends Widget_Base {
 		$this->add_control(
 			'shortcode',
 			[
-				'label' => __( 'Insert your shortcode here', 'elementor' ),
+				'label' => __( 'Insert your shortcode here', 'wroter' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'placeholder' => '[gallery id="123" size="medium"]',
 				'default' => '',
@@ -42,7 +42,7 @@ class Widget_Shortcode extends Widget_Base {
 		$instance['shortcode'] = shortcode_unautop( $instance['shortcode'] );
 		$instance['shortcode'] = do_shortcode( $instance['shortcode'] );
 		?>
-		<div class="elementor-shortcode"><?php echo $instance['shortcode']; ?></div>
+		<div class="wroter-shortcode"><?php echo $instance['shortcode']; ?></div>
 		<?php
 	}
 

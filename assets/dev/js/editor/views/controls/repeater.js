@@ -1,11 +1,11 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
-	RepeaterRowView = require( 'elementor-views/controls/repeater-row' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
+	RepeaterRowView = require( 'wroter-views/controls/repeater-row' ),
 	ControlRepeaterItemView;
 
 ControlRepeaterItemView = ControlBaseItemView.extend( {
 	ui: {
-		btnAddRow: '.elementor-repeater-add',
-		fieldContainer: '.elementor-repeater-fields'
+		btnAddRow: '.wroter-repeater-add',
+		fieldContainer: '.wroter-repeater-fields'
 	},
 
 	events: {
@@ -16,7 +16,7 @@ ControlRepeaterItemView = ControlBaseItemView.extend( {
 
 	childView: RepeaterRowView,
 
-	childViewContainer: '.elementor-repeater-fields',
+	childViewContainer: '.wroter-repeater-fields',
 
 	templateHelpers: function() {
 		return {
@@ -61,7 +61,7 @@ ControlRepeaterItemView = ControlBaseItemView.extend( {
 			return;
 		}
 
-		this.$el.toggleClass( 'elementor-repeater-has-minimum-rows', 1 >= this.collection.length );
+		this.$el.toggleClass( 'wroter-repeater-has-minimum-rows', 1 >= this.collection.length );
 	},
 
 	updateActiveRow: function() {

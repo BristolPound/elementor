@@ -22,6 +22,6 @@
 @import "animate";
 
 // Visibility (for preview mode or front-end)
-body:not(.elementor-editor-active) {
+body:not(.wroter-editor-active) {
 	@import "_visibility";
 }

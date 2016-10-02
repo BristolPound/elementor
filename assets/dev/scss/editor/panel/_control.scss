@@ -2,24 +2,24 @@
 // Panel Controls
 //
 
-#elementor-panel-page-editor {
+#wroter-panel-page-editor {
 
-	.elementor-controls {
+	.wroter-controls {
 
-		> .elementor-control {
+		> .wroter-control {
 
-			&:not(.elementor-active-tab) {
+			&:not(.wroter-active-tab) {
 				display: none;
 			}
 		}
 	}
 
-	.elementor-control {
+	.wroter-control {
 		background-color: #fff;
 		position: relative;
 		padding: 0 20px 15px;
 
-		&.elementor-control-separator- {
+		&.wroter-control-separator- {
 
 			&default {
 
@@ -32,7 +32,7 @@
 				}
 
 				// WP Widgets
-				&.elementor-control-wp {
+				&.wroter-control-wp {
 					margin-top: 15px;
 
 					&:before {
@@ -56,59 +56,59 @@
 			}
 		}
 
-		&.elementor-control-deprecated {
+		&.wroter-control-deprecated {
 			color: $editor-warning;
 
-			.elementor-control-description {
+			.wroter-control-description {
 				color: $editor-warning;
 			}
 		}
 
-		&.elementor-control-hidden-label {
+		&.wroter-control-hidden-label {
 
-			.elementor-control-title {
+			.wroter-control-title {
 				display: none;
 			}
 		}
 
-		&.elementor-hidden-control {
+		&.wroter-hidden-control {
 			display: none;
 		}
 
-		&.elementor-control-under-section {
+		&.wroter-control-under-section {
 
-			&:not(.elementor-open) {
+			&:not(.wroter-open) {
 				display: none;
 			}
 		}
 
-		&.elementor-control-type-heading {
+		&.wroter-control-type-heading {
 
-			.elementor-control-title {
+			.wroter-control-title {
 				font-weight: bold;
 				margin: 0;
 			}
 		}
 
-		&.elementor-control-responsive- {
+		&.wroter-control-responsive- {
 
 			&desktop {
 
-				body:not(.elementor-device-desktop) & {
+				body:not(.wroter-device-desktop) & {
 					display: none;
 				}
 			}
 
 			&tablet {
 
-				body:not(.elementor-device-tablet) & {
+				body:not(.wroter-device-tablet) & {
 					display: none;
 				}
 			}
 
 			&mobile {
 
-				body:not(.elementor-device-mobile) & {
+				body:not(.wroter-device-mobile) & {
 					display: none;
 				}
 			}
@@ -116,7 +116,7 @@
 	}
 
 	// WP Widgets
-	.elementor-control-wp {
+	.wroter-control-wp {
 		line-height: 1.5;
 
 		p {
@@ -124,30 +124,30 @@
 		}
 	}
 
-	.elementor-label-block {
+	.wroter-label-block {
 
-		&:not(.elementor-control-hidden-label):not(.elementor-control-type-heading) {
+		&:not(.wroter-control-hidden-label):not(.wroter-control-type-heading) {
 
-			.elementor-control-title {
+			.wroter-control-title {
 
 			}
 		}
 
-		.elementor-control-field {
+		.wroter-control-field {
 			display: flex;
 			flex-wrap: wrap;
 			align-items: center;
 		}
 
-		.elementor-control-input-wrapper {
+		.wroter-control-input-wrapper {
 			flex-basis: 100%;
 			margin-top: 10px;
 		}
 	}
 
-	.elementor-label-inline {
+	.wroter-label-inline {
 
-		.elementor-control-field {
+		.wroter-control-field {
 			display: table;
 			width: 100%;
 
@@ -157,24 +157,24 @@
 			}
 		}
 
-		.elementor-control-title {
+		.wroter-control-title {
 			width: 45%;
 		}
 	}
 
-	.elementor-control-description {
+	.wroter-control-description {
 		margin-top: 10px;
 	}
 
-	.elementor-control-description,
-	.elementor-control-descriptor {
+	.wroter-control-description,
+	.wroter-control-descriptor {
 		font-size: 11px;
 		font-style: italic;
 		line-height: 1.2;
 		color: $editor-light;
 	}
 
-	.elementor-choices {
+	.wroter-choices {
 		display: table;
 		width: 100%;
 		height: 27px;
@@ -186,17 +186,17 @@
 		input {
 			display: none;
 
-			&:checked + .elementor-choices-label {
+			&:checked + .wroter-choices-label {
 				color: #fff;
 			}
 
-			&:not(:checked) + .elementor-choices-label {
+			&:not(:checked) + .wroter-choices-label {
 				background-color: #fff;
 				color: $editor-light;
 			}
 		}
 
-		.elementor-choices-label {
+		.wroter-choices-label {
 			display: table-cell;
 			vertical-align: middle;
 			font-size: 12px;
@@ -205,7 +205,7 @@
 		}
 	}
 
-	.elementor-slider {
+	.wroter-slider {
 		display: inline-block;
 		margin-top: 10px;
 		height: 4px;
@@ -228,7 +228,7 @@
 		}
 	}
 
-	.elementor-slider-input {
+	.wroter-slider-input {
 		width: 33%;
 		float: $end;
 
@@ -238,7 +238,7 @@
 		}
 	}
 
-	.elementor-units-choices {
+	.wroter-units-choices {
 		flex-grow: 1;
 		text-align: $end;
 
@@ -262,12 +262,12 @@
 		}
 	}
 
-	.elementor-control-responsive-switchers {
+	.wroter-control-responsive-switchers {
 		display: flex;
 		@include margin-start(5px);
 	}
 
-	.elementor-responsive-switcher {
+	.wroter-responsive-switcher {
 		$icon-size: 18px;
 
 		display: inline-block;
@@ -292,32 +292,32 @@
 		}
 	}
 
-	@at-root .elementor-device-desktop #elementor-panel #elementor-panel-page-editor:not(.elementor-responsive-switchers-open) .elementor-responsive-switcher {
+	@at-root .wroter-device-desktop #wroter-panel #wroter-panel-page-editor:not(.wroter-responsive-switchers-open) .wroter-responsive-switcher {
 		background: $editor-lighter;
 
-		&:not(.elementor-responsive-switcher-desktop) {
+		&:not(.wroter-responsive-switcher-desktop) {
 			display: none;
 		}
 	}
 
-	.elementor-responsive-switcher-mobile {
+	.wroter-responsive-switcher-mobile {
 
-		.elementor-device-mobile & {
+		.wroter-device-mobile & {
 			background-color: $editor-info;
 		}
 	}
 
-	.elementor-responsive-switcher-tablet {
+	.wroter-responsive-switcher-tablet {
 
-		.elementor-device-tablet & {
+		.wroter-device-tablet & {
 			background-color: $editor-info;
 		}
 	}
 
 	// Media Control
-	.elementor-control-type-media {
+	.wroter-control-type-media {
 
-		.elementor-control-media {
+		.wroter-control-media {
 			padding: 7px;
 			border: 1px solid;
 			height: 150px;
@@ -325,7 +325,7 @@
 			&:not(:hover) {
 				border-color: $editor-lightest;
 
-				.elementor-control-media-upload-button {
+				.wroter-control-media-upload-button {
 					background-color: $editor-lightest;
 				}
 			}
@@ -333,21 +333,21 @@
 			&:hover {
 				border-color: $editor-light;
 
-				.elementor-control-media-upload-button {
+				.wroter-control-media-upload-button {
 					background-color: $editor-light;
 				}
 			}
 
 			&.media-empty {
 
-				.elementor-control-media-image-area {
+				.wroter-control-media-image-area {
 					display: none;
 				}
 			}
 
 			&:not(.media-empty) {
 
-				.elementor-control-media-upload-button {
+				.wroter-control-media-upload-button {
 					display: none;
 				}
 			}
@@ -368,24 +368,24 @@
 			font-size: 20px;
 		}
 
-		.elementor-control-media-image-area {
+		.wroter-control-media-image-area {
 
 			&:not(:hover) {
 
-				.elementor-control-media-delete {
+				.wroter-control-media-delete {
 					display: none;
 				}
 			}
 
 			&:hover {
 
-				.elementor-control-media-image {
+				.wroter-control-media-image {
 					opacity: .5;
 				}
 			}
 		}
 
-		.elementor-control-media-delete {
+		.wroter-control-media-delete {
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -398,15 +398,15 @@
 			text-transform: uppercase;
 		}
 
-		.elementor-control-media-image {
+		.wroter-control-media-image {
 			height: 100%;
 			background-size: cover;
 		}
 	}
 	// Dimensions Control
-	.elementor-control-type-dimensions {
+	.wroter-control-type-dimensions {
 
-		.elementor-control-dimensions {
+		.wroter-control-dimensions {
 			overflow: hidden;
 		}
 
@@ -415,7 +415,7 @@
 			width: 20%;
 
 			input,
-			.elementor-link-dimensions {
+			.wroter-link-dimensions {
 				display: block;
 				text-align: center;
 				width: 100%;
@@ -445,7 +445,7 @@
 				}
 			}
 
-			.elementor-link-dimensions {
+			.wroter-link-dimensions {
 				border: 1px solid $editor-light;
 				border-left: none;
 				background-color: #fff;
@@ -464,12 +464,12 @@
 			}
 		}
 
-		.elementor-link-dimensions {
+		.wroter-link-dimensions {
 
 			&.unlinked {
 				background-color: #fff;
 
-				.elementor-linked {
+				.wroter-linked {
 					display: none;
 				}
 			}
@@ -477,12 +477,12 @@
 			&:not(.unlinked) {
 				background-color: $editor-light;
 
-				.elementor-unlinked {
+				.wroter-unlinked {
 					display: none;
 				}
 			}
 
-			.elementor-linked {
+			.wroter-linked {
 				color: #fff;
 			}
 
@@ -490,27 +490,27 @@
 	}
 
 	// URL Control
-	.elementor-control-type-url {
+	.wroter-control-type-url {
 
-		.elementor-control-url-external-hide {
+		.wroter-control-url-external-hide {
 
-			.elementor-control-url-target {
+			.wroter-control-url-target {
 				display: none;
 			}
 		}
 
-		.elementor-control-url-external-show {
+		.wroter-control-url-external-show {
 
 			input {
 				padding-right: 46px;
 			}
 		}
 
-		.elementor-control-input-wrapper {
+		.wroter-control-input-wrapper {
 			position: relative;
 		}
 
-		.elementor-control-url-target {
+		.wroter-control-url-target {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -527,14 +527,14 @@
 			&.active {
 				background-color: $editor-light;
 
-				.elementor-control-url-external {
+				.wroter-control-url-external {
 					color: #fff;
 				}
 			}
 
 			&:not(.active) {
 
-				.elementor-control-url-external {
+				.wroter-control-url-external {
 					opacity: .5;
 				}
 			}
@@ -545,7 +545,7 @@
 
 			&:not(:focus) {
 
-				+ .elementor-control-url-target {
+				+ .wroter-control-url-target {
 					border-color: $editor-lightest;
 
 					&.active {
@@ -556,7 +556,7 @@
 
 			&:focus {
 
-				+ .elementor-control-url-target {
+				+ .wroter-control-url-target {
 					border-color: $editor-light;
 
 					&.active {
@@ -568,21 +568,21 @@
 	}
 
 	// = Choices control for alignment
-	.elementor-control-text_align, .elementor-control-align, .elementor-control-position {
+	.wroter-control-text_align, .wroter-control-align, .wroter-control-position {
 
-		.elementor-choices {
+		.wroter-choices {
 			direction: ltr; // Force ltr also in RTL languages
 		}
 	}
 
 	// Section control
-	.elementor-control-type-section {
+	.wroter-control-type-section {
 		margin-top: 10px;
 		padding: 0;
 
-		& + .elementor-control {
+		& + .wroter-control {
 
-			&:not(.elementor-control-type-section) {
+			&:not(.wroter-control-type-section) {
 				padding-top: 15px;
 
 				&:before {
@@ -609,7 +609,7 @@
 	}
 
 	// Wysiwyg control
-	.elementor-control-type-wysiwyg {
+	.wroter-control-type-wysiwyg {
 
 		* {
 			box-sizing: content-box;
@@ -684,7 +684,7 @@
 			}
 		}
 
-		.elementor-wp-editor {
+		.wroter-wp-editor {
 			box-sizing: border-box;
 		}
 
@@ -711,7 +711,7 @@
 	}
 
 	// Icon control
-	.elementor-control-type-icon {
+	.wroter-control-type-icon {
 
 		.select2-selection__rendered {
 
@@ -722,26 +722,26 @@
 	}
 
 	// Gallery control
-	.elementor-control-type-gallery {
+	.wroter-control-type-gallery {
 
-		&.elementor-gallery-empty {
+		&.wroter-gallery-empty {
 
-			.elementor-control-gallery-clear, .elementor-control-gallery-thumbnails {
+			.wroter-control-gallery-clear, .wroter-control-gallery-thumbnails {
 				display: none;
 			}
 		}
 
-		.elementor-control-media {
+		.wroter-control-media {
 		//	padding-top: 20px; //temp remove for some space in gallery widget
 		}
 
-		.elementor-control-gallery-thumbnails {
+		.wroter-control-gallery-thumbnails {
 			overflow: hidden;
 			margin-top: 20px;
 			cursor: pointer;
 		}
 
-		.elementor-control-gallery-thumbnail {
+		.wroter-control-gallery-thumbnail {
 			width: 40px;
 			height: 40px;
 			background-size: cover;
@@ -754,7 +754,7 @@
 			}
 		}
 
-		.elementor-control-gallery-add {
+		.wroter-control-gallery-add {
 			width: 100%;
 			height: 30px;
 			color: #fff;
@@ -763,21 +763,21 @@
 			text-transform: uppercase;
 		}
 
-		.elementor-control-gallery-clear {
+		.wroter-control-gallery-clear {
 			color: $editor-warning;
 			cursor: pointer;
 		}
 	}
 
 	// Structure control
-	.elementor-control-type-structure {
+	.wroter-control-type-structure {
 
-		.elementor-control-structure-preset {
+		.wroter-control-structure-preset {
 			border: 1px solid $editor-background;
 			padding: 3px;
 			border-radius: 3px;
 
-			&:not(.elementor-control-structure-current-preset) {
+			&:not(.wroter-control-structure-current-preset) {
 				display: inline-block;
 				cursor: pointer;
 				height: 50px;
@@ -792,7 +792,7 @@
 			}
 		}
 
-		.elementor-control-structure-current-preset {
+		.wroter-control-structure-current-preset {
 			margin-top: 15px;
 
 			// For Safari
@@ -802,7 +802,7 @@
 			}
 		}
 
-		.elementor-control-structure-reset {
+		.wroter-control-structure-reset {
 			padding: 10px 0 0 2px;
 			font-size: 11px;
 			cursor: pointer;
@@ -813,7 +813,7 @@
 			}
 		}
 
-		.elementor-control-structure-title, .elementor-control-structure-more-presets-title {
+		.wroter-control-structure-title, .wroter-control-structure-more-presets-title {
 			color: $editor-darkest;
 			font-weight: bold;
 			padding: 13.5px 20px;
@@ -839,7 +839,7 @@
 			}
 		}
 
-		.elementor-control-structure-title {
+		.wroter-control-structure-title {
 			margin: 10px -20px 0;
 
 			&:before {
@@ -848,7 +848,7 @@
 			}
 		}
 
-		.elementor-control-structure-more-presets-title {
+		.wroter-control-structure-more-presets-title {
 			margin: 15px -20px 0;
 
 			&:before {
@@ -856,7 +856,7 @@
 			}
 		}
 
-		.elementor-control-structure-more-presets {
+		.wroter-control-structure-more-presets {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
@@ -864,7 +864,7 @@
 			input {
 				display: none;
 
-				&:checked + .elementor-control-structure-preset {
+				&:checked + .wroter-control-structure-preset {
 					border: 1px solid $editor-light;
 
 					path {
@@ -874,11 +874,11 @@
 			}
 		}
 
-		.elementor-control-structure-preset-wrapper {
+		.wroter-control-structure-preset-wrapper {
 			margin-top: 15px;
 		}
 
-		.elementor-control-structure-preset-title {
+		.wroter-control-structure-preset-title {
 			text-align: center;
 			padding-top: 5px;
 			font-style: italic;
@@ -888,18 +888,18 @@
 	}
 
 	// Image dimensions control
-	.elementor-control-type-image_dimensions {
+	.wroter-control-type-image_dimensions {
 
-		.elementor-control-description {
+		.wroter-control-description {
 			margin: 0 0 15px;
 			line-height: 1.4;
 		}
 
-		.elementor-control-input-wrapper {
+		.wroter-control-input-wrapper {
 			overflow: hidden;
 		}
 
-		.elementor-image-dimensions-field {
+		.wroter-image-dimensions-field {
 			width: 70px;
 			float: $start;
 
@@ -907,21 +907,21 @@
 
 				&:focus {
 
-					+ .elementor-image-dimensions-field-description {
+					+ .wroter-image-dimensions-field-description {
 						color: $editor-light;
 					}
 				}
 			}
 		}
 
-		.elementor-image-dimensions-separator {
+		.wroter-image-dimensions-separator {
 			width: 20px;
 			text-align: center;
 			float: $start;
 			padding-top: 4px;
 		}
 
-		.elementor-image-dimensions-field-description {
+		.wroter-image-dimensions-field-description {
 			text-transform: uppercase;
 			margin-top: 5px;
 			color: $editor-lightest;
@@ -929,7 +929,7 @@
 			text-align: center;
 		}
 
-		.elementor-image-dimensions-apply-button {
+		.wroter-image-dimensions-apply-button {
 			float: $end;
 			height: 27px;
 			width: 70px;
@@ -937,7 +937,7 @@
 	}
 
 	// Hidden control
-	.elementor-control-type-hidden {
+	.wroter-control-type-hidden {
 		display: none !important;
 	}
 

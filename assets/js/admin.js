@@ -2,17 +2,17 @@
 ( function( $, window, document ) {
 	'use strict';
 
-	var ElementorAdminApp = {
+	var WroterAdminApp = {
 
 		cacheElements: function() {
 			this.cache = {
 				$body: $( 'body' ),
-				$switchMode: $( '#elementor-switch-mode' ),
-				$goToEditLink: $( '#elementor-go-to-edit-page-link' ),
-				$switchModeInput: $( '#elementor-switch-mode-input' ),
-				$switchModeButton: $( '#elementor-switch-mode-button' ),
-				$elementorLoader: $( '.elementor-loader' ),
-				$builderEditor: $( '#elementor-editor' )
+				$switchMode: $( '#wroter-switch-mode' ),
+				$goToEditLink: $( '#wroter-go-to-edit-page-link' ),
+				$switchModeInput: $( '#wroter-switch-mode-input' ),
+				$switchModeButton: $( '#wroter-switch-mode-button' ),
+				$wroterLoader: $( '.wroter-loader' ),
+				$builderEditor: $( '#wroter-editor' )
 			};
 		},
 
@@ -20,8 +20,8 @@
 			var isBuilderMode = 'builder' === this.getEditMode();
 
 			this.cache.$body
-			    .toggleClass( 'elementor-editor-active', isBuilderMode )
-			    .toggleClass( 'elementor-editor-inactive', ! isBuilderMode );
+			    .toggleClass( 'wroter-editor-active', isBuilderMode )
+			    .toggleClass( 'wroter-editor-inactive', ! isBuilderMode );
 		},
 
 		bindEvents: function() {
@@ -38,7 +38,7 @@
 					var $wpTitle = $( '#title' );
 
 					if ( ! $wpTitle.val() ) {
-						$wpTitle.val( 'Elementor #' + $( '#post_ID' ).val() );
+						$wpTitle.val( 'Wroter #' + $( '#post_ID' ).val() );
 					}
 
 					wp.autosave.server.triggerSave();
@@ -58,23 +58,23 @@
 				self.animateLoader();
 			} );
 
-			$( 'div.notice.elementor-message-dismissed' ).on( 'click', 'button.notice-dismiss', function( event ) {
+			$( 'div.notice.wroter-message-dismissed' ).on( 'click', 'button.notice-dismiss', function( event ) {
 				event.preventDefault();
 
 				$.post( ajaxurl, {
-					action: 'elementor_set_admin_notice_viewed',
-					notice_id: $( this ).closest( '.elementor-message-dismissed' ).data( 'notice_id' )
+					action: 'wroter_set_admin_notice_viewed',
+					notice_id: $( this ).closest( '.wroter-message-dismissed' ).data( 'notice_id' )
 				} );
 			} );
 
-			$( '#elementor-library-sync-button' ).on( 'click', function( event ) {
+			$( '#wroter-library-sync-button' ).on( 'click', function( event ) {
 				event.preventDefault();
 				var $thisButton = $( this );
 
 				$thisButton.removeClass( 'success' ).addClass( 'loading' );
 
 				$.post( ajaxurl, {
-					action: 'elementor_reset_library',
+					action: 'wroter_reset_library',
 					_nonce: $thisButton.data( 'nonce' )
 				} )
 					.done( function() {
@@ -91,13 +91,13 @@
 		},
 
 		initTemplatesImport: function() {
-			if ( ! this.cache.$body.hasClass( 'post-type-elementor_library' ) ) {
+			if ( ! this.cache.$body.hasClass( 'post-type-wroter_library' ) ) {
 				return;
 			}
 
 			var self = this,
-				$importButton = self.cache.$importButton = $( '#elementor-import-template-trigger' ),
-				$importArea = self.cache.$importArea = $( '#elementor-import-template-area' );
+				$importButton = self.cache.$importButton = $( '#wroter-import-template-trigger' ),
+				$importArea = self.cache.$importArea = $( '#wroter-import-template-area' );
 
 			self.cache.$formAnchor = $( 'h1' );
 
@@ -115,12 +115,12 @@
 		},
 
 		animateLoader: function() {
-			this.cache.$goToEditLink.addClass( 'elementor-animate' );
+			this.cache.$goToEditLink.addClass( 'wroter-animate' );
 		}
 	};
 
 	$( function() {
-		ElementorAdminApp.init();
+		WroterAdminApp.init();
 	} );
 
 }( jQuery, window, document ) );

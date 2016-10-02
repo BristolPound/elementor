@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -29,19 +29,19 @@ class Control_Dimensions extends Control_Base_Units {
 
 	public function content_template() {
 		$dimensions = [
-			'top' => __( 'Top', 'elementor' ),
-			'right' => __( 'Right', 'elementor' ),
-			'bottom' => __( 'Bottom', 'elementor' ),
-			'left' => __( 'Left', 'elementor' ),
+			'top' => __( 'Top', 'wroter' ),
+			'right' => __( 'Right', 'wroter' ),
+			'bottom' => __( 'Bottom', 'wroter' ),
+			'left' => __( 'Left', 'wroter' ),
 		];
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
 			<?php $this->print_units_template(); ?>
-			<div class="elementor-control-input-wrapper">
-				<ul class="elementor-control-dimensions">
+			<div class="wroter-control-input-wrapper">
+				<ul class="wroter-control-dimensions">
 					<?php foreach ( $dimensions as $dimension_key => $dimension_title ) : ?>
-						<li class="elementor-control-dimension">
+						<li class="wroter-control-dimension">
 							<input type="number" data-setting="<?php echo esc_attr( $dimension_key ); ?>"
 							       placeholder="<#
 						       if ( _.isObject( data.placeholder ) ) {
@@ -59,16 +59,16 @@ class Control_Dimensions extends Control_Base_Units {
 						</li>
 					<?php endforeach; ?>
 					<li>
-						<button class="elementor-link-dimensions tooltip-target" data-tooltip="<?php _e( 'Link values together', 'elementor' ); ?>">
-							<span class="elementor-linked"><i class="fa fa-link"></i></span>
-							<span class="elementor-unlinked"><i class="fa fa-chain-broken"></i></span>
+						<button class="wroter-link-dimensions tooltip-target" data-tooltip="<?php _e( 'Link values together', 'wroter' ); ?>">
+							<span class="wroter-linked"><i class="fa fa-link"></i></span>
+							<span class="wroter-unlinked"><i class="fa fa-chain-broken"></i></span>
 						</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{{ data.description }}}</div>
+		<div class="wroter-control-description">{{{ data.description }}}</div>
 		<# } #>
 		<?php
 	}

@@ -1,16 +1,16 @@
 //
-// Global selectors for Elementor Front-End
+// Global selectors for Wroter Front-End
 //
 
 // Admin Bar - Icon (Front-End)
-#wpadminbar #wp-admin-bar-elementor_edit_page > .ab-item::before {
+#wpadminbar #wp-admin-bar-wroter_edit_page > .ab-item::before {
 	content: "\e800";
 	font-family: eicon;
 	font-size: 12px;
 	margin-top: 5px;
 }
 
-.elementor {
+.wroter {
 
 	* {
 		&, &:before, &:after {
@@ -51,12 +51,12 @@
 		line-height: 1;
 	}
 
-	.elementor-custom-embed {
+	.wroter-custom-embed {
 		line-height: 0; //for google maps margin bottom
 	}
 
 	// Background Video
-	.elementor-background-video-container {
+	.wroter-background-video-container {
 		height: 100%;
 		width: 100%;
 		top: 0;
@@ -66,7 +66,7 @@
 		z-index: $ground-layer;
 	}
 
-	.elementor-background-video {
+	.wroter-background-video {
 		position: absolute;
 		max-width: none;
 		top: 50%;
@@ -74,12 +74,12 @@
 		transform: translateY(-50%) translateX(-50%);
 	}
 
-	.elementor-html5-video {
+	.wroter-html5-video {
 		object-fit: cover; // For HTML5 portrait video
 	}
 	// End Background Video
 
-	.elementor-background-overlay {
+	.wroter-background-overlay {
 		height: 100%;
 		width: 100%;
 		top: 0;
@@ -87,18 +87,18 @@
 		position: absolute;
 	}
 
-	.elementor-invisible {
+	.wroter-invisible {
 		visibility: hidden;
 	}
 }
 
 // Alignment Classes
-.elementor-align- {
+.wroter-align- {
 
 	&center {
 		text-align: center;
 
-		.elementor-button {
+		.wroter-button {
 			width: auto;
 		}
 	}
@@ -106,7 +106,7 @@
 	&right {
 		text-align: right;
 
-		.elementor-button {
+		.wroter-button {
 			width: auto;
 		}
 	}
@@ -114,14 +114,14 @@
 	&left {
 		text-align: left;
 
-		.elementor-button {
+		.wroter-button {
 			width: auto;
 		}
 	}
 
 	&justify {
 
-		.elementor-button {
+		.wroter-button {
 			width: 100%;
 		}
 	}
@@ -130,12 +130,12 @@
 // Alignment for Tablet
 @media (max-width: $screen-md-max) {
 
-	.elementor-tablet-align- {
+	.wroter-tablet-align- {
 
 		&center {
 			text-align: center;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
@@ -143,7 +143,7 @@
 		&right {
 			text-align: right;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
@@ -151,14 +151,14 @@
 		&left {
 			text-align: left;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
 
 		&justify {
 
-			.elementor-button {
+			.wroter-button {
 				width: 100%;
 			}
 		}
@@ -168,12 +168,12 @@
 // Alignment for Mobile
 @media (max-width: $screen-sm-max) {
 
-	.elementor-mobile-align- {
+	.wroter-mobile-align- {
 
 		&center {
 			text-align: center;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
@@ -181,7 +181,7 @@
 		&right {
 			text-align: right;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
@@ -189,14 +189,14 @@
 		&left {
 			text-align: left;
 
-			.elementor-button {
+			.wroter-button {
 				width: auto;
 			}
 		}
 
 		&justify {
 
-			.elementor-button {
+			.wroter-button {
 				width: 100%;
 			}
 		}
@@ -204,6 +204,6 @@
 }
 
 // TEMP CODE
-#elementor-select-preset {
+#wroter-select-preset {
 	 display: none;
 }

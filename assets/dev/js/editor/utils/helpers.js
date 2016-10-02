@@ -17,7 +17,7 @@ helpers = {
 			return;
 		}
 
-		var fontType = elementor.config.controls.font.fonts[ font ],
+		var fontType = wroter.config.controls.font.fonts[ font ],
 			fontUrl;
 
 		switch ( fontType ) {
@@ -32,7 +32,7 @@ helpers = {
 		}
 
 		if ( ! _.isEmpty( fontUrl ) ) {
-			elementor.$previewContents.find( 'link:last' ).after( '<link href="' + fontUrl + '" rel="stylesheet" type="text/css">' );
+			wroter.$previewContents.find( 'link:last' ).after( '<link href="' + fontUrl + '" rel="stylesheet" type="text/css">' );
 		}
 		this._enqueuedFonts.push( font );
 	},

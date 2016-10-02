@@ -1,19 +1,19 @@
-var PanelSchemeItemView = require( 'elementor-panel/pages/schemes/items/base' ),
+var PanelSchemeItemView = require( 'wroter-panel/pages/schemes/items/base' ),
 	PanelSchemeTypographyView;
 
 PanelSchemeTypographyView = PanelSchemeItemView.extend( {
 	className: function() {
 		var classes = PanelSchemeItemView.prototype.className.apply( this, arguments );
 
-		return classes + ' elementor-panel-box';
+		return classes + ' wroter-panel-box';
 	},
 
 	ui: {
-		heading: '.elementor-panel-heading',
-		allFields: '.elementor-panel-scheme-typography-item-field',
-		inputFields: 'input.elementor-panel-scheme-typography-item-field',
-		selectFields: 'select.elementor-panel-scheme-typography-item-field',
-		selectFamilyFields: 'select.elementor-panel-scheme-typography-item-field[name="font_family"]'
+		heading: '.wroter-panel-heading',
+		allFields: '.wroter-panel-scheme-typography-item-field',
+		inputFields: 'input.wroter-panel-scheme-typography-item-field',
+		selectFields: 'select.wroter-panel-scheme-typography-item-field',
+		selectFamilyFields: 'select.wroter-panel-scheme-typography-item-field[name="font_family"]'
 	},
 
 	events: {
@@ -34,12 +34,12 @@ PanelSchemeTypographyView = PanelSchemeItemView.extend( {
 		} );
 
 		this.ui.selectFamilyFields.select2( {
-			dir: elementor.config.is_rtl ? 'rtl' : 'ltr'
+			dir: wroter.config.is_rtl ? 'rtl' : 'ltr'
 		} );
 	},
 
 	toggleVisibility: function() {
-		this.ui.heading.toggleClass( 'elementor-open' );
+		this.ui.heading.toggleClass( 'wroter-open' );
 	},
 
 	changeUIValue: function( newValue ) {
@@ -54,13 +54,13 @@ PanelSchemeTypographyView = PanelSchemeItemView.extend( {
 
 	onFieldChange: function( event ) {
 		var $select = this.$( event.currentTarget ),
-			currentValue = elementor.helpers.cloneObject( this.model.get( 'value' ) ),
+			currentValue = wroter.helpers.cloneObject( this.model.get( 'value' ) ),
 			fieldKey = $select.attr( 'name' );
 
 		currentValue[ fieldKey ] = $select.val();
 
 		if ( 'font_family' === fieldKey && ! _.isEmpty( currentValue[ fieldKey ] ) ) {
-			elementor.helpers.enqueueFont( currentValue[ fieldKey ] );
+			wroter.helpers.enqueueFont( currentValue[ fieldKey ] );
 		}
 
 		this.triggerMethod( 'value:change', currentValue );

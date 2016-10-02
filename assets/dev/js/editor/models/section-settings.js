@@ -1,4 +1,4 @@
-var BaseSettingsModel = require( 'elementor-models/base-settings' ),
+var BaseSettingsModel = require( 'wroter-models/base-settings' ),
 	SectionSettingsModel;
 
 SectionSettingsModel = BaseSettingsModel.extend( {

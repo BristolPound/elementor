@@ -1,7 +1,7 @@
 <?php
-namespace Elementor\System_Info\Classes\Abstracts;
+namespace Wroter\System_Info\Classes\Abstracts;
 
-use Elementor\System_Info\Helpers\Model_Helper;
+use Wroter\System_Info\Helpers\Model_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

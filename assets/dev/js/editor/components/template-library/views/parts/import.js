@@ -1,12 +1,12 @@
 var TemplateLibraryImportView;
 
 TemplateLibraryImportView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-template-library-import',
+	template: '#tmpl-wroter-template-library-import',
 
-	id: 'elementor-template-library-import',
+	id: 'wroter-template-library-import',
 
 	ui: {
-		uploadForm: '#elementor-template-library-import-form'
+		uploadForm: '#wroter-template-library-import-form'
 	},
 
 	events: {
@@ -16,19 +16,19 @@ TemplateLibraryImportView = Marionette.ItemView.extend( {
 	onFormSubmit: function( event ) {
 		event.preventDefault();
 
-		elementor.templates.getLayout().showLoadingView();
+		wroter.templates.getLayout().showLoadingView();
 
-		elementor.ajax.send( 'import_template', {
+		wroter.ajax.send( 'import_template', {
 			data: new FormData( this.ui.uploadForm[ 0 ] ),
 			processData: false,
 			contentType: false,
 			success: function( data ) {
-				elementor.templates.getTemplatesCollection().add( data.item );
+				wroter.templates.getTemplatesCollection().add( data.item );
 
-				elementor.templates.showTemplates();
+				wroter.templates.showTemplates();
 			},
 			error: function( data ) {
-				elementor.templates.showErrorDialog( data.message );
+				wroter.templates.showErrorDialog( data.message );
 			}
 		} );
 	}

@@ -1,12 +1,12 @@
 module.exports = function( $ ) {
 	var interval = 80;
 
-	$( this ).find( '.elementor-progress-bar' ).waypoint( function() {
+	$( this ).find( '.wroter-progress-bar' ).waypoint( function() {
 		var $progressbar = $( this ),
 			max = parseInt( $progressbar.data( 'max' ), 10 ),
 			$inner = $progressbar.next(),
-			$innerTextWrap = $inner.find( '.elementor-progress-text' ),
-			$percent = $inner.find( '.elementor-progress-percentage' ),
+			$innerTextWrap = $inner.find( '.wroter-progress-text' ),
+			$percent = $inner.find( '.wroter-progress-percentage' ),
 			innerText = $inner.data( 'inner' ) ? $inner.data( 'inner' ) : '';
 
 		$progressbar.css( 'width', max + '%' );

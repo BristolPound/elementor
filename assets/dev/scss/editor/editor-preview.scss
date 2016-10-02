@@ -7,25 +7,25 @@
 @import '_compatibility';
 
 // Hidden WP Admin Bar
-html.elementor-html {
+html.wroter-html {
 	margin-top: 0 !important;
 }
 
-#elementor{
+#wroter{
 	position: relative;
 }
 
-.elementor-editor-active {
-	#elementor {
+.wroter-editor-active {
+	#wroter {
 
-		.elementor-element-empty {
+		.wroter-element-empty {
 
-			.elementor-sortable-placeholder {
+			.wroter-sortable-placeholder {
 				display: none;
 			}
 		}
 
-		.elementor-empty-view {
+		.wroter-empty-view {
 			display: table;
 			width: 100%;
 			height: 100%;
@@ -33,22 +33,22 @@ html.elementor-html {
 			z-index: $first-layer;
 		}
 
-		.elementor-first-add {
+		.wroter-first-add {
 			display: table-cell;
 			vertical-align: middle;
 			text-align: center;
 			border: 1px dashed #d5dadf;
 
-			.elementor-icon {
+			.wroter-icon {
 				font-size: 19px;
 				color: $editor-light;
 				cursor: pointer;
 			}
 		}
 
-		.elementor-element {
+		.wroter-element {
 
-			> .elementor-element-overlay {
+			> .wroter-element-overlay {
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -58,7 +58,7 @@ html.elementor-html {
 				z-index: $element-overlay;
 			}
 
-			&.elementor-widget-empty {
+			&.wroter-widget-empty {
 				height: 50px;
 				background: $white;
 
@@ -72,7 +72,7 @@ html.elementor-html {
 					background-color: fade-out($editor-background, .2);
 				}
 
-				.elementor-widget-empty-icon {
+				.wroter-widget-empty-icon {
 					position: absolute;
 					height: 25px;
 					width: 25px;
@@ -88,11 +88,11 @@ html.elementor-html {
 
 			&:not(:hover) {
 
-				&:not(.elementor-element-editable) {
+				&:not(.wroter-element-editable) {
 
-					> .elementor-element-overlay {
+					> .wroter-element-overlay {
 
-						.elementor-editor-element-settings-list {
+						.wroter-editor-element-settings-list {
 							display: none;
 						}
 					}
@@ -100,7 +100,7 @@ html.elementor-html {
 
 				&:not(.ui-resizable-resizing) {
 
-					> .elementor-element-overlay {
+					> .wroter-element-overlay {
 
 						.column-title {
 							display: none;
@@ -111,7 +111,7 @@ html.elementor-html {
 
 			@media (max-width: $screen-md-max) {
 
-				> .elementor-element-overlay {
+				> .wroter-element-overlay {
 
 					.column-title {
 						display: none;
@@ -124,7 +124,7 @@ html.elementor-html {
 				animation-timing-function: ease-out;
 			}
 
-			&[data-side="top"], &[data-side="bottom"] + .elementor-element {
+			&[data-side="top"], &[data-side="bottom"] + .wroter-element {
 				border-top: 4px solid $editor-info;
 			}
 
@@ -134,17 +134,17 @@ html.elementor-html {
 		}
 
 		// Section
-		.elementor-section {
+		.wroter-section {
 
-			&:not(.elementor-section-height-full) {
+			&:not(.wroter-section-height-full) {
 
-				.elementor-column-wrap {
+				.wroter-column-wrap {
 
-					&.elementor-element-empty {
+					&.wroter-element-empty {
 
 						@media (min-width: $screen-md-min) {
 
-							&, .elementor-widget-wrap {
+							&, .wroter-widget-wrap {
 								position: absolute;
 								width: 100%;
 								height: 100%;
@@ -157,22 +157,22 @@ html.elementor-html {
 		}
 
 		// Inner Section
-		.elementor-top-column {
+		.wroter-top-column {
 
-			.elementor-widget-wrap {
+			.wroter-widget-wrap {
 
-				.elementor-inner-section {
+				.wroter-inner-section {
 					margin-top: 20px;
 				}
 			}
 		}
 
 		// General - Overlay Settings
-		.elementor-editor-element-settings {
+		.wroter-editor-element-settings {
 			position: absolute;
 			overflow: hidden;
 
-			.elementor-editor-element-settings-list {
+			.wroter-editor-element-settings-list {
 				display: table;
 				table-layout: fixed;
 				height: 20px;
@@ -185,10 +185,10 @@ html.elementor-html {
 				font-style: normal;
 				line-height: 1;
 
-				&.elementor-editor-section-settings-list {
+				&.wroter-editor-section-settings-list {
 					background-color: $editor-light;
 
-					.elementor-editor-element-setting {
+					.wroter-editor-element-setting {
 
 						@media (min-width: $screen-lg-min) {
 							&:not(:last-child) {
@@ -196,9 +196,9 @@ html.elementor-html {
 							}
 						}
 
-						&.elementor-editor-element-trigger {
+						&.wroter-editor-element-trigger {
 
-							&:not(.elementor-active) {
+							&:not(.wroter-active) {
 								border: none;
 							}
 						}
@@ -217,7 +217,7 @@ html.elementor-html {
 				}
 			}
 
-			.elementor-editor-element-setting {
+			.wroter-editor-element-setting {
 				display: table-cell;
 				vertical-align: middle;
 				width: 35px;
@@ -235,7 +235,7 @@ html.elementor-html {
 				}
 			}
 
-			.elementor-editor-element-remove {
+			.wroter-editor-element-remove {
 
 				.fa {
 					color: $editor-danger;
@@ -244,7 +244,7 @@ html.elementor-html {
 		}
 
 		// Column - Overlay Settings
-		.elementor-editor-column-settings {
+		.wroter-editor-column-settings {
 			@include start(-1px);
 			z-index: $first-layer;
 			bottom: 100%;
@@ -252,11 +252,11 @@ html.elementor-html {
 			transform: translateY(1px);
 			border-radius: 3px 3px 0 0;
 
-			.elementor-editor-element-settings-list {
+			.wroter-editor-element-settings-list {
 				float: $start;
 				background-color: $editor-darkest;
 
-				.elementor-editor-element-setting {
+				.wroter-editor-element-setting {
 
 					@media (min-width: $screen-lg-min) {
 						&:not(:last-child) {
@@ -273,11 +273,11 @@ html.elementor-html {
 				}
 			}
 
-			.elementor-editor-element-trigger {
+			.wroter-editor-element-trigger {
 
-				&:not(.elementor-active) {
+				&:not(.wroter-active) {
 
-					~ .elementor-editor-element-setting {
+					~ .wroter-editor-element-setting {
 						display: none;
 					}
 				}
@@ -301,7 +301,7 @@ html.elementor-html {
 						}
 					}
 
-					&.elementor-active {
+					&.wroter-active {
 						> a {
 							&:after {
 								content: getValueByDirection('\f105', '\f104');
@@ -315,12 +315,12 @@ html.elementor-html {
 		}
 
 		// Widget - Overlay Settings
-		.elementor-editor-widget-settings {
+		.wroter-editor-widget-settings {
 			z-index: $second-layer;
 			top: 2px;
 			@include end(2px);
 
-			.elementor-editor-element-setting {
+			.wroter-editor-element-setting {
 				width: 24px;
 
 				&:not(:last-child) {
@@ -338,7 +338,7 @@ html.elementor-html {
 				}
 			}
 
-			.elementor-editor-element-remove {
+			.wroter-editor-element-remove {
 
 				.fa {
 					color: #ffffff;
@@ -352,7 +352,7 @@ html.elementor-html {
 				}
 			}
 
-			.elementor-editor-element-edit {
+			.wroter-editor-element-edit {
 
 				a {
 					cursor: move;
@@ -360,9 +360,9 @@ html.elementor-html {
 			}
 		}
 
-		.elementor-editor-element-setting {
+		.wroter-editor-element-setting {
 
-			&:not(.elementor-editor-element-edit):not(.elementor-editor-element-trigger) {
+			&:not(.wroter-editor-element-edit):not(.wroter-editor-element-trigger) {
 
 				@media (max-width: $screen-md-max) {
 					display: none;
@@ -371,42 +371,42 @@ html.elementor-html {
 		}
 
 		// Section Full (No more columns) - Overlay
-		.elementor-section-filled {
+		.wroter-section-filled {
 
-			.elementor-editor-column-settings {
+			.wroter-editor-column-settings {
 
-				.elementor-editor-element-add, .elementor-editor-element-duplicate {
+				.wroter-editor-element-add, .wroter-editor-element-duplicate {
 					display: none;
 				}
 			}
 
-			.elementor-sortable-placeholder {
+			.wroter-sortable-placeholder {
 
-				&.elementor-column {
+				&.wroter-column {
 					display: none;
 				}
 			}
 
-			.elementor-row {
+			.wroter-row {
 
-				&.elementor-draggable-over {
+				&.wroter-draggable-over {
 					border: 1px solid $editor-danger;
 				}
 			}
 		}
 
 		// Row
-		.elementor-row {
+		.wroter-row {
 			min-height: 100px; // Min Height for Section
 		}
 
 		// Column
-		.elementor-column {
+		.wroter-column {
 
 			&:hover,
-			&.elementor-element-editable {
+			&.wroter-element-editable {
 
-				> .elementor-element-overlay {
+				> .wroter-element-overlay {
 					border: 1px solid $white;
 
 					&:after {
@@ -423,9 +423,9 @@ html.elementor-html {
 				}
 			}
 
-			&.elementor-dragging-on-child {
+			&.wroter-dragging-on-child {
 
-				> .elementor-element-overlay {
+				> .wroter-element-overlay {
 					border: 1px solid $editor-info;
 
 					&:after {
@@ -470,7 +470,7 @@ html.elementor-html {
 		}
 	}
 
-	#elementor-inner {
+	#wroter-inner {
 
 		// Force keeping in top for blank page detection
 		&:before {
@@ -480,11 +480,11 @@ html.elementor-html {
 		}
 	}
 
-	.elementor-column-wrap {
+	.wroter-column-wrap {
 
-		&.elementor-element-empty {
+		&.wroter-element-empty {
 
-			.elementor-widget-wrap {
+			.wroter-widget-wrap {
 
 				@media (min-width: $screen-md-min) {
 					padding: 10px;
@@ -493,31 +493,31 @@ html.elementor-html {
 		}
 	}
 
-	.elementor-widget {
+	.wroter-widget {
 
-		&.elementor-loading {
+		&.wroter-loading {
 			opacity: .3;
 		}
 
-		&:not(.elementor-loading):not(.elementor-widget-menu-anchor) { // Don't apply transition on anchor widget - Safari hack
+		&:not(.wroter-loading):not(.wroter-widget-menu-anchor) { // Don't apply transition on anchor widget - Safari hack
 			transition: all .1s;
 		}
 
-		&.elementor-element-editable, &:hover {
+		&.wroter-element-editable, &:hover {
 			outline: 1px solid $editor-info;
 		}
 
-		&:not(.elementor-element-editable):not(:hover) {
+		&:not(.wroter-element-editable):not(:hover) {
 
-			.elementor-editor-element-settings {
+			.wroter-editor-element-settings {
 				display: none;
 			}
 		}
 	}
 
-	.elementor-column.elementor-dragging {
+	.wroter-column.wroter-dragging {
 
-		div.elementor-column-wrap {
+		div.wroter-column-wrap {
 			min-height: 50px; //FOR EMPTY COLUMN - DON'T REMOVE!
 		}
 	}
@@ -526,20 +526,20 @@ html.elementor-html {
 		display: none; //TEMP
 	}
 
-	.elementor-sortable-placeholder {
+	.wroter-sortable-placeholder {
 		background: $editor-info;
 		transition-timing-function: ease-out;
 
-		&:not(.elementor-column) {
+		&:not(.wroter-column) {
 			height: 5px;
 		}
 
-		&.elementor-column {
+		&.wroter-column {
 			width: 5px;
 		}
 	}
 
-	.elementor-sortable-helper {
+	.wroter-sortable-helper {
 		position: absolute;
 		border-radius: 3px;
 		background-color: #fff;
@@ -553,7 +553,7 @@ html.elementor-html {
 			line-height: 1;
 		}
 
-		.elementor-element-title-wrapper {
+		.wroter-element-title-wrapper {
 			display: table;
 			width: 100%;
 		}
@@ -569,8 +569,8 @@ html.elementor-html {
 		}
 	}
 
-	.elementor-draggable-over:not([data-dragged-element="section"]):not([data-dragged-is-inner="true"]) > .elementor-empty-view > .elementor-first-add,
-	.elementor-first-add[data-side] {
+	.wroter-draggable-over:not([data-dragged-element="section"]):not([data-dragged-is-inner="true"]) > .wroter-empty-view > .wroter-first-add,
+	.wroter-first-add[data-side] {
 
 		&:after {
 			content: '';
@@ -579,20 +579,20 @@ html.elementor-html {
 			background-color: $editor-info;
 		}
 
-		.elementor-icon {
+		.wroter-icon {
 			display: none;
 		}
 	}
 
-	.elementor-draggable-over[data-dragged-element="section"][data-dragged-is-inner="true"] {
+	.wroter-draggable-over[data-dragged-element="section"][data-dragged-is-inner="true"] {
 
-		.elementor-sortable-placeholder {
+		.wroter-sortable-placeholder {
 			display: none;
 		}
 	}
 
 	// Add new Section
-	#elementor-add-section {
+	#wroter-add-section {
 		background-color: rgba(255, 255, 255, .5);
 		margin: 60px auto;
 		max-width: 1140px;
@@ -611,16 +611,16 @@ html.elementor-html {
 		}
 	}
 
-	#elementor-add-section-inner {
+	#wroter-add-section-inner {
 		text-align: center;
 		margin-top: 10px;
 		padding: 40px 0;
 	}
 
-	#elementor-add-new-section {
+	#wroter-add-new-section {
 		display: inline-block; // For smooth dragging above
 
-		.elementor-button {
+		.wroter-button {
 			color: #fff;
 			background-image: none; // Reset for some themes
 			font-size: 13px;
@@ -647,16 +647,16 @@ html.elementor-html {
 		}
 	}
 
-	#elementor-add-section-button {
+	#wroter-add-section-button {
 		background-color: $editor-accent;
 	}
 
-	#elementor-add-template-button {
+	#wroter-add-template-button {
 		background-color: $editor-dark;
 		margin-left: 25px;
 	}
 
-	#elementor-add-section-drag-title {
+	#wroter-add-section-drag-title {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 13px;
 		font-weight: normal;
@@ -666,7 +666,7 @@ html.elementor-html {
 		margin-top: 15px;
 	}
 
-	#elementor-select-preset-close {
+	#wroter-select-preset-close {
 		position: absolute;
 		right: 20px;
 		top: 20px;
@@ -676,7 +676,7 @@ html.elementor-html {
 		color: $editor-lightest;
 	}
 
-	#elementor-select-preset-title {
+	#wroter-select-preset-title {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 13px;
 		font-weight: 500;
@@ -685,14 +685,14 @@ html.elementor-html {
 		color: $editor-darker;
 	}
 
-	#elementor-select-preset-list {
+	#wroter-select-preset-list {
 		list-style: none;
 		padding: 0 25px;
 		margin: 20px auto 0;
 		overflow: hidden;
 		max-width: 700px;
 
-		.elementor-preset {
+		.wroter-preset {
 			cursor: pointer;
 			margin: 0;
 			padding: 10px;
@@ -720,15 +720,15 @@ html.elementor-html {
 }
 
 // Preview Mode
-.elementor-editor-preview {
+.wroter-editor-preview {
 
-	.elementor-element-overlay,
-	.elementor-editor-widget-settings,
+	.wroter-element-overlay,
+	.wroter-editor-widget-settings,
 	.column-title,
-	.elementor-empty,
-	#elementor-add-section,
-	.elementor-element-empty,
-	.elementor-widget-empty {
+	.wroter-empty,
+	#wroter-add-section,
+	.wroter-element-empty,
+	.wroter-widget-empty {
 		display: none;
 	}
 }

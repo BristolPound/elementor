@@ -1,26 +1,26 @@
 //
 // Image Box
 //
-.elementor-widget-image-box {
+.wroter-widget-image-box {
 
-	.elementor-image-box-content {
+	.wroter-image-box-content {
 		width: 100%; // Hack for Chrome in flex mode
 	}
 
 	@media (min-width: $screen-md-min) {
 
-		&.elementor-position- {
+		&.wroter-position- {
 
 			&left, &right {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					display: flex;
 				}
 			}
 
 			&right {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					text-align: $end;
 					flex-direction: getValueByDirection(row-reverse, row);
 				}
@@ -28,7 +28,7 @@
 
 			&left {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					text-align: $start;
 					flex-direction: getValueByDirection(row, row-reverse);
 				}
@@ -36,31 +36,31 @@
 
 			&top {
 
-				.elementor-image-box-img {
+				.wroter-image-box-img {
 					margin: auto;
 				}
 			}
 		}
 
-		&.elementor-vertical-align- {
+		&.wroter-vertical-align- {
 
 			&top {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					align-items: flex-start;
 				}
 			}
 
 			&middle {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					align-items: center;
 				}
 			}
 
 			&bottom {
 
-				.elementor-image-box-wrapper {
+				.wroter-image-box-wrapper {
 					align-items: flex-end;
 				}
 			}
@@ -70,29 +70,29 @@
 	@media (max-width: $screen-sm-max) {
 
 		// TEMP code to override the image spacing
-		.elementor-image-box-img {
+		.wroter-image-box-img {
 			margin-left: auto !important;
 			margin-right: auto !important;
 			margin-bottom: 15px;
 		}
 	}
 
-	.elementor-image-box-img {
+	.wroter-image-box-img {
 		display: inline-block; // For alignment content
 	}
 
-	.elementor-image-box-title {
+	.wroter-image-box-title {
 
 		a {
 			color: inherit;
 		}
 	}
 
-	.elementor-image-box-wrapper {
+	.wroter-image-box-wrapper {
 		text-align: center;
 	}
 
-	.elementor-image-box-description {
+	.wroter-image-box-description {
 		margin: 0;
 	}
 }

@@ -1,10 +1,10 @@
-var PanelSchemeBaseView = require( 'elementor-panel/pages/schemes/base' ),
+var PanelSchemeBaseView = require( 'wroter-panel/pages/schemes/base' ),
 	PanelSchemeTypographyView;
 
 PanelSchemeTypographyView = PanelSchemeBaseView.extend( {
 
 	getChildView: function() {
-		return require( 'elementor-panel/pages/schemes/items/typography' );
+		return require( 'wroter-panel/pages/schemes/items/typography' );
 	},
 
 	getType: function() {

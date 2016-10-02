@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -74,11 +74,11 @@ class Control_Animation extends Control_Base {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
 				<select data-setting="{{ data.name }}">
-					<option value=""><?php _e( 'None', 'elementor' ); ?></option>
+					<option value=""><?php _e( 'None', 'wroter' ); ?></option>
 					<?php foreach ( self::get_animations() as $animations_group_name => $animations_group ) : ?>
 						<optgroup label="<?php echo $animations_group_name; ?>">
 							<?php foreach ( $animations_group as $animation_name => $animation_title ) : ?>
@@ -90,7 +90,7 @@ class Control_Animation extends Control_Base {
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{{ data.description }}}</div>
+		<div class="wroter-control-description">{{{ data.description }}}</div>
 		<# } #>
 		<?php
 	}

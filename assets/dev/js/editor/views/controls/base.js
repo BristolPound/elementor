@@ -8,15 +8,15 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 			radio: 'input[data-setting][type="radio"]',
 			select: 'select[data-setting]',
 			textarea: 'textarea[data-setting]',
-			controlTitle: '.elementor-control-title',
-			responsiveSwitchers: '.elementor-responsive-switcher',
-			switcherDesktop: '.elementor-responsive-switcher-desktop'
+			controlTitle: '.wroter-control-title',
+			responsiveSwitchers: '.wroter-responsive-switcher',
+			switcherDesktop: '.wroter-responsive-switcher-desktop'
 		};
 	},
 
 	className: function() {
 		// TODO: Any better classes for that?
-		var classes = 'elementor-control elementor-control-' + this.model.get( 'name' ) + ' elementor-control-type-' + this.model.get( 'type' ),
+		var classes = 'wroter-control wroter-control-' + this.model.get( 'name' ) + ' wroter-control-type-' + this.model.get( 'type' ),
 			modelClasses = this.model.get( 'classes' ),
 			responsiveControl = this.model.get( 'responsive' );
 
@@ -25,18 +25,18 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 		}
 
 		if ( ! _.isEmpty( this.model.get( 'section' ) ) ) {
-			classes += ' elementor-control-under-section';
+			classes += ' wroter-control-under-section';
 		}
 
 		if ( ! _.isEmpty( responsiveControl ) ) {
-			classes += ' elementor-control-responsive-' + responsiveControl;
+			classes += ' wroter-control-responsive-' + responsiveControl;
 		}
 
 		return classes;
 	},
 
 	getTemplate: function() {
-		return Marionette.TemplateCache.get( '#tmpl-elementor-control-' + this.model.get( 'type' ) + '-content' );
+		return Marionette.TemplateCache.get( '#tmpl-wroter-control-' + this.model.get( 'type' ) + '-content' );
 	},
 
 	templateHelpers: function() {
@@ -70,7 +70,7 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 		this.elementSettingsModel = options.elementSettingsModel;
 
 		var controlType = this.model.get( 'type' ),
-			controlSettings = Backbone.$.extend( true, {}, elementor.config.controls[ controlType ], this.model.attributes );
+			controlSettings = Backbone.$.extend( true, {}, wroter.config.controls[ controlType ], this.model.attributes );
 
 		this.model.set( controlSettings );
 
@@ -154,11 +154,11 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 	},
 
 	onSettingsError: function() {
-		this.$el.addClass( 'elementor-error' );
+		this.$el.addClass( 'wroter-error' );
 	},
 
 	onSettingsChange: function() {
-		this.$el.removeClass( 'elementor-error' );
+		this.$el.removeClass( 'wroter-error' );
 	},
 
 	onRender: function() {
@@ -166,12 +166,12 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 
 		var layoutType = this.model.get( 'label_block' ) ? 'block' : 'inline',
 			showLabel = this.model.get( 'show_label' ),
-			elClasses = 'elementor-label-' + layoutType;
+			elClasses = 'wroter-label-' + layoutType;
 
-		elClasses += ' elementor-control-separator-' + this.model.get( 'separator' );
+		elClasses += ' wroter-control-separator-' + this.model.get( 'separator' );
 
 		if ( ! showLabel ) {
-			elClasses += ' elementor-control-hidden-label';
+			elClasses += ' wroter-control-hidden-label';
 		}
 
 		this.$el.addClass( elClasses );
@@ -190,11 +190,11 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 	onSwitcherClick: function( event ) {
 		var device = Backbone.$( event.currentTarget ).data( 'device' );
 
-		elementor.changeDeviceMode( device );
+		wroter.changeDeviceMode( device );
 	},
 
 	onSwitcherDesktopClick: function() {
-		elementor.getPanelView().getCurrentPageView().$el.toggleClass( 'elementor-responsive-switchers-open' );
+		wroter.getPanelView().getCurrentPageView().$el.toggleClass( 'wroter-responsive-switchers-open' );
 	},
 
 	renderResponsiveSwitchers: function() {
@@ -202,23 +202,23 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 			return;
 		}
 
-		var templateHtml = Backbone.$( '#tmpl-elementor-control-responsive-switchers' ).html();
+		var templateHtml = Backbone.$( '#tmpl-wroter-control-responsive-switchers' ).html();
 
 		this.ui.controlTitle.after( templateHtml );
 	},
 
 	toggleControlVisibility: function() {
-		var isVisible = elementor.helpers.isControlVisible( this.model, this.elementSettingsModel );
+		var isVisible = wroter.helpers.isControlVisible( this.model, this.elementSettingsModel );
 
-		this.$el.toggleClass( 'elementor-hidden-control', ! isVisible );
+		this.$el.toggleClass( 'wroter-hidden-control', ! isVisible );
 
-		elementor.channels.data.trigger( 'scrollbar:update' );
+		wroter.channels.data.trigger( 'scrollbar:update' );
 	},
 
 	onControlSwitchTab: function( activeTab ) {
-		this.$el.toggleClass( 'elementor-active-tab', ( activeTab === this.model.get( 'tab' ) ) );
+		this.$el.toggleClass( 'wroter-active-tab', ( activeTab === this.model.get( 'tab' ) ) );
 
-		elementor.channels.data.trigger( 'scrollbar:update' );
+		wroter.channels.data.trigger( 'scrollbar:update' );
 	},
 
 	onReady: function() {},
@@ -231,7 +231,7 @@ ControlBaseItemView = Marionette.CompositeView.extend( {
 	replaceStyleValues: function( cssProperty, controlValue ) {
 		var replaceArray = { '\{\{VALUE\}\}': controlValue };
 
-		return elementor.helpers.stringReplaceAll( cssProperty, replaceArray );
+		return wroter.helpers.stringReplaceAll( cssProperty, replaceArray );
 	}
 } );
 

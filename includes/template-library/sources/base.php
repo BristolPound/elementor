@@ -1,5 +1,5 @@
 <?php
-namespace Elementor\TemplateLibrary;
+namespace Wroter\TemplateLibrary;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

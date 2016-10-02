@@ -2,13 +2,13 @@ var HandleEditModeBehavior;
 
 HandleEditModeBehavior = Marionette.Behavior.extend( {
 	initialize: function() {
-		this.listenTo( elementor.channels.dataEditMode, 'switch', this.onEditModeSwitched );
+		this.listenTo( wroter.channels.dataEditMode, 'switch', this.onEditModeSwitched );
 	},
 
 	onEditModeSwitched: function() {
-		var activeMode = elementor.channels.dataEditMode.request( 'activeMode' );
+		var activeMode = wroter.channels.dataEditMode.request( 'activeMode' );
 
-		this.view.$el.toggleClass( 'elementor-active-mode', 'preview' !== activeMode );
+		this.view.$el.toggleClass( 'wroter-active-mode', 'preview' !== activeMode );
 	},
 
 	onRender: function() {

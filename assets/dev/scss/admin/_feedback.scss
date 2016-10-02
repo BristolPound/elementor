@@ -1,8 +1,8 @@
 
-/*= Elementor Feedback
+/*= Wroter Feedback
 ---------------------------------------*/
 
-@keyframes elementor-rotation {
+@keyframes wroter-rotation {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -11,11 +11,11 @@
 	}
 }
 
-#elementor-deactivate-feedback-dialog-wrapper {
+#wroter-deactivate-feedback-dialog-wrapper {
 	display: none;
 }
 
-#elementor-deactivate-feedback-modal {
+#wroter-deactivate-feedback-modal {
 
 	.dialog-widget-content {
 		width: 550px;
@@ -43,26 +43,26 @@
 		text-align: $start;
 	}
 
-	.elementor-deactivate-feedback-dialog-input {
+	.wroter-deactivate-feedback-dialog-input {
 		float: $start;
 		@include margin(0, 15px, 0, 0);
 		box-shadow: none;
 
 		&:not(:checked) {
 
-			~ .elementor-feedback-text {
+			~ .wroter-feedback-text {
 				display: none;
 			}
 		}
 	}
 
-	.elementor-deactivate-feedback-dialog-label {
+	.wroter-deactivate-feedback-dialog-label {
 		display: block;
 		font-size: 13px;
 		color: $editor-dark;
 	}
 
-	.elementor-feedback-text {
+	.wroter-feedback-text {
 		@include margin(10px, 0, 0, 30px);
 		padding: 5px;
 		font-size: 13px;
@@ -87,13 +87,13 @@
 		width: 180px;
 		height: 38px;
 
-		&.elementor-loading {
+		&.wroter-loading {
 
 			&:before {
 				display: inline-block;
 				content: '\f463';
 				font: 18px dashicons;
-				animation: elementor-rotation 2s infinite linear;
+				animation: wroter-rotation 2s infinite linear;
 			}
 		}
 	}
@@ -106,7 +106,7 @@
 	}
 }
 
-#elementor-deactivate-feedback-dialog-header {
+#wroter-deactivate-feedback-dialog-header {
 
 	i {
 		color: $editor-accent;
@@ -114,25 +114,25 @@
 	}
 }
 
-#elementor-deactivate-feedback-dialog-header-title {
+#wroter-deactivate-feedback-dialog-header-title {
 	font-size: 15px;
 	text-transform: uppercase;
 	font-weight: bold;
 	@include padding-start(5px);
 }
 
-#elementor-deactivate-feedback-dialog-form-caption {
+#wroter-deactivate-feedback-dialog-form-caption {
 	font-weight: bold;
 	font-size: 15px;
 	color: $editor-darkest;
 	line-height: 1.4;
 }
 
-#elementor-deactivate-feedback-dialog-form-body {
+#wroter-deactivate-feedback-dialog-form-body {
 	padding-top: 30px;
 }
 
-.elementor-deactivate-feedback-dialog-input-wrapper {
+.wroter-deactivate-feedback-dialog-input-wrapper {
 	line-height: 1.3;
 	overflow: hidden;
 	margin-bottom: 15px;

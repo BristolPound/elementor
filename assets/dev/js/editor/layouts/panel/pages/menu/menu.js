@@ -1,8 +1,8 @@
-var PanelMenuItemView = require( 'elementor-panel/pages/menu/views/item' ),
+var PanelMenuItemView = require( 'wroter-panel/pages/menu/views/item' ),
 	PanelMenuPageView;
 
 PanelMenuPageView = Marionette.CollectionView.extend( {
-	id: 'elementor-panel-page-menu',
+	id: 'wroter-panel-page-menu',
 
 	childView: PanelMenuItemView,
 
@@ -10,36 +10,36 @@ PanelMenuPageView = Marionette.CollectionView.extend( {
 		this.collection = new Backbone.Collection( [
             {
                 icon: 'paint-brush',
-                title: elementor.translate( 'global_colors' ),
+                title: wroter.translate( 'global_colors' ),
 				type: 'page',
                 pageName: 'colorScheme'
             },
             {
                 icon: 'font',
-                title: elementor.translate( 'global_fonts' ),
+                title: wroter.translate( 'global_fonts' ),
 				type: 'page',
                 pageName: 'typographyScheme'
             },
             {
 				icon: 'file-text',
-				title: elementor.translate( 'page_settings' ) + '  <span>(' + elementor.translate( 'soon' ) + ')</span>'
+				title: wroter.translate( 'page_settings' ) + '  <span>(' + wroter.translate( 'soon' ) + ')</span>'
 			},
 			{
 				icon: 'cog',
-				title: elementor.translate( 'elementor_settings' ),
+				title: wroter.translate( 'wroter_settings' ),
 				type: 'link',
-				link: elementor.config.settings_page_link,
+				link: wroter.config.settings_page_link,
 				newTab: true
 			},
 			{
 				icon: 'history',
-				title: elementor.translate( 'revisions_history' ) + '  <span>(' + elementor.translate( 'soon' ) + ')</span>'
+				title: wroter.translate( 'revisions_history' ) + '  <span>(' + wroter.translate( 'soon' ) + ')</span>'
 			},
 			{
 				icon: 'info-circle',
-				title: elementor.translate( 'about_elementor' ),
+				title: wroter.translate( 'about_wroter' ),
 				type: 'link',
-				link: elementor.config.elementor_site,
+				link: wroter.config.wroter_site,
 				newTab: true
 			}
 		] );
@@ -53,7 +53,7 @@ PanelMenuPageView = Marionette.CollectionView.extend( {
 				var pageName = childView.model.get( 'pageName' ),
 					pageTitle = childView.model.get( 'title' );
 
-				elementor.getPanelView().setPage( pageName, pageTitle );
+				wroter.getPanelView().setPage( pageName, pageTitle );
 				break;
 
 			case 'link' :

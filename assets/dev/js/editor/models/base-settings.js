@@ -3,7 +3,7 @@ var BaseSettingsModel;
 BaseSettingsModel = Backbone.Model.extend( {
 
 	initialize: function( data ) {
-		this.controls = elementor.getElementControls( this );
+		this.controls = wroter.getElementControls( this );
 		if ( ! this.controls ) {
 			return;
 		}
@@ -12,7 +12,7 @@ BaseSettingsModel = Backbone.Model.extend( {
 			defaults = {};
 
 		_.each( this.controls, function( field ) {
-			var control = elementor.config.controls[ field.type ];
+			var control = wroter.config.controls[ field.type ];
 
 			if ( _.isObject( control.default_value )  ) {
 				defaults[ field.name ] = _.extend( {}, control.default_value, field['default'] || {} );
@@ -82,7 +82,7 @@ BaseSettingsModel = Backbone.Model.extend( {
 	},
 
 	clone: function() {
-		return new BaseSettingsModel( elementor.helpers.cloneObject( this.attributes ) );
+		return new BaseSettingsModel( wroter.helpers.cloneObject( this.attributes ) );
 	},
 
 	toJSON: function() {

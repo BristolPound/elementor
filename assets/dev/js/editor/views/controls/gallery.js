@@ -1,13 +1,13 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlMediaItemView;
 
 ControlMediaItemView = ControlBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.addImages = '.elementor-control-gallery-add';
-		ui.clearGallery = '.elementor-control-gallery-clear';
-		ui.galleryThumbnails = '.elementor-control-gallery-thumbnails';
+		ui.addImages = '.wroter-control-gallery-add';
+		ui.clearGallery = '.wroter-control-gallery-clear';
+		ui.galleryThumbnails = '.wroter-control-gallery-thumbnails';
 
 		return ui;
 	},
@@ -22,8 +22,8 @@ ControlMediaItemView = ControlBaseItemView.extend( {
 		var hasImages = this.hasImages();
 
 		this.$el
-		    .toggleClass( 'elementor-gallery-has-images', hasImages )
-		    .toggleClass( 'elementor-gallery-empty', ! hasImages );
+		    .toggleClass( 'wroter-gallery-has-images', hasImages )
+		    .toggleClass( 'wroter-gallery-empty', ! hasImages );
 
 		this.initRemoveDialog();
 	},
@@ -50,7 +50,7 @@ ControlMediaItemView = ControlBaseItemView.extend( {
 			multiple: true,
 			state: frameStates[ action ],
 			button: {
-				text: elementor.translate( 'insert_media' )
+				text: wroter.translate( 'insert_media' )
 			}
 		};
 
@@ -132,12 +132,12 @@ ControlMediaItemView = ControlBaseItemView.extend( {
 
 		this.getRemoveDialog = function() {
 			if ( ! removeDialog ) {
-				removeDialog = elementor.dialogsManager.createWidget( 'confirm', {
-					message: elementor.translate( 'dialog_confirm_gallery_delete' ),
-					headerMessage: elementor.translate( 'delete_gallery' ),
+				removeDialog = wroter.dialogsManager.createWidget( 'confirm', {
+					message: wroter.translate( 'dialog_confirm_gallery_delete' ),
+					headerMessage: wroter.translate( 'delete_gallery' ),
 					strings: {
-						confirm: elementor.translate( 'delete' ),
-						cancel: elementor.translate( 'cancel' )
+						confirm: wroter.translate( 'delete' ),
+						cancel: wroter.translate( 'cancel' )
 					},
 					defaultOption: 'confirm',
 					onConfirm: _.bind( this.resetGallery, this )

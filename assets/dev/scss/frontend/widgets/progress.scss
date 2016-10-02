@@ -2,11 +2,11 @@
 // Progress Bar
 //
 
-.elementor-widget-progress {
+.wroter-widget-progress {
 	text-align: $start;
 }
 
-.elementor-progress-wrapper {
+.wroter-progress-wrapper {
 	position: relative;
 	background-color: $progress-bg;
 	color: $progress-text;
@@ -14,7 +14,7 @@
 	line-height: 30px;
 	border-radius: 2px;
 
-	.elementor-progress-bar {
+	.wroter-progress-bar {
 		display: inline-block;
 		background-color: $gray;
 		height: 100%;
@@ -23,7 +23,7 @@
 		transition: width 1s ease-in-out;
 	}
 
-	.elementor-progress-inner-text {
+	.wroter-progress-inner-text {
 		display: inline-block;
 		position: absolute;
 		@include start(0);
@@ -32,58 +32,58 @@
 		width: 0;
 		transition: width 1s ease-in-out;
 
-		.elementor-progress-percentage {
+		.wroter-progress-percentage {
 			position: relative;
 			float: $end;
 		}
 	}
 }
 
-.elementor-widget-progress {
-	.elementor-progress-wrapper {
+.wroter-widget-progress {
+	.wroter-progress-wrapper {
 
 		&.progress-info {
 
-			.elementor-progress-bar {
+			.wroter-progress-bar {
 				background-color: $info;
 			}
 		}
 
 		&.progress-success {
 
-			.elementor-progress-bar {
+			.wroter-progress-bar {
 				background-color: $success;
 			}
 		}
 
 		&.progress-warning {
 
-			.elementor-progress-bar {
+			.wroter-progress-bar {
 				background-color: $warning;
 			}
 		}
 
 		&.progress-danger {
 
-			.elementor-progress-bar {
+			.wroter-progress-bar {
 				background-color: $danger;
 			}
 		}
 	}
 }
 
-.elementor-progress .elementor-title {
+.wroter-progress .wroter-title {
 	display: block;
 }
 
 // Responsive mode
 @media (max-width: $screen-sm-max) {
 
-	.elementor-progress-wrapper {
+	.wroter-progress-wrapper {
 		height: 25px;
 		line-height: 25px;
 
-		.elementor-progress-inner-text {
+		.wroter-progress-inner-text {
 			padding: 0 10px;
 		}
 	}

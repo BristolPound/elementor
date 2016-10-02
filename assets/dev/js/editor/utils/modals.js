@@ -52,7 +52,7 @@ Modals = {
 			}
 		};
 
-		DialogsManager.addWidgetType( 'elementor-modal', DialogsManager.getWidgetType( 'options' ).extend( 'elementor-modal', modalProperties ) );
+		DialogsManager.addWidgetType( 'wroter-modal', DialogsManager.getWidgetType( 'options' ).extend( 'wroter-modal', modalProperties ) );
 	}
 };
 

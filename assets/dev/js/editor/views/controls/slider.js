@@ -1,11 +1,11 @@
-var ControlBaseUnitsItemView = require( 'elementor-views/controls/base-units' ),
+var ControlBaseUnitsItemView = require( 'wroter-views/controls/base-units' ),
 	ControlSliderItemView;
 
 ControlSliderItemView = ControlBaseUnitsItemView.extend( {
 	ui: function() {
 		var ui = ControlBaseUnitsItemView.prototype.ui.apply( this, arguments );
 
-		ui.slider = '.elementor-slider';
+		ui.slider = '.wroter-slider';
 
 		return ui;
 	},

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Html extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'HTML', 'elementor' );
+		return __( 'HTML', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Html extends Widget_Base {
 		$this->add_control(
 			'section_title',
 			[
-				'label' => __( 'HTML Code', 'elementor' ),
+				'label' => __( 'HTML Code', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -32,7 +32,7 @@ class Widget_Html extends Widget_Base {
 				'label' => '',
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => '',
-				'placeholder' => __( 'Enter your embed code here', 'elementor' ),
+				'placeholder' => __( 'Enter your embed code here', 'wroter' ),
 				'section' => 'section_title',
 				'show_label' => false,
 			]

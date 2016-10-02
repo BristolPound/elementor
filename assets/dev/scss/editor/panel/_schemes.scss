@@ -2,14 +2,14 @@
 // Schemes
 //
 
-.elementor-panel-scheme {
+.wroter-panel-scheme {
 
-	.elementor-panel-scheme-title {
+	.wroter-panel-scheme-title {
 		padding: 10px 20px;
 		margin-top: 10px;
 	}
 
-	.elementor-panel-scheme-buttons {
+	.wroter-panel-scheme-buttons {
 		@include padding-start(20px);
 		display: table;
 		table-layout: fixed;
@@ -19,23 +19,23 @@
 		box-shadow: $panel-bottom-shadow;
 	}
 
-	.elementor-panel-scheme-button-wrapper {
+	.wroter-panel-scheme-button-wrapper {
 		display: table-cell;
 		vertical-align: middle;
 	}
 
-	.elementor-panel-scheme-save {
+	.wroter-panel-scheme-save {
 		text-align: center;
 
-		.elementor-button {
+		.wroter-button {
 			padding: 6px 18px;
 			text-transform: uppercase;
 		}
 	}
 
-	.elementor-panel-scheme-reset, .elementor-panel-scheme-discard {
+	.wroter-panel-scheme-reset, .wroter-panel-scheme-discard {
 
-		.elementor-button {
+		.wroter-button {
 			color: $editor-light;
 			background: none;
 
@@ -50,13 +50,13 @@
 	}
 }
 
-#elementor-panel-scheme-color {
+#wroter-panel-scheme-color {
 
-	.elementor-panel-scheme-items {
+	.wroter-panel-scheme-items {
 		position: relative;
 	}
 
-	.elementor-panel-scheme-item {
+	.wroter-panel-scheme-item {
 		display: inline-block;
 		margin-bottom: 10px;
 
@@ -77,7 +77,7 @@
 	}
 }
 
-.elementor-panel-scheme-color-title {
+.wroter-panel-scheme-color-title {
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 10px;
@@ -85,7 +85,7 @@
 	font-size: 8px;
 }
 
-.elementor-panel-scheme-typography-item {
+.wroter-panel-scheme-typography-item {
 	display: table;
 	table-layout: fixed;
 	width: 100%;
@@ -97,30 +97,30 @@
 	 }
 }
 
-.elementor-panel-scheme-typography-item-value {
+.wroter-panel-scheme-typography-item-value {
 
 	select, input {
 		width: 100%;
 	}
 }
 
-.elementor-panel-scheme-item {
+.wroter-panel-scheme-item {
 
-	.elementor-panel-heading {
+	.wroter-panel-heading {
 
-		&:not(.elementor-open) {
+		&:not(.wroter-open) {
 
-			+ .elementor-panel-scheme-typography-items {
+			+ .wroter-panel-scheme-typography-items {
 				display: none;
 			}
 		}
 	}
 }
 
-.elementor-panel-scheme-color-system-scheme {
+.wroter-panel-scheme-color-system-scheme {
 	margin-bottom: 10px;
 
-	.elementor-title {
+	.wroter-title {
 		font-size: 11px;
 		color: $editor-light;
 		font-style: italic;
@@ -128,7 +128,7 @@
 	}
 }
 
-.elementor-panel-scheme-color-system-items {
+.wroter-panel-scheme-color-system-items {
 	transition: border .5s;
 	overflow: hidden;
 	padding: 3px;
@@ -141,13 +141,13 @@
 	}
 }
 
-.elementor-panel-scheme-color-system-item {
+.wroter-panel-scheme-color-system-item {
 	float: left;
 	height: 20px;
 	width: 25%;
 }
 
-#elementor-panel-schemes-disabled {
+#wroter-panel-schemes-disabled {
 	padding: 20px;
 
 	a {

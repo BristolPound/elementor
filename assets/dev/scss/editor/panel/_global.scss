@@ -2,7 +2,7 @@
 // Panel Global
 //
 
-.elementor-panel-heading {
+.wroter-panel-heading {
 	display: table;
 	table-layout: fixed;
 	height: 40px;
@@ -11,9 +11,9 @@
 	border-bottom: 1px solid $editor-background;
 	cursor: pointer;
 
-	&:not(.elementor-open) {
+	&:not(.wroter-open) {
 
-		.elementor-panel-heading-toggle {
+		.wroter-panel-heading-toggle {
 
 			.fa {
 
@@ -24,9 +24,9 @@
 		}
 	}
 
-	&.elementor-open {
+	&.wroter-open {
 
-		.elementor-panel-heading-toggle {
+		.wroter-panel-heading-toggle {
 
 			.fa {
 
@@ -43,26 +43,26 @@
 	}
 }
 
-.elementor-panel-heading-toggle {
+.wroter-panel-heading-toggle {
 	width: 20px;
 	color: $editor-darkest;
 }
 
-.elementor-panel-heading-title {
+.wroter-panel-heading-title {
 	color: $editor-darkest;
 	font-weight: bold;
 }
 
-.elementor-panel-box {
+.wroter-panel-box {
 	margin-top: 10px;
 	background-color: #fff;
 }
 
-.elementor-panel-box-content {
+.wroter-panel-box-content {
 	padding: 20px 20px 10px;
 }
 
-.elementor-control-title {
+.wroter-control-title {
 	font-size: 12px;
 }
 
@@ -100,9 +100,9 @@
 }
 
 // Pojo Theme Support
-#elementor-panel {
-	#elementor-panel-page-editor {
-		.elementor-controls {
+#wroter-panel {
+	#wroter-panel-page-editor {
+		.wroter-controls {
 			.pojo-widget-button-collapse {
 				display: none;
 			}

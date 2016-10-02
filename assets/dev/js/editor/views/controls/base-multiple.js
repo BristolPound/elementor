@@ -1,4 +1,4 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlBaseMultipleItemView;
 
 ControlBaseMultipleItemView = ControlBaseItemView.extend( {
@@ -28,7 +28,7 @@ ControlBaseMultipleItemView = ControlBaseItemView.extend( {
 			return values[ key ] || '';
 		}
 
-		return elementor.helpers.cloneObject( values );
+		return wroter.helpers.cloneObject( values );
 	},
 
 	setValue: function( key, value ) {

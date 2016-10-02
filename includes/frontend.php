@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -30,7 +30,7 @@ class Frontend {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ] );
 
-		// Add Edit with the Elementor in Admin Bar
+		// Add Edit with the Wroter in Admin Bar
 		add_action( 'admin_bar_menu', [ $this, 'add_menu_in_admin_bar' ], 200 );
 	}
 
@@ -48,7 +48,7 @@ class Frontend {
 		$section_obj = Plugin::instance()->elements_manager->get_element( 'section' );
 		$instance = $section_obj->get_parse_values( $section_data['settings'] );
 
-		do_action( 'elementor/frontend/section/before_render', $section_obj, $instance );
+		do_action( 'wroter/frontend/section/before_render', $section_obj, $instance );
 
 		$section_obj->before_render( $instance, $section_data['id'], $section_data );
 
@@ -58,14 +58,14 @@ class Frontend {
 
 		$section_obj->after_render( $instance, $section_data['id'], $section_data );
 
-		do_action( 'elementor/frontend/section/after_render', $section_obj, $instance );
+		do_action( 'wroter/frontend/section/after_render', $section_obj, $instance );
 	}
 
 	protected function _print_column( $column_data ) {
 		$column_obj = Plugin::instance()->elements_manager->get_element( 'column' );
 		$instance = $column_obj->get_parse_values( $column_data['settings'] );
 
-		do_action( 'elementor/frontend/column/before_render', $column_obj, $instance );
+		do_action( 'wroter/frontend/column/before_render', $column_obj, $instance );
 
 		$column_obj->before_render( $instance, $column_data['id'], $column_data );
 
@@ -79,7 +79,7 @@ class Frontend {
 
 		$column_obj->after_render( $instance, $column_data['id'], $column_data );
 
-		do_action( 'elementor/frontend/column/after_render', $column_obj, $instance );
+		do_action( 'wroter/frontend/column/after_render', $column_obj, $instance );
 	}
 
 	protected function _print_widget( $widget_data ) {
@@ -92,18 +92,18 @@ class Frontend {
 
 		$instance = $widget_obj->get_parse_values( $widget_data['settings'] );
 
-		do_action( 'elementor/frontend/widget/before_render', $widget_obj, $instance );
+		do_action( 'wroter/frontend/widget/before_render', $widget_obj, $instance );
 
 		$widget_obj->before_render( $instance, $widget_data['id'], $widget_data );
 		$widget_obj->render_content( $instance );
 		$widget_obj->after_render( $instance, $widget_data['id'], $widget_data );
 
-		do_action( 'elementor/frontend/widget/after_render', $widget_obj, $instance );
+		do_action( 'wroter/frontend/widget/after_render', $widget_obj, $instance );
 	}
 
 	public function body_class( $classes = [] ) {
 		if ( is_singular() && 'builder' === Plugin::instance()->db->get_edit_mode( get_the_ID() ) ) {
-			$classes[] = 'elementor-page';
+			$classes[] = 'wroter-page';
 		}
 		return $classes;
 	}
@@ -113,7 +113,7 @@ class Frontend {
 
 		wp_register_script(
 			'waypoints',
-			ELEMENTOR_ASSETS_URL . 'lib/waypoints/waypoints' . $suffix . '.js',
+			WROTER_ASSETS_URL . 'lib/waypoints/waypoints' . $suffix . '.js',
 			[
 				'jquery',
 			],
@@ -123,7 +123,7 @@ class Frontend {
 
 		wp_register_script(
 			'jquery-numerator',
-			ELEMENTOR_ASSETS_URL . 'lib/jquery-numerator/jquery-numerator' . $suffix . '.js',
+			WROTER_ASSETS_URL . 'lib/jquery-numerator/jquery-numerator' . $suffix . '.js',
 			[
 				'jquery',
 			],
@@ -133,7 +133,7 @@ class Frontend {
 
 		wp_register_script(
 			'jquery-slick',
-			ELEMENTOR_ASSETS_URL . 'lib/slick/slick' . $suffix . '.js',
+			WROTER_ASSETS_URL . 'lib/slick/slick' . $suffix . '.js',
 			[
 				'jquery',
 			],
@@ -142,8 +142,8 @@ class Frontend {
 		);
 
 		wp_register_script(
-			'elementor-frontend',
-			ELEMENTOR_ASSETS_URL . 'js/frontend' . $suffix . '.js',
+			'wroter-frontend',
+			WROTER_ASSETS_URL . 'js/frontend' . $suffix . '.js',
 			[
 				'waypoints',
 				'jquery-numerator',
@@ -152,13 +152,13 @@ class Frontend {
 			Plugin::instance()->get_version(),
 			true
 		);
-		wp_enqueue_script( 'elementor-frontend' );
+		wp_enqueue_script( 'wroter-frontend' );
 
 		wp_localize_script(
-			'elementor-frontend',
-			'elementorFrontendConfig', [
+			'wroter-frontend',
+			'wroterFrontendConfig', [
 				'isEditMode' => Plugin::instance()->editor->is_edit_mode(),
-				'stretchedSectionContainer' => get_option( 'elementor_stretched_section_container', '' ),
+				'stretchedSectionContainer' => get_option( 'wroter_stretched_section_container', '' ),
 				'is_rtl' => is_rtl(),
 			]
 		);
@@ -170,39 +170,39 @@ class Frontend {
 		$direction_suffix = is_rtl() ? '-rtl' : '';
 
 		wp_enqueue_style(
-			'elementor-icons',
-			ELEMENTOR_ASSETS_URL . 'lib/eicons/css/elementor-icons' . $suffix . '.css',
+			'wroter-icons',
+			WROTER_ASSETS_URL . 'lib/eicons/css/wroter-icons' . $suffix . '.css',
 			[],
 			Plugin::instance()->get_version()
 		);
 
 		wp_register_style(
 			'font-awesome',
-			ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/font-awesome' . $suffix . '.css',
+			WROTER_ASSETS_URL . 'lib/font-awesome/css/font-awesome' . $suffix . '.css',
 			[],
 			'4.6.3'
 		);
 
-		// Elementor Animations
+		// Wroter Animations
 		wp_register_style(
-			'elementor-animations',
-			ELEMENTOR_ASSETS_URL . 'css/animations.min.css',
+			'wroter-animations',
+			WROTER_ASSETS_URL . 'css/animations.min.css',
 			[],
-			ELEMENTOR_VERSION
+			WROTER_VERSION
 		);
 
 		wp_register_style(
-			'elementor-frontend',
-			ELEMENTOR_ASSETS_URL . 'css/frontend' . $direction_suffix . $suffix . '.css',
+			'wroter-frontend',
+			WROTER_ASSETS_URL . 'css/frontend' . $direction_suffix . $suffix . '.css',
 			[
-				'elementor-icons',
+				'wroter-icons',
 				'font-awesome',
 			],
 			Plugin::instance()->get_version()
 		);
 
-		wp_enqueue_style( 'elementor-animations' );
-		wp_enqueue_style( 'elementor-frontend' );
+		wp_enqueue_style( 'wroter-animations' );
+		wp_enqueue_style( 'wroter-frontend' );
 	}
 
 	public function print_css() {
@@ -213,9 +213,9 @@ class Frontend {
 		if ( empty( $data ) || 'builder' !== $edit_mode )
 			return;
 
-		$container_width = absint( get_option( 'elementor_container_width' ) );
+		$container_width = absint( get_option( 'wroter_container_width' ) );
 		if ( ! empty( $container_width ) ) {
-			$this->stylesheet->add_rules( '.elementor-section.elementor-section-boxed > .elementor-container', 'max-width:' . $container_width . 'px' );
+			$this->stylesheet->add_rules( '.wroter-section.wroter-section-boxed > .wroter-container', 'max-width:' . $container_width . 'px' );
 		}
 
 		$this->_parse_schemes_css_code();
@@ -238,7 +238,7 @@ class Frontend {
 			return;
 
 		?>
-		<style id="elementor-frontend-stylesheet"><?php echo $css_code; ?></style>
+		<style id="wroter-frontend-stylesheet"><?php echo $css_code; ?></style>
 		<?php
 
 		// Enqueue used fonts
@@ -283,7 +283,7 @@ class Frontend {
 			return;
 
 		$element_instance = $element_obj->get_parse_values( $element['settings'] );
-		$element_unique_class = '.elementor-element.elementor-element-' . $element['id'];
+		$element_unique_class = '.wroter-element.wroter-element-' . $element['id'];
 		if ( 'column' === $element_obj->get_id() ) {
 			if ( ! empty( $element_instance['_inline_size'] ) ) {
 				$this->_column_widths[] = $element_unique_class . '{width:' . $element_instance['_inline_size'] . '%;}';
@@ -347,7 +347,7 @@ class Frontend {
 				if ( empty( $scheme_value ) )
 					continue;
 
-				$element_unique_class = 'elementor-widget-' . $widget_obj->get_id();
+				$element_unique_class = 'wroter-widget-' . $widget_obj->get_id();
 				$control_obj = Plugin::instance()->controls_manager->get_control( $control['type'] );
 
 				if ( Controls_Manager::FONT === $control_obj->get_type() ) {
@@ -379,9 +379,9 @@ class Frontend {
 			return $content;
 
 		ob_start(); ?>
-		<div id="elementor" class="elementor">
-			<div id="elementor-inner">
-				<div id="elementor-section-wrap">
+		<div id="wroter" class="wroter">
+			<div id="wroter-inner">
+				<div id="wroter-section-wrap">
 					<?php foreach ( $data as $section ) : ?>
 						<?php $this->_print_section( $section ); ?>
 					<?php endforeach; ?>
@@ -389,7 +389,7 @@ class Frontend {
 			</div>
 		</div>
 		<?php
-		return apply_filters( 'elementor/frontend/the_content', ob_get_clean() );
+		return apply_filters( 'wroter/frontend/the_content', ob_get_clean() );
 	}
 
 	function add_menu_in_admin_bar( \WP_Admin_Bar $wp_admin_bar ) {
@@ -401,8 +401,8 @@ class Frontend {
 		}
 
 		$wp_admin_bar->add_node( [
-			'id'    => 'elementor_edit_page',
-			'title' => __( 'Edit with Elementor', 'elementor' ),
+			'id'    => 'wroter_edit_page',
+			'title' => __( 'Edit with Wroter', 'wroter' ),
 			'href'  => Utils::get_edit_link( $post_id ),
 		] );
 	}

@@ -1,8 +1,8 @@
 <?php
-namespace Elementor\System_Info;
+namespace Wroter\System_Info;
 
-use Elementor\System_Info\Classes\Abstracts\Base_Reporter;
-use Elementor\System_Info\Helpers\Model_Helper;
+use Wroter\System_Info\Classes\Abstracts\Base_Reporter;
+use Wroter\System_Info\Helpers\Model_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -54,7 +54,7 @@ class Main {
 	private function add_actions() {
 		add_action( 'admin_menu', [ $this, 'register_menu' ], 501 );
 
-		add_action( 'wp_ajax_elementor_system_info_download_file', [ $this, 'download_file' ] );
+		add_action( 'wp_ajax_wroter_system_info_download_file', [ $this, 'download_file' ] );
 	}
 
 	public function display_page() {
@@ -63,17 +63,17 @@ class Main {
 		$reports = $this->load_reports( $reports_info );
 
 		?>
-		<div id="elementor-system-info">
-			<h3><?php _e( 'System Info', 'elementor' ); ?></h3>
+		<div id="wroter-system-info">
+			<h3><?php _e( 'System Info', 'wroter' ); ?></h3>
 			<div><?php $this->print_report( $reports, 'html' ); ?></div>
-			<h3><?php _e( 'Copy & Paste Info', 'elementor' ); ?></h3>
-			<div id="elementor-system-info-raw">
-				<label id="elementor-system-info-raw-code-label"
-				       for="elementor-system-info-raw-code"><?php _e( 'You can copy the below info as simple text with Ctrl+C / Ctrl+V:', 'elementor' ) ?></label>
-				<textarea id="elementor-system-info-raw-code"
+			<h3><?php _e( 'Copy & Paste Info', 'wroter' ); ?></h3>
+			<div id="wroter-system-info-raw">
+				<label id="wroter-system-info-raw-code-label"
+				       for="wroter-system-info-raw-code"><?php _e( 'You can copy the below info as simple text with Ctrl+C / Ctrl+V:', 'wroter' ) ?></label>
+				<textarea id="wroter-system-info-raw-code"
 				          readonly><?php $this->print_report( $reports, 'raw' ); ?></textarea>
 				<script>
-					var textarea = document.getElementById( 'elementor-system-info-raw-code' );
+					var textarea = document.getElementById( 'wroter-system-info-raw-code' );
 					var selectRange = function () {
 						textarea.setSelectionRange( 0, textarea.value.length );
 					};
@@ -83,8 +83,8 @@ class Main {
 			</div>
 			<hr>
 			<form action="<?php echo admin_url( 'admin-ajax.php' ) ?>" method="post">
-				<input type="hidden" name="action" value="elementor_system_info_download_file">
-				<input type="submit" class="button button-primary" value="<?php _e( 'Download System Info', 'elementor' ); ?>">
+				<input type="hidden" name="action" value="wroter_system_info_download_file">
+				<input type="submit" class="button button-primary" value="<?php _e( 'Download System Info', 'wroter' ); ?>">
 			</form>
 		</div>
 		<?php
@@ -92,7 +92,7 @@ class Main {
 
 	public function download_file() {
 		if ( ! current_user_can( $this->capability ) ) {
-			wp_die( __( 'You don\'t have a permission to download this file', 'elementor' ) );
+			wp_die( __( 'You don\'t have a permission to download this file', 'wroter' ) );
 		}
 
 		$reports_info = self::get_allowed_reports();
@@ -159,14 +159,14 @@ class Main {
 	}
 
 	public function register_menu() {
-		$system_info_text = __( 'System Info', 'elementor' );
+		$system_info_text = __( 'System Info', 'wroter' );
 
 		add_submenu_page(
-			'elementor',
+			'wroter',
 			$system_info_text,
 			$system_info_text,
 			$this->capability,
-			'elementor-system-info',
+			'wroter-system-info',
 			[ $this, 'display_page' ]
 		);
 	}
@@ -180,7 +180,7 @@ class Main {
 
 		$settings['reporter_properties'] = $reporter_properties;
 
-		$base_lib_dir = ELEMENTOR_PATH . 'includes/settings/system-info/';
+		$base_lib_dir = WROTER_PATH . 'includes/settings/system-info/';
 
 		$settings['dirs'] = [
 			'lib'       => $base_lib_dir,

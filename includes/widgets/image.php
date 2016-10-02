@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Image extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Image', 'elementor' );
+		return __( 'Image', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'section_image',
 			[
-				'label' => __( 'Image', 'elementor' ),
+				'label' => __( 'Image', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,7 +29,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label' => __( 'Choose Image', 'elementor' ),
+				'label' => __( 'Choose Image', 'wroter' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -41,19 +41,19 @@ class Widget_Image extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
@@ -68,11 +68,11 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'caption',
 			[
-				'label' => __( 'Caption', 'elementor' ),
+				'label' => __( 'Caption', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
-				'placeholder' => __( 'Enter your caption about the image', 'elementor' ),
-				'title' => __( 'Input image caption here', 'elementor' ),
+				'placeholder' => __( 'Enter your caption about the image', 'wroter' ),
+				'title' => __( 'Input image caption here', 'wroter' ),
 				'section' => 'section_image',
 			]
 		);
@@ -80,14 +80,14 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'link_to',
 			[
-				'label' => __( 'Link to', 'elementor' ),
+				'label' => __( 'Link to', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'none',
 				'section' => 'section_image',
 				'options' => [
-					'none' => __( 'None', 'elementor' ),
-					'file' => __( 'Media File', 'elementor' ),
-					'custom' => __( 'Custom URL', 'elementor' ),
+					'none' => __( 'None', 'wroter' ),
+					'file' => __( 'Media File', 'wroter' ),
+					'custom' => __( 'Custom URL', 'wroter' ),
 				],
 			]
 		);
@@ -95,9 +95,9 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link to', 'elementor' ),
+				'label' => __( 'Link to', 'wroter' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'http://your-link.com', 'elementor' ),
+				'placeholder' => __( 'http://your-link.com', 'wroter' ),
 				'section' => 'section_image',
 				'condition' => [
 					'link_to' => 'custom',
@@ -109,7 +109,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_image',
@@ -120,7 +120,7 @@ class Widget_Image extends Widget_Base {
 			'section_style_image',
 			[
 				'type'  => Controls_Manager::SECTION,
-				'label' => __( 'Image', 'elementor' ),
+				'label' => __( 'Image', 'wroter' ),
 				'tab'   => self::TAB_STYLE,
 			]
 		);
@@ -128,7 +128,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'space',
 			[
-				'label' => __( 'Size (%)', 'elementor' ),
+				'label' => __( 'Size (%)', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_image',
@@ -144,7 +144,7 @@ class Widget_Image extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-image img' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-image img' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -152,7 +152,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'opacity',
 			[
-				'label' => __( 'Opacity (%)', 'elementor' ),
+				'label' => __( 'Opacity (%)', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_image',
@@ -167,7 +167,7 @@ class Widget_Image extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-image img' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .wroter-image img' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -175,7 +175,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Hover Animation', 'elementor' ),
+				'label' => __( 'Hover Animation', 'wroter' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_image',
@@ -186,23 +186,23 @@ class Widget_Image extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'image_border',
-				'label' => __( 'Image Border', 'elementor' ),
+				'label' => __( 'Image Border', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_image',
-				'selector' => '{{WRAPPER}} .elementor-image img',
+				'selector' => '{{WRAPPER}} .wroter-image img',
 			]
 		);
 
 		$this->add_control(
 			'image_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_image',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -213,7 +213,7 @@ class Widget_Image extends Widget_Base {
 				'name' => 'image_box_shadow',
 				'section' => 'section_style_image',
 				'tab' => self::TAB_STYLE,
-				'selector' => '{{WRAPPER}} .elementor-image img',
+				'selector' => '{{WRAPPER}} .wroter-image img',
 			]
 		);
 
@@ -221,7 +221,7 @@ class Widget_Image extends Widget_Base {
 			'section_style_caption',
 			[
 				'type'  => Controls_Manager::SECTION,
-				'label' => __( 'Caption', 'elementor' ),
+				'label' => __( 'Caption', 'wroter' ),
 				'tab'   => self::TAB_STYLE,
 			]
 		);
@@ -229,23 +229,23 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'caption_align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'wroter' ),
 						'icon' => 'align-justify',
 					],
 				],
@@ -261,7 +261,7 @@ class Widget_Image extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'default' => '',
@@ -294,13 +294,13 @@ class Widget_Image extends Widget_Base {
 		}
 		$has_caption = ! empty( $instance['caption'] );
 
-		$image_html = '<div class="elementor-image' . ( ! empty( $instance['shape'] ) ? ' elementor-image-shape-' . $instance['shape'] : '' ) . '">';
+		$image_html = '<div class="wroter-image' . ( ! empty( $instance['shape'] ) ? ' wroter-image-shape-' . $instance['shape'] : '' ) . '">';
 
 		if ( $has_caption ) {
 			$image_html .= '<figure class="wp-caption">';
 		}
 
-		$image_class_html = ! empty( $instance['hover_animation'] ) ? ' class="elementor-animation-' . $instance['hover_animation'] . '"' : '';
+		$image_class_html = ! empty( $instance['hover_animation'] ) ? ' class="wroter-animation-' . $instance['hover_animation'] . '"' : '';
 
 		$image_html .= sprintf( '<img src="%s" title="%s" alt="%s"%s />', esc_attr( $instance['image']['url'] ), Control_Media::get_image_title( $instance['image'] ), Control_Media::get_image_alt( $instance['image'] ), $image_class_html );
 
@@ -328,14 +328,14 @@ class Widget_Image extends Widget_Base {
 	protected function content_template() {
 		?>
 		<# if ( '' !== settings.image.url ) { #>
-			<div class="elementor-image{{ settings.shape ? ' elementor-image-shape-' + settings.shape : '' }}">
+			<div class="wroter-image{{ settings.shape ? ' wroter-image-shape-' + settings.shape : '' }}">
 				<#
 				var imgClass = '', image_html = '',
 					hasCaption = '' !== settings.caption,
 					image_html = '';
 
 				if ( '' !== settings.hover_animation ) {
-					imgClass = 'elementor-animation-' + settings.hover_animation;
+					imgClass = 'wroter-animation-' + settings.hover_animation;
 				}
 				
 				if ( hasCaption ) {

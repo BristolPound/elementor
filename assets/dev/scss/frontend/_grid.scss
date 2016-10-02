@@ -3,11 +3,11 @@
 //
 
 // Section
-.elementor-section {
+.wroter-section {
 	position: relative;
 
 	// Container
-	.elementor-container {
+	.wroter-container {
 		display: flex;
 		margin-right: auto;
 		margin-left: auto;
@@ -15,63 +15,63 @@
 	}
 
 	// Max-width of container depending on section settings
-	&.elementor-section-boxed {
-		& > .elementor-container {
+	&.wroter-section-boxed {
+		& > .wroter-container {
 			max-width: 1140px;
 		}
 	}
 
 	// Stretched section settings
-	&.elementor-section-stretched {
+	&.wroter-section-stretched {
 		position: relative;
 		width: 100%;
 	}
 
 	// In section min-height / fit to screen mode
-	&.elementor-section-items- {
+	&.wroter-section-items- {
 
 		&top {
 
-			> .elementor-container {
+			> .wroter-container {
 				align-items: flex-start;
 			}
 		}
 
 		&middle {
 
-			> .elementor-container {
+			> .wroter-container {
 				align-items: center;
 			}
 		}
 
 		&bottom {
 
-			> .elementor-container {
+			> .wroter-container {
 				align-items: flex-end;
 			}
 		}
 	}
 
 	// In columns stretch mode
-	&.elementor-section-content- {
+	&.wroter-section-content- {
 
 		&top {
 
-			.elementor-column-wrap {
+			.wroter-column-wrap {
 				align-items: flex-start;
 			}
 		}
 
 		&middle {
 
-			.elementor-column-wrap {
+			.wroter-column-wrap {
 				align-items: center;
 			}
 		}
 
 		&bottom {
 
-			.elementor-column-wrap {
+			.wroter-column-wrap {
 				align-items: flex-end;
 			}
 		}
@@ -80,10 +80,10 @@
 	@media (min-width: $screen-md-min) {
 
 		// Section Full Height (note: don't be smart - min-height does not work well with the content position)
-		&.elementor-section-height-full {
+		&.wroter-section-height-full {
 			height: 100vh;
 
-			> .elementor-container {
+			> .wroter-container {
 				height: 100%;
 			}
 		}
@@ -91,7 +91,7 @@
 }
 
 // Row
-.elementor-row {
+.wroter-row {
 	width: 100%;
 	display: flex;
 
@@ -102,18 +102,18 @@
 }
 
 // Widget
-.elementor-column-wrap {
+.wroter-column-wrap {
 	width: 100%;
 	display: flex;
 }
 
-.elementor-widget-wrap {
+.wroter-widget-wrap {
 	position: relative;
 	width: 100%;
 	z-index: 1;
 }
 
-.elementor-widget {
+.wroter-widget {
 	position: relative;
 
 	&:not(:last-child) {
@@ -122,28 +122,28 @@
 }
 
 // Columns
-.elementor-column {
+.wroter-column {
 	position: relative;
 	min-height: 1px;
 	display: flex;
 
 }
 
-@mixin elementor-grid-classes {
+@mixin wroter-grid-classes {
 
 	@each $sizeKey, $size in $column-sizes {
 
-		&.elementor-col-#{$sizeKey}, &[data-col="#{$sizeKey}"] {
+		&.wroter-col-#{$sizeKey}, &[data-col="#{$sizeKey}"] {
 			width: $size;
 		}
 	}
 }
 
-@mixin elementor-responsive($breakpoint-name) {
+@mixin wroter-responsive($breakpoint-name) {
 
 	@each $size-name, $size in $column-sizes {
 
-		&.elementor-#{$breakpoint-name}-#{$size-name} {
+		&.wroter-#{$breakpoint-name}-#{$size-name} {
 			width: $size;
 		}
 	}
@@ -151,80 +151,80 @@
 }
 
 // Columns Gap (Inner section supported)
-.elementor-inner-section {
+.wroter-inner-section {
 
-	.elementor-column-gap-no {
+	.wroter-column-gap-no {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 0;
 		}
 	}
 }
 
 // Responsive Grid
-.elementor-column {
+.wroter-column {
 
 	@media (max-width: $screen-xs-max) {
-		@include elementor-responsive(xs);
+		@include wroter-responsive(xs);
 	}
 
 	@media (max-width: $screen-sm-max) {
-		@include elementor-responsive(sm);
+		@include wroter-responsive(sm);
 	}
 
 	@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-		@include elementor-responsive(md);
+		@include wroter-responsive(md);
 	}
 }
 
 @media (min-width: $screen-md-min) {
-	.elementor-column {
-		@include elementor-grid-classes;
+	.wroter-column {
+		@include wroter-grid-classes;
 	}
 
 	// Columns Gap
-	.elementor-column-gap-default {
+	.wroter-column-gap-default {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 10px;
 		}
 	}
 
-	.elementor-column-gap-narrow {
+	.wroter-column-gap-narrow {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 5px;
 		}
 	}
 
-	.elementor-column-gap-extended {
+	.wroter-column-gap-extended {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 15px;
 		}
 	}
 
-	.elementor-column-gap-wide {
+	.wroter-column-gap-wide {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 20px;
 		}
 	}
 
-	.elementor-column-gap-wider {
+	.wroter-column-gap-wider {
 
-		.elementor-element-populated {
+		.wroter-element-populated {
 			padding: 30px;
 		}
 	}
 }
 
 @media (max-width: $screen-sm-max) {
-	.elementor-column {
+	.wroter-column {
 		width: 100%;
 	}
 
-	.elementor-reverse-mobile > .elementor-container > .elementor-row {
+	.wroter-reverse-mobile > .wroter-container > .wroter-row {
 		flex-direction: column-reverse;
 	}
 }

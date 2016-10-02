@@ -1,10 +1,10 @@
 <?php
-namespace Elementor\TemplateLibrary;
+namespace Wroter\TemplateLibrary;
 
-use Elementor\Api;
-use Elementor\Controls_Manager;
-use Elementor\Plugin;
-use Elementor\Utils;
+use Wroter\Api;
+use Wroter\Controls_Manager;
+use Wroter\Plugin;
+use Wroter\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -15,7 +15,7 @@ class Source_Remote extends Source_Base {
 	}
 
 	public function get_title() {
-		return __( 'Remote', 'elementor' );
+		return __( 'Remote', 'wroter' );
 	}
 
 	public function register_data() {}

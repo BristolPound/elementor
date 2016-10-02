@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Sidebar extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Sidebar', 'elementor' );
+		return __( 'Sidebar', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -23,9 +23,9 @@ class Widget_Sidebar extends Widget_Base {
 		$options = [];
 
 		if ( ! $wp_registered_sidebars ) {
-			$options[''] = __( 'No sidebars were found', 'elementor' );
+			$options[''] = __( 'No sidebars were found', 'wroter' );
 		} else {
-			$options[''] = __( 'Choose Sidebar', 'elementor' );
+			$options[''] = __( 'Choose Sidebar', 'wroter' );
 
 			foreach ( $wp_registered_sidebars as $sidebar_id => $sidebar ) {
 				$options[ $sidebar_id ] = $sidebar['name'];
@@ -38,13 +38,13 @@ class Widget_Sidebar extends Widget_Base {
 		$this->add_control(
 			'section_sidebar',
 			[
-				'label' => __( 'Sidebar', 'elementor' ),
+				'label' => __( 'Sidebar', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
 
 		$this->add_control( 'sidebar', [
-			'label' => __( 'Choose Sidebar', 'elementor' ),
+			'label' => __( 'Choose Sidebar', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'default' => $default_key,
 			'options' => $options,

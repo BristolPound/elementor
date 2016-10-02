@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Google_maps extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Google Maps', 'elementor' );
+		return __( 'Google Maps', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,16 +21,16 @@ class Widget_Google_maps extends Widget_Base {
 		$this->add_control(
 			'section_map',
 			[
-				'label' => __( 'Map', 'elementor' ),
+				'label' => __( 'Map', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
 
-		$default_address = __( 'London Eye, London, United Kingdom', 'elementor' );
+		$default_address = __( 'London Eye, London, United Kingdom', 'wroter' );
 		$this->add_control(
 			'address',
 			[
-				'label' => __( 'Address', 'elementor' ),
+				'label' => __( 'Address', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => $default_address,
 				'default' => $default_address,
@@ -42,7 +42,7 @@ class Widget_Google_maps extends Widget_Base {
 		$this->add_control(
 			'zoom',
 			[
-				'label' => __( 'Zoom Level', 'elementor' ),
+				'label' => __( 'Zoom Level', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 10,
@@ -60,7 +60,7 @@ class Widget_Google_maps extends Widget_Base {
 		$this->add_control(
 			'height',
 			[
-				'label' => __( 'Height', 'elementor' ),
+				'label' => __( 'Height', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 300,
@@ -81,12 +81,12 @@ class Widget_Google_maps extends Widget_Base {
 		$this->add_control(
 			'prevent_scroll',
 			[
-				'label' => __( 'Prevent Scroll', 'elementor' ),
+				'label' => __( 'Prevent Scroll', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'yes',
 				'options' => [
-					'' => __( 'No', 'elementor' ),
-					'yes' => __( 'Yes', 'elementor' ),
+					'' => __( 'No', 'wroter' ),
+					'yes' => __( 'Yes', 'wroter' ),
 				],
 				'section' => 'section_map',
 				'selectors' => [
@@ -98,7 +98,7 @@ class Widget_Google_maps extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_map',
@@ -114,7 +114,7 @@ class Widget_Google_maps extends Widget_Base {
 			$instance['zoom']['size'] = 10;
 
 		printf(
-			'<div class="elementor-custom-embed"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=%s&amp;t=m&amp;z=%d&amp;output=embed&amp;iwloc=near"></iframe></div>',
+			'<div class="wroter-custom-embed"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=%s&amp;t=m&amp;z=%d&amp;output=embed&amp;iwloc=near"></iframe></div>',
 			urlencode( $instance['address'] ),
 			absint( $instance['zoom']['size'] )
 		);

@@ -1,24 +1,24 @@
 //
 // testimonial
 //
-.elementor-testimonial-wrapper {
+.wroter-testimonial-wrapper {
 	overflow: hidden;
 	text-align: center;
 
-	.elementor-testimonial-content {
+	.wroter-testimonial-content {
 		font-size: 1.3em;
 		margin-bottom: 20px;
 	}
 
-	.elementor-testimonial-name {
+	.wroter-testimonial-name {
 		line-height: 1.5;
 	}
 
-	.elementor-testimonial-job {
+	.wroter-testimonial-job {
 		font-size: 0.85em;
 	}
 
-	&.elementor-testimonial-text-align- {
+	&.wroter-testimonial-text-align- {
 		&left {
 			text-align: left;
 		}
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.elementor-testimonial-meta {
+	.wroter-testimonial-meta {
 		width: 100%;
 		line-height: 1;
 
@@ -36,13 +36,13 @@
 			display: inline-block;
 		}
 
-		.elementor-testimonial-details,
-		.elementor-testimonial-image {
+		.wroter-testimonial-details,
+		.wroter-testimonial-image {
 			display: table-cell;
 			vertical-align: middle;
 		}
 
-		.elementor-testimonial-image {
+		.wroter-testimonial-image {
 
 			img {
 				width: 60px;
@@ -51,25 +51,25 @@
 			}
 		}
 
-		&.elementor-testimonial-image-position-aside {
+		&.wroter-testimonial-image-position-aside {
 
-			.elementor-testimonial-image {
+			.wroter-testimonial-image {
 				@include padding-end(15px);
 			}
 
-			.elementor-testimonial-details {
+			.wroter-testimonial-details {
 				text-align: $start;
 			}
 		}
 
-		&.elementor-testimonial-image-position-top {
+		&.wroter-testimonial-image-position-top {
 
-			.elementor-testimonial-details,
-			.elementor-testimonial-image {
+			.wroter-testimonial-details,
+			.wroter-testimonial-image {
 				display: block;
 			}
 
-			.elementor-testimonial-image {
+			.wroter-testimonial-image {
 				margin-bottom: 20px;
 			}
 		}

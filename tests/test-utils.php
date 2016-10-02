@@ -1,6 +1,6 @@
 <?php
 
-class Elementor_Test_Utils extends WP_UnitTestCase {
+class Wroter_Test_Utils extends WP_UnitTestCase {
 
 	public function test_getYoutubeId() {
 		$youtube_id = '9uOETcuFjbE';
@@ -11,9 +11,9 @@ class Elementor_Test_Utils extends WP_UnitTestCase {
 		];
 		
 		foreach ( $youtube_urls as $youtube_url ) {
-			$this->assertEquals( $youtube_id, \Elementor\Utils::get_youtube_id_from_url( $youtube_url ) );
+			$this->assertEquals( $youtube_id, \Wroter\Utils::get_youtube_id_from_url( $youtube_url ) );
 		}
 		
-		$this->assertFalse( \Elementor\Utils::get_youtube_id_from_url( 'https://www.youtube.com/' ) );
+		$this->assertFalse( \Wroter\Utils::get_youtube_id_from_url( 'https://www.youtube.com/' ) );
 	}
 }

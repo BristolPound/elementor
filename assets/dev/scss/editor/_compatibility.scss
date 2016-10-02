@@ -8,13 +8,13 @@ body {
 	}
 }
 
-#elementor {
+#wroter {
 
 	.animated {
 		animation-fill-mode: none !important; // Prevent external animate.css embed which causing elements overlay issue
 	}
 
-	.elementor-editor-element-settings-list {
+	.wroter-editor-element-settings-list {
 		word-break: normal; // Fixes Make theme issue
 	}
 }

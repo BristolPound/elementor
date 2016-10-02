@@ -4,7 +4,7 @@ var PanelElementsCategoryView = require( './category' ),
 PanelElementsCategoriesView = Marionette.CollectionView.extend( {
 	childView: PanelElementsCategoryView,
 
-	id: 'elementor-panel-elements-categories'
+	id: 'wroter-panel-elements-categories'
 } );
 
 module.exports = PanelElementsCategoriesView;

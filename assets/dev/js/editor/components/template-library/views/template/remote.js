@@ -1,11 +1,11 @@
-var TemplateLibraryTemplateView = require( 'elementor-templates/views/template/base' ),
+var TemplateLibraryTemplateView = require( 'wroter-templates/views/template/base' ),
 	TemplateLibraryTemplateRemoteView;
 
 TemplateLibraryTemplateRemoteView = TemplateLibraryTemplateView.extend( {
-	template: '#tmpl-elementor-template-library-template-remote',
+	template: '#tmpl-wroter-template-library-template-remote',
 
 	onPreviewButtonClick: function() {
-		elementor.templates.getLayout().showPreviewView( this.model );
+		wroter.templates.getLayout().showPreviewView( this.model );
 	}
 } );
 

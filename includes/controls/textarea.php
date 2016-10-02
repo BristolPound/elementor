@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -17,14 +17,14 @@ class Control_Textarea extends Control_Base {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
 				<textarea rows="{{ data.rows || 5 }}" data-setting="{{ data.name }}" placeholder="{{ data.placeholder }}"></textarea>
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{{ data.description }}}</div>
+		<div class="wroter-control-description">{{{ data.description }}}</div>
 		<# } #>
 		<?php
 	}

@@ -1,11 +1,11 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Settings {
 
-	const PAGE_ID = 'elementor';
+	const PAGE_ID = 'wroter';
 
 	public static function get_url() {
 		return admin_url( 'admin.php?page=' . self::PAGE_ID );
@@ -16,19 +16,19 @@ class Settings {
 		$validations_class_name = __NAMESPACE__ . '\Settings_Validations';
 
 		// Register the main section
-		$main_section = 'elementor_general_section';
+		$main_section = 'wroter_general_section';
 
 		add_settings_section(
 			$main_section,
-			__( 'General Settings', 'elementor' ),
+			__( 'General Settings', 'wroter' ),
 			'__return_empty_string', // No need intro text for this section right now
 			self::PAGE_ID
 		);
 
-		$field_id = 'elementor_cpt_support';
+		$field_id = 'wroter_cpt_support';
 		add_settings_field(
 			$field_id,
-			__( 'Post Types', 'elementor' ),
+			__( 'Post Types', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$main_section,
@@ -36,16 +36,16 @@ class Settings {
 				'id' => $field_id,
 				'type' => 'checkbox_list_cpt',
 				'std' => [ 'page', 'post' ],
-				'exclude' => [ 'attachment', 'elementor_library' ],
+				'exclude' => [ 'attachment', 'wroter_library' ],
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id, [ $validations_class_name, 'checkbox_list' ] );
 
-		$field_id = 'elementor_exclude_user_roles';
+		$field_id = 'wroter_exclude_user_roles';
 		add_settings_field(
 			$field_id,
-			__( 'Exclude Roles', 'elementor' ),
+			__( 'Exclude Roles', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$main_section,
@@ -59,19 +59,19 @@ class Settings {
 		register_setting( self::PAGE_ID, $field_id, [ $validations_class_name, 'checkbox_list' ] );
 
 		// Style section
-		$style_section = 'elementor_style_section';
+		$style_section = 'wroter_style_section';
 
 		add_settings_section(
 			$style_section,
-			__( 'Style Settings', 'elementor' ),
+			__( 'Style Settings', 'wroter' ),
 			'__return_empty_string', // No need intro text for this section right now
 			self::PAGE_ID
 		);
 
-		$field_id = 'elementor_disable_color_schemes';
+		$field_id = 'wroter_disable_color_schemes';
 		add_settings_field(
 			$field_id,
-			__( 'Disable Color Palettes', 'elementor' ),
+			__( 'Disable Color Palettes', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$style_section,
@@ -79,16 +79,16 @@ class Settings {
 				'id' => $field_id,
 				'type' => 'checkbox',
 				'value' => 'yes',
-				'sub_desc' => __( 'Color Palettes let you change the default colors that appear under the various widgets. If you prefer to inherit the colors from your theme, you can disable this feature.', 'elementor' ),
+				'sub_desc' => __( 'Color Palettes let you change the default colors that appear under the various widgets. If you prefer to inherit the colors from your theme, you can disable this feature.', 'wroter' ),
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id );
 
-		$field_id = 'elementor_disable_typography_schemes';
+		$field_id = 'wroter_disable_typography_schemes';
 		add_settings_field(
 			$field_id,
-			__( 'Disable Default Fonts', 'elementor' ),
+			__( 'Disable Default Fonts', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$style_section,
@@ -96,16 +96,16 @@ class Settings {
 				'id' => $field_id,
 				'type' => 'checkbox',
 				'value' => 'yes',
-				'sub_desc' => __( 'Default Fonts let you change the fonts that appear on Elementor from one place. If you prefer to inherit the fonts from your theme, you can disable this feature here.', 'elementor' ),
+				'sub_desc' => __( 'Default Fonts let you change the fonts that appear on Wroter from one place. If you prefer to inherit the fonts from your theme, you can disable this feature here.', 'wroter' ),
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id );
 
-		$field_id = 'elementor_default_generic_fonts';
+		$field_id = 'wroter_default_generic_fonts';
 		add_settings_field(
 			$field_id,
-			__( 'Default Generic Fonts', 'elementor' ),
+			__( 'Default Generic Fonts', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$style_section,
@@ -114,16 +114,16 @@ class Settings {
 				'type' => 'text',
 				'std' => 'Sans-serif',
 				'classes' => [ 'medium-text' ],
-				'desc' => __( 'The list of fonts used if the chosen font is not available.', 'elementor' ),
+				'desc' => __( 'The list of fonts used if the chosen font is not available.', 'wroter' ),
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id );
 
-		$field_id = 'elementor_container_width';
+		$field_id = 'wroter_container_width';
 		add_settings_field(
 			$field_id,
-			__( 'Content Width', 'elementor' ),
+			__( 'Content Width', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$style_section,
@@ -133,16 +133,16 @@ class Settings {
 				'placeholder' => '1140',
 				'sub_desc' => 'px',
 				'classes' => [ 'medium-text' ],
-				'desc' => __( 'Sets the default width of the content area (Default: 1140)', 'elementor' ),
+				'desc' => __( 'Sets the default width of the content area (Default: 1140)', 'wroter' ),
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id );
 
-		$field_id = 'elementor_stretched_section_container';
+		$field_id = 'wroter_stretched_section_container';
 		add_settings_field(
 			$field_id,
-			__( 'Stretched Section Fit To', 'elementor' ),
+			__( 'Stretched Section Fit To', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$style_section,
@@ -151,40 +151,40 @@ class Settings {
 				'type' => 'text',
 				'placeholder' => 'body',
 				'classes' => [ 'medium-text' ],
-				'desc' => __( 'Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width.', 'elementor' ),
+				'desc' => __( 'Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width.', 'wroter' ),
 			]
 		);
 
 		register_setting( self::PAGE_ID, $field_id );
 
 		// Tools section
-		$tools_section = 'elementor_tools_section';
+		$tools_section = 'wroter_tools_section';
 		add_settings_section(
 			$tools_section,
-			__( 'Tools', 'elementor' ),
+			__( 'Tools', 'wroter' ),
 			'__return_empty_string', // No need intro text for this section right now
 			self::PAGE_ID
 		);
 
-		$field_id = 'elementor_raw_reset_api_data';
+		$field_id = 'wroter_raw_reset_api_data';
 		add_settings_field(
 			$field_id,
-			__( 'Sync Library', 'elementor' ),
+			__( 'Sync Library', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$tools_section,
 			[
 				'id' => $field_id,
 				'type' => 'raw_html',
-				'html' => sprintf( '<button data-nonce="%s" class="button" id="elementor-library-sync-button">%s</button>', wp_create_nonce( 'elementor_reset_library' ), __( 'Sync Library', 'elementor' ) ),
-				'desc' => __( 'Elementor Library automatically updates on a daily basis. You can also manually update it by clicking on the sync button.', 'elementor' ),
+				'html' => sprintf( '<button data-nonce="%s" class="button" id="wroter-library-sync-button">%s</button>', wp_create_nonce( 'wroter_reset_library' ), __( 'Sync Library', 'wroter' ) ),
+				'desc' => __( 'Wroter Library automatically updates on a daily basis. You can also manually update it by clicking on the sync button.', 'wroter' ),
 			]
 		);
 
-		$field_id = 'elementor_allow_tracking';
+		$field_id = 'wroter_allow_tracking';
 		add_settings_field(
 			$field_id,
-			__( 'Usage Data Tracking', 'elementor' ),
+			__( 'Usage Data Tracking', 'wroter' ),
 			[ $controls_class_name, 'render' ],
 			self::PAGE_ID,
 			$tools_section,
@@ -193,7 +193,7 @@ class Settings {
 				'type' => 'checkbox',
 				'value' => 'yes',
 				'default' => '',
-				'sub_desc' => __( 'Opt-in to our anonymous plugin data collection and to updates. We guarantee no sensitive data is collected.', 'elementor' ) . sprintf( ' <a href="%s" target="_blank">%s</a>', 'https://go.elementor.com/usage-data-tracking/', __( 'Learn more.', 'elementor' ) ),
+				'sub_desc' => __( 'Opt-in to our anonymous plugin data collection and to updates. We guarantee no sensitive data is collected.', 'wroter' ) . sprintf( ' <a href="%s" target="_blank">%s</a>', 'https://go.wroter.com/usage-data-tracking/', __( 'Learn more.', 'wroter' ) ),
 			]
 		);
 
@@ -202,8 +202,8 @@ class Settings {
 
 	public function register_admin_menu() {
 		add_menu_page(
-			__( 'Elementor', 'elementor' ),
-			__( 'Elementor', 'elementor' ),
+			__( 'Wroter', 'wroter' ),
+			__( 'Wroter', 'wroter' ),
 			'manage_options',
 			self::PAGE_ID,
 			[ $this, 'display_settings_page' ],
@@ -215,14 +215,14 @@ class Settings {
 	public function admin_menu_change_name() {
 		global $submenu;
 
-		if ( isset( $submenu['elementor'] ) )
-			$submenu['elementor'][0][0] = __( 'Settings', 'elementor' );
+		if ( isset( $submenu['wroter'] ) )
+			$submenu['wroter'][0][0] = __( 'Settings', 'wroter' );
 	}
 
 	public function display_settings_page() {
 		?>
 		<div class="wrap">
-			<h2><?php _e( 'Elementor', 'elementor' ); ?></h2>
+			<h2><?php _e( 'Wroter', 'wroter' ); ?></h2>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( self::PAGE_ID );
@@ -236,8 +236,8 @@ class Settings {
 	}
 
 	public function __construct() {
-		include( ELEMENTOR_PATH . 'includes/settings/controls.php' );
-		include( ELEMENTOR_PATH . 'includes/settings/validations.php' );
+		include( WROTER_PATH . 'includes/settings/controls.php' );
+		include( WROTER_PATH . 'includes/settings/validations.php' );
 
 		add_action( 'admin_init', [ $this, 'register_settings_fields' ], 20 );
 		add_action( 'admin_menu', [ $this, 'register_admin_menu' ], 20 );

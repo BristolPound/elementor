@@ -7,7 +7,7 @@
 		convertWarningsToExceptions="true"
 		>
 	<php>
-		<env name="PLUGIN_FILE" value="elementor.php" />
+		<env name="PLUGIN_FILE" value="wroter.php" />
 	</php>
 	
 	<testsuites>

@@ -1,9 +1,9 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlWysiwygItemView;
 
 ControlWysiwygItemView = ControlBaseItemView.extend( {
 	childEvents: {
-		'keyup textarea.elementor-wp-editor': 'updateElementModel'
+		'keyup textarea.wroter-wp-editor': 'updateElementModel'
 	},
 
 	// List of buttons to move {buttonToMove: afterButton}
@@ -24,7 +24,7 @@ ControlWysiwygItemView = ControlBaseItemView.extend( {
 
 		var self = this;
 
-		this.editorID = 'elementorwpeditor' + this.cid;
+		this.editorID = 'wroterwpeditor' + this.cid;
 
 		var editorConfig = {
 			id: this.editorID,
@@ -38,13 +38,13 @@ ControlWysiwygItemView = ControlBaseItemView.extend( {
 			}
 		};
 
-		tinyMCEPreInit.mceInit[ this.editorID ] = _.extend( _.clone( tinyMCEPreInit.mceInit.elementorwpeditor ), editorConfig );
+		tinyMCEPreInit.mceInit[ this.editorID ] = _.extend( _.clone( tinyMCEPreInit.mceInit.wroterwpeditor ), editorConfig );
 
 		this.rearrangeButtons();
 
 		// This class allows us to reduce "flicker" by hiding the editor
 		// until we are done loading and modifying it.
-		this.$el.addClass( 'elementor-loading-editor' );
+		this.$el.addClass( 'wroter-loading-editor' );
 
 		// Wait a cycle before initializing the editors.
 		_.defer( function() {
@@ -61,7 +61,7 @@ ControlWysiwygItemView = ControlBaseItemView.extend( {
 	},
 
 	attachElContent: function() {
-		var editorTemplate = elementor.config.wp_editor.replace( /elementorwpeditor/g, this.editorID ).replace( '%%EDITORCONTENT%%', this.getControlValue() );
+		var editorTemplate = wroter.config.wp_editor.replace( /wroterwpeditor/g, this.editorID ).replace( '%%EDITORCONTENT%%', this.getControlValue() );
 
 		this.$el.html( editorTemplate );
 

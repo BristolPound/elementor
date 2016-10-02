@@ -1,7 +1,7 @@
 //
 // Switcher Preview by Devices
 //
-#elementor-preview {
+#wroter-preview {
 	background-color: #333;
 	position: absolute;
 	height: 100%;
@@ -9,16 +9,16 @@
 	right: 0;
 	border: 0;
 
-	.elementor-device-desktop & {
+	.wroter-device-desktop & {
 		overflow-y: hidden;
 	}
 
-	body:not(.elementor-device-desktop) & {
+	body:not(.wroter-device-desktop) & {
 		overflow-y: auto;
 	}
 }
 
-#elementor-preview-responsive-wrapper {
+#wroter-preview-responsive-wrapper {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -26,25 +26,25 @@
 	right: 0;
 	transition: all .5s ease 0s;
 
-	.elementor-device-desktop & {
+	.wroter-device-desktop & {
 		min-width: map_get($breakpoints, lg);
 		width: 100%;
 		height: 100%;
 	}
 
-	.elementor-device-tablet & {
+	.wroter-device-tablet & {
 		width: $screen-md-min;
 		height: $screen-lg-min;
 		padding: 40px 10px 70px;
 	}
 
-	.elementor-device-mobile & {
+	.wroter-device-mobile & {
 		width: 360px;
 		height: 640px;
 		padding: 40px 10px 70px;
 	}
 
-	body:not(.elementor-device-desktop) & {
+	body:not(.wroter-device-desktop) & {
 		border-radius: 30px;
 		background-color: #111;
 		margin: 30px auto 80px;
@@ -52,7 +52,7 @@
 	}
 }
 
-#elementor-preview-iframe {
+#wroter-preview-iframe {
 	width: 100%;
 	height: 100%;
 	background-color: #fff;

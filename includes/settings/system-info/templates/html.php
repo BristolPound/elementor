@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 
 foreach ( $reports as $report_name => $report ) : ?>
-	<div class="elementor-system-info-section">
+	<div class="wroter-system-info-section">
 		<table class="widefat">
 			<thead>
 			<tr>

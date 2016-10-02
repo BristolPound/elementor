@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -77,7 +77,7 @@ class Widget_WordPress extends Widget_Base {
 		$this->add_control(
 			'wp',
 			[
-				'label' => __( 'Form', 'elementor' ),
+				'label' => __( 'Form', 'wroter' ),
 				'type' => Controls_Manager::WP_WIDGET,
 				'widget' => $this->get_id(),
 				'id_base' => $this->_get_widget_instance()->id_base,

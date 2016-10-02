@@ -2,13 +2,13 @@
 // Tabs
 //
 
-.elementor-tabs {
+.wroter-tabs {
 	text-align: $start;
 
-	.elementor-tabs-wrapper {
+	.wroter-tabs-wrapper {
 		overflow: hidden;
 
-		.elementor-tab-title {
+		.wroter-tab-title {
 			display: table-cell;
 
 			> span {
@@ -49,7 +49,7 @@
 		}
 	}
 
-	.elementor-tab-content {
+	.wroter-tab-content {
 	    padding: 20px;
 	    display: none;
 		border: 1px solid $gray-light;
@@ -60,11 +60,11 @@
 // Responsive mode
 @media (max-width: $screen-sm-max) {
 
-	.elementor-tabs {
+	.wroter-tabs {
 
-		.elementor-tabs-wrapper {
+		.wroter-tabs-wrapper {
 
-			.elementor-tab-title {
+			.wroter-tab-title {
 
 				> span {
 					padding: 12px 15px;
@@ -72,7 +72,7 @@
 			}
 		}
 
-		.elementor-tab-content {
+		.wroter-tab-content {
 			padding: 10px;
 		}
 	}

@@ -12,25 +12,25 @@
  */
 /* 2D TRANSITIONS */
 /* Grow */
-.elementor-animation-grow {
+.wroter-animation-grow {
   transition-duration: 0.3s;
   transition-property: transform;
 }
-.elementor-animation-grow:hover, .elementor-animation-grow:focus, .elementor-animation-grow:active {
+.wroter-animation-grow:hover, .wroter-animation-grow:focus, .wroter-animation-grow:active {
   transform: scale(1.1);
 }
 
 /* Shrink */
-.elementor-animation-shrink {
+.wroter-animation-shrink {
   transition-duration: 0.3s;
   transition-property: transform;
 }
-.elementor-animation-shrink:hover, .elementor-animation-shrink:focus, .elementor-animation-shrink:active {
+.wroter-animation-shrink:hover, .wroter-animation-shrink:focus, .wroter-animation-shrink:active {
   transform: scale(0.9);
 }
 
 /* Pulse */
-@keyframes elementor-animation-pulse {
+@keyframes wroter-animation-pulse {
   25% {
     transform: scale(1.1);
   }
@@ -38,21 +38,21 @@
     transform: scale(0.9);
   }
 }
-.elementor-animation-pulse:hover, .elementor-animation-pulse:focus, .elementor-animation-pulse:active {
-  animation-name: elementor-animation-pulse;
+.wroter-animation-pulse:hover, .wroter-animation-pulse:focus, .wroter-animation-pulse:active {
+  animation-name: wroter-animation-pulse;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 /* Pulse Grow */
-@keyframes elementor-animation-pulse-grow {
+@keyframes wroter-animation-pulse-grow {
   to {
     transform: scale(1.1);
   }
 }
-.elementor-animation-pulse-grow:hover, .elementor-animation-pulse-grow:focus, .elementor-animation-pulse-grow:active {
-  animation-name: elementor-animation-pulse-grow;
+.wroter-animation-pulse-grow:hover, .wroter-animation-pulse-grow:focus, .wroter-animation-pulse-grow:active {
+  animation-name: wroter-animation-pulse-grow;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -60,13 +60,13 @@
 }
 
 /* Pulse Shrink */
-@keyframes elementor-animation-pulse-shrink {
+@keyframes wroter-animation-pulse-shrink {
   to {
     transform: scale(0.9);
   }
 }
-.elementor-animation-pulse-shrink:hover, .elementor-animation-pulse-shrink:focus, .elementor-animation-pulse-shrink:active {
-  animation-name: elementor-animation-pulse-shrink;
+.wroter-animation-pulse-shrink:hover, .wroter-animation-pulse-shrink:focus, .wroter-animation-pulse-shrink:active {
+  animation-name: wroter-animation-pulse-shrink;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -74,7 +74,7 @@
 }
 
 /* Push */
-@keyframes elementor-animation-push {
+@keyframes wroter-animation-push {
   50% {
     transform: scale(0.8);
   }
@@ -82,84 +82,84 @@
     transform: scale(1);
   }
 }
-.elementor-animation-push:hover, .elementor-animation-push:focus, .elementor-animation-push:active {
-  animation-name: elementor-animation-push;
+.wroter-animation-push:hover, .wroter-animation-push:focus, .wroter-animation-push:active {
+  animation-name: wroter-animation-push;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
 
 /* Pop */
-@keyframes elementor-animation-pop {
+@keyframes wroter-animation-pop {
   50% {
     transform: scale(1.2);
   }
 }
-.elementor-animation-pop:hover, .elementor-animation-pop:focus, .elementor-animation-pop:active {
-  animation-name: elementor-animation-pop;
+.wroter-animation-pop:hover, .wroter-animation-pop:focus, .wroter-animation-pop:active {
+  animation-name: wroter-animation-pop;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
 
 /* Bounce In */
-.elementor-animation-bounce-in {
+.wroter-animation-bounce-in {
   transition-duration: 0.5s;
 }
-.elementor-animation-bounce-in:hover, .elementor-animation-bounce-in:focus, .elementor-animation-bounce-in:active {
+.wroter-animation-bounce-in:hover, .wroter-animation-bounce-in:focus, .wroter-animation-bounce-in:active {
   transform: scale(1.2);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 /* Bounce Out */
-.elementor-animation-bounce-out {
+.wroter-animation-bounce-out {
   transition-duration: 0.5s;
 }
-.elementor-animation-bounce-out:hover, .elementor-animation-bounce-out:focus, .elementor-animation-bounce-out:active {
+.wroter-animation-bounce-out:hover, .wroter-animation-bounce-out:focus, .wroter-animation-bounce-out:active {
   transform: scale(0.8);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 /* Rotate */
-.elementor-animation-rotate {
+.wroter-animation-rotate {
   transition-duration: 0.3s;
   transition-property: transform;
 }
-.elementor-animation-rotate:hover, .elementor-animation-rotate:focus, .elementor-animation-rotate:active {
+.wroter-animation-rotate:hover, .wroter-animation-rotate:focus, .wroter-animation-rotate:active {
   transform: rotate(4deg);
 }
 
 /* Grow Rotate */
-.elementor-animation-grow-rotate {
+.wroter-animation-grow-rotate {
   transition-duration: 0.3s;
   transition-property: transform;
 }
-.elementor-animation-grow-rotate:hover, .elementor-animation-grow-rotate:focus, .elementor-animation-grow-rotate:active {
+.wroter-animation-grow-rotate:hover, .wroter-animation-grow-rotate:focus, .wroter-animation-grow-rotate:active {
   transform: scale(1.1) rotate(4deg);
 }
 
 /* Float */
-.elementor-animation-float {
+.wroter-animation-float {
   transition-duration: 0.3s;
   transition-property: transform;
   transition-timing-function: ease-out;
 }
-.elementor-animation-float:hover, .elementor-animation-float:focus, .elementor-animation-float:active {
+.wroter-animation-float:hover, .wroter-animation-float:focus, .wroter-animation-float:active {
   transform: translateY(-8px);
 }
 
 /* Sink */
-.elementor-animation-sink {
+.wroter-animation-sink {
   transition-duration: 0.3s;
   transition-property: transform;
   transition-timing-function: ease-out;
 }
-.elementor-animation-sink:hover, .elementor-animation-sink:focus, .elementor-animation-sink:active {
+.wroter-animation-sink:hover, .wroter-animation-sink:focus, .wroter-animation-sink:active {
   transform: translateY(8px);
 }
 
 /* Bob */
-@keyframes elementor-animation-bob {
+@keyframes wroter-animation-bob {
   0% {
     transform: translateY(-8px);
   }
@@ -170,13 +170,13 @@
     transform: translateY(-8px);
   }
 }
-@keyframes elementor-animation-bob-float {
+@keyframes wroter-animation-bob-float {
   100% {
     transform: translateY(-8px);
   }
 }
-.elementor-animation-bob:hover, .elementor-animation-bob:focus, .elementor-animation-bob:active {
-  animation-name: elementor-animation-bob-float, elementor-animation-bob;
+.wroter-animation-bob:hover, .wroter-animation-bob:focus, .wroter-animation-bob:active {
+  animation-name: wroter-animation-bob-float, wroter-animation-bob;
   animation-duration: .3s, 1.5s;
   animation-delay: 0s, .3s;
   animation-timing-function: ease-out, ease-in-out;
@@ -186,7 +186,7 @@
 }
 
 /* Hang */
-@keyframes elementor-animation-hang {
+@keyframes wroter-animation-hang {
   0% {
     transform: translateY(8px);
   }
@@ -197,13 +197,13 @@
     transform: translateY(8px);
   }
 }
-@keyframes elementor-animation-hang-sink {
+@keyframes wroter-animation-hang-sink {
   100% {
     transform: translateY(8px);
   }
 }
-.elementor-animation-hang:hover, .elementor-animation-hang:focus, .elementor-animation-hang:active {
-  animation-name: elementor-animation-hang-sink, elementor-animation-hang;
+.wroter-animation-hang:hover, .wroter-animation-hang:focus, .wroter-animation-hang:active {
+  animation-name: wroter-animation-hang-sink, wroter-animation-hang;
   animation-duration: .3s, 1.5s;
   animation-delay: 0s, .3s;
   animation-timing-function: ease-out, ease-in-out;
@@ -213,36 +213,36 @@
 }
 
 /* Skew */
-.elementor-animation-skew {
+.wroter-animation-skew {
   transition-duration: 0.3s;
   transition-property: transform;
 }
-.elementor-animation-skew:hover, .elementor-animation-skew:focus, .elementor-animation-skew:active {
+.wroter-animation-skew:hover, .wroter-animation-skew:focus, .wroter-animation-skew:active {
   transform: skew(-10deg);
 }
 
 /* Skew Forward */
-.elementor-animation-skew-forward {
+.wroter-animation-skew-forward {
   transition-duration: 0.3s;
   transition-property: transform;
   transform-origin: 0 100%;
 }
-.elementor-animation-skew-forward:hover, .elementor-animation-skew-forward:focus, .elementor-animation-skew-forward:active {
+.wroter-animation-skew-forward:hover, .wroter-animation-skew-forward:focus, .wroter-animation-skew-forward:active {
   transform: skew(-10deg);
 }
 
 /* Skew Backward */
-.elementor-animation-skew-backward {
+.wroter-animation-skew-backward {
   transition-duration: 0.3s;
   transition-property: transform;
   transform-origin: 0 100%;
 }
-.elementor-animation-skew-backward:hover, .elementor-animation-skew-backward:focus, .elementor-animation-skew-backward:active {
+.wroter-animation-skew-backward:hover, .wroter-animation-skew-backward:focus, .wroter-animation-skew-backward:active {
   transform: skew(10deg);
 }
 
 /* Wobble Vertical */
-@keyframes elementor-animation-wobble-vertical {
+@keyframes wroter-animation-wobble-vertical {
   16.65% {
     transform: translateY(8px);
   }
@@ -262,15 +262,15 @@
     transform: translateY(0);
   }
 }
-.elementor-animation-wobble-vertical:hover, .elementor-animation-wobble-vertical:focus, .elementor-animation-wobble-vertical:active {
-  animation-name: elementor-animation-wobble-vertical;
+.wroter-animation-wobble-vertical:hover, .wroter-animation-wobble-vertical:focus, .wroter-animation-wobble-vertical:active {
+  animation-name: wroter-animation-wobble-vertical;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble Horizontal */
-@keyframes elementor-animation-wobble-horizontal {
+@keyframes wroter-animation-wobble-horizontal {
   16.65% {
     transform: translateX(8px);
   }
@@ -290,15 +290,15 @@
     transform: translateX(0);
   }
 }
-.elementor-animation-wobble-horizontal:hover, .elementor-animation-wobble-horizontal:focus, .elementor-animation-wobble-horizontal:active {
-  animation-name: elementor-animation-wobble-horizontal;
+.wroter-animation-wobble-horizontal:hover, .wroter-animation-wobble-horizontal:focus, .wroter-animation-wobble-horizontal:active {
+  animation-name: wroter-animation-wobble-horizontal;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble To Bottom Right */
-@keyframes elementor-animation-wobble-to-bottom-right {
+@keyframes wroter-animation-wobble-to-bottom-right {
   16.65% {
     transform: translate(8px, 8px);
   }
@@ -318,15 +318,15 @@
     transform: translate(0, 0);
   }
 }
-.elementor-animation-wobble-to-bottom-right:hover, .elementor-animation-wobble-to-bottom-right:focus, .elementor-animation-wobble-to-bottom-right:active {
-  animation-name: elementor-animation-wobble-to-bottom-right;
+.wroter-animation-wobble-to-bottom-right:hover, .wroter-animation-wobble-to-bottom-right:focus, .wroter-animation-wobble-to-bottom-right:active {
+  animation-name: wroter-animation-wobble-to-bottom-right;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble To Top Right */
-@keyframes elementor-animation-wobble-to-top-right {
+@keyframes wroter-animation-wobble-to-top-right {
   16.65% {
     transform: translate(8px, -8px);
   }
@@ -346,15 +346,15 @@
     transform: translate(0, 0);
   }
 }
-.elementor-animation-wobble-to-top-right:hover, .elementor-animation-wobble-to-top-right:focus, .elementor-animation-wobble-to-top-right:active {
-  animation-name: elementor-animation-wobble-to-top-right;
+.wroter-animation-wobble-to-top-right:hover, .wroter-animation-wobble-to-top-right:focus, .wroter-animation-wobble-to-top-right:active {
+  animation-name: wroter-animation-wobble-to-top-right;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble Top */
-@keyframes elementor-animation-wobble-top {
+@keyframes wroter-animation-wobble-top {
   16.65% {
     transform: skew(-12deg);
   }
@@ -374,18 +374,18 @@
     transform: skew(0);
   }
 }
-.elementor-animation-wobble-top {
+.wroter-animation-wobble-top {
   transform-origin: 0 100%;
 }
-.elementor-animation-wobble-top:hover, .elementor-animation-wobble-top:focus, .elementor-animation-wobble-top:active {
-  animation-name: elementor-animation-wobble-top;
+.wroter-animation-wobble-top:hover, .wroter-animation-wobble-top:focus, .wroter-animation-wobble-top:active {
+  animation-name: wroter-animation-wobble-top;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble Bottom */
-@keyframes elementor-animation-wobble-bottom {
+@keyframes wroter-animation-wobble-bottom {
   16.65% {
     transform: skew(-12deg);
   }
@@ -405,18 +405,18 @@
     transform: skew(0);
   }
 }
-.elementor-animation-wobble-bottom {
+.wroter-animation-wobble-bottom {
   transform-origin: 100% 0;
 }
-.elementor-animation-wobble-bottom:hover, .elementor-animation-wobble-bottom:focus, .elementor-animation-wobble-bottom:active {
-  animation-name: elementor-animation-wobble-bottom;
+.wroter-animation-wobble-bottom:hover, .wroter-animation-wobble-bottom:focus, .wroter-animation-wobble-bottom:active {
+  animation-name: wroter-animation-wobble-bottom;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Wobble Skew */
-@keyframes elementor-animation-wobble-skew {
+@keyframes wroter-animation-wobble-skew {
   16.65% {
     transform: skew(-12deg);
   }
@@ -436,15 +436,15 @@
     transform: skew(0);
   }
 }
-.elementor-animation-wobble-skew:hover, .elementor-animation-wobble-skew:focus, .elementor-animation-wobble-skew:active {
-  animation-name: elementor-animation-wobble-skew;
+.wroter-animation-wobble-skew:hover, .wroter-animation-wobble-skew:focus, .wroter-animation-wobble-skew:active {
+  animation-name: wroter-animation-wobble-skew;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 /* Buzz */
-@keyframes elementor-animation-buzz {
+@keyframes wroter-animation-buzz {
   50% {
     transform: translateX(3px) rotate(2deg);
   }
@@ -452,15 +452,15 @@
     transform: translateX(-3px) rotate(-2deg);
   }
 }
-.elementor-animation-buzz:hover, .elementor-animation-buzz:focus, .elementor-animation-buzz:active {
-  animation-name: elementor-animation-buzz;
+.wroter-animation-buzz:hover, .wroter-animation-buzz:focus, .wroter-animation-buzz:active {
+  animation-name: wroter-animation-buzz;
   animation-duration: 0.15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 /* Buzz Out */
-@keyframes elementor-animation-buzz-out {
+@keyframes wroter-animation-buzz-out {
   10% {
     transform: translateX(3px) rotate(2deg);
   }
@@ -492,8 +492,8 @@
     transform: translateX(-1px) rotate(0);
   }
 }
-.elementor-animation-buzz-out:hover, .elementor-animation-buzz-out:focus, .elementor-animation-buzz-out:active {
-  animation-name: elementor-animation-buzz-out;
+.wroter-animation-buzz-out:hover, .wroter-animation-buzz-out:focus, .wroter-animation-buzz-out:active {
+  animation-name: wroter-animation-buzz-out;
   animation-duration: 0.75s;
   animation-timing-function: linear;
   animation-iteration-count: 1;

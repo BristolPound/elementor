@@ -1,17 +1,17 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 abstract class Scheme_Base implements Scheme_Interface {
 
 	public function get_scheme_value() {
-		$scheme_values = get_option( 'elementor_scheme_' . static::get_type() );
+		$scheme_values = get_option( 'wroter_scheme_' . static::get_type() );
 
 		if ( ! $scheme_values ) {
 			$scheme_values = $this->get_default_scheme();
 
-			update_option( 'elementor_scheme_' . static::get_type(), $scheme_values );
+			update_option( 'wroter_scheme_' . static::get_type(), $scheme_values );
 		}
 
 		return $scheme_values;
@@ -30,7 +30,7 @@ abstract class Scheme_Base implements Scheme_Interface {
 			$scheme_values[ $scheme_key ] = $scheme_value;
 		}
 
-		update_option( 'elementor_scheme_' . static::get_type(), $scheme_values );
+		update_option( 'wroter_scheme_' . static::get_type(), $scheme_values );
 	}
 
 	public function get_scheme() {

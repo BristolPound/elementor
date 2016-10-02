@@ -15,12 +15,12 @@ SortableBehavior = Marionette.Behavior.extend( {
 	},
 
 	initialize: function() {
-		this.listenTo( elementor.channels.dataEditMode, 'switch', this.onEditModeSwitched );
-		this.listenTo( elementor.channels.deviceMode, 'change', this.onDeviceModeChange );
+		this.listenTo( wroter.channels.dataEditMode, 'switch', this.onEditModeSwitched );
+		this.listenTo( wroter.channels.deviceMode, 'change', this.onDeviceModeChange );
 	},
 
 	onEditModeSwitched: function() {
-		var activeMode = elementor.channels.dataEditMode.request( 'activeMode' );
+		var activeMode = wroter.channels.dataEditMode.request( 'activeMode' );
 
 		if ( 'preview' !== activeMode ) {
 			this.active();
@@ -30,7 +30,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 	},
 
 	onDeviceModeChange: function() {
-		var deviceMode = elementor.channels.deviceMode.request( 'currentMode' );
+		var deviceMode = wroter.channels.deviceMode.request( 'currentMode' );
 
 		if ( 'desktop' === deviceMode ) {
 			this.active();
@@ -56,7 +56,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 			defaultSortableOptions = {
 				connectWith: $childViewContainer.selector,
 				cursor: 'move',
-				placeholder: 'elementor-sortable-placeholder',
+				placeholder: 'wroter-sortable-placeholder',
 				cursorAt: {
 					top: 20,
 					left: 25
@@ -73,7 +73,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 			cid: $item.data( 'model-cid' )
 		} );
 
-		return '<div style="height: 84px; width: 125px;" class="elementor-sortable-helper elementor-sortable-helper-' + model.get( 'elType' ) + '"><div class="icon"><i class="eicon-' + model.getIcon() + '"></i></div><div class="elementor-element-title-wrapper"><div class="title">' + model.getTitle() + '</div></div></div>';
+		return '<div style="height: 84px; width: 125px;" class="wroter-sortable-helper wroter-sortable-helper-' + model.get( 'elType' ) + '"><div class="icon"><i class="eicon-' + model.getIcon() + '"></i></div><div class="wroter-element-title-wrapper"><div class="title">' + model.getTitle() + '</div></div></div>';
 	},
 
 	deactivate: function() {
@@ -91,7 +91,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 
 		if ( 'column' === this.options.elChildType ) {
 			// the following code is just for touch
-			ui.placeholder.addClass( 'elementor-column' );
+			ui.placeholder.addClass( 'wroter-column' );
 
 			var uiData = ui.item.data( 'sortableItem' ),
 				uiItems = uiData.items,
@@ -106,37 +106,37 @@ SortableBehavior = Marionette.Behavior.extend( {
 
 			ui.placeholder.height( itemHeight );
 
-			// ui.placeholder.addClass( 'elementor-column elementor-col-' + model.getSetting( 'size' ) );
+			// ui.placeholder.addClass( 'wroter-column wroter-col-' + model.getSetting( 'size' ) );
 		}
 
-		elementor.channels.data.trigger( model.get( 'elType' ) + ':drag:start' );
+		wroter.channels.data.trigger( model.get( 'elType' ) + ':drag:start' );
 
-		elementor.channels.data.reply( 'cache:' + model.cid, model );
+		wroter.channels.data.reply( 'cache:' + model.cid, model );
 	},
 
 	onSortOver: function( event, ui ) {
 		event.stopPropagation();
 
-		var model = elementor.channels.data.request( 'cache:' + ui.item.data( 'model-cid' ) );
+		var model = wroter.channels.data.request( 'cache:' + ui.item.data( 'model-cid' ) );
 
 		Backbone.$( event.target )
-			.addClass( 'elementor-draggable-over' )
+			.addClass( 'wroter-draggable-over' )
 			.attr( {
 				'data-dragged-element': model.get( 'elType' ),
 				'data-dragged-is-inner': model.get( 'isInner' )
 			} );
 
-		this.$el.addClass( 'elementor-dragging-on-child' );
+		this.$el.addClass( 'wroter-dragging-on-child' );
 	},
 
 	onSortOut: function( event ) {
 		event.stopPropagation();
 
 		Backbone.$( event.target )
-			.removeClass( 'elementor-draggable-over' )
+			.removeClass( 'wroter-draggable-over' )
 			.removeAttr( 'data-dragged-element data-dragged-is-inner' );
 
-		this.$el.removeClass( 'elementor-dragging-on-child' );
+		this.$el.removeClass( 'wroter-dragging-on-child' );
 	},
 
 	onSortReceive: function( event, ui ) {
@@ -147,7 +147,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 			return;
 		}
 
-		var model = elementor.channels.data.request( 'cache:' + ui.item.data( 'model-cid' ) ),
+		var model = wroter.channels.data.request( 'cache:' + ui.item.data( 'model-cid' ) ),
 			draggedElType = model.get( 'elType' ),
 			draggedIsInnerSection = 'section' === draggedElType && model.get( 'isInner' ),
 			targetIsInnerColumn = 'column' === this.view.getElementType() && this.view.isInner();
@@ -162,7 +162,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 
 		this.view.addChildModel( newModel, { at: newIndex } );
 
-		elementor.channels.data.trigger( draggedElType + ':drag:end' );
+		wroter.channels.data.trigger( draggedElType + ':drag:end' );
 
 		model.destroy();
 	},
@@ -172,7 +172,7 @@ SortableBehavior = Marionette.Behavior.extend( {
 
 		var model = this.view.collection.get( ui.item.attr( 'data-model-cid' ) );
 		if ( model ) {
-			elementor.channels.data.trigger( model.get( 'elType' ) + ':drag:end' );
+			wroter.channels.data.trigger( model.get( 'elType' ) + ':drag:end' );
 		}
 	},
 
@@ -192,10 +192,10 @@ SortableBehavior = Marionette.Behavior.extend( {
 					collection.remove( model, { silent: true } );
 					collection.add( model, { silent: true, at: newIndex } );
 
-					elementor.setFlagEditorChange( true );
+					wroter.setFlagEditorChange( true );
 				}
 
-				elementor.channels.data.trigger( model.get( 'elType' ) + ':drag:end' );
+				wroter.channels.data.trigger( model.get( 'elType' ) + ':drag:end' );
 			}
 		}
 	},

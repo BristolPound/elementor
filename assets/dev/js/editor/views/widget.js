@@ -1,4 +1,4 @@
-var BaseElementView = require( 'elementor-views/base-element' ),
+var BaseElementView = require( 'wroter-views/base-element' ),
 	WidgetView;
 
 WidgetView = BaseElementView.extend( {
@@ -6,14 +6,14 @@ WidgetView = BaseElementView.extend( {
 
 	getTemplate: function() {
 		if ( 'remote' !== this.getTemplateType() ) {
-			return Marionette.TemplateCache.get( '#tmpl-elementor-widget-' + this.model.get( 'widgetType' ) + '-content' );
+			return Marionette.TemplateCache.get( '#tmpl-wroter-widget-' + this.model.get( 'widgetType' ) + '-content' );
 		} else {
 			return _.template( '' );
 		}
 	},
 
 	className: function() {
-		return 'elementor-widget elementor-widget-' + this.model.get( 'widgetType' );
+		return 'wroter-widget wroter-widget-' + this.model.get( 'widgetType' );
 	},
 
 	modelEvents: {
@@ -26,20 +26,20 @@ WidgetView = BaseElementView.extend( {
 			event: 'click:edit',
 			stopPropagation: false
 		},
-		'click > .elementor-editor-element-settings .elementor-editor-add-element': 'click:add',
-		'click > .elementor-editor-element-settings .elementor-editor-element-duplicate': 'click:duplicate'
+		'click > .wroter-editor-element-settings .wroter-editor-add-element': 'click:add',
+		'click > .wroter-editor-element-settings .wroter-editor-element-duplicate': 'click:duplicate'
 	},
 
 	elementEvents: {
-		'click > .elementor-editor-element-settings .elementor-editor-element-remove': 'onClickRemove'
+		'click > .wroter-editor-element-settings .wroter-editor-element-remove': 'onClickRemove'
 	},
 
 	behaviors: {
 		HandleEditor: {
-			behaviorClass: require( 'elementor-behaviors/handle-editor' )
+			behaviorClass: require( 'wroter-behaviors/handle-editor' )
 		},
 		HandleEditMode: {
-			behaviorClass: require( 'elementor-behaviors/handle-edit-mode' )
+			behaviorClass: require( 'wroter-behaviors/handle-edit-mode' )
 		}
 	},
 
@@ -53,7 +53,7 @@ WidgetView = BaseElementView.extend( {
 
 	getTemplateType: function() {
 		if ( null === this.getOption( '_templateType' ) ) {
-			var $template = Backbone.$( '#tmpl-elementor-widget-' + this.model.get( 'widgetType' ) + '-content' );
+			var $template = Backbone.$( '#tmpl-wroter-widget-' + this.model.get( 'widgetType' ) + '-content' );
 
 			if ( 0 === $template.length ) {
 				this._templateType = 'remote';
@@ -66,12 +66,12 @@ WidgetView = BaseElementView.extend( {
 	},
 
 	onModelBeforeRemoteRender: function() {
-		this.$el.addClass( 'elementor-loading' );
+		this.$el.addClass( 'wroter-loading' );
 	},
 
 	onBeforeDestroy: function() {
 		// Remove old style from the DOM.
-		elementor.$previewContents.find( '#elementor-style-' + this.model.cid ).remove();
+		wroter.$previewContents.find( '#wroter-style-' + this.model.cid ).remove();
 	},
 
 	onModelRemoteRender: function() {
@@ -79,7 +79,7 @@ WidgetView = BaseElementView.extend( {
 			return;
 		}
 
-		this.$el.removeClass( 'elementor-loading' );
+		this.$el.removeClass( 'wroter-loading' );
 		this.render();
 	},
 
@@ -92,7 +92,7 @@ WidgetView = BaseElementView.extend( {
 
 		//this.$el.html( html );
 		_.defer( _.bind( function() {
-			elementorFrontend.getScopeWindow().jQuery( '#' + this.getElementUniqueClass() ).html( html );
+			wroterFrontend.getScopeWindow().jQuery( '#' + this.getElementUniqueClass() ).html( html );
 		}, this ) );
 
 		return this;
@@ -100,18 +100,18 @@ WidgetView = BaseElementView.extend( {
 
 	onRender: function() {
 		this.$el
-			.removeClass( 'elementor-widget-empty' )
-			.children( '.elementor-widget-empty-icon' )
+			.removeClass( 'wroter-widget-empty' )
+			.children( '.wroter-widget-empty-icon' )
 			.remove();
 
 		this.$el.imagesLoaded().always( _.defer( _.bind( function() {
 			// Is element empty?
 			if ( 1 > this.$el.height() ) {
-				this.$el.addClass( 'elementor-widget-empty' );
+				this.$el.addClass( 'wroter-widget-empty' );
 
 				// TODO: REMOVE THIS !!
 				// TEMP CODING !!
-				this.$el.append( '<i class="elementor-widget-empty-icon eicon-' + this.model.getIcon() + '"></i>' );
+				this.$el.append( '<i class="wroter-widget-empty-icon eicon-' + this.model.getIcon() + '"></i>' );
 			}
 		}, this ) ) );
 	}

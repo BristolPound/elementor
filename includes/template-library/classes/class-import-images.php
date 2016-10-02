@@ -1,5 +1,5 @@
 <?php
-namespace Elementor\TemplateLibrary\Classes;
+namespace Wroter\TemplateLibrary\Classes;
 
 class Import_Images {
 
@@ -18,7 +18,7 @@ class Import_Images {
 		$post_id = $wpdb->get_var(
 			$wpdb->prepare(
 				'SELECT `post_id` FROM %1$s
-					WHERE `meta_key` = \'_elementor_source_image_hash\'
+					WHERE `meta_key` = \'_wroter_source_image_hash\'
 						AND `meta_value` = \'%2$s\'
 				;',
 				$wpdb->postmeta,
@@ -78,7 +78,7 @@ class Import_Images {
 			$post_id,
 			wp_generate_attachment_metadata( $post_id, $upload['file'] )
 		);
-		update_post_meta( $post_id, '_elementor_source_image_hash', $this->_get_hash_image( $attachment['url'] ) );
+		update_post_meta( $post_id, '_wroter_source_image_hash', $this->_get_hash_image( $attachment['url'] ) );
 
 		$new_attachment = [
 			'id' => $post_id,

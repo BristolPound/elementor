@@ -1,8 +1,8 @@
 <?php
-namespace Elementor\System_Info\Classes;
+namespace Wroter\System_Info\Classes;
 
-use Elementor\Api;
-use Elementor\System_Info\Classes\Abstracts\Base_Reporter;
+use Wroter\Api;
+use Wroter\System_Info\Classes\Abstracts\Base_Reporter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -21,7 +21,7 @@ class Server_Reporter extends Base_Reporter {
 			'php_max_input_vars' => 'PHP Max Input Vars',
 			'php_max_post_size' => 'PHP Max Post Size',
 			'gd_installed' => 'GD Installed',
-			'elementor_library' => 'Elementor Library',
+			'wroter_library' => 'Wroter Library',
 		];
 	}
 
@@ -43,7 +43,7 @@ class Server_Reporter extends Base_Reporter {
 		];
 
 		if ( version_compare( $result['value'], '5.4', '<' ) ) {
-			$result['recommendation'] = _x( 'We recommend to use php 5.4 or higher', 'System Info', 'elementor' );
+			$result['recommendation'] = _x( 'We recommend to use php 5.4 or higher', 'System Info', 'wroter' );
 		}
 
 		return $result;
@@ -75,12 +75,12 @@ class Server_Reporter extends Base_Reporter {
 		];
 	}
 
-	public function get_elementor_library() {
+	public function get_wroter_library() {
 		$response = wp_remote_post( Api::$api_info_url, [
 			'timeout' => 25,
 			'body' => [
 				// Which API version is used
-				'api_version' => ELEMENTOR_VERSION,
+				'api_version' => WROTER_VERSION,
 				// Which language to return
 				'site_lang' => get_bloginfo( 'language' ),
 			],

@@ -39,30 +39,30 @@ ElementsHandler = function( $ ) {
 module.exports = ElementsHandler;
 
 },{}],2:[function(require,module,exports){
-/* global elementorFrontendConfig */
+/* global wroterFrontendConfig */
 ( function( $ ) {
-	var ElementsHandler = require( 'elementor-frontend/elements-handler' ),
-	    Utils = require( 'elementor-frontend/utils' );
+	var ElementsHandler = require( 'wroter-frontend/elements-handler' ),
+	    Utils = require( 'wroter-frontend/utils' );
 
-	var ElementorFrontend = function() {
+	var WroterFrontend = function() {
 		var self = this,
 			scopeWindow = window;
 
 		var elementsDefaultHandlers = {
-			accordion: require( 'elementor-frontend/handlers/accordion' ),
-			alert: require( 'elementor-frontend/handlers/alert' ),
-			counter: require( 'elementor-frontend/handlers/counter' ),
-			'image-carousel': require( 'elementor-frontend/handlers/image-carousel' ),
-			'menu-anchor': require( 'elementor-frontend/handlers/menu-anchor' ),
-			progress: require( 'elementor-frontend/handlers/progress' ),
-			section: require( 'elementor-frontend/handlers/section' ),
-			tabs: require( 'elementor-frontend/handlers/tabs' ),
-			toggle: require( 'elementor-frontend/handlers/toggle' ),
-			video: require( 'elementor-frontend/handlers/video' )
+			accordion: require( 'wroter-frontend/handlers/accordion' ),
+			alert: require( 'wroter-frontend/handlers/alert' ),
+			counter: require( 'wroter-frontend/handlers/counter' ),
+			'image-carousel': require( 'wroter-frontend/handlers/image-carousel' ),
+			'menu-anchor': require( 'wroter-frontend/handlers/menu-anchor' ),
+			progress: require( 'wroter-frontend/handlers/progress' ),
+			section: require( 'wroter-frontend/handlers/section' ),
+			tabs: require( 'wroter-frontend/handlers/tabs' ),
+			toggle: require( 'wroter-frontend/handlers/toggle' ),
+			video: require( 'wroter-frontend/handlers/video' )
 		};
 
 		var addGlobalHandlers = function() {
-			self.elementsHandler.addGlobalHandler( require( 'elementor-frontend/handlers/global' ) );
+			self.elementsHandler.addGlobalHandler( require( 'wroter-frontend/handlers/global' ) );
 		};
 
 		var addElementsHandlers = function() {
@@ -72,12 +72,12 @@ module.exports = ElementsHandler;
 		};
 
 		var runElementsHandlers = function() {
-			$( '.elementor-element' ).each( function() {
+			$( '.wroter-element' ).each( function() {
 				self.elementsHandler.runReadyTrigger( $( this ) );
 			} );
 		};
 
-		this.config = elementorFrontendConfig;
+		this.config = wroterFrontendConfig;
 
 		this.getScopeWindow = function() {
 			return scopeWindow;
@@ -151,16 +151,16 @@ module.exports = ElementsHandler;
 		};
 	};
 
-	window.elementorFrontend = new ElementorFrontend();
+	window.wroterFrontend = new WroterFrontend();
 } )( jQuery );
 
 jQuery( function() {
-	if ( ! elementorFrontend.isEditMode() ) {
-		elementorFrontend.init();
+	if ( ! wroterFrontend.isEditMode() ) {
+		wroterFrontend.init();
 	}
 } );
 
-},{"elementor-frontend/elements-handler":1,"elementor-frontend/handlers/accordion":3,"elementor-frontend/handlers/alert":4,"elementor-frontend/handlers/counter":5,"elementor-frontend/handlers/global":6,"elementor-frontend/handlers/image-carousel":7,"elementor-frontend/handlers/menu-anchor":8,"elementor-frontend/handlers/progress":9,"elementor-frontend/handlers/section":10,"elementor-frontend/handlers/tabs":11,"elementor-frontend/handlers/toggle":12,"elementor-frontend/handlers/video":13,"elementor-frontend/utils":14}],3:[function(require,module,exports){
+},{"wroter-frontend/elements-handler":1,"wroter-frontend/handlers/accordion":3,"wroter-frontend/handlers/alert":4,"wroter-frontend/handlers/counter":5,"wroter-frontend/handlers/global":6,"wroter-frontend/handlers/image-carousel":7,"wroter-frontend/handlers/menu-anchor":8,"wroter-frontend/handlers/progress":9,"wroter-frontend/handlers/section":10,"wroter-frontend/handlers/tabs":11,"wroter-frontend/handlers/toggle":12,"wroter-frontend/handlers/video":13,"wroter-frontend/utils":14}],3:[function(require,module,exports){
 var activateSection = function( sectionIndex, $accordionTitles ) {
 	var $activeTitle = $accordionTitles.filter( '.active' ),
 		$requestedTitle = $accordionTitles.filter( '[data-section="' + sectionIndex + '"]' ),
@@ -181,8 +181,8 @@ var activateSection = function( sectionIndex, $accordionTitles ) {
 
 module.exports = function( $ ) {
 	var $this = $( this ),
-		defaultActiveSection = $this.find( '.elementor-accordion' ).data( 'active-section' ),
-		$accordionTitles = $this.find( '.elementor-accordion-title' );
+		defaultActiveSection = $this.find( '.wroter-accordion' ).data( 'active-section' ),
+		$accordionTitles = $this.find( '.wroter-accordion-title' );
 
 	if ( ! defaultActiveSection ) {
 		defaultActiveSection = 1;
@@ -197,14 +197,14 @@ module.exports = function( $ ) {
 
 },{}],4:[function(require,module,exports){
 module.exports = function( $ ) {
-	$( this ).find( '.elementor-alert-dismiss' ).on( 'click', function() {
+	$( this ).find( '.wroter-alert-dismiss' ).on( 'click', function() {
 		$( this ).parent().fadeOut();
 	} );
 };
 
 },{}],5:[function(require,module,exports){
 module.exports = function( $ ) {
-	this.find( '.elementor-counter-number' ).waypoint( function() {
+	this.find( '.wroter-counter-number' ).waypoint( function() {
 		var $number = $( this );
 
 		$number.numerator( {
@@ -215,7 +215,7 @@ module.exports = function( $ ) {
 
 },{}],6:[function(require,module,exports){
 module.exports = function() {
-	if ( elementorFrontend.isEditMode() ) {
+	if ( wroterFrontend.isEditMode() ) {
 		return;
 	}
 
@@ -226,17 +226,17 @@ module.exports = function() {
 		return;
 	}
 
-	$element.addClass( 'elementor-invisible' ).removeClass( animation );
+	$element.addClass( 'wroter-invisible' ).removeClass( animation );
 
 	$element.waypoint( function() {
-		$element.removeClass( 'elementor-invisible' ).addClass( animation );
+		$element.removeClass( 'wroter-invisible' ).addClass( animation );
 	}, { offset: '90%' } );
 
 };
 
 },{}],7:[function(require,module,exports){
 module.exports = function( $ ) {
-	var $carousel = $( this ).find( '.elementor-image-carousel' );
+	var $carousel = $( this ).find( '.wroter-image-carousel' );
 	if ( ! $carousel.length ) {
 		return;
 	}
@@ -269,11 +269,11 @@ module.exports = function( $ ) {
 
 },{}],8:[function(require,module,exports){
 module.exports = function( $ ) {
-	if ( elementorFrontend.isEditMode() ) {
+	if ( wroterFrontend.isEditMode() ) {
 		return;
 	}
 
-	var $anchor = this.find( '.elementor-menu-anchor' ),
+	var $anchor = this.find( '.wroter-menu-anchor' ),
 		anchorID = $anchor.attr( 'id' ),
 		$anchorLinks = $( 'a[href*="#' + anchorID + '"]' ),
 		$scrollable = $( 'html, body' ),
@@ -299,12 +299,12 @@ module.exports = function( $ ) {
 module.exports = function( $ ) {
 	var interval = 80;
 
-	$( this ).find( '.elementor-progress-bar' ).waypoint( function() {
+	$( this ).find( '.wroter-progress-bar' ).waypoint( function() {
 		var $progressbar = $( this ),
 			max = parseInt( $progressbar.data( 'max' ), 10 ),
 			$inner = $progressbar.next(),
-			$innerTextWrap = $inner.find( '.elementor-progress-text' ),
-			$percent = $inner.find( '.elementor-progress-percentage' ),
+			$innerTextWrap = $inner.find( '.wroter-progress-text' ),
+			$percent = $inner.find( '.wroter-progress-percentage' ),
 			innerText = $inner.data( 'inner' ) ? $inner.data( 'inner' ) : '';
 
 		$progressbar.css( 'width', max + '%' );
@@ -367,11 +367,11 @@ var BackgroundVideo = function( $, $backgroundVideoContainer ) {
 			}
 		} );
 
-		$( elementorFrontend.getScopeWindow() ).on( 'resize', changeVideoSize );
+		$( wroterFrontend.getScopeWindow() ).on( 'resize', changeVideoSize );
 	};
 
 	var initElements = function() {
-		elements.$backgroundVideo = $backgroundVideoContainer.children( '.elementor-background-video' );
+		elements.$backgroundVideo = $backgroundVideoContainer.children( '.wroter-background-video' );
 	};
 
 	var run = function() {
@@ -380,7 +380,7 @@ var BackgroundVideo = function( $, $backgroundVideoContainer ) {
 		if ( videoID ) {
 			isYTVideo = true;
 
-			elementorFrontend.utils.onYoutubeApiReady( function( YT ) {
+			wroterFrontend.utils.onYoutubeApiReady( function( YT ) {
 				setTimeout( function() {
 					prepareYTVideo( YT, videoID );
 				}, 1 );
@@ -409,7 +409,7 @@ var StretchedSection = function( $, $section ) {
 			'left': '0'
 		} );
 
-		if ( ! $section.hasClass( 'elementor-section-stretched' ) ) {
+		if ( ! $section.hasClass( 'wroter-section-stretched' ) ) {
 			return;
 		}
 
@@ -440,12 +440,12 @@ var StretchedSection = function( $, $section ) {
 	};
 
 	var initSettings = function() {
-		settings.sectionContainerSelector = elementorFrontend.config.stretchedSectionContainer;
-		settings.is_rtl = elementorFrontend.config.is_rtl;
+		settings.sectionContainerSelector = wroterFrontend.config.stretchedSectionContainer;
+		settings.is_rtl = wroterFrontend.config.is_rtl;
 	};
 
 	var initElements = function() {
-		elements.scopeWindow = elementorFrontend.getScopeWindow();
+		elements.scopeWindow = wroterFrontend.getScopeWindow();
 		elements.$scopeWindow = $( elements.scopeWindow );
 		elements.$sectionContainer = $( elements.scopeWindow.document ).find( settings.sectionContainerSelector );
 	};
@@ -467,7 +467,7 @@ var StretchedSection = function( $, $section ) {
 module.exports = function( $ ) {
 	new StretchedSection( $, this );
 
-	var $backgroundVideoContainer = this.find( '.elementor-background-video-container' );
+	var $backgroundVideoContainer = this.find( '.wroter-background-video-container' );
 
 	if ( $backgroundVideoContainer ) {
 		new BackgroundVideo( $, $backgroundVideoContainer );
@@ -477,9 +477,9 @@ module.exports = function( $ ) {
 },{}],11:[function(require,module,exports){
 module.exports = function( $ ) {
 	var $this = $( this ),
-		defaultActiveTab = $this.find( '.elementor-tabs' ).data( 'active-tab' ),
-		$tabsTitles = $this.find( '.elementor-tab-title' ),
-		$tabs = $this.find( '.elementor-tab-content' ),
+		defaultActiveTab = $this.find( '.wroter-tabs' ).data( 'active-tab' ),
+		$tabsTitles = $this.find( '.wroter-tab-title' ),
+		$tabs = $this.find( '.wroter-tab-content' ),
 		$active,
 		$content;
 
@@ -512,7 +512,7 @@ module.exports = function( $ ) {
 
 },{}],12:[function(require,module,exports){
 module.exports = function( $ ) {
-	var $toggleTitles = $( this ).find( '.elementor-toggle-title' );
+	var $toggleTitles = $( this ).find( '.wroter-toggle-title' );
 
 	$toggleTitles.on( 'click', function() {
 		var $active = $( this ),
@@ -531,7 +531,7 @@ module.exports = function( $ ) {
 },{}],13:[function(require,module,exports){
 module.exports = function( $ ) {
 	var $this = $( this ),
-		$imageOverlay = $this.find( '.elementor-custom-embed-image-overlay' ),
+		$imageOverlay = $this.find( '.wroter-custom-embed-image-overlay' ),
 		$videoFrame = $this.find( 'iframe' );
 
 	if ( ! $imageOverlay.length ) {

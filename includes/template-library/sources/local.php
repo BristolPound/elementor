@@ -1,21 +1,21 @@
 <?php
-namespace Elementor\TemplateLibrary;
+namespace Wroter\TemplateLibrary;
 
-use Elementor\Controls_Manager;
-use Elementor\DB;
-use Elementor\Plugin;
-use Elementor\Settings;
-use Elementor\User;
-use Elementor\Utils;
+use Wroter\Controls_Manager;
+use Wroter\DB;
+use Wroter\Plugin;
+use Wroter\Settings;
+use Wroter\User;
+use Wroter\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Source_Local extends Source_Base {
 
-	const CPT = 'elementor_library';
-	const TAXONOMY_TYPE_SLUG = 'elementor_library_type';
+	const CPT = 'wroter_library';
+	const TAXONOMY_TYPE_SLUG = 'wroter_library_type';
 
-	const TYPE_META_KEY = '_elementor_template_type';
+	const TYPE_META_KEY = '_wroter_template_type';
 
 	public static function get_template_types() {
 		return [
@@ -29,24 +29,24 @@ class Source_Local extends Source_Base {
 	}
 
 	public function get_title() {
-		return __( 'Local', 'elementor' );
+		return __( 'Local', 'wroter' );
 	}
 
 	public function register_data() {
 		$labels = [
-			'name' => _x( 'My Library', 'Template Library', 'elementor' ),
-			'singular_name' => _x( 'Template', 'Template Library', 'elementor' ),
-			'add_new' => _x( 'Add New', 'Template Library', 'elementor' ),
-			'add_new_item' => _x( 'Add New Template', 'Template Library', 'elementor' ),
-			'edit_item' => _x( 'Edit Template', 'Template Library', 'elementor' ),
-			'new_item' => _x( 'New Template', 'Template Library', 'elementor' ),
-			'all_items' => _x( 'All Templates', 'Template Library', 'elementor' ),
-			'view_item' => _x( 'View Template', 'Template Library', 'elementor' ),
-			'search_items' => _x( 'Search Template', 'Template Library', 'elementor' ),
-			'not_found' => _x( 'No Templates found', 'Template Library', 'elementor' ),
-			'not_found_in_trash' => _x( 'No Templates found in Trash', 'Template Library', 'elementor' ),
+			'name' => _x( 'My Library', 'Template Library', 'wroter' ),
+			'singular_name' => _x( 'Template', 'Template Library', 'wroter' ),
+			'add_new' => _x( 'Add New', 'Template Library', 'wroter' ),
+			'add_new_item' => _x( 'Add New Template', 'Template Library', 'wroter' ),
+			'edit_item' => _x( 'Edit Template', 'Template Library', 'wroter' ),
+			'new_item' => _x( 'New Template', 'Template Library', 'wroter' ),
+			'all_items' => _x( 'All Templates', 'Template Library', 'wroter' ),
+			'view_item' => _x( 'View Template', 'Template Library', 'wroter' ),
+			'search_items' => _x( 'Search Template', 'Template Library', 'wroter' ),
+			'not_found' => _x( 'No Templates found', 'Template Library', 'wroter' ),
+			'not_found_in_trash' => _x( 'No Templates found in Trash', 'Template Library', 'wroter' ),
 			'parent_item_colon' => '',
-			'menu_name' => _x( 'My Library', 'Template Library', 'elementor' ),
+			'menu_name' => _x( 'My Library', 'Template Library', 'wroter' ),
 		];
 
 		$args = [
@@ -58,12 +58,12 @@ class Source_Local extends Source_Base {
 			'show_in_nav_menus' => false,
 			'capability_type' => 'post',
 			'hierarchical' => false,
-			'supports' => [ 'title', 'thumbnail', 'author', 'elementor' ],
+			'supports' => [ 'title', 'thumbnail', 'author', 'wroter' ],
 		];
 
 		register_post_type(
 			self::CPT,
-			apply_filters( 'elementor/template_library/sources/local/register_post_type_args', $args )
+			apply_filters( 'wroter/template_library/sources/local/register_post_type_args', $args )
 		);
 
 		$args = [
@@ -74,21 +74,21 @@ class Source_Local extends Source_Base {
 			'query_var' => is_admin(),
 			'rewrite' => false,
 			'public' => false,
-			'label' => _x( 'Type', 'Template Library', 'elementor' ),
+			'label' => _x( 'Type', 'Template Library', 'wroter' ),
 		];
 
 		register_taxonomy(
 			self::TAXONOMY_TYPE_SLUG,
 			self::CPT,
-			apply_filters( 'elementor/template_library/sources/local/register_taxonomy_args', $args )
+			apply_filters( 'wroter/template_library/sources/local/register_taxonomy_args', $args )
 		);
 	}
 
 	public function register_admin_menu() {
 		add_submenu_page(
 			Settings::PAGE_ID,
-			__( 'My Library', 'elementor' ),
-			__( 'My Library', 'elementor' ),
+			__( 'My Library', 'wroter' ),
+			__( 'My Library', 'wroter' ),
 			'edit_pages',
 			'edit.php?post_type=' . self::CPT
 		);
@@ -121,7 +121,7 @@ class Source_Local extends Source_Base {
 
 		$post_id = wp_insert_post(
 			[
-				'post_title' => ! empty( $template_data['title'] ) ? $template_data['title'] : __( '(no title)', 'elementor' ),
+				'post_title' => ! empty( $template_data['title'] ) ? $template_data['title'] : __( '(no title)', 'wroter' ),
 				'post_status' => 'publish',
 				'post_type' => self::CPT,
 			]
@@ -196,7 +196,7 @@ class Source_Local extends Source_Base {
 			'data' => $template_data,
 		];
 
-		$filename = 'elementor-' . $item_id . '-' . date( 'Y-m-d' ) . '.json';
+		$filename = 'wroter-' . $item_id . '-' . date( 'Y-m-d' ) . '.json';
 		$template_contents = wp_json_encode( $export_data );
 		$filesize = strlen( $template_contents );
 
@@ -288,7 +288,7 @@ class Source_Local extends Source_Base {
 
 	public function post_row_actions( $actions, \WP_Post $post ) {
 		if ( $this->_is_base_templates_screen() ) {
-			$actions['export-template'] = sprintf( '<a href="%s">%s</a>', $this->_get_export_link( $post->ID ), __( 'Export Template', 'elementor' ) );
+			$actions['export-template'] = sprintf( '<a href="%s">%s</a>', $this->_get_export_link( $post->ID ), __( 'Export Template', 'wroter' ) );
 			unset( $actions['inline hide-if-no-js'] );
 		}
 
@@ -300,15 +300,15 @@ class Source_Local extends Source_Base {
 			return;
 		}
 		?>
-		<div id="elementor-hidden-area">
-			<a id="elementor-import-template-trigger" class="page-title-action"><?php _e( 'Import Template', 'elementor' ); ?></a>
-			<div id="elementor-import-template-area">
-				<div id="elementor-import-template-title"><?php _e( 'Choose an Elementor template JSON file, and add it to the list of templates available in your library.', 'elementor' ); ?></div>
-				<form id="elementor-import-template-form" method="post" action="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
-					<input type="hidden" name="action" value="elementor_import_template">
-					<fieldset id="elementor-import-template-form-inputs">
+		<div id="wroter-hidden-area">
+			<a id="wroter-import-template-trigger" class="page-title-action"><?php _e( 'Import Template', 'wroter' ); ?></a>
+			<div id="wroter-import-template-area">
+				<div id="wroter-import-template-title"><?php _e( 'Choose an Wroter template JSON file, and add it to the list of templates available in your library.', 'wroter' ); ?></div>
+				<form id="wroter-import-template-form" method="post" action="<?php echo admin_url( 'admin-ajax.php' ); ?>" enctype="multipart/form-data">
+					<input type="hidden" name="action" value="wroter_import_template">
+					<fieldset id="wroter-import-template-form-inputs">
 						<input type="file" name="file" accept="application/json" required>
-						<input type="submit" class="button" value="<?php _e( 'Import Now', 'elementor' ); ?>">
+						<input type="submit" class="button" value="<?php _e( 'Import Now', 'wroter' ); ?>">
 					</fieldset>
 				</form>
 			</div>
@@ -342,7 +342,7 @@ class Source_Local extends Source_Base {
 	private function _get_export_link( $item_id ) {
 		return add_query_arg(
 			[
-				'action' => 'elementor_export_template',
+				'action' => 'wroter_export_template',
 				'source' => $this->get_id(),
 				'template_id' => $item_id,
 			],

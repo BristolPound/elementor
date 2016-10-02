@@ -1,12 +1,12 @@
-var TemplateLibraryTemplateView = require( 'elementor-templates/views/template/base' ),
+var TemplateLibraryTemplateView = require( 'wroter-templates/views/template/base' ),
 	TemplateLibraryTemplateLocalView;
 
 TemplateLibraryTemplateLocalView = TemplateLibraryTemplateView.extend( {
-	template: '#tmpl-elementor-template-library-template-local',
+	template: '#tmpl-wroter-template-library-template-local',
 
 	ui: function() {
 		return _.extend( TemplateLibraryTemplateView.prototype.ui.apply( this, arguments ), {
-			deleteButton: '.elementor-template-library-template-delete'
+			deleteButton: '.wroter-template-library-template-delete'
 		} );
 	},
 
@@ -17,7 +17,7 @@ TemplateLibraryTemplateLocalView = TemplateLibraryTemplateView.extend( {
 	},
 
 	onDeleteButtonClick: function() {
-		elementor.templates.deleteTemplate( this.model );
+		wroter.templates.deleteTemplate( this.model );
 	},
 
 	onPreviewButtonClick: function() {

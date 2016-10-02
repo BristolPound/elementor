@@ -3,23 +3,23 @@
 //
 
 @media (max-width: $screen-sm-max) {
-	.elementor-hidden-phone {
+	.wroter-hidden-phone {
 		display: none;
 	}
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-	.elementor-hidden-tablet {
+	.wroter-hidden-tablet {
 		display: none;
 	}
 }
 
 @media (min-width: $screen-lg-min) {
-	.elementor-hidden-desktop {
+	.wroter-hidden-desktop {
 		display: none;
 	}
 }
 
-.elementor-hidden {
+.wroter-hidden {
 	display: none;
 }

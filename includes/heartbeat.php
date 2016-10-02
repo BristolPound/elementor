@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -16,17 +16,17 @@ class Heartbeat {
 	 * @return array
 	 */
 	public function heartbeat_received( $response, $data ) {
-		if ( isset( $data['elementor_post_lock']['post_ID'] ) ) {
-			$post_id = $data['elementor_post_lock']['post_ID'];
+		if ( isset( $data['wroter_post_lock']['post_ID'] ) ) {
+			$post_id = $data['wroter_post_lock']['post_ID'];
 			$locked_user = Plugin::instance()->editor->get_locked_user( $post_id );
 
-			if ( ! $locked_user || ! empty( $data['elementor_force_post_lock'] ) ) {
+			if ( ! $locked_user || ! empty( $data['wroter_force_post_lock'] ) ) {
 				Plugin::instance()->editor->lock_post( $post_id );
 			} else {
 				$response['locked_user'] = $locked_user->display_name;
 			}
 
-			$response['elementor_nonce'] = wp_create_nonce( 'elementor-editing' );
+			$response['wroter_nonce'] = wp_create_nonce( 'wroter-editing' );
 		}
 		return $response;
 	}

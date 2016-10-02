@@ -1,4 +1,4 @@
-var ControlBaseMultipleItemView = require( 'elementor-views/controls/base-multiple' ),
+var ControlBaseMultipleItemView = require( 'wroter-views/controls/base-multiple' ),
 	ControlBaseUnitsItemView;
 
 ControlBaseUnitsItemView = ControlBaseMultipleItemView.extend( {

@@ -1,7 +1,7 @@
 
 // Loading Builder
 
-#elementor-loading {
+#wroter-loading {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -11,7 +11,7 @@
 	z-index: $editor-layer;
 }
 
-.elementor-loader-wrapper {
+.wroter-loader-wrapper {
 	$size: 100px;
 
 	position: absolute;
@@ -20,19 +20,19 @@
 	transform: translateX(-50%) translateY(-50%);
 	width: $size;
 
-	.elementor-loader {
+	.wroter-loader {
 		height: $size;
 		position: relative;
 	}
 
-	.elementor-loader-box {
+	.wroter-loader-box {
 		background-color: $editor-background;
 	}
 
 	@import "loader";
 }
 
-.elementor-loading-title {
+.wroter-loading-title {
 
 	@keyframes load-title {
 		0% {
@@ -66,7 +66,7 @@
 
 
 // Modal Confirm (the_content missing)
-#elementor-fatal-error-dialog {
+#wroter-fatal-error-dialog {
 
 	button.dialog-ok {
 		color: $editor-info;

@@ -1,9 +1,9 @@
-var PanelSchemeItemView = require( 'elementor-panel/pages/schemes/items/base' ),
+var PanelSchemeItemView = require( 'wroter-panel/pages/schemes/items/base' ),
 	PanelSchemeColorView;
 
 PanelSchemeColorView = PanelSchemeItemView.extend( {
 	ui: {
-		input: '.elementor-panel-scheme-color-value'
+		input: '.wroter-panel-scheme-color-value'
 	},
 
 	changeUIValue: function( newValue ) {

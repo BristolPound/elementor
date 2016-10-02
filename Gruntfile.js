@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
 		checktextdomain: {
 			standard: {
 				options:{
-					text_domain: 'elementor',
+					text_domain: 'wroter',
 					correct_domain: true,
 					keywords: [
 						// WordPress keywords
@@ -72,52 +72,52 @@ module.exports = function( grunt ) {
 						{
 							cwd: 'assets/dev/js/editor/behaviors',
 							src: '**/*.js',
-							expose: 'elementor-behaviors'
+							expose: 'wroter-behaviors'
 						},
 						{
 							cwd: 'assets/dev/js/editor/layouts',
 							src: '**/*.js',
-							expose: 'elementor-layouts'
+							expose: 'wroter-layouts'
 						},
 						{
 							cwd: 'assets/dev/js/editor/models',
 							src: '**/*.js',
-							expose: 'elementor-models'
+							expose: 'wroter-models'
 						},
 						{
 							cwd: 'assets/dev/js/editor/collections',
 							src: '**/*.js',
-							expose: 'elementor-collections'
+							expose: 'wroter-collections'
 						},
 						{
 							cwd: 'assets/dev/js/editor/views',
 							src: '**/*.js',
-							expose: 'elementor-views'
+							expose: 'wroter-views'
 						},
 						{
 							cwd: 'assets/dev/js/editor/components',
 							src: '**/*.js',
-							expose: 'elementor-components'
+							expose: 'wroter-components'
 						},
 						{
 							cwd: 'assets/dev/js/editor/utils',
 							src: '**/*.js',
-							expose: 'elementor-utils'
+							expose: 'wroter-utils'
 						},
 						{
 							cwd: 'assets/dev/js/editor/layouts/panel',
 							src: '**/*.js',
-							expose: 'elementor-panel'
+							expose: 'wroter-panel'
 						},
 						{
 							cwd: 'assets/dev/js/editor/components/template-library',
 							src: '**/*.js',
-							expose: 'elementor-templates'
+							expose: 'wroter-templates'
 						},
 						{
 							cwd: 'assets/dev/js/frontend',
 							src: '**/*.js',
-							expose: 'elementor-frontend'
+							expose: 'wroter-frontend'
 						}
 					] );
 				}
@@ -254,10 +254,10 @@ module.exports = function( grunt ) {
 		wp_readme_to_markdown: {
 			github: {
 				options: {
-					wordpressPluginSlug: 'elementor',
-					travisUrlRepo: 'https://travis-ci.org/pojome/elementor',
-					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/elementor',
-					coverallsRepo: 'pojome/elementor',
+					wordpressPluginSlug: 'wroter',
+					travisUrlRepo: 'https://travis-ci.org/pojome/wroter',
+					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/wroter',
+					coverallsRepo: 'pojome/wroter',
 					screenshot_url: 'assets/{screenshot}.png'
 				},
 				files: {
@@ -277,7 +277,7 @@ module.exports = function( grunt ) {
 
 		replace: {
 			plugin_main: {
-				src: [ 'elementor.php' ],
+				src: [ 'wroter.php' ],
 				overwrite: true,
 				replacements: [
 					{
@@ -285,8 +285,8 @@ module.exports = function( grunt ) {
 						to: 'Version: <%= pkg.version %>'
 					},
 					{
-						from: /ELEMENTOR_VERSION', '.*?'/g,
-						to: 'ELEMENTOR_VERSION\', \'<%= pkg.version %>\''
+						from: /WROTER_VERSION', '.*?'/g,
+						to: 'WROTER_VERSION\', \'<%= pkg.version %>\''
 					}
 				]
 			},

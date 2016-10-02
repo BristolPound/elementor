@@ -1,13 +1,13 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Api {
 
-	public static $api_info_url = 'http://my.elementor.com/api/v1/info/';
-	private static $api_feedback_url = 'http://my.elementor.com/api/v1/feedback/';
-	private static $api_get_template_content_url = 'http://my.elementor.com/api/v1/templates/%d';
+	public static $api_info_url = 'http://my.wroter.com/api/v1/info/';
+	private static $api_feedback_url = 'http://my.wroter.com/api/v1/feedback/';
+	private static $api_get_template_content_url = 'http://my.wroter.com/api/v1/templates/%d';
 
 	/**
 	 * This function notifies the user of upgrade notices, new templates and contributors
@@ -17,7 +17,7 @@ class Api {
 	 * @return array|bool
 	 */
 	private static function _get_info_data( $force = false ) {
-		$cache_key = 'elementor_remote_info_api_data_' . Plugin::instance()->get_version();
+		$cache_key = 'wroter_remote_info_api_data_' . Plugin::instance()->get_version();
 		$info_data = get_transient( $cache_key );
 
 		if ( $force || false === $info_data ) {
@@ -25,7 +25,7 @@ class Api {
 				'timeout' => 25,
 				'body' => [
 					// Which API version is used
-					'api_version' => ELEMENTOR_VERSION,
+					'api_version' => WROTER_VERSION,
 					// Which language to return
 					'site_lang' => get_bloginfo( 'language' ),
 				],
@@ -45,7 +45,7 @@ class Api {
 			}
 
 			if ( isset( $info_data['templates'] ) ) {
-				update_option( 'elementor_remote_info_templates_data', $info_data['templates'], 'no' );
+				update_option( 'wroter_remote_info_templates_data', $info_data['templates'], 'no' );
 				unset( $info_data['templates'] );
 			}
 			set_transient( $cache_key, $info_data, 12 * HOUR_IN_SECONDS );
@@ -65,7 +65,7 @@ class Api {
 	public static function get_templates_data() {
 		self::_get_info_data();
 
-		$templates = get_option( 'elementor_remote_info_templates_data' );
+		$templates = get_option( 'wroter_remote_info_templates_data' );
 		if ( empty( $templates ) )
 			return [];
 
@@ -78,7 +78,7 @@ class Api {
 			'timeout' => 40,
 			'body' => [
 				// Which API version is used
-				'api_version' => ELEMENTOR_VERSION,
+				'api_version' => WROTER_VERSION,
 				// Which language to return
 				'site_lang' => get_bloginfo( 'language' ),
 			],
@@ -104,7 +104,7 @@ class Api {
 		$response = wp_remote_post( self::$api_feedback_url, [
 			'timeout' => 30,
 			'body' => [
-				'api_version' => ELEMENTOR_VERSION,
+				'api_version' => WROTER_VERSION,
 				'site_lang' => get_bloginfo( 'language' ),
 				'feedback_key' => $feedback_key,
 				'feedback' => $feedback_text,
@@ -115,7 +115,7 @@ class Api {
 	}
 
 	public function ajax_reset_api_data() {
-		check_ajax_referer( 'elementor_reset_library', '_nonce' );
+		check_ajax_referer( 'wroter_reset_library', '_nonce' );
 
 		self::_get_info_data( true );
 
@@ -123,7 +123,7 @@ class Api {
 	}
 
 	public static function init() {
-		add_action( 'wp_ajax_elementor_reset_library', [ __CLASS__, 'ajax_reset_api_data' ] );
+		add_action( 'wp_ajax_wroter_reset_library', [ __CLASS__, 'ajax_reset_api_data' ] );
 	}
 }
 

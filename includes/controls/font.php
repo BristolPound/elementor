@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -17,23 +17,23 @@ class Control_Font extends Control_Base {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
-				<select class="elementor-control-font-family" data-setting="{{ data.name }}">
-					<option value=""><?php _e( 'Default', 'elementor' ); ?></option>
-					<optgroup label="<?php _e( 'System', 'elementor' ); ?>">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
+				<select class="wroter-control-font-family" data-setting="{{ data.name }}">
+					<option value=""><?php _e( 'Default', 'wroter' ); ?></option>
+					<optgroup label="<?php _e( 'System', 'wroter' ); ?>">
 						<# _.each( getFontsByGroups( 'system' ), function( fontType, fontName ) { #>
 						<option value="{{ fontName }}">{{{ fontName }}}</option>
 						<# } ); #>
 					</optgroup>
 					<?php /*
-					<optgroup label="<?php _e( 'Local', 'elementor' ); ?>">
+					<optgroup label="<?php _e( 'Local', 'wroter' ); ?>">
 						<# _.each( getFontsByGroups( 'local' ), function( fontType, fontName ) { #>
 						<option value="{{ fontName }}">{{{ fontName }}}</option>
 						<# } ); #>
 					</optgroup> */ ?>
-					<optgroup label="<?php _e( 'Google', 'elementor' ); ?>">
+					<optgroup label="<?php _e( 'Google', 'wroter' ); ?>">
 						<# _.each( getFontsByGroups( [ 'googlefonts', 'earlyaccess' ] ), function( fontType, fontName ) { #>
 						<option value="{{ fontName }}">{{{ fontName }}}</option>
 						<# } ); #>
@@ -42,7 +42,7 @@ class Control_Font extends Control_Base {
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{{ data.description }}}</div>
+		<div class="wroter-control-description">{{{ data.description }}}</div>
 		<# } #>
 		<?php
 	}

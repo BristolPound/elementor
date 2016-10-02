@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -19,16 +19,16 @@ class Control_Color extends Control_Base {
 			'wp-color-picker',
 			'wpColorPickerL10n',
 			[
-				'clear' => __( 'Clear', 'elementor' ),
-				'defaultString' => __( 'Default', 'elementor' ),
-				'pick' => __( 'Select Color', 'elementor' ),
-				'current' => __( 'Current Color', 'elementor' ),
+				'clear' => __( 'Clear', 'wroter' ),
+				'defaultString' => __( 'Default', 'wroter' ),
+				'pick' => __( 'Select Color', 'wroter' ),
+				'current' => __( 'Current Color', 'wroter' ),
 			]
 		);
 
 		wp_register_script(
 			'wp-color-picker-alpha',
-			ELEMENTOR_ASSETS_URL . 'lib/wp-color-picker/wp-color-picker-alpha' . $suffix . '.js',
+			WROTER_ASSETS_URL . 'lib/wp-color-picker/wp-color-picker-alpha' . $suffix . '.js',
 			[
 				'wp-color-picker',
 			],
@@ -54,17 +54,17 @@ class Control_Color extends Control_Base {
 			if ( data.alpha ) {
 				dataAlpha = ' data-alpha="true"';
 			} #>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">
 				<# if ( data.label ) { #>
 					{{{ data.label }}}
 				<# } #>
 				<# if ( data.description ) { #>
-					<span class="elementor-control-description">{{{ data.description }}}</span>
+					<span class="wroter-control-description">{{{ data.description }}}</span>
 				<# } #>
 			</label>
-			<div class="elementor-control-input-wrapper">
-				<input data-setting="{{ name }}" class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', 'elementor' ); ?>" {{ defaultValue }}{{ dataAlpha }} />
+			<div class="wroter-control-input-wrapper">
+				<input data-setting="{{ name }}" class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', 'wroter' ); ?>" {{ defaultValue }}{{ dataAlpha }} />
 			</div>
 		</div>
 		<?php

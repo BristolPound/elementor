@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -107,7 +107,7 @@ class Controls_Manager {
 		}
 
 		// Group Controls
-		include( ELEMENTOR_PATH . 'includes/interfaces/group-control.php' );
+		include( WROTER_PATH . 'includes/interfaces/group-control.php' );
 		include( 'controls/groups/base.php' );
 
 		include( 'controls/groups/background.php' );
@@ -170,7 +170,7 @@ class Controls_Manager {
 	 * @since 1.0.0
 	 * @param $control_id
 	 *
-	 * @return bool|\Elementor\Control_Base
+	 * @return bool|\Wroter\Control_Base
 	 */
 	public function get_control( $control_id ) {
 		$controls = $this->get_controls();

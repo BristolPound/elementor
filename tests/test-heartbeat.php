@@ -1,6 +1,6 @@
 <?php
 
-class Elementor_Test_Heartbeat extends WP_UnitTestCase {
+class Wroter_Test_Heartbeat extends WP_UnitTestCase {
 
 	protected $user_own_post;
 	protected $user_editor;
@@ -9,7 +9,7 @@ class Elementor_Test_Heartbeat extends WP_UnitTestCase {
 		parent::setUp();
 
 		// Create new instance again
-		new \Elementor\Heartbeat;
+		new \Wroter\Heartbeat;
 	}
 
 	public function test_postLock() {
@@ -21,7 +21,7 @@ class Elementor_Test_Heartbeat extends WP_UnitTestCase {
 		$post = $this->factory->post->create_and_get();
 
 		$data = [
-			'elementor_post_lock' => [
+			'wroter_post_lock' => [
 				'post_ID' => $post->ID,
 			],
 		];

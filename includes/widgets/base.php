@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -36,7 +36,7 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'_section_style',
 			[
-				'label' => __( 'Element Style', 'elementor' ),
+				'label' => __( 'Element Style', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_ADVANCED,
 			]
@@ -45,13 +45,13 @@ abstract class Widget_Base extends Element_Base {
 	    $this->add_responsive_control(
 	        '_margin',
 	        [
-	            'label' => __( 'Margin', 'elementor' ),
+	            'label' => __( 'Margin', 'wroter' ),
 	            'type' => Controls_Manager::DIMENSIONS,
 		        'size_units' => [ 'px', '%' ],
 	            'tab' => self::TAB_ADVANCED,
 	            'section' => '_section_style',
 	            'selectors' => [
-	                '{{WRAPPER}} .elementor-widget-container' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                '{{WRAPPER}} .wroter-widget-container' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 	            ],
 	        ]
 	    );
@@ -59,13 +59,13 @@ abstract class Widget_Base extends Element_Base {
 	    $this->add_responsive_control(
 	        '_padding',
 	        [
-	            'label' => __( 'Padding', 'elementor' ),
+	            'label' => __( 'Padding', 'wroter' ),
 	            'type' => Controls_Manager::DIMENSIONS,
 		        'size_units' => [ 'px', 'em', '%' ],
 	            'tab' => self::TAB_ADVANCED,
 	            'section' => '_section_style',
 	            'selectors' => [
-	                '{{WRAPPER}} .elementor-widget-container' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+	                '{{WRAPPER}} .wroter-widget-container' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 	            ],
 	        ]
 	    );
@@ -73,7 +73,7 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'_animation',
 			[
-				'label' => __( 'Entrance Animation', 'elementor' ),
+				'label' => __( 'Entrance Animation', 'wroter' ),
 				'type' => Controls_Manager::ANIMATION,
 				'default' => '',
 				'prefix_class' => 'animated ',
@@ -86,13 +86,13 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'animation_duration',
 			[
-				'label' => __( 'Animation Duration', 'elementor' ),
+				'label' => __( 'Animation Duration', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'slow' => __( 'Slow', 'elementor' ),
-					'' => __( 'Normal', 'elementor' ),
-					'fast' => __( 'Fast', 'elementor' ),
+					'slow' => __( 'Slow', 'wroter' ),
+					'' => __( 'Normal', 'wroter' ),
+					'fast' => __( 'Fast', 'wroter' ),
 				],
 				'prefix_class' => 'animated-',
 				'tab' => self::TAB_ADVANCED,
@@ -106,21 +106,21 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'_css_classes',
 			[
-				'label' => __( 'CSS Classes', 'elementor' ),
+				'label' => __( 'CSS Classes', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_style',
 				'default' => '',
 				'prefix_class' => '',
 				'label_block' => true,
-				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor' ),
+				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'wroter' ),
 			]
 		);
 
 		$this->add_control(
 			'_section_background',
 			[
-				'label' => __( 'Background & Border', 'elementor' ),
+				'label' => __( 'Background & Border', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_ADVANCED,
 			]
@@ -132,7 +132,7 @@ abstract class Widget_Base extends Element_Base {
 				'name' => '_background',
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_background',
-				'selector' => '{{WRAPPER}} .elementor-widget-container',
+				'selector' => '{{WRAPPER}} .wroter-widget-container',
 			]
 		);
 
@@ -142,20 +142,20 @@ abstract class Widget_Base extends Element_Base {
 				'name' => '_border',
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_background',
-				'selector' => '{{WRAPPER}} .elementor-widget-container',
+				'selector' => '{{WRAPPER}} .wroter-widget-container',
 			]
 		);
 
 		$this->add_control(
 			'_border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_background',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-widget-container' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -166,14 +166,14 @@ abstract class Widget_Base extends Element_Base {
 				'name' => '_box_shadow',
 				'section' => '_section_background',
 				'tab' => self::TAB_ADVANCED,
-				'selector' => '{{WRAPPER}} .elementor-widget-container',
+				'selector' => '{{WRAPPER}} .wroter-widget-container',
 			]
 		);
 
 		$this->add_control(
 			'_section_responsive',
 			[
-				'label' => __( 'Responsive', 'elementor' ),
+				'label' => __( 'Responsive', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_ADVANCED,
 			]
@@ -182,23 +182,23 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'responsive_description',
 			[
-				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Elementor.', 'elementor' ),
+				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Wroter.', 'wroter' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_responsive',
-				'classes' => 'elementor-control-descriptor',
+				'classes' => 'wroter-control-descriptor',
 			]
 		);
 
 		$this->add_control(
 			'hide_desktop',
 			[
-				'label' => __( 'Hide On Desktop', 'elementor' ),
+				'label' => __( 'Hide On Desktop', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_responsive',
 				'default' => '',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'wroter-',
 				'label_on' => 'Hide',
 				'label_off' => 'Show',
 				'return_value' => 'hidden-desktop',
@@ -208,12 +208,12 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'hide_tablet',
 			[
-				'label' => __( 'Hide On Tablet', 'elementor' ),
+				'label' => __( 'Hide On Tablet', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_responsive',
 				'default' => '',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'wroter-',
 				'label_on' => 'Hide',
 				'label_off' => 'Show',
 				'return_value' => 'hidden-tablet',
@@ -223,12 +223,12 @@ abstract class Widget_Base extends Element_Base {
 		$this->add_control(
 			'hide_mobile',
 			[
-				'label' => __( 'Hide On Mobile', 'elementor' ),
+				'label' => __( 'Hide On Mobile', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'tab' => self::TAB_ADVANCED,
 				'section' => '_section_responsive',
 				'default' => '',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'wroter-',
 				'label_on' => 'Hide',
 				'label_off' => 'Show',
 				'return_value' => 'hidden-phone',
@@ -241,15 +241,15 @@ abstract class Widget_Base extends Element_Base {
 		$this->content_template();
 		$content_template = ob_get_clean();
 
-		$content_template = apply_filters( 'elementor/widget/print_template', $content_template,  $this );
+		$content_template = apply_filters( 'wroter/widget/print_template', $content_template,  $this );
 
 		if ( empty( $content_template ) ) {
 			return;
 		}
 		?>
-		<script type="text/html" id="tmpl-elementor-<?php echo $this->get_type(); ?>-<?php echo esc_attr( $this->get_id() ); ?>-content">
+		<script type="text/html" id="tmpl-wroter-<?php echo $this->get_type(); ?>-<?php echo esc_attr( $this->get_id() ); ?>-content">
 			<?php $this->render_settings(); ?>
-			<div class="elementor-widget-container">
+			<div class="wroter-widget-container">
 				<?php echo $content_template; ?>
 			</div>
 		</script>
@@ -261,13 +261,13 @@ abstract class Widget_Base extends Element_Base {
 			$this->render_settings();
 		}
 		?>
-		<div class="elementor-widget-container">
+		<div class="wroter-widget-container">
 			<?php
 			ob_start();
 			$this->render( $instance );
 			$content = ob_get_clean();
 
-			$content = apply_filters( 'elementor/widget/render_content', $content, $instance, $this );
+			$content = apply_filters( 'wroter/widget/render_content', $content, $instance, $this );
 
 			echo $content;
 			?>
@@ -281,23 +281,23 @@ abstract class Widget_Base extends Element_Base {
 
 	protected function render_settings() {
 		?>
-		<div class="elementor-editor-element-settings elementor-editor-<?php echo esc_attr( $this->get_type() ); ?>-settings elementor-editor-<?php echo esc_attr( $this->get_id() ); ?>-settings">
-			<ul class="elementor-editor-element-settings-list">
-				<li class="elementor-editor-element-setting elementor-editor-element-edit">
-					<a href="#" title="<?php _e( 'Edit', 'elementor' ); ?>">
-						<span class="elementor-screen-only"><?php _e( 'Edit', 'elementor' ); ?></span>
+		<div class="wroter-editor-element-settings wroter-editor-<?php echo esc_attr( $this->get_type() ); ?>-settings wroter-editor-<?php echo esc_attr( $this->get_id() ); ?>-settings">
+			<ul class="wroter-editor-element-settings-list">
+				<li class="wroter-editor-element-setting wroter-editor-element-edit">
+					<a href="#" title="<?php _e( 'Edit', 'wroter' ); ?>">
+						<span class="wroter-screen-only"><?php _e( 'Edit', 'wroter' ); ?></span>
 						<i class="fa fa-pencil"></i>
 					</a>
 				</li>
-				<li class="elementor-editor-element-setting elementor-editor-element-duplicate">
-					<a href="#" title="<?php _e( 'Duplicate', 'elementor' ); ?>">
-						<span class="elementor-screen-only"><?php _e( 'Duplicate', 'elementor' ); ?></span>
+				<li class="wroter-editor-element-setting wroter-editor-element-duplicate">
+					<a href="#" title="<?php _e( 'Duplicate', 'wroter' ); ?>">
+						<span class="wroter-screen-only"><?php _e( 'Duplicate', 'wroter' ); ?></span>
 						<i class="fa fa-files-o"></i>
 					</a>
 				</li>
-				<li class="elementor-editor-element-setting elementor-editor-element-remove">
-					<a href="#" title="<?php _e( 'Remove', 'elementor' ); ?>">
-						<span class="elementor-screen-only"><?php _e( 'Remove', 'elementor' ); ?></span>
+				<li class="wroter-editor-element-setting wroter-editor-element-remove">
+					<a href="#" title="<?php _e( 'Remove', 'wroter' ); ?>">
+						<span class="wroter-screen-only"><?php _e( 'Remove', 'wroter' ); ?></span>
 						<i class="fa fa-times"></i>
 					</a>
 				</li>
@@ -308,10 +308,10 @@ abstract class Widget_Base extends Element_Base {
 
 	public function before_render( $instance, $element_id, $element_data = [] ) {
 		$this->add_render_attribute( 'wrapper', 'class', [
-			'elementor-widget',
-			'elementor-element',
-			'elementor-element-' . $element_id,
-			'elementor-widget-' . $this->get_id(),
+			'wroter-widget',
+			'wroter-element',
+			'wroter-element-' . $element_id,
+			'wroter-widget-' . $this->get_id(),
 		] );
 
 		foreach ( $this->get_class_controls() as $control ) {

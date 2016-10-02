@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -12,7 +12,7 @@ class Element_Section extends Element_Base {
 	}
 
 	public function get_title() {
-		return __( 'Section', 'elementor' );
+		return __( 'Section', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -99,7 +99,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'section_layout',
 			[
-				'label' => __( 'Layout', 'elementor' ),
+				'label' => __( 'Layout', 'wroter' ),
 				'tab' => self::TAB_LAYOUT,
 			]
 		);
@@ -107,37 +107,37 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'stretch_section',
 			[
-				'label' => __( 'Stretch Section', 'elementor' ),
+				'label' => __( 'Stretch Section', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'label_on' => __( 'Yes', 'elementor' ),
-				'label_off' => __( 'No', 'elementor' ),
+				'label_on' => __( 'Yes', 'wroter' ),
+				'label_off' => __( 'No', 'wroter' ),
 				'return_value' => 'section-stretched',
-				'prefix_class' => 'elementor-',
+				'prefix_class' => 'wroter-',
 				'force_render' => true,
 				'hide_in_inner' => true,
-				'description' => __( 'Stretch the section to the full width of the page using JS.', 'elementor' ) . sprintf( ' <a href="%s" target="_blank">%s</a>', 'https://go.elementor.com/stretch-section/', __( 'Learn more.', 'elementor' ) ),
+				'description' => __( 'Stretch the section to the full width of the page using JS.', 'wroter' ) . sprintf( ' <a href="%s" target="_blank">%s</a>', 'https://go.wroter.com/stretch-section/', __( 'Learn more.', 'wroter' ) ),
 			]
 		);
 
 		$this->add_control(
 			'layout',
 			[
-				'label' => __( 'Content Width', 'elementor' ),
+				'label' => __( 'Content Width', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'boxed',
 				'options' => [
-					'boxed' => __( 'Boxed', 'elementor' ),
-					'full_width' => __( 'Full Width', 'elementor' ),
+					'boxed' => __( 'Boxed', 'wroter' ),
+					'full_width' => __( 'Full Width', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-section-',
+				'prefix_class' => 'wroter-section-',
 			]
 		);
 
 		$this->add_control(
 			'content_width',
 			[
-				'label' => __( 'Content Width', 'elementor' ),
+				'label' => __( 'Content Width', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -146,7 +146,7 @@ class Element_Section extends Element_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} > .wroter-container' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'layout' => [ 'boxed' ],
@@ -159,16 +159,16 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'gap',
 			[
-				'label' => __( 'Columns Gap', 'elementor' ),
+				'label' => __( 'Columns Gap', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Default', 'elementor' ),
-					'no' => __( 'No Gap', 'elementor' ),
-					'narrow' => __( 'Narrow', 'elementor' ),
-					'extended' => __( 'Extended', 'elementor' ),
-					'wide' => __( 'Wide', 'elementor' ),
-					'wider' => __( 'Wider', 'elementor' ),
+					'default' => __( 'Default', 'wroter' ),
+					'no' => __( 'No Gap', 'wroter' ),
+					'narrow' => __( 'Narrow', 'wroter' ),
+					'extended' => __( 'Extended', 'wroter' ),
+					'wide' => __( 'Wide', 'wroter' ),
+					'wider' => __( 'Wider', 'wroter' ),
 				],
 			]
 		);
@@ -176,15 +176,15 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'height',
 			[
-				'label' => __( 'Height', 'elementor' ),
+				'label' => __( 'Height', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Default', 'elementor' ),
-					'full' => __( 'Fit To Screen', 'elementor' ),
-					'min-height' => __( 'Min Height', 'elementor' ),
+					'default' => __( 'Default', 'wroter' ),
+					'full' => __( 'Fit To Screen', 'wroter' ),
+					'min-height' => __( 'Min Height', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-section-height-',
+				'prefix_class' => 'wroter-section-height-',
 				'hide_in_inner' => true,
 			]
 		);
@@ -192,7 +192,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'custom_height',
 			[
-				'label' => __( 'Minimum Height', 'elementor' ),
+				'label' => __( 'Minimum Height', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 400,
@@ -204,7 +204,7 @@ class Element_Section extends Element_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container' => 'min-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} > .wroter-container' => 'min-height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'height' => [ 'min-height' ],
@@ -216,14 +216,14 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'height_inner',
 			[
-				'label' => __( 'Height', 'elementor' ),
+				'label' => __( 'Height', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => [
-					'default' => __( 'Default', 'elementor' ),
-					'min-height' => __( 'Min Height', 'elementor' ),
+					'default' => __( 'Default', 'wroter' ),
+					'min-height' => __( 'Min Height', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-section-height-',
+				'prefix_class' => 'wroter-section-height-',
 				'hide_in_top' => true,
 			]
 		);
@@ -231,7 +231,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'custom_height_inner',
 			[
-				'label' => __( 'Minimum Height', 'elementor' ),
+				'label' => __( 'Minimum Height', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 400,
@@ -243,7 +243,7 @@ class Element_Section extends Element_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container' => 'min-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} > .wroter-container' => 'min-height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'height_inner' => [ 'min-height' ],
@@ -255,16 +255,16 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'column_position',
 			[
-				'label' => __( 'Column Position', 'elementor' ),
+				'label' => __( 'Column Position', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'middle',
 				'options' => [
-					'stretch' => __( 'Stretch', 'elementor' ),
-					'top' => __( 'Top', 'elementor' ),
-					'middle' => __( 'Middle', 'elementor' ),
-					'bottom' => __( 'Bottom', 'elementor' ),
+					'stretch' => __( 'Stretch', 'wroter' ),
+					'top' => __( 'Top', 'wroter' ),
+					'middle' => __( 'Middle', 'wroter' ),
+					'bottom' => __( 'Bottom', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-section-items-',
+				'prefix_class' => 'wroter-section-items-',
 				'condition' => [
 					'height' => [ 'full', 'min-height' ],
 				],
@@ -274,23 +274,23 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'content_position',
 			[
-				'label' => __( 'Content Position', 'elementor' ),
+				'label' => __( 'Content Position', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'top' => __( 'Top', 'elementor' ),
-					'middle' => __( 'Middle', 'elementor' ),
-					'bottom' => __( 'Bottom', 'elementor' ),
+					'' => __( 'Default', 'wroter' ),
+					'top' => __( 'Top', 'wroter' ),
+					'middle' => __( 'Middle', 'wroter' ),
+					'bottom' => __( 'Bottom', 'wroter' ),
 				],
-				'prefix_class' => 'elementor-section-content-',
+				'prefix_class' => 'wroter-section-content-',
 			]
 		);
 
 		$this->add_control(
 			'structure',
 			[
-				'label' => __( 'Structure', 'elementor' ),
+				'label' => __( 'Structure', 'wroter' ),
 				'type' => Controls_Manager::STRUCTURE,
 				'default' => '10',
 			]
@@ -302,7 +302,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'section_background',
 			[
-				'label' => __( 'Background', 'elementor' ),
+				'label' => __( 'Background', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 			]
 		);
@@ -321,7 +321,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'background_overlay_section',
 			[
-				'label' => __( 'Background Overlay', 'elementor' ),
+				'label' => __( 'Background Overlay', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 				'condition' => [
 					'background_background' => [ 'classic', 'video' ],
@@ -333,7 +333,7 @@ class Element_Section extends Element_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background_overlay',
-				'selector' => '{{WRAPPER}} > .elementor-background-overlay',
+				'selector' => '{{WRAPPER}} > .wroter-background-overlay',
 				'condition' => [
 					'background_background' => [ 'classic', 'video' ],
 				],
@@ -343,7 +343,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'background_overlay_opacity',
 			[
-				'label' => __( 'Opacity (%)', 'elementor' ),
+				'label' => __( 'Opacity (%)', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => .5,
@@ -355,7 +355,7 @@ class Element_Section extends Element_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-background-overlay' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} > .wroter-background-overlay' => 'opacity: {{SIZE}};',
 				],
 				'condition' => [
 					'background_overlay_background' => [ 'classic' ],
@@ -369,7 +369,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'section_border',
 			[
-				'label' => __( 'Border', 'elementor' ),
+				'label' => __( 'Border', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 			]
 		);
@@ -384,11 +384,11 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}}, {{WRAPPER}} > .elementor-background-overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}}, {{WRAPPER}} > .wroter-background-overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -406,7 +406,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'section_typo',
 			[
-				'label' => __( 'Typography', 'elementor' ),
+				'label' => __( 'Typography', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 			]
 		);
@@ -414,11 +414,11 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'heading_color',
 			[
-				'label' => __( 'Heading Color', 'elementor' ),
+				'label' => __( 'Heading Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container .elementor-heading-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} > .wroter-container .wroter-heading-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -426,11 +426,11 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'color_text',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container' => 'color: {{VALUE}};',
+					'{{WRAPPER}} > .wroter-container' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -438,11 +438,11 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'color_link',
 			[
-				'label' => __( 'Link Color', 'elementor' ),
+				'label' => __( 'Link Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} > .wroter-container a' => 'color: {{VALUE}};',
 				],
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_typo',
@@ -452,11 +452,11 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'color_link_hover',
 			[
-				'label' => __( 'Link Hover Color', 'elementor' ),
+				'label' => __( 'Link Hover Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} > .wroter-container a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -464,24 +464,24 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'text_align',
 			[
-				'label' => __( 'Text Align', 'elementor' ),
+				'label' => __( 'Text Align', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} > .elementor-container' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} > .wroter-container' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -492,7 +492,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'section_advanced',
 			[
-				'label' => __( 'Advanced', 'elementor' ),
+				'label' => __( 'Advanced', 'wroter' ),
 				'tab' => self::TAB_ADVANCED,
 			]
 		);
@@ -500,7 +500,7 @@ class Element_Section extends Element_Base {
 		$this->add_responsive_control(
 			'margin',
 			[
-				'label' => __( 'Margin', 'elementor' ),
+				'label' => __( 'Margin', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'allowed_dimensions' => 'vertical',
@@ -519,7 +519,7 @@ class Element_Section extends Element_Base {
 		$this->add_responsive_control(
 			'padding',
 			[
-				'label' => __( 'Padding', 'elementor' ),
+				'label' => __( 'Padding', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
@@ -531,7 +531,7 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'animation',
 			[
-				'label' => __( 'Entrance Animation', 'elementor' ),
+				'label' => __( 'Entrance Animation', 'wroter' ),
 				'type' => Controls_Manager::ANIMATION,
 				'default' => '',
 				'prefix_class' => 'animated ',
@@ -542,13 +542,13 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'animation_duration',
 			[
-				'label' => __( 'Animation Duration', 'elementor' ),
+				'label' => __( 'Animation Duration', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'slow' => __( 'Slow', 'elementor' ),
-					'' => __( 'Normal', 'elementor' ),
-					'fast' => __( 'Fast', 'elementor' ),
+					'slow' => __( 'Slow', 'wroter' ),
+					'' => __( 'Normal', 'wroter' ),
+					'fast' => __( 'Fast', 'wroter' ),
 				],
 				'prefix_class' => 'animated-',
 				'condition' => [
@@ -560,12 +560,12 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'css_classes',
 			[
-				'label' => __( 'CSS Classes', 'elementor' ),
+				'label' => __( 'CSS Classes', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => '',
 				'prefix_class' => '',
 				'label_block' => true,
-				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'elementor' ),
+				'title' => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'wroter' ),
 			]
 		);
 
@@ -575,7 +575,7 @@ class Element_Section extends Element_Base {
 		$this->start_controls_section(
 			'_section_responsive',
 			[
-				'label' => __( 'Responsive', 'elementor' ),
+				'label' => __( 'Responsive', 'wroter' ),
 				'tab' => self::TAB_ADVANCED,
 			]
 		);
@@ -583,21 +583,21 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'reverse_order_mobile',
 			[
-				'label' => __( 'Reverse Columns', 'elementor' ),
+				'label' => __( 'Reverse Columns', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'prefix_class' => 'elementor-',
-				'label_on' => __( 'Yes', 'elementor' ),
-				'label_off' => __( 'No', 'elementor' ),
+				'prefix_class' => 'wroter-',
+				'label_on' => __( 'Yes', 'wroter' ),
+				'label_off' => __( 'No', 'wroter' ),
 				'return_value' => 'reverse-mobile',
-				'description' => __( 'Reverse column order - When on mobile, the column order is reversed, so the last column appears on top and vice versa.', 'elementor' ),
+				'description' => __( 'Reverse column order - When on mobile, the column order is reversed, so the last column appears on top and vice versa.', 'wroter' ),
 			]
 		);
 
 		$this->add_control(
 			'heading_visibility',
 			[
-				'label' => __( 'Visibility', 'elementor' ),
+				'label' => __( 'Visibility', 'wroter' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -606,21 +606,21 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'responsive_description',
 			[
-				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Elementor.', 'elementor' ),
+				'raw' => __( 'Attention: The display settings (show/hide for mobile, tablet or desktop) will only take effect once you are on the preview or live page, and not while you\'re in editing mode in Wroter.', 'wroter' ),
 				'type' => Controls_Manager::RAW_HTML,
-				'classes' => 'elementor-control-descriptor',
+				'classes' => 'wroter-control-descriptor',
 			]
 		);
 
 		$this->add_control(
 			'hide_desktop',
 			[
-				'label' => __( 'Hide On Desktop', 'elementor' ),
+				'label' => __( 'Hide On Desktop', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'prefix_class' => 'elementor-',
-				'label_on' => __( 'Hide', 'elementor' ),
-				'label_off' => __( 'Show', 'elementor' ),
+				'prefix_class' => 'wroter-',
+				'label_on' => __( 'Hide', 'wroter' ),
+				'label_off' => __( 'Show', 'wroter' ),
 				'return_value' => 'hidden-desktop',
 			]
 		);
@@ -628,12 +628,12 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'hide_tablet',
 			[
-				'label' => __( 'Hide On Tablet', 'elementor' ),
+				'label' => __( 'Hide On Tablet', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'prefix_class' => 'elementor-',
-				'label_on' => __( 'Hide', 'elementor' ),
-				'label_off' => __( 'Show', 'elementor' ),
+				'prefix_class' => 'wroter-',
+				'label_on' => __( 'Hide', 'wroter' ),
+				'label_off' => __( 'Show', 'wroter' ),
 				'return_value' => 'hidden-tablet',
 			]
 		);
@@ -641,12 +641,12 @@ class Element_Section extends Element_Base {
 		$this->add_control(
 			'hide_mobile',
 			[
-				'label' => __( 'Hide On Mobile', 'elementor' ),
+				'label' => __( 'Hide On Mobile', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'prefix_class' => 'elementor-',
-				'label_on' => __( 'Hide', 'elementor' ),
-				'label_off' => __( 'Show', 'elementor' ),
+				'prefix_class' => 'wroter-',
+				'label_on' => __( 'Hide', 'wroter' ),
+				'label_off' => __( 'Show', 'wroter' ),
 				'return_value' => 'hidden-phone',
 			]
 		);
@@ -656,7 +656,7 @@ class Element_Section extends Element_Base {
 
 	protected function render_settings() {
 		?>
-		<div class="elementor-element-overlay"></div>
+		<div class="wroter-element-overlay"></div>
 		<?php
 	}
 
@@ -666,27 +666,27 @@ class Element_Section extends Element_Base {
 			var videoLink = settings.background_video_link;
 
 			if ( videoLink ) {
-				var videoID = elementor.helpers.getYoutubeIDFromURL( settings.background_video_link ); #>
+				var videoID = wroter.helpers.getYoutubeIDFromURL( settings.background_video_link ); #>
 
-				<div class="elementor-background-video-container elementor-hidden-phone">
+				<div class="wroter-background-video-container wroter-hidden-phone">
 					<# if ( videoID ) { #>
-						<div class="elementor-background-video" data-video-id="{{ videoID }}"></div>
+						<div class="wroter-background-video" data-video-id="{{ videoID }}"></div>
 					<# } else { #>
-						<video class="elementor-background-video" src="{{ videoLink }}" autoplay loop muted></video>
+						<video class="wroter-background-video" src="{{ videoLink }}" autoplay loop muted></video>
 					<# } #>
 				</div>
 			<# }
 
 			if ( settings.background_video_fallback ) { #>
-				<div class="elementor-background-video-fallback" style="background-image: url({{ settings.background_video_fallback.url }})"></div>
+				<div class="wroter-background-video-fallback" style="background-image: url({{ settings.background_video_fallback.url }})"></div>
 			<# }
 		}
 
 		if ( 'classic' === settings.background_overlay_background ) { #>
-			<div class="elementor-background-overlay"></div>
+			<div class="wroter-background-overlay"></div>
 		<# } #>
-		<div class="elementor-container elementor-column-gap-{{ settings.gap }}" <# if ( settings.get_render_attribute_string ) { #>{{{ settings.get_render_attribute_string( 'wrapper' ) }}} <# } #> >
-			<div class="elementor-row"></div>
+		<div class="wroter-container wroter-column-gap-{{ settings.gap }}" <# if ( settings.get_render_attribute_string ) { #>{{{ settings.get_render_attribute_string( 'wrapper' ) }}} <# } #> >
+			<div class="wroter-row"></div>
 		</div>
 		<?php
 	}
@@ -695,10 +695,10 @@ class Element_Section extends Element_Base {
 		$section_type = ! empty( $element_data['isInner'] ) ? 'inner' : 'top';
 
 		$this->add_render_attribute( 'wrapper', 'class', [
-			'elementor-section',
-			'elementor-element',
-			'elementor-element-' . $element_id,
-			'elementor-' . $section_type . '-section',
+			'wroter-section',
+			'wroter-element',
+			'wroter-element-' . $element_id,
+			'wroter-' . $section_type . '-section',
 		] );
 
 		foreach ( $this->get_class_controls() as $control ) {
@@ -723,21 +723,21 @@ class Element_Section extends Element_Base {
 				if ( $instance['background_video_link'] ) :
 					$video_id = Utils::get_youtube_id_from_url( $instance['background_video_link'] );
 					?>
-					<div class="elementor-background-video-container elementor-hidden-phone">
+					<div class="wroter-background-video-container wroter-hidden-phone">
 						<?php if ( $video_id ) : ?>
-							<div class="elementor-background-video" data-video-id="<?php echo $video_id; ?>"></div>
+							<div class="wroter-background-video" data-video-id="<?php echo $video_id; ?>"></div>
 						<?php else : ?>
-							<video class="elementor-background-video elementor-html5-video" src="<?php echo $instance['background_video_link'] ?>" autoplay loop muted></video>
+							<video class="wroter-background-video wroter-html5-video" src="<?php echo $instance['background_video_link'] ?>" autoplay loop muted></video>
 						<?php endif; ?>
 					</div>
 				<?php endif;
 			endif;
 
 			if ( 'classic' === $instance['background_overlay_background'] ) : ?>
-				<div class="elementor-background-overlay"></div>
+				<div class="wroter-background-overlay"></div>
 			<?php endif; ?>
-			<div class="elementor-container elementor-column-gap-<?php echo esc_attr( $instance['gap'] ); ?>">
-				<div class="elementor-row">
+			<div class="wroter-container wroter-column-gap-<?php echo esc_attr( $instance['gap'] ); ?>">
+				<div class="wroter-row">
 		<?php
 	}
 

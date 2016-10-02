@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Text_editor extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Text Editor', 'elementor' );
+		return __( 'Text Editor', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Text_editor extends Widget_Base {
 		$this->add_control(
 			'section_editor',
 			[
-				'label' => __( 'Text Editor', 'elementor' ),
+				'label' => __( 'Text Editor', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -31,7 +31,7 @@ class Widget_Text_editor extends Widget_Base {
 			[
 				'label' => '',
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => __( 'I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor' ),
+				'default' => __( 'I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'wroter' ),
 				'section' => 'section_editor',
 			]
 		);
@@ -39,7 +39,7 @@ class Widget_Text_editor extends Widget_Base {
 		$this->add_control(
 			'section_style',
 			[
-				'label' => __( 'Text Editor', 'elementor' ),
+				'label' => __( 'Text Editor', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -48,30 +48,30 @@ class Widget_Text_editor extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style',
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'elementor' ),
+						'title' => __( 'Justified', 'wroter' ),
 						'icon' => 'align-justify',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-text-editor' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .wroter-text-editor' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -79,7 +79,7 @@ class Widget_Text_editor extends Widget_Base {
 	    $this->add_control(
 	        'text_color',
 	        [
-	            'label' => __( 'Text Color', 'elementor' ),
+	            'label' => __( 'Text Color', 'wroter' ),
 	            'type' => Controls_Manager::COLOR,
 	            'tab' => self::TAB_STYLE,
 	            'section' => 'section_style',
@@ -108,7 +108,7 @@ class Widget_Text_editor extends Widget_Base {
 	protected function render( $instance = [] ) {
 		$instance['editor'] = $this->parse_text_editor( $instance['editor'], $instance );
 		?>
-		<div class="elementor-text-editor"><?php echo $instance['editor']; ?></div>
+		<div class="wroter-text-editor"><?php echo $instance['editor']; ?></div>
 		<?php
 	}
 
@@ -119,7 +119,7 @@ class Widget_Text_editor extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<div class="elementor-text-editor">{{{ settings.editor }}}</div>
+		<div class="wroter-text-editor">{{{ settings.editor }}}</div>
 		<?php
 	}
 }

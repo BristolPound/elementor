@@ -1,7 +1,7 @@
 var PanelSchemeDisabledView;
 
 PanelSchemeDisabledView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-panel-schemes-disabled',
+	template: '#tmpl-wroter-panel-schemes-disabled',
 
 	disabledTitle: '',
 
@@ -11,7 +11,7 @@ PanelSchemeDisabledView = Marionette.ItemView.extend( {
 		};
 	},
 
-	id: 'elementor-panel-schemes-disabled'
+	id: 'wroter-panel-schemes-disabled'
 } );
 
 module.exports = PanelSchemeDisabledView;

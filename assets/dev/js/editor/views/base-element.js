@@ -1,5 +1,5 @@
-var BaseSettingsModel = require( 'elementor-models/base-settings' ),
-	Stylesheet = require( 'elementor-utils/stylesheet' ),
+var BaseSettingsModel = require( 'wroter-models/base-settings' ),
+	Stylesheet = require( 'wroter-utils/stylesheet' ),
 	BaseElementView;
 
 BaseElementView = Marionette.CompositeView.extend( {
@@ -31,7 +31,7 @@ BaseElementView = Marionette.CompositeView.extend( {
 	},
 
 	getChildType: function() {
-		return elementor.helpers.getElementChildType( this.getElementType() );
+		return wroter.helpers.getElementChildType( this.getElementType() );
 	},
 
 	events: function() {
@@ -84,12 +84,12 @@ BaseElementView = Marionette.CompositeView.extend( {
 			if ( ! removeDialog ) {
 				var elementTitle = this.model.getTitle();
 
-				removeDialog = elementor.dialogsManager.createWidget( 'confirm', {
-					message: elementor.translate( 'dialog_confirm_delete', [ elementTitle.toLowerCase() ] ),
-					headerMessage: elementor.translate( 'delete_element', [ elementTitle ] ),
+				removeDialog = wroter.dialogsManager.createWidget( 'confirm', {
+					message: wroter.translate( 'dialog_confirm_delete', [ elementTitle.toLowerCase() ] ),
+					headerMessage: wroter.translate( 'delete_element', [ elementTitle ] ),
 					strings: {
-						confirm: elementor.translate( 'delete' ),
-						cancel: elementor.translate( 'cancel' )
+						confirm: wroter.translate( 'delete' ),
+						cancel: wroter.translate( 'cancel' )
 					},
 					defaultOption: 'confirm',
 					onConfirm: _.bind( function() {
@@ -105,7 +105,7 @@ BaseElementView = Marionette.CompositeView.extend( {
 	initStylesheet: function() {
 		this.stylesheet = new Stylesheet();
 
-		var viewportBreakpoints = elementor.config.viewportBreakpoints;
+		var viewportBreakpoints = wroter.config.viewportBreakpoints;
 
 		this.stylesheet
 			.addDevice( 'mobile', 0 )
@@ -120,18 +120,18 @@ BaseElementView = Marionette.CompositeView.extend( {
 				return;
 			}
 
-			var isVisible = elementor.helpers.isControlVisible( control, this.model.get( 'settings' ) );
+			var isVisible = wroter.helpers.isControlVisible( control, this.model.get( 'settings' ) );
 			if ( ! isVisible ) {
 				return;
 			}
 
-			elementor.helpers.enqueueFont( fontFamilyName );
+			wroter.helpers.enqueueFont( fontFamilyName );
 		}, this ) );
 	},
 
 	renderStyles: function() {
 		var self = this,
-			$stylesheet = elementor.$previewContents.find( '#elementor-style-' + self.model.cid ),
+			$stylesheet = wroter.$previewContents.find( '#wroter-style-' + self.model.cid ),
 			styleControls = self.model.get( 'settings' ).getStyleControls();
 
 		self.stylesheet.empty();
@@ -143,14 +143,14 @@ BaseElementView = Marionette.CompositeView.extend( {
 				return;
 			}
 
-			var isVisible = elementor.helpers.isControlVisible( control, self.model.get( 'settings' ) );
+			var isVisible = wroter.helpers.isControlVisible( control, self.model.get( 'settings' ) );
 			if ( ! isVisible ) {
 				return;
 			}
 
 			_.each( control.selectors, function( cssProperty, selector ) {
 				var outputSelector = selector.replace( /\{\{WRAPPER}}/g, '#' + self.getElementUniqueClass() ),
-					outputCssProperty = elementor.getControlItemView( control.type ).replaceStyleValues( cssProperty, controlValue ),
+					outputCssProperty = wroter.getControlItemView( control.type ).replaceStyleValues( cssProperty, controlValue ),
 					query;
 
 				if ( _.isEmpty( outputCssProperty ) ) {
@@ -180,15 +180,15 @@ BaseElementView = Marionette.CompositeView.extend( {
 		}
 
 		if ( ! $stylesheet.length ) {
-			elementor.$previewContents.find( 'head' ).append( '<style type="text/css" id="elementor-style-' + self.model.cid + '"></style>' );
-			$stylesheet = elementor.$previewContents.find( '#elementor-style-' + self.model.cid );
+			wroter.$previewContents.find( 'head' ).append( '<style type="text/css" id="wroter-style-' + self.model.cid + '"></style>' );
+			$stylesheet = wroter.$previewContents.find( '#wroter-style-' + self.model.cid );
 		}
 
 		$stylesheet.html( styleHtml );
 	},
 
 	renderCustomClasses: function() {
-		this.$el.addClass( 'elementor-element' );
+		this.$el.addClass( 'wroter-element' );
 
 		var settings = this.model.get( 'settings' );
 
@@ -198,7 +198,7 @@ BaseElementView = Marionette.CompositeView.extend( {
 
 				this.$el.removeClass( currentControl.prefix_class + settings.previous( attribute ) );
 
-				var isVisible = elementor.helpers.isControlVisible( currentControl, this.model.get( 'settings' ) );
+				var isVisible = wroter.helpers.isControlVisible( currentControl, this.model.get( 'settings' ) );
 
 				if ( isVisible && ! _.isEmpty( settings.get( attribute ) ) ) {
 					this.$el.addClass( currentControl.prefix_class + settings.get( attribute ) );
@@ -216,22 +216,22 @@ BaseElementView = Marionette.CompositeView.extend( {
 
 	runReadyTrigger: function() {
 		_.defer( _.bind( function() {
-			elementorFrontend.elementsHandler.runReadyTrigger( this.$el );
+			wroterFrontend.elementsHandler.runReadyTrigger( this.$el );
 		}, this ) );
 	},
 
 	getElementUniqueClass: function() {
-		return 'elementor-element-' + this.model.get( 'id' );
+		return 'wroter-element-' + this.model.get( 'id' );
 	},
 
 	onCollectionChanged: function() {
-		elementor.setFlagEditorChange( true );
+		wroter.setFlagEditorChange( true );
 	},
 
 	onSettingsChanged: function( settings ) {
 		if ( this.model.get( 'editSettings' ) !== settings ) {
 			// Change flag only if server settings was changed
-			elementor.setFlagEditorChange( true );
+			wroter.setFlagEditorChange( true );
 		}
 
 		// Make sure is correct model

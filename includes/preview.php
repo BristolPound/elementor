@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -40,7 +40,7 @@ class Preview {
 			return false;
 		}
 
-		if ( ! isset( $_GET['elementor-preview'] ) ) {
+		if ( ! isset( $_GET['wroter-preview'] ) ) {
 			return false;
 		}
 
@@ -56,7 +56,7 @@ class Preview {
 	 * @return array
 	 */
 	public function body_class( $classes = [] ) {
-		$classes[] = 'elementor-body';
+		$classes[] = 'wroter-body';
 		return $classes;
 	}
 
@@ -70,16 +70,16 @@ class Preview {
 	 * @return string
 	 */
 	public function builder_wrapper( $content ) {
-		return '<div id="elementor" class="elementor"></div>';
+		return '<div id="wroter" class="wroter"></div>';
 	}
 
 	public function print_custom_css() {
-		$container_width = absint( get_option( 'elementor_container_width' ) );
+		$container_width = absint( get_option( 'wroter_container_width' ) );
 		if ( empty( $container_width ) ) {
 			return;
 		}
 
-		?><style>.elementor-section.elementor-section-boxed > .elementor-container{max-width: <?php echo esc_html( $container_width ); ?>px</style><?php
+		?><style>.wroter-section.wroter-section-boxed > .wroter-container{max-width: <?php echo esc_html( $container_width ); ?>px</style><?php
 	}
 
 	/**
@@ -100,7 +100,7 @@ class Preview {
 
 		wp_register_style(
 			'editor-preview',
-			ELEMENTOR_ASSETS_URL . 'css/editor-preview' . $direction_suffix . $suffix . '.css',
+			WROTER_ASSETS_URL . 'css/editor-preview' . $direction_suffix . $suffix . '.css',
 			[],
 			Plugin::instance()->get_version()
 		);

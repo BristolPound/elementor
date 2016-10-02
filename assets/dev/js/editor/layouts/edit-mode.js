@@ -1,14 +1,14 @@
 var EditModeItemView;
 
 EditModeItemView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-mode-switcher-content',
+	template: '#tmpl-wroter-mode-switcher-content',
 
-	id: 'elementor-mode-switcher-inner',
+	id: 'wroter-mode-switcher-inner',
 
 	ui: {
-		previewButton: '#elementor-mode-switcher-preview-input',
-		previewLabel: '#elementor-mode-switcher-preview',
-		previewLabelA11y: '#elementor-mode-switcher-preview .elementor-screen-only'
+		previewButton: '#wroter-mode-switcher-preview-input',
+		previewLabel: '#wroter-mode-switcher-preview',
+		previewLabelA11y: '#wroter-mode-switcher-preview .wroter-screen-only'
 	},
 
 	events: {
@@ -28,7 +28,7 @@ EditModeItemView = Marionette.ItemView.extend( {
 	},
 
 	onEditModeChange: function() {
-		var dataEditMode = elementor.channels.dataEditMode,
+		var dataEditMode = wroter.channels.dataEditMode,
 			oldEditMode = dataEditMode.request( 'activeMode' ),
 			currentMode = this.getCurrentMode();
 

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor\TemplateLibrary;
+namespace Wroter\TemplateLibrary;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -11,8 +11,8 @@ class Manager {
 	protected $_registered_sources = [];
 
 	public function init() {
-		include( ELEMENTOR_PATH . 'includes/template-library/classes/class-import-images.php' );
-		include( ELEMENTOR_PATH . 'includes/template-library/sources/base.php' );
+		include( WROTER_PATH . 'includes/template-library/classes/class-import-images.php' );
+		include( WROTER_PATH . 'includes/template-library/sources/base.php' );
 
 		$sources = [
 			'local',
@@ -20,7 +20,7 @@ class Manager {
 		];
 
 		foreach ( $sources as $source_filename ) {
-			include( ELEMENTOR_PATH . 'includes/template-library/sources/' . $source_filename . '.php' );
+			include( WROTER_PATH . 'includes/template-library/sources/' . $source_filename . '.php' );
 
 			$class_name = ucwords( $source_filename );
 			$class_name = str_replace( '-', '_', $class_name );
@@ -171,7 +171,7 @@ class Manager {
 	}
 
 	public function on_export_template_error( \WP_Error $error ) {
-		_default_wp_die_handler( $error->get_error_message(), 'Elementor Library' );
+		_default_wp_die_handler( $error->get_error_message(), 'Wroter Library' );
 	}
 
 	private function handle_ajax_request( $ajax_request, $args ) {
@@ -225,7 +225,7 @@ class Manager {
 		];
 
 		foreach ( $allowed_ajax_requests as $ajax_request ) {
-			add_action( 'wp_ajax_elementor_' . $ajax_request, function() use ( $ajax_request ) {
+			add_action( 'wp_ajax_wroter_' . $ajax_request, function() use ( $ajax_request ) {
 				$this->handle_ajax_request( $ajax_request, func_get_args() );
 			} );
 		}

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Accordion extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Accordion', 'elementor' );
+		return __( 'Accordion', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,38 +21,38 @@ class Widget_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_title',
 			[
-				'label' => __( 'Accordion', 'elementor' ),
+				'label' => __( 'Accordion', 'wroter' ),
 			]
 		);
 
 		$this->add_control(
 			'tabs',
 			[
-				'label' => __( 'Accordion Items', 'elementor' ),
+				'label' => __( 'Accordion Items', 'wroter' ),
 				'type' => Controls_Manager::REPEATER,
 				'default' => [
 					[
-						'tab_title' => __( 'Accordion #1', 'elementor' ),
-						'tab_content' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor' ),
+						'tab_title' => __( 'Accordion #1', 'wroter' ),
+						'tab_content' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'wroter' ),
 					],
 					[
-						'tab_title' => __( 'Accordion #2', 'elementor' ),
-						'tab_content' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor' ),
+						'tab_title' => __( 'Accordion #2', 'wroter' ),
+						'tab_content' => __( 'I am item content. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'wroter' ),
 					],
 				],
 				'fields' => [
 					[
 						'name' => 'tab_title',
-						'label' => __( 'Title & Content', 'elementor' ),
+						'label' => __( 'Title & Content', 'wroter' ),
 						'type' => Controls_Manager::TEXT,
-						'default' => __( 'Accordion Title' , 'elementor' ),
+						'default' => __( 'Accordion Title' , 'wroter' ),
 						'label_block' => true,
 					],
 					[
 						'name' => 'tab_content',
-						'label' => __( 'Content', 'elementor' ),
+						'label' => __( 'Content', 'wroter' ),
 						'type' => Controls_Manager::TEXTAREA,
-						'default' => __( 'Accordion Content', 'elementor' ),
+						'default' => __( 'Accordion Content', 'wroter' ),
 						'show_label' => false,
 					],
 				],
@@ -63,7 +63,7 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -74,7 +74,7 @@ class Widget_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_style',
 			[
-				'label' => __( 'Accordion', 'elementor' ),
+				'label' => __( 'Accordion', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 			]
 		);
@@ -82,12 +82,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label' => __( 'Icon Alignment', 'elementor' ),
+				'label' => __( 'Icon Alignment', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => is_rtl() ? 'right' : 'left',
 				'options' => [
-					'left' => __( 'Left', 'elementor' ),
-					'right' => __( 'Right', 'elementor' ),
+					'left' => __( 'Left', 'wroter' ),
+					'right' => __( 'Right', 'wroter' ),
 				],
 			]
 		);
@@ -95,7 +95,7 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'border_width',
 			[
-				'label' => __( 'Border Width', 'elementor' ),
+				'label' => __( 'Border Width', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 1,
@@ -109,9 +109,9 @@ class Widget_Accordion extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-item' => 'border-width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-content' => 'border-width: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-wrapper .elementor-accordion-title.active > span' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-item' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-content' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-wrapper .wroter-accordion-title.active > span' => 'border-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -119,14 +119,14 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'border_color',
 			[
-				'label' => __( 'Border Color', 'elementor' ),
+				'label' => __( 'Border Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-item' => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-content' => 'border-top-color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-wrapper .elementor-accordion-title.active > span' => 'border-bottom-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-item' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-content' => 'border-top-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-wrapper .wroter-accordion-title.active > span' => 'border-bottom-color: {{VALUE}};',
 				],
 			]
 		);
@@ -134,12 +134,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label' => __( 'Title Color', 'elementor' ),
+				'label' => __( 'Title Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-title' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -152,12 +152,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'title_background',
 			[
-				'label' => __( 'Title Background', 'elementor' ),
+				'label' => __( 'Title Background', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-title' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-title' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -165,12 +165,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'tab_active_color',
 			[
-				'label' => __( 'Active Color', 'elementor' ),
+				'label' => __( 'Active Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-title.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-title.active' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -182,11 +182,11 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'label' => __( 'Title Typography', 'elementor' ),
+				'label' => __( 'Title Typography', 'wroter' ),
 				'name' => 'title_typography',
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
-				'selector' => '{{WRAPPER}} .elementor-accordion .elementor-accordion-title',
+				'selector' => '{{WRAPPER}} .wroter-accordion .wroter-accordion-title',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_1,
 			]
 		);
@@ -194,12 +194,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'content_background_color',
 			[
-				'label' => __( 'Content Background', 'elementor' ),
+				'label' => __( 'Content Background', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-content' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-content' => 'background-color: {{VALUE}};',
 				],
 				'separator' => 'before',
 			]
@@ -208,12 +208,12 @@ class Widget_Accordion extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Content Color', 'elementor' ),
+				'label' => __( 'Content Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-accordion .elementor-accordion-content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-accordion .wroter-accordion-content' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -228,10 +228,10 @@ class Widget_Accordion extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'content_typography',
-				'label' => __( 'Content Typography', 'elementor' ),
+				'label' => __( 'Content Typography', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_title_style',
-				'selector' => '{{WRAPPER}} .elementor-accordion .elementor-accordion-content',
+				'selector' => '{{WRAPPER}} .wroter-accordion .wroter-accordion-content',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -239,17 +239,17 @@ class Widget_Accordion extends Widget_Base {
 
 	protected function render( $instance = [] ) {
 		?>
-		<div class="elementor-accordion">
+		<div class="wroter-accordion">
 			<?php $counter = 1; ?>
 			<?php foreach ( $instance['tabs'] as $item ) : ?>
-				<div class="elementor-accordion-item">
-					<div class="elementor-accordion-title" data-section="<?php echo $counter; ?>">
-						<span class="elementor-accordion-icon elementor-accordion-icon-<?php echo $instance['icon_align']; ?>">
+				<div class="wroter-accordion-item">
+					<div class="wroter-accordion-title" data-section="<?php echo $counter; ?>">
+						<span class="wroter-accordion-icon wroter-accordion-icon-<?php echo $instance['icon_align']; ?>">
 							<i class="fa"></i>
 						</span>
 						<?php echo $item['tab_title']; ?>
 					</div>
-					<div class="elementor-accordion-content" data-section="<?php echo $counter; ?>"><?php echo $this->parse_text_editor( $item['tab_content'], $item ); ?></div>
+					<div class="wroter-accordion-content" data-section="<?php echo $counter; ?>"><?php echo $this->parse_text_editor( $item['tab_content'], $item ); ?></div>
 				</div>
 			<?php
 				$counter++;
@@ -260,19 +260,19 @@ class Widget_Accordion extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<div class="elementor-accordion" data-active-section="{{ editSettings.activeItemIndex ? editSettings.activeItemIndex : 0 }}">
+		<div class="wroter-accordion" data-active-section="{{ editSettings.activeItemIndex ? editSettings.activeItemIndex : 0 }}">
 			<#
 			if ( settings.tabs ) {
 				var counter = 1;
 				_.each( settings.tabs, function( item ) { #>
-					<div class="elementor-accordion-item">
-						<div class="elementor-accordion-title" data-section="{{ counter }}">
-							<span class="elementor-accordion-icon elementor-accordion-icon-{{ settings.icon_align }}">
+					<div class="wroter-accordion-item">
+						<div class="wroter-accordion-title" data-section="{{ counter }}">
+							<span class="wroter-accordion-icon wroter-accordion-icon-{{ settings.icon_align }}">
 								<i class="fa"></i>
 							</span>
 							{{{ item.tab_title }}}
 						</div>
-						<div class="elementor-accordion-content" data-section="{{ counter }}">{{{ item.tab_content }}}</div>
+						<div class="wroter-accordion-content" data-section="{{ counter }}">{{{ item.tab_content }}}</div>
 					</div>
 				<#
 					counter++;

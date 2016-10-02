@@ -1,16 +1,16 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class User {
 
-	const ADMIN_NOTICES_KEY = 'elementor_admin_notices';
-	const INTRODUCTION_KEY = 'elementor_introduction';
+	const ADMIN_NOTICES_KEY = 'wroter_admin_notices';
+	const INTRODUCTION_KEY = 'wroter_introduction';
 
 	public static function init() {
-		add_action( 'wp_ajax_elementor_introduction_viewed', [ __CLASS__, 'set_introduction_viewed' ] );
-		add_action( 'wp_ajax_elementor_set_admin_notice_viewed', [ __CLASS__, 'ajax_set_admin_notice_viewed' ] );
+		add_action( 'wp_ajax_wroter_introduction_viewed', [ __CLASS__, 'set_introduction_viewed' ] );
+		add_action( 'wp_ajax_wroter_set_admin_notice_viewed', [ __CLASS__, 'ajax_set_admin_notice_viewed' ] );
 	}
 
 	public static function is_current_user_can_edit( $post_id = 0 ) {
@@ -35,7 +35,7 @@ class User {
 			return false;
 
 		$user = wp_get_current_user();
-		$exclude_roles = get_option( 'elementor_exclude_user_roles', [] );
+		$exclude_roles = get_option( 'wroter_exclude_user_roles', [] );
 
 		$compare_roles = array_intersect( $user->roles, $exclude_roles );
 		if ( ! empty( $compare_roles ) )
@@ -117,12 +117,12 @@ class User {
 	private static function get_current_introduction() {
 		return [
 			'active' => true,
-			'title' => '<div id="elementor-introduction-title">' .
-			           __( 'Two Minute Tour Of Elementor', 'elementor' ) .
-			           '</div><div id="elementor-introduction-subtitle">' .
-			           __( 'Watch this quick tour that gives you a basic understanding of how to use Elementor.', 'elementor' ) .
+			'title' => '<div id="wroter-introduction-title">' .
+			           __( 'Two Minute Tour Of Wroter', 'wroter' ) .
+			           '</div><div id="wroter-introduction-subtitle">' .
+			           __( 'Watch this quick tour that gives you a basic understanding of how to use Wroter.', 'wroter' ) .
 			           '</div>',
-			'content' => '<div class="elementor-video-wrapper"><iframe src="https://www.youtube.com/embed/6u45V2q1s4k?autoplay=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>',
+			'content' => '<div class="wroter-video-wrapper"><iframe src="https://www.youtube.com/embed/6u45V2q1s4k?autoplay=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>',
 			'delay' => 2500,
 			'version' => 1,
 		];

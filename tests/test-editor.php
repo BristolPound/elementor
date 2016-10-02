@@ -1,14 +1,14 @@
 <?php
 
-class Elementor_Test_Editor extends WP_UnitTestCase {
+class Wroter_Test_Editor extends WP_UnitTestCase {
 
 	public function test_getInstance() {
-		$this->assertInstanceOf( '\Elementor\Editor', Elementor\Plugin::instance()->editor );
+		$this->assertInstanceOf( '\Wroter\Editor', Wroter\Plugin::instance()->editor );
 	}
 
 	public function test_enqueueScripts() {
 		ob_start();
-		Elementor\Plugin::instance()->editor->enqueue_scripts();
+		Wroter\Plugin::instance()->editor->enqueue_scripts();
 		ob_get_clean();
 
 		$scripts = [
@@ -22,9 +22,9 @@ class Elementor_Test_Editor extends WP_UnitTestCase {
 			'tipsy',
 			'imagesloaded',
 			'heartbeat',
-			'elementor-dialog',
+			'wroter-dialog',
 
-			'elementor-editor',
+			'wroter-editor',
 		];
 
 		foreach ( $scripts as $script ) {
@@ -33,16 +33,16 @@ class Elementor_Test_Editor extends WP_UnitTestCase {
 	}
 
 	public function test_enqueueStyles() {
-		Elementor\Plugin::instance()->editor->enqueue_styles();
+		Wroter\Plugin::instance()->editor->enqueue_styles();
 
 		$scripts = [
 			'font-awesome',
 			'select2',
-			'elementor-icons',
+			'wroter-icons',
 			'wp-auth-check',
 			'google-font-roboto',
 
-			'elementor-admin',
+			'wroter-admin',
 		];
 
 		foreach ( $scripts as $script ) {
@@ -52,7 +52,7 @@ class Elementor_Test_Editor extends WP_UnitTestCase {
 
 	public function test_renderFooter() {
 		ob_start();
-		Elementor\Plugin::instance()->editor->wp_footer();
+		Wroter\Plugin::instance()->editor->wp_footer();
 		$buffer = ob_get_clean();
 
 		$this->assertNotEmpty( $buffer );

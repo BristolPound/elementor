@@ -1,16 +1,16 @@
-var EditModeItemView = require( 'elementor-layouts/edit-mode' ),
+var EditModeItemView = require( 'wroter-layouts/edit-mode' ),
 	PanelLayoutView;
 
 PanelLayoutView = Marionette.LayoutView.extend( {
-	template: '#tmpl-elementor-panel',
+	template: '#tmpl-wroter-panel',
 
-	id: 'elementor-panel-inner',
+	id: 'wroter-panel-inner',
 
 	regions: {
-		content: '#elementor-panel-content-wrapper',
-		header: '#elementor-panel-header-wrapper',
-		footer: '#elementor-panel-footer',
-		modeSwitcher: '#elementor-mode-switcher'
+		content: '#wroter-panel-content-wrapper',
+		header: '#wroter-panel-header-wrapper',
+		footer: '#wroter-panel-footer',
+		modeSwitcher: '#wroter-mode-switcher'
 	},
 
 	pages: {},
@@ -35,31 +35,31 @@ PanelLayoutView = Marionette.LayoutView.extend( {
 	initPages: function() {
 		var pages = {
 			elements: {
-				view: require( 'elementor-panel/pages/elements/elements' ),
-				title: '<img src="' + elementor.config.assets_url + 'images/logo-panel.svg">'
+				view: require( 'wroter-panel/pages/elements/elements' ),
+				title: '<img src="' + wroter.config.assets_url + 'images/logo-panel.svg">'
 			},
 			editor: {
-				view: require( 'elementor-panel/pages/editor' )
+				view: require( 'wroter-panel/pages/editor' )
 			},
 			menu: {
-				view: require( 'elementor-panel/pages/menu/menu' ),
-				title: '<img src="' + elementor.config.assets_url + 'images/logo-panel.svg">'
+				view: require( 'wroter-panel/pages/menu/menu' ),
+				title: '<img src="' + wroter.config.assets_url + 'images/logo-panel.svg">'
 			},
 			colorScheme: {
-				view: require( 'elementor-panel/pages/schemes/colors' )
+				view: require( 'wroter-panel/pages/schemes/colors' )
 			},
 			typographyScheme: {
-				view: require( 'elementor-panel/pages/schemes/typography' )
+				view: require( 'wroter-panel/pages/schemes/typography' )
 			}
 		};
 
-		var schemesTypes = Object.keys( elementor.schemes.getSchemes() ),
-			disabledSchemes = _.difference( schemesTypes, elementor.schemes.getEnabledSchemesTypes() );
+		var schemesTypes = Object.keys( wroter.schemes.getSchemes() ),
+			disabledSchemes = _.difference( schemesTypes, wroter.schemes.getEnabledSchemesTypes() );
 
 		_.each( disabledSchemes, function( schemeType ) {
-			var scheme  = elementor.schemes.getScheme( schemeType );
+			var scheme  = wroter.schemes.getScheme( schemeType );
 
-			pages[ schemeType + 'Scheme' ].view = require( 'elementor-panel/pages/schemes/disabled' ).extend( {
+			pages[ schemeType + 'Scheme' ].view = require( 'wroter-panel/pages/schemes/disabled' ).extend( {
 				disabledTitle: scheme.disabled_title
 			} );
 		} );
@@ -83,7 +83,7 @@ PanelLayoutView = Marionette.LayoutView.extend( {
 		var pageData = this.pages[ page ];
 
 		if ( ! pageData ) {
-			throw new ReferenceError( 'Elementor panel doesn\'t have page named \'' + page + '\'' );
+			throw new ReferenceError( 'Wroter panel doesn\'t have page named \'' + page + '\'' );
 		}
 
 		this.showChildView( 'content', new pageData.view( viewOptions ) );
@@ -94,8 +94,8 @@ PanelLayoutView = Marionette.LayoutView.extend( {
 	},
 
 	onBeforeShow: function() {
-		var PanelFooterItemView = require( 'elementor-layouts/panel/footer' ),
-			PanelHeaderItemView = require( 'elementor-layouts/panel/header' );
+		var PanelFooterItemView = require( 'wroter-layouts/panel/footer' ),
+			PanelHeaderItemView = require( 'wroter-layouts/panel/header' );
 
 		// Edit Mode
 		this.showChildView( 'modeSwitcher', new EditModeItemView() );
@@ -117,7 +117,7 @@ PanelLayoutView = Marionette.LayoutView.extend( {
 		// Set default page to elements
 		this.setPage( 'elements' );
 
-		this.listenTo( elementor.channels.data, 'scrollbar:update', this.updateScrollbar );
+		this.listenTo( wroter.channels.data, 'scrollbar:update', this.updateScrollbar );
 	},
 
 	onEditorBeforeShow: function() {

@@ -1,17 +1,17 @@
 var TemplateLibraryHeaderLogoView;
 
 TemplateLibraryHeaderLogoView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-template-library-header-logo',
+	template: '#tmpl-wroter-template-library-header-logo',
 
-	id: 'elementor-template-library-header-logo',
+	id: 'wroter-template-library-header-logo',
 
 	events: {
 		'click': 'onClick'
 	},
 
 	onClick: function() {
-		elementor.templates.setTemplatesSource( 'remote' );
-		elementor.templates.showTemplates();
+		wroter.templates.setTemplatesSource( 'remote' );
+		wroter.templates.showTemplates();
 	}
 } );
 

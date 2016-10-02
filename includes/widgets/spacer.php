@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Spacer extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Spacer', 'elementor' );
+		return __( 'Spacer', 'wroter' );
 	}
 
 	public function get_categories() {
@@ -25,7 +25,7 @@ class Widget_Spacer extends Widget_Base {
 		$this->add_control(
 			'section_spacer',
 			[
-				'label' => __( 'Spacer', 'elementor' ),
+				'label' => __( 'Spacer', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -33,7 +33,7 @@ class Widget_Spacer extends Widget_Base {
 		$this->add_responsive_control(
 			'space',
 			[
-				'label' => __( 'Space (PX)', 'elementor' ),
+				'label' => __( 'Space (PX)', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'section' => 'section_spacer',
 				'default' => [
@@ -46,7 +46,7 @@ class Widget_Spacer extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-spacer-inner' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-spacer-inner' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -54,7 +54,7 @@ class Widget_Spacer extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_spacer',
@@ -64,16 +64,16 @@ class Widget_Spacer extends Widget_Base {
 
 	protected function render( $instance = [] ) {
 		?>
-		<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
+		<div class="wroter-spacer">
+			<div class="wroter-spacer-inner"></div>
 		</div>
 		<?php
 	}
 
 	protected function content_template() {
 		?>
-		<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
+		<div class="wroter-spacer">
+			<div class="wroter-spacer-inner"></div>
 		</div>
 		<?php
 	}

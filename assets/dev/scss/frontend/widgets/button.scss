@@ -2,7 +2,7 @@
 // Button
 //
 
-.elementor-button {
+.wroter-button {
 	display: inline-block;
 	line-height: 1;
 	border-radius: 3px;
@@ -19,7 +19,7 @@
 		opacity: .9;
 	}
 
-	&.elementor-size- {
+	&.wroter-size- {
 		&small {
 			font-size: 13px;
 			padding: 10px 20px;
@@ -41,7 +41,7 @@
 		}
 	}
 
-	.elementor-align-icon- {
+	.wroter-align-icon- {
 
 		&right {
 			float: right;
@@ -53,14 +53,14 @@
 		}
 	}
 
-	.elementor-button-text {
+	.wroter-button-text {
 		display: inline-block;
 	}
 }
 
-.elementor-widget-button {
-	.elementor-button {
-		&.elementor-button- {
+.wroter-widget-button {
+	.wroter-button {
+		&.wroter-button- {
 
 			&info {
 				background-color: $info;

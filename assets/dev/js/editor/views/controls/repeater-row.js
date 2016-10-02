@@ -1,15 +1,15 @@
 var RepeaterRowView;
 
 RepeaterRowView = Marionette.CompositeView.extend( {
-	template: Marionette.TemplateCache.get( '#tmpl-elementor-repeater-row' ),
+	template: Marionette.TemplateCache.get( '#tmpl-wroter-repeater-row' ),
 
 	className: 'repeater-fields',
 
 	ui: {
-		duplicateButton: '.elementor-repeater-tool-duplicate',
-		editButton: '.elementor-repeater-tool-edit',
-		removeButton: '.elementor-repeater-tool-remove',
-		itemTitle: '.elementor-repeater-row-item-title'
+		duplicateButton: '.wroter-repeater-tool-duplicate',
+		editButton: '.wroter-repeater-tool-edit',
+		removeButton: '.wroter-repeater-tool-remove',
+		itemTitle: '.wroter-repeater-row-item-title'
 	},
 
 	triggers: {
@@ -24,11 +24,11 @@ RepeaterRowView = Marionette.CompositeView.extend( {
 		};
 	},
 
-	childViewContainer: '.elementor-repeater-row-controls',
+	childViewContainer: '.wroter-repeater-row-controls',
 
 	getChildView: function( item ) {
 		var controlType = item.get( 'type' );
-		return elementor.getControlItemView( controlType );
+		return wroter.getControlItemView( controlType );
 	},
 
 	childViewOptions: function() {
@@ -54,7 +54,7 @@ RepeaterRowView = Marionette.CompositeView.extend( {
 		}
 
 		if ( ! title ) {
-			title = elementor.translate( 'Item #{0}', [ this.getOption( 'itemIndex' ) ] );
+			title = wroter.translate( 'Item #{0}', [ this.getOption( 'itemIndex' ) ] );
 		}
 
 		this.ui.itemTitle.text( title );

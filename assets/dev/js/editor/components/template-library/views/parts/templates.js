@@ -1,14 +1,14 @@
-var TemplateLibraryTemplateLocalView = require( 'elementor-templates/views/template/local' ),
-	TemplateLibraryTemplateRemoteView = require( 'elementor-templates/views/template/remote' ),
-	TemplateLibraryTemplatesEmptyView = require( 'elementor-templates/views/parts/templates-empty' ),
+var TemplateLibraryTemplateLocalView = require( 'wroter-templates/views/template/local' ),
+	TemplateLibraryTemplateRemoteView = require( 'wroter-templates/views/template/remote' ),
+	TemplateLibraryTemplatesEmptyView = require( 'wroter-templates/views/parts/templates-empty' ),
 	TemplateLibraryCollectionView;
 
 TemplateLibraryCollectionView = Marionette.CompositeView.extend( {
-	template: '#tmpl-elementor-template-library-templates',
+	template: '#tmpl-wroter-template-library-templates',
 
-	id: 'elementor-template-library-templates',
+	id: 'wroter-template-library-templates',
 
-	childViewContainer: '#elementor-template-library-templates-container',
+	childViewContainer: '#wroter-template-library-templates-container',
 
 	emptyView: TemplateLibraryTemplatesEmptyView,
 
@@ -21,11 +21,11 @@ TemplateLibraryCollectionView = Marionette.CompositeView.extend( {
 	},
 
 	initialize: function() {
-		this.listenTo( elementor.channels.templates, 'filter:change', this._renderChildren );
+		this.listenTo( wroter.channels.templates, 'filter:change', this._renderChildren );
 	},
 
 	filterByName: function( model ) {
-		var filterValue = elementor.channels.templates.request( 'filter:text' );
+		var filterValue = wroter.channels.templates.request( 'filter:text' );
 
 		if ( ! filterValue ) {
 			return true;
@@ -43,7 +43,7 @@ TemplateLibraryCollectionView = Marionette.CompositeView.extend( {
 	},
 
 	filterBySource: function( model ) {
-		var filterValue = elementor.channels.templates.request( 'filter:source' );
+		var filterValue = wroter.channels.templates.request( 'filter:source' );
 
 		if ( ! filterValue ) {
 			return true;
@@ -59,7 +59,7 @@ TemplateLibraryCollectionView = Marionette.CompositeView.extend( {
 	onRenderCollection: function() {
 		var isEmpty = this.children.isEmpty();
 
-		this.$childViewContainer.attr( 'data-template-source', isEmpty ? 'empty' : elementor.channels.templates.request( 'filter:source' ) );
+		this.$childViewContainer.attr( 'data-template-source', isEmpty ? 'empty' : wroter.channels.templates.request( 'filter:source' ) );
 	}
 } );
 

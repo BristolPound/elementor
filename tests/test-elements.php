@@ -1,17 +1,17 @@
 <?php
 
-class Elementor_Test_Elements extends WP_UnitTestCase {
+class Wroter_Test_Elements extends WP_UnitTestCase {
 
 	public function test_getInstance() {
-		$this->assertInstanceOf( '\Elementor\Elements_Manager', Elementor\Plugin::instance()->elements_manager );
+		$this->assertInstanceOf( '\Wroter\Elements_Manager', Wroter\Plugin::instance()->elements_manager );
 	}
 
 	public function test_getElements() {
-		$this->assertNotEmpty( Elementor\Plugin::instance()->elements_manager->get_registered_elements() );
+		$this->assertNotEmpty( Wroter\Plugin::instance()->elements_manager->get_registered_elements() );
 	}
 
 	public function test_elementMethods() {
-		foreach ( \Elementor\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
+		foreach ( \Wroter\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
 			$this->assertNotEmpty( $element->get_title() );
 			$this->assertNotEmpty( $element->get_type() );
 			$this->assertNotEmpty( $element->get_id() );
@@ -19,35 +19,35 @@ class Elementor_Test_Elements extends WP_UnitTestCase {
 	}
 
 	public function test_registerNUnregisterElement() {
-		$return = Elementor\Plugin::instance()->elements_manager->register_element( 'Element_Not_Found' );
+		$return = Wroter\Plugin::instance()->elements_manager->register_element( 'Element_Not_Found' );
 		$this->assertInstanceOf( '\WP_Error', $return );
 		$this->assertEquals( 'element_class_name_not_exists', $return->get_error_code() );
 
-		$return = Elementor\Plugin::instance()->elements_manager->register_element( '\Elementor\Control_Text' );
+		$return = Wroter\Plugin::instance()->elements_manager->register_element( '\Wroter\Control_Text' );
 		$this->assertInstanceOf( '\WP_Error', $return );
 		$this->assertEquals( 'wrong_instance_element', $return->get_error_code() );
 
-		$element_class = '\Elementor\Element_Column';
+		$element_class = '\Wroter\Element_Column';
 		$element_id = 'column';
 
-		$this->assertTrue( Elementor\Plugin::instance()->elements_manager->register_element( $element_class ) );
+		$this->assertTrue( Wroter\Plugin::instance()->elements_manager->register_element( $element_class ) );
 
-		$element = Elementor\Plugin::instance()->elements_manager->get_element( $element_id );
+		$element = Wroter\Plugin::instance()->elements_manager->get_element( $element_id );
 		$this->assertInstanceOf( $element_class, $element );
 
-		$this->assertTrue( Elementor\Plugin::instance()->elements_manager->unregister_element( $element_id ) );
-		$this->assertFalse( Elementor\Plugin::instance()->elements_manager->unregister_element( $element_id ) );
+		$this->assertTrue( Wroter\Plugin::instance()->elements_manager->unregister_element( $element_id ) );
+		$this->assertFalse( Wroter\Plugin::instance()->elements_manager->unregister_element( $element_id ) );
 
-		$this->assertFalse( Elementor\Plugin::instance()->elements_manager->get_element( $element_id ) );
+		$this->assertFalse( Wroter\Plugin::instance()->elements_manager->get_element( $element_id ) );
 
-		$this->assertTrue( Elementor\Plugin::instance()->elements_manager->register_element( $element_class ) );
+		$this->assertTrue( Wroter\Plugin::instance()->elements_manager->register_element( $element_class ) );
 	}
 
 	/**
-	 * @expectedIncorrectUsage  Elementor\Element_Base::add_control
+	 * @expectedIncorrectUsage  Wroter\Element_Base::add_control
 	 */
 	public function test_redeclareControl() {
-		$element_obj = Elementor\Plugin::instance()->elements_manager->get_element( 'section' );
+		$element_obj = Wroter\Plugin::instance()->elements_manager->get_element( 'section' );
 
 		$control_id = 'test_redeclare_control';
 		$element_obj->add_control( $control_id, [ 'section' => 'section_layout' ] );
@@ -58,7 +58,7 @@ class Elementor_Test_Elements extends WP_UnitTestCase {
 	public function test_controlsSelectorsData() {
 		$wrapper_text = '{{WRAPPER}}';
 
-		foreach ( Elementor\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
+		foreach ( Wroter\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
 			foreach ( $element->get_style_controls() as $control ) {
 				foreach ( $control['selectors'] as $selector => $css_property ) {
 					foreach ( explode( ',', $selector ) as $item ) {
@@ -70,9 +70,9 @@ class Elementor_Test_Elements extends WP_UnitTestCase {
 	}
 
 	public function test_controlsDefaultData() {
-		foreach ( Elementor\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
+		foreach ( Wroter\Plugin::instance()->elements_manager->get_registered_elements() as $element ) {
 			foreach ( $element->get_controls() as $control ) {
-				if ( \Elementor\Controls_Manager::SELECT !== $control['type'] )
+				if ( \Wroter\Controls_Manager::SELECT !== $control['type'] )
 					continue;
 
 				$error_msg = sprintf( 'Element: %s, Control: %s', $element->get_id(), $control['name'] );

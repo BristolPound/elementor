@@ -5,8 +5,8 @@ Introduction = function() {
 		modal;
 
 	var initModal = function() {
-		modal = elementor.dialogsManager.createWidget( 'elementor-modal', {
-			id: 'elementor-introduction'
+		modal = wroter.dialogsManager.createWidget( 'wroter-modal', {
+			id: 'wroter-introduction'
 		} );
 
 		modal.getElements( 'closeButton' ).on( 'click', function() {
@@ -19,7 +19,7 @@ Introduction = function() {
 	};
 
 	this.getSettings = function() {
-		return elementor.config.introduction;
+		return wroter.config.introduction;
 	};
 
 	this.getModal = function() {
@@ -52,7 +52,7 @@ Introduction = function() {
 	};
 
 	this.setIntroductionViewed = function() {
-		elementor.ajax.send( 'introduction_viewed' );
+		wroter.ajax.send( 'introduction_viewed' );
 	};
 };
 

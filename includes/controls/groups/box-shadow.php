@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -13,17 +13,17 @@ class Group_Control_Box_Shadow extends Group_Control_Base {
 		$controls = [];
 
 		$controls['box_shadow_type'] = [
-			'label' => _x( 'Box Shadow', 'Box Shadow Control', 'elementor' ),
+			'label' => _x( 'Box Shadow', 'Box Shadow Control', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'options' => [
-				'' => __( 'No', 'elementor' ),
-				'outset' => _x( 'Yes', 'Box Shadow Control', 'elementor' ),
+				'' => __( 'No', 'wroter' ),
+				'outset' => _x( 'Yes', 'Box Shadow Control', 'wroter' ),
 			],
 			'separator' => 'before',
 		];
 
 		$controls['box_shadow'] = [
-			'label' => _x( 'Box Shadow', 'Box Shadow Control', 'elementor' ),
+			'label' => _x( 'Box Shadow', 'Box Shadow Control', 'wroter' ),
 			'type' => Controls_Manager::BOX_SHADOW,
 			'selectors' => [
 				$args['selector'] => 'box-shadow: {{HORIZONTAL}}px {{VERTICAL}}px {{BLUR}}px {{SPREAD}}px {{COLOR}};',

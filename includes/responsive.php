@@ -1,10 +1,10 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Responsive {
-	const BREAKPOINT_OPTION_PREFIX = 'elementor_viewport_';
+	const BREAKPOINT_OPTION_PREFIX = 'wroter_viewport_';
 
 	private static $_default_breakpoints = [
 		'xs' => 0,

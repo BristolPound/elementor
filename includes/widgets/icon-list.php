@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Icon_list extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Icon List', 'elementor' );
+		return __( 'Icon List', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'section_icon',
 			[
-				'label' => __( 'Icon List', 'elementor' ),
+				'label' => __( 'Icon List', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -33,15 +33,15 @@ class Widget_Icon_list extends Widget_Base {
 				'type' => Controls_Manager::REPEATER,
 				'default' => [
 					[
-						'text' => __( 'List Item #1', 'elementor' ),
+						'text' => __( 'List Item #1', 'wroter' ),
 						'icon' => 'fa fa-check',
 					],
 					[
-						'text' => __( 'List Item #2', 'elementor' ),
+						'text' => __( 'List Item #2', 'wroter' ),
 						'icon' => 'fa fa-times',
 					],
 					[
-						'text' => __( 'List Item #3', 'elementor' ),
+						'text' => __( 'List Item #3', 'wroter' ),
 						'icon' => 'fa fa-dot-circle-o',
 					],
 				],
@@ -49,25 +49,25 @@ class Widget_Icon_list extends Widget_Base {
 				'fields' => [
 					[
 						'name' => 'text',
-						'label' => __( 'Text', 'elementor' ),
+						'label' => __( 'Text', 'wroter' ),
 						'type' => Controls_Manager::TEXT,
 						'label_block' => true,
-						'placeholder' => __( 'List Item', 'elementor' ),
-						'default' => __( 'List Item', 'elementor' ),
+						'placeholder' => __( 'List Item', 'wroter' ),
+						'default' => __( 'List Item', 'wroter' ),
 					],
 					[
 						'name' => 'icon',
-						'label' => __( 'Icon', 'elementor' ),
+						'label' => __( 'Icon', 'wroter' ),
 						'type' => Controls_Manager::ICON,
 						'label_block' => true,
 						'default' => 'fa fa-check',
 					],
 					[
 						'name' => 'link',
-						'label' => __( 'Link', 'elementor' ),
+						'label' => __( 'Link', 'wroter' ),
 						'type' => Controls_Manager::URL,
 						'label_block' => true,
-						'placeholder' => __( 'http://your-link.com', 'elementor' ),
+						'placeholder' => __( 'http://your-link.com', 'wroter' ),
 					],
 				],
 				'title_field' => 'text',
@@ -77,7 +77,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 				'section' => 'section_icon',
@@ -87,7 +87,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'section_icon_style',
 			[
-				'label' => __( 'Icon', 'elementor' ),
+				'label' => __( 'Icon', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -96,13 +96,13 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label' => __( 'Icon Color', 'elementor' ),
+				'label' => __( 'Icon Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_icon_style',
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-icon-list-icon i' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -114,7 +114,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'icon_size',
 			[
-				'label' => __( 'Icon Size', 'elementor' ),
+				'label' => __( 'Icon Size', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_icon_style',
@@ -127,7 +127,7 @@ class Widget_Icon_list extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon-list-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -135,26 +135,26 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_icon_style',
 				'options' => [
 					'left' => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-items' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .wroter-icon-list-items' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -162,7 +162,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'section_text_style',
 			[
-				'label' => __( 'Text', 'elementor' ),
+				'label' => __( 'Text', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -171,7 +171,7 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'text_indent',
 			[
-				'label' => __( 'Text Indent', 'elementor' ),
+				'label' => __( 'Text Indent', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_text_style',
@@ -181,7 +181,7 @@ class Widget_Icon_list extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-text' => is_rtl() ? 'padding-right: {{SIZE}}{{UNIT}};' : 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon-list-text' => is_rtl() ? 'padding-right: {{SIZE}}{{UNIT}};' : 'padding-left: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -189,13 +189,13 @@ class Widget_Icon_list extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label' => __( 'Text Color', 'elementor' ),
+				'label' => __( 'Text Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_text_style',
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .wroter-icon-list-text' => 'color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -208,10 +208,10 @@ class Widget_Icon_list extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'icon_typography',
-				'label' => __( 'Typography', 'elementor' ),
+				'label' => __( 'Typography', 'wroter' ),
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_text_style',
-				'selector' => '{{WRAPPER}} .elementor-icon-list-text',
+				'selector' => '{{WRAPPER}} .wroter-icon-list-text',
 				'scheme' => Scheme_Typography::TYPOGRAPHY_3,
 			]
 		);
@@ -219,9 +219,9 @@ class Widget_Icon_list extends Widget_Base {
 
 	protected function render( $instance = [] ) {
 		?>
-		<ul class="elementor-icon-list-items">
+		<ul class="wroter-icon-list-items">
 			<?php foreach ( $instance['icon_list'] as $item ) : ?>
-				<li class="elementor-icon-list-item" >
+				<li class="wroter-icon-list-item" >
 					<?php
 					if ( ! empty( $item['link']['url'] ) ) {
 						$target = $item['link']['is_external'] ? ' target="_blank"' : '';
@@ -230,11 +230,11 @@ class Widget_Icon_list extends Widget_Base {
 					}
 
 					if ( $item['icon'] ) : ?>
-						<span class="elementor-icon-list-icon">
+						<span class="wroter-icon-list-icon">
 							<i class="<?php echo esc_attr( $item['icon'] ); ?>"></i>
 						</span>
 					<?php endif; ?>
-					<span class="elementor-icon-list-text"><?php echo $item['text']; ?></span>
+					<span class="wroter-icon-list-text"><?php echo $item['text']; ?></span>
 					<?php
 					if ( ! empty( $item['link']['url'] ) ) {
 						echo '</a>';
@@ -249,18 +249,18 @@ class Widget_Icon_list extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<ul class="elementor-icon-list-items">
+		<ul class="wroter-icon-list-items">
 			<#
 			if ( settings.icon_list ) {
 				_.each( settings.icon_list, function( item ) { #>
-					<li class="elementor-icon-list-item">
+					<li class="wroter-icon-list-item">
 						<# if ( item.link && item.link.url ) { #>
 							<a href="{{ item.link.url }}">
 						<# } #>
-						<span class="elementor-icon-list-icon">
+						<span class="wroter-icon-list-icon">
 							<i class="{{ item.icon }}"></i>
 						</span>
-						<span class="elementor-icon-list-text">{{{ item.text }}}</span>
+						<span class="wroter-icon-list-text">{{{ item.text }}}</span>
 						<# if ( item.link && item.link.url ) { #>
 							</a>
 						<# } #>

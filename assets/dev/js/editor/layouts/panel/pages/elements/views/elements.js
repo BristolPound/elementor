@@ -4,14 +4,14 @@ var PanelElementsElementView = require( './element' ),
 PanelElementsElementsView = Marionette.CollectionView.extend( {
 	childView: PanelElementsElementView,
 
-	id: 'elementor-panel-elements',
+	id: 'wroter-panel-elements',
 
 	initialize: function() {
-		this.listenTo( elementor.channels.panelElements, 'change', this.onFilterChanged );
+		this.listenTo( wroter.channels.panelElements, 'change', this.onFilterChanged );
 	},
 
 	filter: function( childModel ) {
-		var filterValue = elementor.channels.panelElements.request( 'filter:value' );
+		var filterValue = wroter.channels.panelElements.request( 'filter:value' );
 
 		if ( ! filterValue ) {
 			return true;

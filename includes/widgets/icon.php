@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Icon extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Icon', 'elementor' );
+		return __( 'Icon', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'section_icon',
 			[
-				'label' => __( 'Icon', 'elementor' ),
+				'label' => __( 'Icon', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,23 +29,23 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_icon',
 				'options' => [
-					'default' => __( 'Default', 'elementor' ),
-					'stacked' => __( 'Stacked', 'elementor' ),
-					'framed' => __( 'Framed', 'elementor' ),
+					'default' => __( 'Default', 'wroter' ),
+					'stacked' => __( 'Stacked', 'wroter' ),
+					'framed' => __( 'Framed', 'wroter' ),
 				],
 				'default' => 'default',
-				'prefix_class' => 'elementor-view-',
+				'prefix_class' => 'wroter-view-',
 			]
 		);
 
 		$this->add_control(
 			'icon',
 			[
-				'label' => __( 'Icon', 'elementor' ),
+				'label' => __( 'Icon', 'wroter' ),
 				'type' => Controls_Manager::ICON,
 				'label_block' => true,
 				'default' => 'fa fa-star',
@@ -56,25 +56,25 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'shape',
 			[
-				'label' => __( 'Shape', 'elementor' ),
+				'label' => __( 'Shape', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_icon',
 				'options' => [
-					'circle' => __( 'Circle', 'elementor' ),
-					'square' => __( 'Square', 'elementor' ),
+					'circle' => __( 'Circle', 'wroter' ),
+					'square' => __( 'Square', 'wroter' ),
 				],
 				'default' => 'circle',
 				'condition' => [
 					'view!' => 'default',
 				],
-				'prefix_class' => 'elementor-shape-',
+				'prefix_class' => 'wroter-shape-',
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor' ),
+				'label' => __( 'Link', 'wroter' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => 'http://your-link.com',
 				'section' => 'section_icon',
@@ -84,26 +84,26 @@ class Widget_Icon extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label' => __( 'Alignment', 'elementor' ),
+				'label' => __( 'Alignment', 'wroter' ),
 				'type' => Controls_Manager::CHOOSE,
 				'section' => 'section_icon',
 				'options' => [
 					'left'    => [
-						'title' => __( 'Left', 'elementor' ),
+						'title' => __( 'Left', 'wroter' ),
 						'icon' => 'align-left',
 					],
 					'center' => [
-						'title' => __( 'Center', 'elementor' ),
+						'title' => __( 'Center', 'wroter' ),
 						'icon' => 'align-center',
 					],
 					'right' => [
-						'title' => __( 'Right', 'elementor' ),
+						'title' => __( 'Right', 'wroter' ),
 						'icon' => 'align-right',
 					],
 				],
 				'default' => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-wrapper' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .wroter-icon-wrapper' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -111,7 +111,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'section_style_icon',
 			[
-				'label' => __( 'Icon', 'elementor' ),
+				'label' => __( 'Icon', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -120,14 +120,14 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'primary_color',
 			[
-				'label' => __( 'Primary Color', 'elementor' ),
+				'label' => __( 'Primary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}.elementor-view-stacked .elementor-icon' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}}.elementor-view-framed .elementor-icon, {{WRAPPER}}.elementor-view-default .elementor-icon' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-stacked .wroter-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-framed .wroter-icon, {{WRAPPER}}.wroter-view-default .wroter-icon' => 'color: {{VALUE}}; border-color: {{VALUE}};',
 				],
 				'scheme' => [
 					'type' => Scheme_Color::get_type(),
@@ -139,7 +139,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'secondary_color',
 			[
-				'label' => __( 'Secondary Color', 'elementor' ),
+				'label' => __( 'Secondary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
@@ -148,8 +148,8 @@ class Widget_Icon extends Widget_Base {
 					'view!' => 'default',
 				],
 				'selectors' => [
-					'{{WRAPPER}}.elementor-view-framed .elementor-icon' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}}.elementor-view-stacked .elementor-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-framed .wroter-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-stacked .wroter-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -157,7 +157,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label' => __( 'Icon Size', 'elementor' ),
+				'label' => __( 'Icon Size', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -168,7 +168,7 @@ class Widget_Icon extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -176,12 +176,12 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'icon_padding',
 			[
-				'label' => __( 'Icon Padding', 'elementor' ),
+				'label' => __( 'Icon Padding', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon' => 'padding: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon' => 'padding: {{SIZE}}{{UNIT}};',
 				],
 				'default' => [
 					'size' => 1.5,
@@ -201,7 +201,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'rotate',
 			[
-				'label' => __( 'Icon Rotate', 'elementor' ),
+				'label' => __( 'Icon Rotate', 'wroter' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 0,
@@ -210,7 +210,7 @@ class Widget_Icon extends Widget_Base {
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon i' => 'transform: rotate({{SIZE}}{{UNIT}});',
+					'{{WRAPPER}} .wroter-icon i' => 'transform: rotate({{SIZE}}{{UNIT}});',
 				],
 			]
 		);
@@ -218,12 +218,12 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'border_width',
 			[
-				'label' => __( 'Border Width', 'elementor' ),
+				'label' => __( 'Border Width', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'view' => 'framed',
@@ -234,13 +234,13 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label' => __( 'Border Radius', 'elementor' ),
+				'label' => __( 'Border Radius', 'wroter' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_style_icon',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .wroter-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'view!' => 'default',
@@ -251,7 +251,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'section_hover',
 			[
-				'label' => __( 'Icon Hover', 'elementor' ),
+				'label' => __( 'Icon Hover', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 				'tab' => self::TAB_STYLE,
 			]
@@ -260,14 +260,14 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'hover_primary_color',
 			[
-				'label' => __( 'Primary Color', 'elementor' ),
+				'label' => __( 'Primary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_hover',
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}.elementor-view-stacked .elementor-icon:hover' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}}.elementor-view-framed .elementor-icon:hover, {{WRAPPER}}.elementor-view-default .elementor-icon:hover' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-stacked .wroter-icon:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-framed .wroter-icon:hover, {{WRAPPER}}.wroter-view-default .wroter-icon:hover' => 'color: {{VALUE}}; border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -275,7 +275,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'hover_secondary_color',
 			[
-				'label' => __( 'Secondary Color', 'elementor' ),
+				'label' => __( 'Secondary Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_hover',
@@ -284,8 +284,8 @@ class Widget_Icon extends Widget_Base {
 					'view!' => 'default',
 				],
 				'selectors' => [
-					'{{WRAPPER}}.elementor-view-framed .elementor-icon:hover' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}}.elementor-view-stacked .elementor-icon:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-framed .wroter-icon:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.wroter-view-stacked .wroter-icon:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -293,7 +293,7 @@ class Widget_Icon extends Widget_Base {
 		$this->add_control(
 			'hover_animation',
 			[
-				'label' => __( 'Animation', 'elementor' ),
+				'label' => __( 'Animation', 'wroter' ),
 				'type' => Controls_Manager::HOVER_ANIMATION,
 				'tab' => self::TAB_STYLE,
 				'section' => 'section_hover',
@@ -302,12 +302,12 @@ class Widget_Icon extends Widget_Base {
 	}
 
 	protected function render( $instance = [] ) {
-		$this->add_render_attribute( 'wrapper', 'class', 'elementor-icon-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'wroter-icon-wrapper' );
 
-		$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-icon' );
+		$this->add_render_attribute( 'icon-wrapper', 'class', 'wroter-icon' );
 
 		if ( ! empty( $instance['hover_animation'] ) ) {
-			$this->add_render_attribute( 'icon-wrapper', 'class', 'elementor-animation-' . $instance['hover_animation'] );
+			$this->add_render_attribute( 'icon-wrapper', 'class', 'wroter-animation-' . $instance['hover_animation'] );
 		}
 
 		$icon_tag = 'div';
@@ -338,8 +338,8 @@ class Widget_Icon extends Widget_Base {
 		?>
 		<# var link = settings.link.url ? 'href="' + settings.link.url + '"' : '',
 				iconTag = link ? 'a' : 'div'; #>
-		<div class="elementor-icon-wrapper">
-			<{{{ iconTag }}} class="elementor-icon elementor-animation-{{ settings.hover_animation }}" {{{ link }}}>
+		<div class="wroter-icon-wrapper">
+			<{{{ iconTag }}} class="wroter-icon wroter-animation-{{ settings.hover_animation }}" {{{ link }}}>
 				<i class="{{ settings.icon }}"></i>
 			</{{{ iconTag }}}>
 		</div>

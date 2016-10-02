@@ -3,22 +3,22 @@ var EditorCompositeView;
 EditorCompositeView = Marionette.CompositeView.extend( {
 	template: Marionette.TemplateCache.get( '#tmpl-editor-content' ),
 
-	id: 'elementor-panel-page-editor',
+	id: 'wroter-panel-page-editor',
 
 	templateHelpers: function() {
 		return {
-			elementData: elementor.getElementData( this.model )
+			elementData: wroter.getElementData( this.model )
 		};
 	},
 
-	childViewContainer: 'div.elementor-controls',
+	childViewContainer: 'div.wroter-controls',
 
 	modelEvents: {
 		'destroy': 'onModelDestroy'
 	},
 
 	ui: {
-		'tabs': '.elementor-tabs-controls li'
+		'tabs': '.wroter-tabs-controls li'
 	},
 
 	events: {
@@ -26,12 +26,12 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	},
 
 	initialize: function() {
-		this.listenTo( elementor.channels.deviceMode, 'change', this.onDeviceModeChange );
+		this.listenTo( wroter.channels.deviceMode, 'change', this.onDeviceModeChange );
 	},
 
 	getChildView: function( item ) {
 		var controlType = item.get( 'type' );
-		return elementor.getControlItemView( controlType );
+		return wroter.getControlItemView( controlType );
 	},
 
 	childViewOptions: function() {
@@ -42,14 +42,14 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	},
 
 	onDestroy: function() {
-		this.getOption( 'editedElementView' ).$el.removeClass( 'elementor-element-editable' );
+		this.getOption( 'editedElementView' ).$el.removeClass( 'wroter-element-editable' );
 		this.model.trigger( 'editor:close' );
 
 		this.triggerMethod( 'editor:destroy' );
 	},
 
 	onBeforeRender: function() {
-		var controls = elementor.getElementControls( this.model.get( 'settings' ) );
+		var controls = wroter.getElementControls( this.model.get( 'settings' ) );
 
 		if ( ! controls ) {
 			throw new Error( 'Editor controls not found' );
@@ -60,7 +60,7 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	},
 
 	onRender: function() {
-		this.getOption( 'editedElementView' ).$el.addClass( 'elementor-element-editable' );
+		this.getOption( 'editedElementView' ).$el.addClass( 'wroter-element-editable' );
 
 		// Set the first tab as active
 		this.ui.tabs.eq( 0 ).find( 'a' ).trigger( 'click' );
@@ -103,12 +103,12 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	onDeviceModeChange: function() {
 		var self = this;
 
-		self.$el.removeClass( 'elementor-responsive-switchers-open' );
+		self.$el.removeClass( 'wroter-responsive-switchers-open' );
 
 		// Timeout according to preview resize css animation duration
 		setTimeout( function() {
-			elementor.$previewContents.find( 'html, body' ).animate( {
-				scrollTop: self.getOption( 'editedElementView' ).$el.offset().top - elementor.$preview[0].contentWindow.innerHeight / 2
+			wroter.$previewContents.find( 'html, body' ).animate( {
+				scrollTop: self.getOption( 'editedElementView' ).$el.offset().top - wroter.$preview[0].contentWindow.innerHeight / 2
 			} );
 		}, 500 );
 	},
@@ -119,7 +119,7 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	 * TODO: Rewrite this method later.
 	 */
 	openFirstSectionInCurrentTab: function( currentTab ) {
-		var openedClass = 'elementor-open',
+		var openedClass = 'wroter-open',
 
 			childrenUnderSection = this.children.filter( function( view ) {
 				return ( ! _.isEmpty( view.model.get( 'section' ) ) );
@@ -148,7 +148,7 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 	},
 
 	onChildviewControlSectionClicked: function( childView ) {
-		var openedClass = 'elementor-open',
+		var openedClass = 'wroter-open',
 			sectionClicked = childView.model.get( 'name' ),
 			isSectionOpen = childView.ui.heading.hasClass( openedClass ),
 
@@ -156,7 +156,7 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 				return ( ! _.isEmpty( view.model.get( 'section' ) ) );
 			} );
 
-		this.$( '.elementor-control.elementor-control-type-section .elementor-panel-heading' ).removeClass( openedClass );
+		this.$( '.wroter-control.wroter-control-type-section .wroter-panel-heading' ).removeClass( openedClass );
 
 		if ( isSectionOpen ) {
 			// Close all open sections
@@ -174,7 +174,7 @@ EditorCompositeView = Marionette.CompositeView.extend( {
 			view.$el.addClass( openedClass );
 		} );
 
-		elementor.channels.data.trigger( 'scrollbar:update' );
+		wroter.channels.data.trigger( 'scrollbar:update' );
 	}
 } );
 

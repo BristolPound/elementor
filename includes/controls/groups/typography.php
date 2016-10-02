@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -29,7 +29,7 @@ class Group_Control_Typography extends Group_Control_Base {
 		$fields = [];
 
 		$fields['font_size'] = [
-			'label' => _x( 'Size', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Size', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SLIDER,
 			'size_units' => [ 'px', 'em', 'rem' ],
 			'range' => [
@@ -42,57 +42,57 @@ class Group_Control_Typography extends Group_Control_Base {
 			'selector_value' => 'font-size: {{SIZE}}{{UNIT}}',
 		];
 
-		$default_fonts = get_option( 'elementor_default_generic_fonts', 'Sans-serif' );
+		$default_fonts = get_option( 'wroter_default_generic_fonts', 'Sans-serif' );
 
 		if ( $default_fonts ) {
 			$default_fonts = ', ' . $default_fonts;
 		}
 
 		$fields['font_family'] = [
-			'label' => _x( 'Family', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Family', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::FONT,
 			'default' => '',
 			'selector_value' => 'font-family: {{VALUE}}' . $default_fonts . ';',
 		];
 
-		$typo_weight_options = [ '' => __( 'Default', 'elementor' ) ];
+		$typo_weight_options = [ '' => __( 'Default', 'wroter' ) ];
 		foreach ( array_merge( [ 'normal', 'bold' ], range( 100, 900, 100 ) ) as $weight ) {
 			$typo_weight_options[ $weight ] = ucfirst( $weight );
 		}
 
 		$fields['font_weight'] = [
-			'label' => _x( 'Weight', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Weight', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'default' => '',
 			'options' => $typo_weight_options,
 		];
 
 		$fields['text_transform'] = [
-			'label' => _x( 'Transform', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Transform', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'default' => '',
 			'options' => [
-				'' => __( 'Default', 'elementor' ),
-				'uppercase' => _x( 'Uppercase', 'Typography Control', 'elementor' ),
-				'lowercase' => _x( 'Lowercase', 'Typography Control', 'elementor' ),
-				'capitalize' => _x( 'Capitalize', 'Typography Control', 'elementor' ),
+				'' => __( 'Default', 'wroter' ),
+				'uppercase' => _x( 'Uppercase', 'Typography Control', 'wroter' ),
+				'lowercase' => _x( 'Lowercase', 'Typography Control', 'wroter' ),
+				'capitalize' => _x( 'Capitalize', 'Typography Control', 'wroter' ),
 			],
 		];
 
 		$fields['font_style'] = [
-			'label' => _x( 'Style', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Style', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SELECT,
 			'default' => '',
 			'options' => [
-				'' => __( 'Default', 'elementor' ),
-				'normal' => _x( 'Normal', 'Typography Control', 'elementor' ),
-				'italic' => _x( 'Italic', 'Typography Control', 'elementor' ),
-				'oblique' => _x( 'Oblique', 'Typography Control', 'elementor' ),
+				'' => __( 'Default', 'wroter' ),
+				'normal' => _x( 'Normal', 'Typography Control', 'wroter' ),
+				'italic' => _x( 'Italic', 'Typography Control', 'wroter' ),
+				'oblique' => _x( 'Oblique', 'Typography Control', 'wroter' ),
 			],
 		];
 
 		$fields['line_height'] = [
-			'label' => _x( 'Line-Height', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Line-Height', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SLIDER,
 			'default' => [
 				'unit' => 'em',
@@ -108,7 +108,7 @@ class Group_Control_Typography extends Group_Control_Base {
 		];
 
 		$fields['letter_spacing'] = [
-			'label' => _x( 'Letter Spacing', 'Typography Control', 'elementor' ),
+			'label' => _x( 'Letter Spacing', 'Typography Control', 'wroter' ),
 			'type' => Controls_Manager::SLIDER,
 			'range' => [
 				'px' => [
@@ -141,12 +141,12 @@ class Group_Control_Typography extends Group_Control_Base {
 
 		$typography_control = [
 			'typography' => [
-				'label' => _x( 'Typography', 'Typography Control', 'elementor' ),
+				'label' => _x( 'Typography', 'Typography Control', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					'' => __( 'Default', 'elementor' ),
-					'custom' => __( 'Custom', 'elementor' ),
+					'' => __( 'Default', 'wroter' ),
+					'custom' => __( 'Custom', 'wroter' ),
 				],
 			],
 		];
@@ -156,7 +156,7 @@ class Group_Control_Typography extends Group_Control_Base {
 		 *
 		$typography_control = [
 			'typography' => [
-				'label' => _x( 'Custom Typography', 'Typography Control', 'elementor' ),
+				'label' => _x( 'Custom Typography', 'Typography Control', 'wroter' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
 				'return_value' => 'custom',

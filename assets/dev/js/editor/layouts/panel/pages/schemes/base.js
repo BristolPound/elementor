@@ -2,22 +2,22 @@ var PanelSchemeBaseView;
 
 PanelSchemeBaseView = Marionette.CompositeView.extend( {
 	id: function() {
-		return 'elementor-panel-scheme-' + this.getType();
+		return 'wroter-panel-scheme-' + this.getType();
 	},
 
-	className: 'elementor-panel-scheme',
+	className: 'wroter-panel-scheme',
 
-	childViewContainer: '.elementor-panel-scheme-items',
+	childViewContainer: '.wroter-panel-scheme-items',
 
 	getTemplate: function() {
-		return Marionette.TemplateCache.get( '#tmpl-elementor-panel-schemes-' + this.getType() );
+		return Marionette.TemplateCache.get( '#tmpl-wroter-panel-schemes-' + this.getType() );
 	},
 
 	ui: function() {
 		return {
-			saveButton: '.elementor-panel-scheme-save .elementor-button',
-			discardButton: '.elementor-panel-scheme-discard .elementor-button',
-			resetButton: '.elementor-panel-scheme-reset .elementor-button'
+			saveButton: '.wroter-panel-scheme-save .wroter-button',
+			discardButton: '.wroter-panel-scheme-discard .wroter-button',
+			resetButton: '.wroter-panel-scheme-reset .wroter-button'
 		};
 	},
 
@@ -38,7 +38,7 @@ PanelSchemeBaseView = Marionette.CompositeView.extend( {
 	getType: function() {},
 
 	getScheme: function() {
-		return elementor.schemes.getScheme( this.getType() );
+		return wroter.schemes.getScheme( this.getType() );
 	},
 
 	changeChildrenUIValues: function( schemeItems ) {
@@ -53,7 +53,7 @@ PanelSchemeBaseView = Marionette.CompositeView.extend( {
 	},
 
 	discardScheme: function() {
-		elementor.schemes.resetSchemes( this.getType() );
+		wroter.schemes.resetSchemes( this.getType() );
 
 		this.ui.saveButton.prop( 'disabled', true );
 
@@ -61,11 +61,11 @@ PanelSchemeBaseView = Marionette.CompositeView.extend( {
 	},
 
 	setSchemeValue: function( key, value ) {
-		elementor.schemes.setSchemeValue( this.getType(), key, value );
+		wroter.schemes.setSchemeValue( this.getType(), key, value );
 	},
 
 	saveScheme: function() {
-		elementor.schemes.saveScheme( this.getType() );
+		wroter.schemes.saveScheme( this.getType() );
 
 		this.ui.saveButton.prop( 'disabled', true );
 
@@ -75,7 +75,7 @@ PanelSchemeBaseView = Marionette.CompositeView.extend( {
 	},
 
 	setDefaultScheme: function() {
-		var defaultScheme = elementor.config.default_schemes[ this.getType() ].items;
+		var defaultScheme = wroter.config.default_schemes[ this.getType() ].items;
 
 		this.changeChildrenUIValues( defaultScheme );
 	},

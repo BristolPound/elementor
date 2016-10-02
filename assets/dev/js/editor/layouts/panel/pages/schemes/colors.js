@@ -1,4 +1,4 @@
-var PanelSchemeBaseView = require( 'elementor-panel/pages/schemes/base' ),
+var PanelSchemeBaseView = require( 'wroter-panel/pages/schemes/base' ),
 	PanelSchemeColorsView;
 
 PanelSchemeColorsView = PanelSchemeBaseView.extend( {
@@ -6,7 +6,7 @@ PanelSchemeColorsView = PanelSchemeBaseView.extend( {
 	ui: function() {
 		var ui = PanelSchemeBaseView.prototype.ui.apply( this, arguments );
 
-		ui.systemSchemes = '.elementor-panel-scheme-color-system-scheme';
+		ui.systemSchemes = '.wroter-panel-scheme-color-system-scheme';
 
 		return ui;
 	},
@@ -20,7 +20,7 @@ PanelSchemeColorsView = PanelSchemeBaseView.extend( {
 	},
 
 	getChildView: function() {
-		return require( 'elementor-panel/pages/schemes/items/color' );
+		return require( 'wroter-panel/pages/schemes/items/color' );
 	},
 
 	getType: function() {
@@ -30,7 +30,7 @@ PanelSchemeColorsView = PanelSchemeBaseView.extend( {
 	onSystemSchemeClick: function( event ) {
 		var $schemeClicked = Backbone.$( event.currentTarget ),
 			schemeName = $schemeClicked.data( 'schemeName' ),
-			scheme = elementor.config.system_schemes.color[ schemeName ].items;
+			scheme = wroter.config.system_schemes.color[ schemeName ].items;
 
 		this.changeChildrenUIValues( scheme );
 	}

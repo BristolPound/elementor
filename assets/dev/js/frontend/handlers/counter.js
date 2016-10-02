@@ -1,5 +1,5 @@
 module.exports = function( $ ) {
-	this.find( '.elementor-counter-number' ).waypoint( function() {
+	this.find( '.wroter-counter-number' ).waypoint( function() {
 		var $number = $( this );
 
 		$number.numerator( {

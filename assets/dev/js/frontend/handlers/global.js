@@ -1,5 +1,5 @@
 module.exports = function() {
-	if ( elementorFrontend.isEditMode() ) {
+	if ( wroterFrontend.isEditMode() ) {
 		return;
 	}
 
@@ -10,10 +10,10 @@ module.exports = function() {
 		return;
 	}
 
-	$element.addClass( 'elementor-invisible' ).removeClass( animation );
+	$element.addClass( 'wroter-invisible' ).removeClass( animation );
 
 	$element.waypoint( function() {
-		$element.removeClass( 'elementor-invisible' ).addClass( animation );
+		$element.removeClass( 'wroter-invisible' ).addClass( animation );
 	}, { offset: '90%' } );
 
 };

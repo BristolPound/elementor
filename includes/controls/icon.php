@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -650,11 +650,11 @@ class Control_Icon extends Control_Base {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
-				<select class="elementor-control-icon" data-setting="{{ data.name }}" data-placeholder="<?php _e( 'Select Icon', 'elementor' ); ?>">
-					<option value=""><?php _e( 'Select Icon', 'elementor' ); ?></option>
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
+				<select class="wroter-control-icon" data-setting="{{ data.name }}" data-placeholder="<?php _e( 'Select Icon', 'wroter' ); ?>">
+					<option value=""><?php _e( 'Select Icon', 'wroter' ); ?></option>
 					<# _.each( data.icons, function( option_title, option_value ) { #>
 					<option value="{{ option_value }}">{{{ option_title }}}</option>
 					<# } ); #>
@@ -662,7 +662,7 @@ class Control_Icon extends Control_Base {
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{ data.description }}</div>
+		<div class="wroter-control-description">{{ data.description }}</div>
 		<# } #>
 		<?php
 	}

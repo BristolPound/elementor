@@ -1,9 +1,9 @@
 var PanelElementsSearchView;
 
 PanelElementsSearchView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-panel-element-search',
+	template: '#tmpl-wroter-panel-element-search',
 
-	id: 'elementor-panel-elements-search-wrapper',
+	id: 'wroter-panel-elements-search-wrapper',
 
 	ui: {
 		input: 'input'

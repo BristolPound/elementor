@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -65,8 +65,8 @@ abstract class Control_Base {
 	 */
 	final public function print_template() {
 		?>
-		<script type="text/html" id="tmpl-elementor-control-<?php echo esc_attr( $this->get_type() ); ?>-content">
-			<div class="elementor-control-content">
+		<script type="text/html" id="tmpl-wroter-control-<?php echo esc_attr( $this->get_type() ); ?>-content">
+			<div class="wroter-control-content">
 				<?php $this->content_template(); ?>
 			</div>
 		</script>

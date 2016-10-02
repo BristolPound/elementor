@@ -1,12 +1,12 @@
-var ControlMultipleBaseItemView = require( 'elementor-views/controls/base-multiple' ),
+var ControlMultipleBaseItemView = require( 'wroter-views/controls/base-multiple' ),
 	ControlBoxShadowItemView;
 
 ControlBoxShadowItemView = ControlMultipleBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlMultipleBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.sliders = '.elementor-slider';
-		ui.colors = '.elementor-box-shadow-color-picker';
+		ui.sliders = '.wroter-slider';
+		ui.colors = '.wroter-box-shadow-color-picker';
 
 		return ui;
 	},
@@ -20,7 +20,7 @@ ControlBoxShadowItemView = ControlMultipleBaseItemView.extend( {
 
 		this.ui.sliders.each( function() {
 			var $slider = Backbone.$( this ),
-				$input = $slider.next( '.elementor-slider-input' ).find( 'input' );
+				$input = $slider.next( '.wroter-slider-input' ).find( 'input' );
 
 			$slider.slider( {
 				value: value[ this.dataset.input ],

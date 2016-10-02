@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -22,10 +22,10 @@ class Control_Box_Shadow extends Control_Base_Multiple {
 
 	public function get_sliders() {
 		return [
-			[ 'label' => __( 'Blur', 'elementor' ), 'type' => 'blur', 'min' => 0, 'max' => 100 ],
-			[ 'label' => __( 'Spread', 'elementor' ), 'type' => 'spread', 'min' => 0, 'max' => 100 ],
-			[ 'label' => __( 'Horizontal', 'elementor' ), 'type' => 'horizontal', 'min' => -100, 'max' => 100 ],
-			[ 'label' => __( 'Vertical', 'elementor' ), 'type' => 'vertical', 'min' => -100, 'max' => 100 ],
+			[ 'label' => __( 'Blur', 'wroter' ), 'type' => 'blur', 'min' => 0, 'max' => 100 ],
+			[ 'label' => __( 'Spread', 'wroter' ), 'type' => 'spread', 'min' => 0, 'max' => 100 ],
+			[ 'label' => __( 'Horizontal', 'wroter' ), 'type' => 'horizontal', 'min' => -100, 'max' => 100 ],
+			[ 'label' => __( 'Vertical', 'wroter' ), 'type' => 'vertical', 'min' => -100, 'max' => 100 ],
 		];
 	}
 
@@ -44,18 +44,18 @@ class Control_Box_Shadow extends Control_Base_Multiple {
 			defaultColorValue = ' data-default-color=' + defaultColorValue; // Quotes added automatically.
 		}
 		#>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title"><?php _e( 'Color', 'elementor' ); ?></label>
-			<div class="elementor-control-input-wrapper">
-				<input data-setting="color" class="elementor-box-shadow-color-picker" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', 'elementor' ); ?>" data-alpha="true"{{{ defaultColorValue }}} />
+		<div class="wroter-control-field">
+			<label class="wroter-control-title"><?php _e( 'Color', 'wroter' ); ?></label>
+			<div class="wroter-control-input-wrapper">
+				<input data-setting="color" class="wroter-box-shadow-color-picker" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value', 'wroter' ); ?>" data-alpha="true"{{{ defaultColorValue }}} />
 			</div>
 		</div>
 		<?php foreach ( $this->get_sliders() as $slider ) : ?>
-			<div class="elementor-box-shadow-slider">
-				<label class="elementor-control-title"><?php echo $slider['label']; ?></label>
-				<div class="elementor-control-input-wrapper">
-					<div class="elementor-slider" data-input="<?php echo $slider['type']; ?>"></div>
-					<div class="elementor-slider-input">
+			<div class="wroter-box-shadow-slider">
+				<label class="wroter-control-title"><?php echo $slider['label']; ?></label>
+				<div class="wroter-control-input-wrapper">
+					<div class="wroter-slider" data-input="<?php echo $slider['type']; ?>"></div>
+					<div class="wroter-slider-input">
 						<input type="number" min="<?php echo $slider['min']; ?>" max="<?php echo $slider['max']; ?>" step="{{ data.step }}" data-setting="<?php echo $slider['type']; ?>"/>
 					</div>
 				</div>

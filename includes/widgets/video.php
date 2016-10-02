@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -12,7 +12,7 @@ class Widget_Video extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Video', 'elementor' );
+		return __( 'Video', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -23,7 +23,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'section_video',
 			[
-				'label' => __( 'Video', 'elementor' ),
+				'label' => __( 'Video', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -31,14 +31,14 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'video_type',
 			[
-				'label' => __( 'Video Type', 'elementor' ),
+				'label' => __( 'Video Type', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'default' => 'youtube',
 				'options' => [
-					'youtube' => __( 'YouTube', 'elementor' ),
-					'vimeo' => __( 'Vimeo', 'elementor' ),
-					//'hosted' => __( 'HTML5 Video', 'elementor' ),
+					'youtube' => __( 'YouTube', 'wroter' ),
+					'vimeo' => __( 'Vimeo', 'wroter' ),
+					//'hosted' => __( 'HTML5 Video', 'wroter' ),
 				],
 			]
 		);
@@ -46,10 +46,10 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'elementor' ),
+				'label' => __( 'Link', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'section' => 'section_video',
-				'placeholder' => __( 'Enter your YouTube link', 'elementor' ),
+				'placeholder' => __( 'Enter your YouTube link', 'wroter' ),
 				'default' => 'https://www.youtube.com/watch?v=9uOETcuFjbE',
 				'label_block' => true,
 				'condition' => [
@@ -61,10 +61,10 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_link',
 			[
-				'label' => __( 'Vimeo Link', 'elementor' ),
+				'label' => __( 'Vimeo Link', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'section' => 'section_video',
-				'placeholder' => __( 'Enter your Vimeo link', 'elementor' ),
+				'placeholder' => __( 'Enter your Vimeo link', 'wroter' ),
 				'default' => 'https://vimeo.com/170933924',
 				'label_block' => true,
 				'condition' => [
@@ -76,10 +76,10 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'hosted_link',
 			[
-				'label' => __( 'Link', 'elementor' ),
+				'label' => __( 'Link', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
 				'section' => 'section_video',
-				'placeholder' => __( 'Enter your video link', 'elementor' ),
+				'placeholder' => __( 'Enter your video link', 'wroter' ),
 				'default' => '',
 				'label_block' => true,
 				'condition' => [
@@ -91,7 +91,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'aspect_ratio',
 			[
-				'label' => __( 'Aspect Ratio', 'elementor' ),
+				'label' => __( 'Aspect Ratio', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 	            'options' => [
@@ -100,14 +100,14 @@ class Widget_Video extends Widget_Base {
 					'32' => '3:2',
 	            ],
 	            'default' => '169',
-				'prefix_class' => 'elementor-aspect-ratio-',
+				'prefix_class' => 'wroter-aspect-ratio-',
 			]
 		);
 
 		$this->add_control(
 			'heading_youtube',
 			[
-				'label' => __( 'Video Options', 'elementor' ),
+				'label' => __( 'Video Options', 'wroter' ),
 				'type' => Controls_Manager::HEADING,
 				'section' => 'section_video',
 				'separator' => 'before',
@@ -118,12 +118,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'yt_autoplay',
 			[
-				'label' => __( 'Autoplay', 'elementor' ),
+				'label' => __( 'Autoplay', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'no' => __( 'No', 'elementor' ),
-					'yes' => __( 'Yes', 'elementor' ),
+					'no' => __( 'No', 'wroter' ),
+					'yes' => __( 'Yes', 'wroter' ),
 				],
 				'condition' => [
 					'video_type' => 'youtube',
@@ -135,12 +135,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'yt_rel',
 			[
-				'label' => __( 'Suggested Videos', 'elementor' ),
+				'label' => __( 'Suggested Videos', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'no' => __( 'Hide', 'elementor' ),
-					'yes' => __( 'Show', 'elementor' ),
+					'no' => __( 'Hide', 'wroter' ),
+					'yes' => __( 'Show', 'wroter' ),
 				],
 				'default' => 'no',
 				'condition' => [
@@ -152,12 +152,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'yt_controls',
 			[
-				'label' => __( 'Player Control', 'elementor' ),
+				'label' => __( 'Player Control', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'yes' => __( 'Show', 'elementor' ),
-					'no' => __( 'Hide', 'elementor' ),
+					'yes' => __( 'Show', 'wroter' ),
+					'no' => __( 'Hide', 'wroter' ),
 				],
 				'default' => 'yes',
 				'condition' => [
@@ -169,12 +169,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'yt_showinfo',
 			[
-				'label' => __( 'Player Title & Actions', 'elementor' ),
+				'label' => __( 'Player Title & Actions', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'yes' => __( 'Show', 'elementor' ),
-					'no' => __( 'Hide', 'elementor' ),
+					'yes' => __( 'Show', 'wroter' ),
+					'no' => __( 'Hide', 'wroter' ),
 				],
 				'default' => 'yes',
 				'condition' => [
@@ -187,12 +187,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_autoplay',
 			[
-				'label' => __( 'Autoplay', 'elementor' ),
+				'label' => __( 'Autoplay', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'no' => __( 'No', 'elementor' ),
-					'yes' => __( 'Yes', 'elementor' ),
+					'no' => __( 'No', 'wroter' ),
+					'yes' => __( 'Yes', 'wroter' ),
 				],
 				'default' => 'no',
 				'condition' => [
@@ -204,12 +204,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_loop',
 			[
-				'label' => __( 'Loop', 'elementor' ),
+				'label' => __( 'Loop', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'no' => __( 'No', 'elementor' ),
-					'yes' => __( 'Yes', 'elementor' ),
+					'no' => __( 'No', 'wroter' ),
+					'yes' => __( 'Yes', 'wroter' ),
 				],
 				'default' => 'no',
 				'condition' => [
@@ -221,12 +221,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_title',
 			[
-				'label' => __( 'Intro Title', 'elementor' ),
+				'label' => __( 'Intro Title', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'yes' => __( 'Show', 'elementor' ),
-					'no' => __( 'Hide', 'elementor' ),
+					'yes' => __( 'Show', 'wroter' ),
+					'no' => __( 'Hide', 'wroter' ),
 				],
 				'default' => 'yes',
 				'condition' => [
@@ -238,12 +238,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_portrait',
 			[
-				'label' => __( 'Intro Portrait', 'elementor' ),
+				'label' => __( 'Intro Portrait', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'yes' => __( 'Show', 'elementor' ),
-					'no' => __( 'Hide', 'elementor' ),
+					'yes' => __( 'Show', 'wroter' ),
+					'no' => __( 'Hide', 'wroter' ),
 				],
 				'default' => 'yes',
 				'condition' => [
@@ -255,12 +255,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_byline',
 			[
-				'label' => __( 'Intro Byline', 'elementor' ),
+				'label' => __( 'Intro Byline', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'section' => 'section_video',
 				'options' => [
-					'yes' => __( 'Show', 'elementor' ),
-					'no' => __( 'Hide', 'elementor' ),
+					'yes' => __( 'Show', 'wroter' ),
+					'no' => __( 'Hide', 'wroter' ),
 				],
 				'default' => 'yes',
 				'condition' => [
@@ -272,7 +272,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_color',
 			[
-				'label' => __( 'Controls Color', 'elementor' ),
+				'label' => __( 'Controls Color', 'wroter' ),
 				'type' => Controls_Manager::COLOR,
 				'section' => 'section_video',
 				'default' => '',
@@ -286,7 +286,7 @@ class Widget_Video extends Widget_Base {
 		//$this->add_control(
 		//	'hosted_width',
 		//	[
-		//		'label' => __( 'Width', 'elementor' ),
+		//		'label' => __( 'Width', 'wroter' ),
 		//		'type' => Controls_Manager::NUMBER,
 		//		'section' => 'section_video',
 		//		'default' => '640',
@@ -299,7 +299,7 @@ class Widget_Video extends Widget_Base {
 		//$this->add_control(
 		//	'hosted_height',
 		//	[
-		//		'label' => __( 'Height', 'elementor' ),
+		//		'label' => __( 'Height', 'wroter' ),
 		//		'type' => Controls_Manager::NUMBER,
 		//		'section' => 'section_video',
 		//		'default' => '360',
@@ -312,12 +312,12 @@ class Widget_Video extends Widget_Base {
 		//$this->add_control(
 		//	'hosted_autoplay',
 		//	[
-		//		'label' => __( 'Autoplay', 'elementor' ),
+		//		'label' => __( 'Autoplay', 'wroter' ),
 		//		'type' => Controls_Manager::SELECT,
 		//		'section' => 'section_video',
 		//		'options' => [
-		//			'no' => __( 'No', 'elementor' ),
-		//			'yes' => __( 'Yes', 'elementor' ),
+		//			'no' => __( 'No', 'wroter' ),
+		//			'yes' => __( 'Yes', 'wroter' ),
 		//		],
 		//		'default' => 'no',
 		//		'condition' => [
@@ -329,12 +329,12 @@ class Widget_Video extends Widget_Base {
 		//$this->add_control(
 		//	'hosted_loop',
 		//	[
-		//		'label' => __( 'Loop', 'elementor' ),
+		//		'label' => __( 'Loop', 'wroter' ),
 		//		'type' => Controls_Manager::SELECT,
 		//		'section' => 'section_video',
 		//		'options' => [
-		//			'no' => __( 'No', 'elementor' ),
-		//			'yes' => __( 'Yes', 'elementor' ),
+		//			'no' => __( 'No', 'wroter' ),
+		//			'yes' => __( 'Yes', 'wroter' ),
 		//		],
 		//		'default' => 'no',
 		//		'condition' => [
@@ -346,7 +346,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'elementor' ),
+				'label' => __( 'View', 'wroter' ),
 				'type' => Controls_Manager::HIDDEN,
 				'section' => 'section_video',
 				'default' => 'youtube',
@@ -356,7 +356,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'section_image_overlay',
 			[
-				'label' => __( 'Image Overlay', 'elementor' ),
+				'label' => __( 'Image Overlay', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -364,12 +364,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'show_image_overlay',
 			[
-				'label' => __( 'Image Overlay', 'elementor' ),
+				'label' => __( 'Image Overlay', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'no',
 				'options' => [
-					'no' => __( 'Hide', 'elementor' ),
-					'yes' => __( 'Show', 'elementor' ),
+					'no' => __( 'Hide', 'wroter' ),
+					'yes' => __( 'Show', 'wroter' ),
 				],
 				'section' => 'section_image_overlay',
 			]
@@ -378,7 +378,7 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'image_overlay',
 			[
-				'label' => __( 'Image', 'elementor' ),
+				'label' => __( 'Image', 'wroter' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
@@ -393,12 +393,12 @@ class Widget_Video extends Widget_Base {
 		$this->add_control(
 			'show_play_icon',
 			[
-				'label' => __( 'Play Icon', 'elementor' ),
+				'label' => __( 'Play Icon', 'wroter' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'yes',
 				'options' => [
-					'yes' => __( 'Yes', 'elementor' ),
-					'no' => __( 'No', 'elementor' ),
+					'yes' => __( 'Yes', 'wroter' ),
+					'no' => __( 'No', 'wroter' ),
 				],
 				'section' => 'section_image_overlay',
 				'condition' => [
@@ -428,14 +428,14 @@ class Widget_Video extends Widget_Base {
 		}
 
 		if ( $video_html ) : ?>
-			<div class="elementor-video-wrapper">
+			<div class="wroter-video-wrapper">
 				<?php
 				echo $video_html;
 
 				if ( $this->has_image_overlay() ) : ?>
-					<div class="elementor-custom-embed-image-overlay" style="background-image: url(<?php echo $this->_current_instance['image_overlay']['url']; ?>);">
+					<div class="wroter-custom-embed-image-overlay" style="background-image: url(<?php echo $this->_current_instance['image_overlay']['url']; ?>);">
 						<?php if ( 'yes' === $this->_current_instance['show_play_icon'] ) : ?>
-							<div class="elementor-custom-embed-play">
+							<div class="wroter-custom-embed-play">
 								<i class="fa fa-play-circle"></i>
 							</div>
 						<?php endif; ?>

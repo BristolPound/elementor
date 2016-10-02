@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -42,21 +42,21 @@ class Control_Media extends Control_Base_Multiple {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
-				<div class="elementor-control-media">
-					<div class="elementor-control-media-upload-button">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
+				<div class="wroter-control-media">
+					<div class="wroter-control-media-upload-button">
 						<i class="fa fa-plus-circle"></i>
 					</div>
-					<div class="elementor-control-media-image-area">
-						<div class="elementor-control-media-image" style="background-image: url({{ data.controlValue.url }});"></div>
-						<div class="elementor-control-media-delete"><?php _e( 'Delete', 'elementor' ); ?></div>
+					<div class="wroter-control-media-image-area">
+						<div class="wroter-control-media-image" style="background-image: url({{ data.controlValue.url }});"></div>
+						<div class="wroter-control-media-delete"><?php _e( 'Delete', 'wroter' ); ?></div>
 					</div>
 				</div>
 			</div>
 			<# if ( data.description ) { #>
-				<div class="elementor-control-description">{{{ data.description }}}</div>
+				<div class="wroter-control-description">{{{ data.description }}}</div>
 			<# } #>
 			<input type="hidden" data-setting="{{ data.name }}" />
 		</div>

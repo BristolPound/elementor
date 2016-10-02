@@ -1,23 +1,23 @@
-var SectionView = require( 'elementor-views/section' ),
+var SectionView = require( 'wroter-views/section' ),
 	SectionsCollectionView;
 
 SectionsCollectionView = Marionette.CompositeView.extend( {
-	template: Marionette.TemplateCache.get( '#tmpl-elementor-preview' ),
+	template: Marionette.TemplateCache.get( '#tmpl-wroter-preview' ),
 
-	id: 'elementor-inner',
+	id: 'wroter-inner',
 
-	childViewContainer: '#elementor-section-wrap',
+	childViewContainer: '#wroter-section-wrap',
 
 	childView: SectionView,
 
 	ui: {
-		addSectionArea: '#elementor-add-section',
-		addNewSection: '#elementor-add-new-section',
-		closePresetsIcon: '#elementor-select-preset-close',
-		addSectionButton: '#elementor-add-section-button',
-		addTemplateButton: '#elementor-add-template-button',
-		selectPreset: '#elementor-select-preset',
-		presets: '.elementor-preset'
+		addSectionArea: '#wroter-add-section',
+		addNewSection: '#wroter-add-new-section',
+		closePresetsIcon: '#wroter-select-preset-close',
+		addSectionButton: '#wroter-add-section-button',
+		addTemplateButton: '#wroter-add-template-button',
+		selectPreset: '#wroter-select-preset',
+		presets: '.wroter-preset'
 	},
 
 	events: {
@@ -29,24 +29,24 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 
 	behaviors: {
 		Sortable: {
-			behaviorClass: require( 'elementor-behaviors/sortable' ),
+			behaviorClass: require( 'wroter-behaviors/sortable' ),
 			elChildType: 'section'
 		},
 		HandleDuplicate: {
-			behaviorClass: require( 'elementor-behaviors/handle-duplicate' )
+			behaviorClass: require( 'wroter-behaviors/handle-duplicate' )
 		},
 		HandleAdd: {
-			behaviorClass: require( 'elementor-behaviors/duplicate' )
+			behaviorClass: require( 'wroter-behaviors/duplicate' )
 		},
 		HandleElementsRelation: {
-			behaviorClass: require( 'elementor-behaviors/elements-relation' )
+			behaviorClass: require( 'wroter-behaviors/elements-relation' )
 		}
 	},
 
 	getSortableOptions: function() {
 		return {
-			handle: '> .elementor-container > .elementor-row > .elementor-column > .elementor-element-overlay .elementor-editor-section-settings-list .elementor-editor-element-trigger',
-			items: '> .elementor-section'
+			handle: '> .wroter-container > .wroter-row > .wroter-column > .wroter-element-overlay .wroter-editor-section-settings-list .wroter-editor-element-trigger',
+			items: '> .wroter-section'
 		};
 	},
 
@@ -61,8 +61,8 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 	initialize: function() {
 		this
 			.listenTo( this.collection, 'add remove reset', this.onCollectionChanged )
-			.listenTo( elementor.channels.panelElements, 'element:drag:start', this.onPanelElementDragStart )
-			.listenTo( elementor.channels.panelElements, 'element:drag:end', this.onPanelElementDragEnd );
+			.listenTo( wroter.channels.panelElements, 'element:drag:start', this.onPanelElementDragStart )
+			.listenTo( wroter.channels.panelElements, 'element:drag:end', this.onPanelElementDragEnd );
 	},
 
 	addChildModel: function( model, options ) {
@@ -71,7 +71,7 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 
 	addSection: function( properties ) {
 		var newSection = {
-			id: elementor.helpers.getUniqueID(),
+			id: wroter.helpers.getUniqueID(),
 			elType: 'section',
 			settings: {},
 			elements: []
@@ -97,9 +97,9 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 			elTopOffsetRange = sectionHandleHeight - elTopOffset;
 
 		if ( 0 < elTopOffsetRange ) {
-			var $style = Backbone.$( '<style>' ).text( '.elementor-editor-active #elementor-inner{margin-top: ' + elTopOffsetRange + 'px}' );
+			var $style = Backbone.$( '<style>' ).text( '.wroter-editor-active #wroter-inner{margin-top: ' + elTopOffsetRange + 'px}' );
 
-			elementor.$previewContents.children().children( 'head' ).append( $style );
+			wroter.$previewContents.children().children( 'head' ).append( $style );
 		}
 	},
 
@@ -109,8 +109,8 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 	},
 
 	onAddTemplateButtonClick: function() {
-		elementor.templates.startModal( function() {
-			elementor.templates.showTemplates();
+		wroter.templates.startModal( function() {
+			wroter.templates.showTemplates();
 		} );
 	},
 
@@ -119,7 +119,7 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 
 		self.ui.addSectionArea.html5Droppable( {
 			axis: [ 'vertical' ],
-			groups: [ 'elementor-element' ],
+			groups: [ 'wroter-element' ],
 			onDragEnter: function( side ) {
 				self.ui.addSectionArea.attr( 'data-side', side );
 			},
@@ -127,12 +127,12 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 				self.ui.addSectionArea.removeAttr( 'data-side' );
 			},
 			onDropping: function() {
-				var elementView = elementor.channels.panelElements.request( 'element:selected' ),
+				var elementView = wroter.channels.panelElements.request( 'element:selected' ),
 					newSection = self.addSection(),
 					elType = elementView.model.get( 'elType' );
 
 				var elementData = {
-					id: elementor.helpers.getUniqueID(),
+					id: wroter.helpers.getUniqueID(),
 					elType: elType
 				};
 
@@ -151,20 +151,20 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 	},
 
 	onCollectionChanged: function() {
-		elementor.setFlagEditorChange( true );
+		wroter.setFlagEditorChange( true );
 	},
 
 	onPresetSelected: function( event ) {
 		this.closeSelectPresets();
 
 		var selectedStructure = event.currentTarget.dataset.structure,
-			parsedStructure = elementor.presetsFactory.getParsedStructure( selectedStructure ),
+			parsedStructure = wroter.presetsFactory.getParsedStructure( selectedStructure ),
 			elements = [],
 			loopIndex;
 
 		for ( loopIndex = 0; loopIndex < parsedStructure.columnsCount; loopIndex++ ) {
 			elements.push( {
-				id: elementor.helpers.getUniqueID(),
+				id: wroter.helpers.getUniqueID(),
 				elType: 'column',
 				settings: {},
 				elements: []
@@ -178,11 +178,11 @@ SectionsCollectionView = Marionette.CompositeView.extend( {
 	},
 
 	onPanelElementDragStart: function() {
-		elementor.helpers.disableElementEvents( this.$el.find( 'iframe' ) );
+		wroter.helpers.disableElementEvents( this.$el.find( 'iframe' ) );
 	},
 
 	onPanelElementDragEnd: function() {
-		elementor.helpers.enableElementEvents( this.$el.find( 'iframe' ) );
+		wroter.helpers.enableElementEvents( this.$el.find( 'iframe' ) );
 	}
 } );
 

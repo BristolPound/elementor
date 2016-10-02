@@ -3,7 +3,7 @@ var HandleEditorBehavior;
 HandleEditorBehavior = Marionette.Behavior.extend( {
 
 	onClickEdit: function() {
-		var activeMode = elementor.channels.dataEditMode.request( 'activeMode' );
+		var activeMode = wroter.channels.dataEditMode.request( 'activeMode' );
 
 		if ( 'preview' === activeMode ) {
 			return;
@@ -13,10 +13,10 @@ HandleEditorBehavior = Marionette.Behavior.extend( {
 	},
 
 	onOpenEditor: function() {
-		var currentPanelPageName = elementor.getPanelView().getCurrentPageName();
+		var currentPanelPageName = wroter.getPanelView().getCurrentPageName();
 
 		if ( 'editor' === currentPanelPageName ) {
-			var currentPanelPageView = elementor.getPanelView().getCurrentPageView(),
+			var currentPanelPageView = wroter.getPanelView().getCurrentPageView(),
 				currentEditableModel = currentPanelPageView.model;
 
 			if ( currentEditableModel === this.view.model ) {
@@ -24,9 +24,9 @@ HandleEditorBehavior = Marionette.Behavior.extend( {
 			}
 		}
 
-		var elementData = elementor.getElementData( this.view.model );
+		var elementData = wroter.getElementData( this.view.model );
 
-		elementor.getPanelView().setPage( 'editor', elementor.translate( 'edit_element', [ elementData.title ] ), {
+		wroter.getPanelView().setPage( 'editor', wroter.translate( 'edit_element', [ elementData.title ] ), {
 			model: this.view.model,
 			editedElementView: this.view
 		} );

@@ -7,10 +7,10 @@ Ajax = {
 		this.config = {
 			ajaxParams: {
 				type: 'POST',
-				url: elementor.config.ajaxurl,
+				url: wroter.config.ajaxurl,
 				data: {}
 			},
-			actionPrefix: 'elementor_'
+			actionPrefix: 'wroter_'
 		};
 	},
 
@@ -19,7 +19,7 @@ Ajax = {
 	},
 
 	send: function( action, options ) {
-		var ajaxParams = elementor.helpers.cloneObject( this.config.ajaxParams );
+		var ajaxParams = wroter.helpers.cloneObject( this.config.ajaxParams );
 
 		options = options || {};
 
@@ -29,10 +29,10 @@ Ajax = {
 
 		if ( ajaxParams.data instanceof FormData ) {
 			ajaxParams.data.append( 'action', action );
-			ajaxParams.data.append( '_nonce', elementor.config.nonce );
+			ajaxParams.data.append( '_nonce', wroter.config.nonce );
 		} else {
 			ajaxParams.data.action = action;
-			ajaxParams.data._nonce = elementor.config.nonce;
+			ajaxParams.data._nonce = wroter.config.nonce;
 		}
 
 		var successCallback = ajaxParams.success,

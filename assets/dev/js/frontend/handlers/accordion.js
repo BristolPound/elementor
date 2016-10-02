@@ -18,8 +18,8 @@ var activateSection = function( sectionIndex, $accordionTitles ) {
 
 module.exports = function( $ ) {
 	var $this = $( this ),
-		defaultActiveSection = $this.find( '.elementor-accordion' ).data( 'active-section' ),
-		$accordionTitles = $this.find( '.elementor-accordion-title' );
+		defaultActiveSection = $this.find( '.wroter-accordion' ).data( 'active-section' ),
+		$accordionTitles = $this.find( '.wroter-accordion-title' );
 
 	if ( ! defaultActiveSection ) {
 		defaultActiveSection = 1;

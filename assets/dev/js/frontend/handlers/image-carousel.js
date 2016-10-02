@@ -1,5 +1,5 @@
 module.exports = function( $ ) {
-	var $carousel = $( this ).find( '.elementor-image-carousel' );
+	var $carousel = $( this ).find( '.wroter-image-carousel' );
 	if ( ! $carousel.length ) {
 		return;
 	}

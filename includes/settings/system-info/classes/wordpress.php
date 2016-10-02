@@ -1,7 +1,7 @@
 <?php
-namespace Elementor\System_Info\Classes;
+namespace Wroter\System_Info\Classes;
 
-use Elementor\System_Info\Classes\Abstracts\Base_Reporter;
+use Wroter\System_Info\Classes\Abstracts\Base_Reporter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

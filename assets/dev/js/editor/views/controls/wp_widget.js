@@ -1,4 +1,4 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlWPWidgetItemView;
 
 ControlWPWidgetItemView = ControlBaseItemView.extend( {
@@ -18,13 +18,13 @@ ControlWPWidgetItemView = ControlBaseItemView.extend( {
 
 	onFormChanged: function() {
 		var idBase = 'widget-' + this.model.get( 'id_base' ),
-			settings = this.ui.form.elementorSerializeObject()[ idBase ].REPLACE_TO_ID;
+			settings = this.ui.form.wroterSerializeObject()[ idBase ].REPLACE_TO_ID;
 
 		this.setValue( settings );
 	},
 
 	onReady: function() {
-		elementor.ajax.send( 'editor_get_wp_widget_form', {
+		wroter.ajax.send( 'editor_get_wp_widget_form', {
 			data: {
 				widget_type: this.model.get( 'widget' ),
 				data: JSON.stringify( this.elementSettingsModel.toJSON() )

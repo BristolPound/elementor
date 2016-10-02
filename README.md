@@ -1,4 +1,4 @@
-# Elementor Page Builder [![Build Status](https://travis-ci.org/pojome/elementor.svg?branch=master)](https://travis-ci.org/pojome/elementor) [![Coverage Status](https://coveralls.io/repos/github/pojome/elementor/badge.svg?branch=master)](https://coveralls.io/github/pojome/elementor?branch=pojome/elementor) [![Dependency Status](https://david-dm.org/pojome/elementor/dev-status.svg)](https://david-dm.org/pojome/elementor#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/elementor.svg?style=flat-square)](https://wordpress.org/plugins/elementor/) [![WordPress](https://img.shields.io/wordpress/plugin/r/elementor.svg?style=flat-square)](https://wordpress.org/plugins/elementor/) [![WordPress](https://img.shields.io/wordpress/plugin/v/elementor.svg?style=flat-square)](https://wordpress.org/plugins/elementor/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/elementor.svg?style=flat-square)](https://wordpress.org/plugins/elementor/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+# Wroter Page Builder [![Build Status](https://travis-ci.org/pojome/wroter.svg?branch=master)](https://travis-ci.org/pojome/wroter) [![Coverage Status](https://coveralls.io/repos/github/pojome/wroter/badge.svg?branch=master)](https://coveralls.io/github/pojome/wroter?branch=pojome/wroter) [![Dependency Status](https://david-dm.org/pojome/wroter/dev-status.svg)](https://david-dm.org/pojome/wroter#info=devDependencies) [![WordPress](https://img.shields.io/wordpress/v/wroter.svg?style=flat-square)](https://wordpress.org/plugins/wroter/) [![WordPress](https://img.shields.io/wordpress/plugin/r/wroter.svg?style=flat-square)](https://wordpress.org/plugins/wroter/) [![WordPress](https://img.shields.io/wordpress/plugin/v/wroter.svg?style=flat-square)](https://wordpress.org/plugins/wroter/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/wroter.svg?style=flat-square)](https://wordpress.org/plugins/wroter/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 
 **Contributors:** [pojo.me](https://profiles.wordpress.org/pojo.me), [KingYes](https://profiles.wordpress.org/KingYes), [ariel.k](https://profiles.wordpress.org/ariel.k), [jzaltzberg](https://profiles.wordpress.org/jzaltzberg), [yehudah](https://profiles.wordpress.org/yehudah)  
@@ -17,13 +17,13 @@ https://www.youtube.com/watch?v=kB4U67tiQLA
 
 It's about time for a live page builder, with no limits of design. A page builder that delivers high-end page designs and advanced capabilities, never before seen on WordPress.
 
-It's time for **Elementor Page Builder**.
+It's time for **Wroter Page Builder**.
 
 ### Faster. Much faster. ###
-Instant reaction was a key feature we wanted to achieve. Instant drag & drop, instant live edit, instant page load. The speed of Elementor is not matched by any other page builder, free or paid. This makes the interface fun and easy to work with, as well as reduces the time it takes to design.
+Instant reaction was a key feature we wanted to achieve. Instant drag & drop, instant live edit, instant page load. The speed of Wroter is not matched by any other page builder, free or paid. This makes the interface fun and easy to work with, as well as reduces the time it takes to design.
 
 ### Live design. Truly live. ###
-Never again work on the backend and guess what the frontend will look like. With Elementor, you edit the page and simultaneously see exactly how it looks like. Elementor features live editing that is truly live, with no need to press update or go to preview mode.
+Never again work on the backend and guess what the frontend will look like. With Wroter, you edit the page and simultaneously see exactly how it looks like. Wroter features live editing that is truly live, with no need to press update or go to preview mode.
 
 ### Surprises you won't see anywhere else. ###
 Create pages that have "the designer touch", by including unique features like box shadows, background overlays, hover and entrance animations, advanced buttons and more. We worked hard to create the perfect balance between full design capabilities and an intuitive and clean interface. You no longer need to use code, HTML, CSS or shortcode.
@@ -32,10 +32,10 @@ Create pages that have "the designer touch", by including unique features like b
 We've added **Library**, which includes a collection of 20+ beautiful templates, made for you by our top notch designers. You can also save your own pages and sections, and reuse them on different pages, or export them to whole different websites.
 
 ### NEW! Mobile Editing. ###
-Elementor comes with an exclusive toolset, that lets you create truly a responsive website in a whole new and visual way. From different font size per device, to reverse column ordering, this is the most powerful solution for creating perfect mobile pages.
+Wroter comes with an exclusive toolset, that lets you create truly a responsive website in a whole new and visual way. From different font size per device, to reverse column ordering, this is the most powerful solution for creating perfect mobile pages.
 
 ### 28 widgets and counting ###
-We packed 28 of the most useful widgets into Elementor. True, that's way more than we had to offer, but we wanted to spare no widget from you, so you can reach the top of your design capabilities.
+We packed 28 of the most useful widgets into Wroter. True, that's way more than we had to offer, but we wanted to spare no widget from you, so you can reach the top of your design capabilities.
 
 - **Heading**. Add eye-catching headlines.
 - **Image**. Control the size, opacity and other settings of images.
@@ -68,35 +68,35 @@ We packed 28 of the most useful widgets into Elementor. True, that's way more th
 - **And counting...**
 
 ### Multilingual & RTL supported. ###
-We've integrated RTL and multi language support within the framework of Elementor, so you get a translated panel out of the box, as well as RTL typography support, and developer options to add even more languages.
+We've integrated RTL and multi language support within the framework of Wroter, so you get a translated panel out of the box, as well as RTL typography support, and developer options to add even more languages.
 
 ### Translations ###
-- [German](https://translate.wordpress.org/locale/de/default/wp-plugins/elementor) - (de_DE)
-- [Japanese](https://translate.wordpress.org/locale/ja/default/wp-plugins/elementor) - (ja)
-- [Portuguese (Portugal)](https://translate.wordpress.org/locale/pt-br/default/wp-plugins/elementor) - (pt_PT)
-- [Portuguese (Brazil)](https://translate.wordpress.org/locale/pt-br/default/wp-plugins/elementor) - (pt_BR)
-- [Polish](https://translate.wordpress.org/locale/pl/default/wp-plugins/elementor) - (pl_PL)
-- [Persian](https://translate.wordpress.org/locale/fa/default/wp-plugins/elementor) - (fa_IR)
-- [Hebrew](https://translate.wordpress.org/locale/he/default/wp-plugins/elementor) - (he_IL)
-- [Romanian](https://translate.wordpress.org/locale/ro/default/wp-plugins/elementor) - (ro_RO) - in progress
-- [Spanish (Spain)](https://translate.wordpress.org/locale/es/default/wp-plugins/elementor) - (es_ES) - in progress
-- [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/elementor) - (fr_FR) - in progress
-- [Italian](https://translate.wordpress.org/locale/it/default/wp-plugins/elementor) - (it_IT) - in progress
+- [German](https://translate.wordpress.org/locale/de/default/wp-plugins/wroter) - (de_DE)
+- [Japanese](https://translate.wordpress.org/locale/ja/default/wp-plugins/wroter) - (ja)
+- [Portuguese (Portugal)](https://translate.wordpress.org/locale/pt-br/default/wp-plugins/wroter) - (pt_PT)
+- [Portuguese (Brazil)](https://translate.wordpress.org/locale/pt-br/default/wp-plugins/wroter) - (pt_BR)
+- [Polish](https://translate.wordpress.org/locale/pl/default/wp-plugins/wroter) - (pl_PL)
+- [Persian](https://translate.wordpress.org/locale/fa/default/wp-plugins/wroter) - (fa_IR)
+- [Hebrew](https://translate.wordpress.org/locale/he/default/wp-plugins/wroter) - (he_IL)
+- [Romanian](https://translate.wordpress.org/locale/ro/default/wp-plugins/wroter) - (ro_RO) - in progress
+- [Spanish (Spain)](https://translate.wordpress.org/locale/es/default/wp-plugins/wroter) - (es_ES) - in progress
+- [French](https://translate.wordpress.org/locale/fr/default/wp-plugins/wroter) - (fr_FR) - in progress
+- [Italian](https://translate.wordpress.org/locale/it/default/wp-plugins/wroter) - (it_IT) - in progress
 
 ### Be a contributor ###
-If you want to contribute, go to our [Elementor GitHub Repository](https://github.com/pojome/elementor) and see where you can help.
+If you want to contribute, go to our [Wroter GitHub Repository](https://github.com/pojome/wroter) and see where you can help.
 
-You can also add a new language via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/elementor). We've built a short guide explaining [how to translate and localize the plugin](https://go.elementor.com/translate/).
+You can also add a new language via [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/wroter). We've built a short guide explaining [how to translate and localize the plugin](https://go.wroter.com/translate/).
 
 ### Documentation and Support ###
 
-- For documentation and tutorials go to [docs.elementor.com](https://docs.elementor.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
-- If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/elementor).
-- For more information about features, FAQs and documentation, check out [Elementor.com](https://elementor.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+- For documentation and tutorials go to [docs.wroter.com](https://docs.wroter.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+- If you have any more questions, visit our support on the [Plugin's Forum](https://wordpress.org/support/plugin/wroter).
+- For more information about features, FAQs and documentation, check out [Wroter.com](https://wroter.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
-### Liked Elementor? ###
-- Check out our recently featured page on [Product Hunt](https://www.producthunt.com/tech/elementor).
-- Or rate us on [WordPress](https://wordpress.org/support/view/plugin-reviews/elementor?rate=5#postform) :)
+### Liked Wroter? ###
+- Check out our recently featured page on [Product Hunt](https://www.producthunt.com/tech/wroter).
+- Or rate us on [WordPress](https://wordpress.org/support/view/plugin-reviews/wroter?rate=5#postform) :)
 
 ## Installation ##
 
@@ -118,36 +118,36 @@ https://www.youtube.com/watch?v=Ypn6fltn_7s
 1. Install using the WordPress built-in Plugin installer, or Extract the zip file and drop the contents in the `wp-content/plugins/` directory of your WordPress installation.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Go to Pages > Add New
-4. Press the 'Edit with Elementor' button.
+4. Press the 'Edit with Wroter' button.
 5. Now you can drag and drop widgets from the left panel onto the content area, as well as add new sections and columns that make up the page structure.
 
-For documentation and tutorials go to [docs.elementor.com](https://docs.elementor.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+For documentation and tutorials go to [docs.wroter.com](https://docs.wroter.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ## Frequently Asked Questions ##
 
-**With Elementor, do I still need a theme?**
+**With Wroter, do I still need a theme?**
 
-Yes. Think of it like this: a theme is like the frame of the picture, and Elementor is the tool to paint the picture inside the frame. You still need a theme to design a nice header and footer.
+Yes. Think of it like this: a theme is like the frame of the picture, and Wroter is the tool to paint the picture inside the frame. You still need a theme to design a nice header and footer.
 
-**Is Elementor compatible with Posts and Custom Post Types?**
+**Is Wroter compatible with Posts and Custom Post Types?**
 
-It sure is! You can set which post types will enable Elementor in the settings page.
+It sure is! You can set which post types will enable Wroter in the settings page.
 
-**Can I use other plugin widgets inside Elementor?**
+**Can I use other plugin widgets inside Wroter?**
 
-Sure can! Plugin widgets that appear in the WordPress widgets menu will also appear inside Elementor automatically. Just drag and drop them onto the page.
+Sure can! Plugin widgets that appear in the WordPress widgets menu will also appear inside Wroter automatically. Just drag and drop them onto the page.
 
-**Do I need to know how to code to use Elementor?**
+**Do I need to know how to code to use Wroter?**
 
-Absolutely not! Elementor is a live frontend page builder, that lets you reach a high end design with no need to write even a line of code or CSS.
+Absolutely not! Wroter is a live frontend page builder, that lets you reach a high end design with no need to write even a line of code or CSS.
 
-**Will Elementor work with RTL or other languages?**
+**Will Wroter work with RTL or other languages?**
 
-Yeah! Elementor enables to seamlessly build RTL pages as well as other translated pages in any language. You can read more about translation and localization here: https://go.elementor.com/translate/
+Yeah! Wroter enables to seamlessly build RTL pages as well as other translated pages in any language. You can read more about translation and localization here: https://go.wroter.com/translate/
 
-**My site is working with WordPress 2.6, will Elementor work for me?**
+**My site is working with WordPress 2.6, will Wroter work for me?**
 
-No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 or greater. We recommend your host supports PHP version 5.6 or greater and MySQL version 5.6 or greater.
+No. Wroter supports WordPress 4.4 or greater, and is compatible with PHP 5.4 or greater. We recommend your host supports PHP version 5.6 or greater and MySQL version 5.6 or greater.
 
 ## Screenshots ##
 
@@ -163,8 +163,8 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - New method for import template library
 * Tweak! - Changed priority for 3rd party plugins
 * Fix! - Conflict with WooCommerce Memberships
-* Fix! - Conflict with Lifter LMS ([#612](https://github.com/pojome/elementor/issues/612))
-* Fix! - Icon list correct alignment ([#620](https://github.com/pojome/elementor/issues/620))
+* Fix! - Conflict with Lifter LMS ([#612](https://github.com/pojome/wroter/issues/612))
+* Fix! - Icon list correct alignment ([#620](https://github.com/pojome/wroter/issues/620))
 * Fix! - Reload the iframe causes the panel to stop working
 
 ### 0.9.2 - 21.09.2016 ###
@@ -178,11 +178,11 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * New! - Added stretch section control for all parent sections
 * New! - Added content width option to set the default width of the content area
 * Tweak! - Changed Fit to Screen to `min-height` for better behavior on mobile and content overflow scenarios.
-* Tweak! - Added Switcher control for editor panel ([#143](https://github.com/pojome/elementor/issues/143))
+* Tweak! - Added Switcher control for editor panel ([#143](https://github.com/pojome/wroter/issues/143))
 * Tweak! - Improved Integration with 3rd party plugins and themes
 * Fix! - Hidden templates library items from nav menu
 * Fix! - Added color default for Button and Icon when schemes color is disabled
-* Fix! - Added default size for the Heading widget - ([#533](https://github.com/pojome/elementor/issues/533))
+* Fix! - Added default size for the Heading widget - ([#533](https://github.com/pojome/wroter/issues/533))
 * Fix! - Button border color hover control - only shown when border is set
 
 ### 0.8.1 - 11.09.2016 ###
@@ -191,10 +191,10 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - Added alignment responsive support for Image Box and Icon Box widgets
 * Tweak! - Added mobile editing for Spacer widget
 * Tweak! - Added title spacing for Image Box and Icon Box
-* Tweak! - Removed quick link to Edit with Elementor for non-Elementor pages ([#539](https://github.com/pojome/elementor/issues/539))
-* Fix! - Correcting title link color in Image Box widget ([#531](https://github.com/pojome/elementor/issues/531))
+* Tweak! - Removed quick link to Edit with Wroter for non-Wroter pages ([#539](https://github.com/pojome/wroter/issues/539))
+* Fix! - Correcting title link color in Image Box widget ([#531](https://github.com/pojome/wroter/issues/531))
 * Fix! - Resolved responsive bug in Image Gallery widget
-* Fix! - Resolved bug in editor for safari ([#530](https://github.com/pojome/elementor/issues/530), [#540](https://github.com/pojome/elementor/issues/540))
+* Fix! - Resolved bug in editor for safari ([#530](https://github.com/pojome/wroter/issues/530), [#540](https://github.com/pojome/wroter/issues/540))
 
 ### 0.8.0 - 07.09.2016 ###
 * New! - Added columns ordering on mobile normal / reverse
@@ -210,16 +210,16 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * New! - Icon widget - Set alignment per device
 * New! - Divider widget - Set alignment per device
 * New! - Icon List Widget - Set alignment per device
-* Tweak! - Elementor Library connection status indicator added in System Info
+* Tweak! - Wroter Library connection status indicator added in System Info
 * Tweak! - Default content-width is now set by css and not by the panel
 * Tweak! - Added shortcode and oEmbed support for Tabs / Accordion / Toggle / Text Editor widgets
 * Tweak! - Removed Default font size in custom option
-* Tweak! - Hide update notice from outside Elementor
+* Tweak! - Hide update notice from outside Wroter
 * Tweak! - Removed mobile-landscape and laptop sizes from preview mode
-* Tweak! - Rearrange TinyMCE buttons ([#444](https://github.com/pojome/elementor/issues/444))
+* Tweak! - Rearrange TinyMCE buttons ([#444](https://github.com/pojome/wroter/issues/444))
 * Tweak! - Changed range for font size control
 * Tweak! - Compatibility with `asp_tags`
-* Tweak! - Improved compatibility for old webkit browsers ([#484](https://github.com/pojome/elementor/issues/484), [#403](https://github.com/pojome/elementor/issues/403), [#370](https://github.com/pojome/elementor/issues/370))
+* Tweak! - Improved compatibility for old webkit browsers ([#484](https://github.com/pojome/wroter/issues/484), [#403](https://github.com/pojome/wroter/issues/403), [#370](https://github.com/pojome/wroter/issues/370))
 * Fix! - Removed style from gallery caption
 * Fix! - Wrong index in section sorting
 * Fix! - Column indication on inner section dragging
@@ -244,24 +244,24 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 ### 0.7.2 - 18.08.2016 ###
 * Tweak! - Hide add section area for mobile device
 * Tweak! - Optimization assets files
-* Fix! - Intrusive Slick Carousel CSS ([#424](https://github.com/pojome/elementor/issues/424))
+* Fix! - Intrusive Slick Carousel CSS ([#424](https://github.com/pojome/wroter/issues/424))
 * Fix! - Display content position for custom height section option
 
 ### 0.7.1 - 17.08.2016 ###
 * Tweak! - Added column/content position for inner section
 * Tweak! - Block template library in the frontend
 * Fix! - Export template ([topic](https://wordpress.org/support/topic/template-export-not-working-in-070))
-* Fix! - Fatal Error during update plugin ([#412](https://github.com/pojome/elementor/issues/412))
-* Fix! - Separating link attributes from classes attributes in Icon Box widget ([#414](https://github.com/pojome/elementor/issues/414))
+* Fix! - Fatal Error during update plugin ([#412](https://github.com/pojome/wroter/issues/412))
+* Fix! - Separating link attributes from classes attributes in Icon Box widget ([#414](https://github.com/pojome/wroter/issues/414))
 * Fix! - Allow column and content position for mobile
-* Fix! - Removed `overflow: hidden` from `#elementor-inner` ([#415](https://github.com/pojome/elementor/issues/415))
+* Fix! - Removed `overflow: hidden` from `#wroter-inner` ([#415](https://github.com/pojome/wroter/issues/415))
 * Fix! - Aspect ratio issue for Video widget ([topic](https://wordpress.org/support/topic/video-embeds-have-black-bars-top-and-bottom))
-* Fix! - Image Carousel "slides to show" on tablet ([#372](https://github.com/pojome/elementor/issues/372))
+* Fix! - Image Carousel "slides to show" on tablet ([#372](https://github.com/pojome/wroter/issues/372))
 * Fix! - RTL style for library
 * Fix! - Handle errors on wrong export action
 
 ### 0.7.0 - 16.08.2016 ###
-* New! - Template Library ([Release Post](https://elementor.com/introducing-template-library/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme))
+* New! - Template Library ([Release Post](https://wroter.com/introducing-template-library/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme))
 * New! - Save your pages and sections to template library
 * New! - 20+ beautifully pre-designed templates
 * New! - Export / Import templates
@@ -277,22 +277,22 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Fix! - Allow blank target link for social-icons widget
 
 ### 0.6.5 - 08.08.2016 ###
-* Tweak! - Added border and box shadow controls for Image widget ([#224](https://github.com/pojome/elementor/issues/244))
+* Tweak! - Added border and box shadow controls for Image widget ([#224](https://github.com/pojome/wroter/issues/244))
 * Tweak! - In new page don't create empty section
 * Tweak! - Embed Roboto font from Google Fonts in editor mode
 * Fix! - Reset structure or remove column after resize
 
 ### 0.6.4 - 04.08.2016 ###
-* Tweak! - Google Fonts list updated ([#371](https://github.com/pojome/elementor/pull/371))
-* Fix! - Content overflow in "fit to screen" sections for mobile ([#369](https://github.com/pojome/elementor/issues/369))
+* Tweak! - Google Fonts list updated ([#371](https://github.com/pojome/wroter/pull/371))
+* Fix! - Content overflow in "fit to screen" sections for mobile ([#369](https://github.com/pojome/wroter/issues/369))
 * Fix! - Icon Box Widget: Better support for Safari browser
-* Fix! - Text Editor Widget: Added listening to undo & redo events ([#340](https://github.com/pojome/elementor/issues/340))
+* Fix! - Text Editor Widget: Added listening to undo & redo events ([#340](https://github.com/pojome/wroter/issues/340))
 
 ### 0.6.3 - 01.08.2016 ###
-* Tweak! - Show element title in delete dialog ([#337](https://github.com/pojome/elementor/pull/337))
+* Tweak! - Show element title in delete dialog ([#337](https://github.com/pojome/wroter/pull/337))
 * Tweak! - Added responsive support for Image Gallery widget ([topic](https://wordpress.org/support/topic/galery-not-responsive))
 * Tweak! - CSS files for entrance animation and hover animations combine to `animations.min.css` file
-* Fix! - Columns resize cannot be repeated ([#349](https://github.com/pojome/elementor/issues/349))
+* Fix! - Columns resize cannot be repeated ([#349](https://github.com/pojome/wroter/issues/349))
 * Fix! - Anchor Menu widget in Safari browser
 * Fix! - Bug when global font set as a default ([topic](https://wordpress.org/support/topic/font-family-bug))
 
@@ -306,7 +306,7 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 ### 0.6.1 - 26.07.2016 ###
 * Tweak! - Improved editor UI for blank pages
 * Fix! - Hide empty widgets in preview mode
-* Fix! - Bug with Section background overlay and background video ([#323](https://github.com/pojome/elementor/issues/323))
+* Fix! - Bug with Section background overlay and background video ([#323](https://github.com/pojome/wroter/issues/323))
 * Fix! - Minor security issue
 
 ### 0.6.0 - 25.07.2016 ###
@@ -317,16 +317,16 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - Improved speed in live editing
 * Tweak! - Optimization for memory usage (30% less!)
 * Tweak! - Improved UI for preview editor
-* Tweak! - Add `contain` background image CSS option ([#297](https://github.com/pojome/elementor/pull/297))
-* Tweak! - Added compatibility for NextGen Gallery plugin ([#296](https://github.com/pojome/elementor/issues/296))
+* Tweak! - Add `contain` background image CSS option ([#297](https://github.com/pojome/wroter/pull/297))
+* Tweak! - Added compatibility for NextGen Gallery plugin ([#296](https://github.com/pojome/wroter/issues/296))
 * Tweak! - Print JS scripts in the footer
 * Tweak! - Set color picker control `alpha` for all widgets
-* Fix! - Remove `maxlength` attribute from color picker input ([#298](https://github.com/pojome/elementor/issues/298))
+* Fix! - Remove `maxlength` attribute from color picker input ([#298](https://github.com/pojome/wroter/issues/298))
 * Fix! - Background video: Set object-fit only HTML5 player (solved Safari YouTube issue)
 * Fix! - Bug with target blank link in Icon List widget
-* Fix! - Bug with alignment in Icon List widget ([#283](https://github.com/pojome/elementor/issues/283))
-* Fix! - Improved responsive in Tabs widget ([#279](https://github.com/pojome/elementor/issues/279))
-* Fix! - RTL bug in Alert widget ([#287](https://github.com/pojome/elementor/issues/287))
+* Fix! - Bug with alignment in Icon List widget ([#283](https://github.com/pojome/wroter/issues/283))
+* Fix! - Improved responsive in Tabs widget ([#279](https://github.com/pojome/wroter/issues/279))
+* Fix! - RTL bug in Alert widget ([#287](https://github.com/pojome/wroter/issues/287))
 
 ### 0.5.2 - 17.07.2016 ###
 * New! - Added Animation Duration control for all elements
@@ -347,13 +347,13 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - Added option to disable fonts default in the settings
 * Tweak! - Added hidden title to alert & image box widgets
 * Tweak! - Added group posts widget from Pojo themes
-* Tweak! - Remove extra margin bottom on Textarea ([#182](https://github.com/pojome/elementor/issues/182))
-* Tweak! - Applying border-radius on background overlay ([#249](https://github.com/pojome/elementor/issues/249))
+* Tweak! - Remove extra margin bottom on Textarea ([#182](https://github.com/pojome/wroter/issues/182))
+* Tweak! - Applying border-radius on background overlay ([#249](https://github.com/pojome/wroter/issues/249))
 * Tweak! - Fixed toggle widget RTL style
 * Tweak! - Updated Font Awesome v4.6.3
 * Tweak! - Changed Textarea control markup according to the general concept
 * Tweak! - Fixed modal RTL style
-* Fix! - Fade effect in Image Carousel widget ([#245](https://github.com/pojome/elementor/issues/245), [#253](https://github.com/pojome/elementor/issues/253))
+* Fix! - Fade effect in Image Carousel widget ([#245](https://github.com/pojome/wroter/issues/245), [#253](https://github.com/pojome/wroter/issues/253))
 * Fix! - Don't print anything when no have link in Video widget
 
 ### 0.4.1 - 05.07.2016 ###
@@ -367,7 +367,7 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * New! - Added Social Icons widget
 * New! - Added Testimonial widget
 * New! - Added SoundCloud (Audio) widget
-* Tweak! - Fixed Bug with background in Image widget ([#180](https://github.com/pojome/elementor/issues/180))
+* Tweak! - Fixed Bug with background in Image widget ([#180](https://github.com/pojome/wroter/issues/180))
 * Tweak! - Assign a field to be used as the item title for Repeater control 
 * Tweak! - Rearrange column settings panel
 * Tweak! - Add link to carousel widget
@@ -380,14 +380,14 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - Image-Box widget: `<img>` alt and title fetch from Media library
 * Tweak! - Carousel widget: `<img>` alt fetch from Media library
 * Tweak! - Add more columns options for responsive mode
-* Tweak! - Add `<title>` in Elementor editor 
+* Tweak! - Add `<title>` in Wroter editor 
 * Tweak! - Rearranged section settings
 * Tweak! - Add more gap size (Wider)
 * Tweak! - Add more color schemes
 * Tweak! - Add negative value for letter spacing
 
 ### 0.3.1 - 22.06.2016 ###
-* Tweak! - Added a quick tour video for Elementor
+* Tweak! - Added a quick tour video for Wroter
 * Tweak! - Enqueue YouTube API from JS (Better compatible for more themes)
 * Tweak! - Added compatible to WooCommerce widgets
 * Tweak! - Fixes re-render elements performance
@@ -404,9 +404,9 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 ### 0.2.5 - 16.06.2016 ###
 * Tweak! - Added Vimeo support for widget Video
 * Tweak! - Improved UI in admin area and panel
-* Tweak! - Added body class `elementor-page` in frontend ([#58](https://github.com/pojome/elementor/issues/58))
-* Fix! - Elementor seems to get stuck while loading ([#77](https://github.com/pojome/elementor/issues/77))
-* Fix! - WP Widgets with multiple checkboxes ([#90](https://github.com/pojome/elementor/issues/90))
+* Tweak! - Added body class `wroter-page` in frontend ([#58](https://github.com/pojome/wroter/issues/58))
+* Fix! - Wroter seems to get stuck while loading ([#77](https://github.com/pojome/wroter/issues/77))
+* Fix! - WP Widgets with multiple checkboxes ([#90](https://github.com/pojome/wroter/issues/90))
 
 ### 0.2.4 - 13.06.2016 ###
 * Tweak! - Added some compatible to Cache plugins
@@ -449,20 +449,20 @@ No. Elementor supports WordPress 4.4 or greater, and is compatible with PHP 5.4 
 * Tweak! - Added default category for widgets
 * Tweak! - Added size and opacity controls for Image widget
 * Tweak! - Added fallback font for custom fonts
-* Tweak! - Added development mode flag (filter `elementor/utils/is_development_mode`)
+* Tweak! - Added development mode flag (filter `wroter/utils/is_development_mode`)
 * Fix! - Issue with duplicate after element sort
 
 ### 0.1.3 - 01.06.2016 ###
 * New! - Added background video for all formats
 * Tweak! - Pojo Framework & Themes supported
-* Tweak! - Updated Elementor Icons v1.1
+* Tweak! - Updated Wroter Icons v1.1
 * Tweak! - Added elements categories in the panel
 * Fix! - UI bug with WordPress widgets (panel)
 * Fix! - Remove fallback image placeholder in background video
 
 ### 0.1.2 - 31.05.2016 ###
 * Tweak! - Added structure control for section element
-* Tweak! - Elementor Icons moved to lib (standalone)
+* Tweak! - Wroter Icons moved to lib (standalone)
 * Fix! - Better check if YouTube API is loaded
 * Fix! - Fixed applying value in dimensions
 * Fix! - Bug in resize columns

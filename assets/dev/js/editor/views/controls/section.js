@@ -1,11 +1,11 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlSectionItemView;
 
 ControlSectionItemView = ControlBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.heading = '.elementor-panel-heading';
+		ui.heading = '.wroter-panel-heading';
 
 		return ui;
 	},

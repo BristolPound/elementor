@@ -1,24 +1,24 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Utils {
 
 	public static function is_development_mode() {
-		return apply_filters( 'elementor/utils/is_development_mode', false );
+		return apply_filters( 'wroter/utils/is_development_mode', false );
 	}
 
 	public static function get_edit_link( $post_id = 0 ) {
-		return apply_filters( 'elementor/utils/get_edit_link', add_query_arg( 'elementor', '', get_permalink( $post_id ) ), $post_id );
+		return apply_filters( 'wroter/utils/get_edit_link', add_query_arg( 'wroter', '', get_permalink( $post_id ) ), $post_id );
 	}
 
 	public static function is_post_type_support( $post_id = 0 ) {
-		return post_type_supports( get_post_type( $post_id ), 'elementor' );
+		return post_type_supports( get_post_type( $post_id ), 'wroter' );
 	}
 
 	public static function get_placeholder_image_src() {
-		return apply_filters( 'elementor/utils/get_placeholder_image_src', ELEMENTOR_ASSETS_URL . 'images/placeholder.png' );
+		return apply_filters( 'wroter/utils/get_placeholder_image_src', WROTER_ASSETS_URL . 'images/placeholder.png' );
 	}
 
 	public static function generate_random_string( $length = 7 ) {

@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -16,7 +16,7 @@ abstract class Group_Control_Base implements Group_Control_Interface {
 	}
 
 	public function get_base_group_classes() {
-		return 'elementor-group-control-' . static::get_type() . ' elementor-group-control';
+		return 'wroter-group-control-' . static::get_type() . ' wroter-group-control';
 	}
 
 	/**
@@ -54,7 +54,7 @@ abstract class Group_Control_Base implements Group_Control_Interface {
 	}
 
 	protected function _init() {
-		add_action( 'elementor/elements/add_group_control/' . static::get_type(), [ $this, 'add_controls' ], 10, 2 );
+		add_action( 'wroter/elements/add_group_control/' . static::get_type(), [ $this, 'add_controls' ], 10, 2 );
 	}
 
 	protected function _get_child_default_args() {
@@ -129,7 +129,7 @@ abstract class Group_Control_Base implements Group_Control_Interface {
 
 		$control_args['tab'] = $args['tab'];
 		$control_args['section'] = $args['section'];
-		$control_args['classes'] = $this->get_base_group_classes() . ' elementor-group-control-' . $control_id;
+		$control_args['classes'] = $this->get_base_group_classes() . ' wroter-group-control-' . $control_id;
 
 		if ( ! empty( $args['condition'] ) ) {
 			if ( empty( $control_args['condition'] ) )

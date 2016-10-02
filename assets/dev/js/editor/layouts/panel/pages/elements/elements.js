@@ -6,11 +6,11 @@ var PanelElementsCategoriesCollection = require( './collections/categories' ),
 	PanelElementsLayoutView;
 
 PanelElementsLayoutView = Marionette.LayoutView.extend( {
-	template: '#tmpl-elementor-panel-elements',
+	template: '#tmpl-wroter-panel-elements',
 
 	regions: {
-		elements: '#elementor-panel-elements-wrapper',
-		search: '#elementor-panel-elements-search-area'
+		elements: '#wroter-panel-elements-wrapper',
+		search: '#wroter-panel-elements-search-area'
 	},
 
 	elementsCollection: null,
@@ -18,15 +18,15 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 	categoriesCollection: null,
 
 	initialize: function() {
-		this.listenTo( elementor.channels.panelElements, 'element:selected', this.destroy );
+		this.listenTo( wroter.channels.panelElements, 'element:selected', this.destroy );
 	},
 
 	initElementsCollection: function() {
 		var elementsCollection = new PanelElementsElementsCollection(),
-			sectionConfig = elementor.config.elements.section;
+			sectionConfig = wroter.config.elements.section;
 
 		elementsCollection.add( {
-			title: elementor.translate( 'inner_section' ),
+			title: wroter.translate( 'inner_section' ),
 			elType: 'section',
 			categories: sectionConfig.categories,
 			keywords: sectionConfig.keywords,
@@ -34,7 +34,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 		} );
 
 		// TODO: Change the array from server syntax, and no need each loop for initialize
-		_.each( elementor.config.widgets, function( element, widgetType ) {
+		_.each( wroter.config.widgets, function( element, widgetType ) {
 			elementsCollection.add( {
 				title: element.title,
 				elType: 'widget',
@@ -63,7 +63,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 
 		var categoriesCollection = new PanelElementsCategoriesCollection();
 
-		_.each( elementor.config.elements_categories, function( categoryConfig, categoryName ) {
+		_.each( wroter.config.elements_categories, function( categoryConfig, categoryName ) {
 			if ( ! categories[ categoryName ] ) {
 				return;
 			}
@@ -92,7 +92,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 	},
 
 	changeFilter: function( filterValue ) {
-		elementor.channels.panelElements
+		wroter.channels.panelElements
 			.reply( 'filter:value', filterValue )
 			.trigger( 'change' );
 	},
@@ -112,7 +112,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 		if ( _.isEmpty( value ) ) {
 			this.showCategoriesView();
 		} else {
-			var oldValue = elementor.channels.panelElements.request( 'filter:value' );
+			var oldValue = wroter.channels.panelElements.request( 'filter:value' );
 
 			if ( _.isEmpty( oldValue ) ) {
 				this.showElementsView();
@@ -123,7 +123,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 	},
 
 	onDestroy: function() {
-		elementor.channels.panelElements.reply( 'filter:value', null );
+		wroter.channels.panelElements.reply( 'filter:value', null );
 	},
 
 	onShow: function() {
@@ -139,7 +139,7 @@ PanelElementsLayoutView = Marionette.LayoutView.extend( {
 	},
 
 	updateElementsScrollbar: function() {
-		elementor.channels.data.trigger( 'scrollbar:update' );
+		wroter.channels.data.trigger( 'scrollbar:update' );
 	}
 } );
 

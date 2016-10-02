@@ -2,18 +2,18 @@ var TemplateLibraryHeaderView;
 
 TemplateLibraryHeaderView = Marionette.LayoutView.extend( {
 
-	id: 'elementor-template-library-header',
+	id: 'wroter-template-library-header',
 
-	template: '#tmpl-elementor-template-library-header',
+	template: '#tmpl-wroter-template-library-header',
 
 	regions: {
-		logoArea: '#elementor-template-library-header-logo-area',
-		tools: '#elementor-template-library-header-tools',
-		menuArea: '#elementor-template-library-header-menu-area'
+		logoArea: '#wroter-template-library-header-logo-area',
+		tools: '#wroter-template-library-header-tools',
+		menuArea: '#wroter-template-library-header-menu-area'
 	},
 
 	ui: {
-		closeModal: '#elementor-template-library-header-close-modal'
+		closeModal: '#wroter-template-library-header-close-modal'
 	},
 
 	events: {
@@ -21,7 +21,7 @@ TemplateLibraryHeaderView = Marionette.LayoutView.extend( {
 	},
 
 	onCloseModalClick: function() {
-		elementor.templates.getModal().hide();
+		wroter.templates.getModal().hide();
 	}
 } );
 

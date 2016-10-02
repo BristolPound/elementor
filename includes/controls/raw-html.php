@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -12,9 +12,9 @@ class Control_Raw_html extends Control_Base {
 	public function content_template() {
 		?>
 		<# if ( data.label ) { #>
-		<span class="elementor-control-title">{{{ data.label }}}</span>
+		<span class="wroter-control-title">{{{ data.label }}}</span>
 		<# } #>
-		<div class="elementor-control-raw-html {{ data.classes }}">{{{ data.raw }}}</div>
+		<div class="wroter-control-raw-html {{ data.classes }}">{{{ data.raw }}}</div>
 		<?php
 	}
 

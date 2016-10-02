@@ -1,4 +1,4 @@
-var ControlBaseItemView = require( 'elementor-views/controls/base' ),
+var ControlBaseItemView = require( 'wroter-views/controls/base' ),
 	ControlAnimationItemView;
 
 ControlAnimationItemView = ControlBaseItemView.extend( {

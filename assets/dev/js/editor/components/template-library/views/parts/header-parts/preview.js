@@ -1,12 +1,12 @@
 var TemplateLibraryHeaderPreviewView;
 
 TemplateLibraryHeaderPreviewView = Marionette.ItemView.extend( {
-	template: '#tmpl-elementor-template-library-header-preview',
+	template: '#tmpl-wroter-template-library-header-preview',
 
-	id: 'elementor-template-library-header-preview',
+	id: 'wroter-template-library-header-preview',
 
 	ui: {
-		insertButton: '#elementor-template-library-header-preview-insert'
+		insertButton: '#wroter-template-library-header-preview-insert'
 	},
 
 	events: {
@@ -14,7 +14,7 @@ TemplateLibraryHeaderPreviewView = Marionette.ItemView.extend( {
 	},
 
 	onInsertButtonClick: function() {
-		elementor.templates.importTemplate( this.model );
+		wroter.templates.importTemplate( this.model );
 	}
 } );
 

@@ -1,12 +1,12 @@
-var ControlBaseUnitsItemView = require( 'elementor-views/controls/base-units' ),
+var ControlBaseUnitsItemView = require( 'wroter-views/controls/base-units' ),
 	ControlDimensionsItemView;
 
 ControlDimensionsItemView = ControlBaseUnitsItemView.extend( {
 	ui: function() {
 		var ui = ControlBaseUnitsItemView.prototype.ui.apply( this, arguments );
 
-		ui.controls = '.elementor-control-dimension > input:enabled';
-		ui.link = 'button.elementor-link-dimensions';
+		ui.controls = '.wroter-control-dimension > input:enabled';
+		ui.link = 'button.wroter-link-dimensions';
 
 		return ui;
 	},

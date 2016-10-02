@@ -20,7 +20,7 @@ HandleAddDuplicateBehavior = Marionette.Behavior.extend( {
 		options = options || {};
 
 		var newItem = {
-			id: elementor.helpers.getUniqueID(),
+			id: wroter.helpers.getUniqueID(),
 			elType: this.view.getChildType()[0],
 			settings: {},
 			elements: []

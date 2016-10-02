@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -15,19 +15,19 @@ class Scheme_Typography extends Scheme_Base {
 	}
 
 	public function get_title() {
-		return __( 'Typography', 'elementor' );
+		return __( 'Typography', 'wroter' );
 	}
 
 	public function get_disabled_title() {
-		return __( 'Default Fonts', 'elementor' );
+		return __( 'Default Fonts', 'wroter' );
 	}
 
 	public function get_scheme_titles() {
 		return [
-			self::TYPOGRAPHY_1 => __( 'Primary Headline', 'elementor' ),
-			self::TYPOGRAPHY_2 => __( 'Secondary Headline', 'elementor' ),
-			self::TYPOGRAPHY_3 => __( 'Body Text', 'elementor' ),
-			self::TYPOGRAPHY_4 => __( 'Accent Text', 'elementor' ),
+			self::TYPOGRAPHY_1 => __( 'Primary Headline', 'wroter' ),
+			self::TYPOGRAPHY_2 => __( 'Secondary Headline', 'wroter' ),
+			self::TYPOGRAPHY_3 => __( 'Body Text', 'wroter' ),
+			self::TYPOGRAPHY_4 => __( 'Accent Text', 'wroter' ),
 		];
 	}
 

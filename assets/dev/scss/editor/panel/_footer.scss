@@ -2,7 +2,7 @@
 // Panel Footer
 //
 
-#elementor-panel-footer {
+#wroter-panel-footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -11,14 +11,14 @@
 	background-color: $editor-darkest;
 }
 
-#elementor-panel-footer-tools {
+#wroter-panel-footer-tools {
 	display: table;
 	table-layout: fixed;
 	width: 100%;
 	height: 100%;
 }
 
-.elementor-panel-footer-tool {
+.wroter-panel-footer-tool {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
@@ -26,23 +26,23 @@
 	color: $editor-light;
 	transition: $transition-hover;
 
-	&.elementor-open {
+	&.wroter-open {
 		color: #fff;
 	}
 
-	&:not(.elementor-open) {
+	&:not(.wroter-open) {
 
 		&:hover {
 			color: $editor-lightest;
 		}
 
-		.elementor-panel-footer-sub-menu-wrapper {
+		.wroter-panel-footer-sub-menu-wrapper {
 			display: none;
 		}
 	}
 }
 
-.elementor-panel-footer-sub-menu-wrapper {
+.wroter-panel-footer-sub-menu-wrapper {
 	position: absolute;
 	bottom: 100%;
 	left: 0;
@@ -53,12 +53,12 @@
 	cursor: default;
 }
 
-.elementor-panel-footer-sub-menu {
+.wroter-panel-footer-sub-menu {
 	border-radius: 5px;
 	overflow: hidden;
 }
 
-.elementor-panel-footer-sub-menu-item {
+.wroter-panel-footer-sub-menu-item {
 	background-color: $editor-darkest;
 	display: table;
 	table-layout: fixed;
@@ -90,17 +90,17 @@
 		vertical-align: middle;
 	}
 
-	.elementor-icon {
+	.wroter-icon {
 		width: 40px;
 		color: $editor-light;
 	}
 
-	.elementor-title {
+	.wroter-title {
 		text-align: $start;
 		color: $editor-lightest;
 	}
 
-	.elementor-description {
+	.wroter-description {
 		width: 95px;
 		text-align: $start;
 		font-size: 11px;
@@ -109,17 +109,17 @@
 	}
 }
 
-#elementor-panel-footer-help-title {
+#wroter-panel-footer-help-title {
 	text-align: $start;
 	padding: 10px 0;
 	color: $editor-lightest;
 }
 
-#elementor-panel-footer-save {
+#wroter-panel-footer-save {
 	width: 90px;
 	padding: 0 10px;
 
-	.elementor-button {
+	.wroter-button {
 		font-size: 11px;
 		text-transform: uppercase;
 		width: 100%;
@@ -128,23 +128,23 @@
 		color: $editor-light;
 	}
 
-	&.elementor-save-active {
-		.elementor-button {
-			@extend .elementor-button-success;
+	&.wroter-save-active {
+		.wroter-button {
+			@extend .wroter-button-success;
 		}
 	}
 }
 
-#elementor-panel-footer-publish {
+#wroter-panel-footer-publish {
 
-	.elementor-icon, .elementor-title {
+	.wroter-icon, .wroter-title {
 		color: $editor-success;
 	}
 }
 
-#elementor-panel-footer-discard {
+#wroter-panel-footer-discard {
 
-	.elementor-icon, .elementor-title {
+	.wroter-icon, .wroter-title {
 		color: $editor-warning;
 	}
 }

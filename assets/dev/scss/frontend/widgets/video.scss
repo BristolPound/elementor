@@ -1,33 +1,33 @@
 //
 // Video
 //
-.elementor-widget-video {
+.wroter-widget-video {
 
-	&.elementor-aspect-ratio- {
+	&.wroter-aspect-ratio- {
 
 		&169 {
 
-			.elementor-video-wrapper {
+			.wroter-video-wrapper {
 				padding-bottom: 56.25%;
 			}
 		}
 
 		&43 {
 
-			.elementor-video-wrapper {
+			.wroter-video-wrapper {
 				padding-bottom: 75%;
 			}
 		}
 
 		&32 {
 
-			.elementor-video-wrapper {
+			.wroter-video-wrapper {
 				padding-bottom: 66.6666%;
 			}
 		}
 	}
 
-	.elementor-custom-embed-image-overlay {
+	.wroter-custom-embed-image-overlay {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -39,7 +39,7 @@
 
 		&:hover {
 
-			.elementor-custom-embed-play {
+			.wroter-custom-embed-play {
 
 				i {
 					opacity: 0.9;
@@ -49,7 +49,7 @@
 		}
 	}
 
-	.elementor-custom-embed-play {
+	.wroter-custom-embed-play {
 		position: absolute;
 		top: 50%;
 		left: 50%;

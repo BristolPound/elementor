@@ -1,55 +1,55 @@
-var BaseElementView = require( 'elementor-views/base-element' ),
-	ColumnView = require( 'elementor-views/column' ),
+var BaseElementView = require( 'wroter-views/base-element' ),
+	ColumnView = require( 'wroter-views/column' ),
 	SectionView;
 
 SectionView = BaseElementView.extend( {
-	template: Marionette.TemplateCache.get( '#tmpl-elementor-element-section-content' ),
+	template: Marionette.TemplateCache.get( '#tmpl-wroter-element-section-content' ),
 
 	childView: ColumnView,
 
 	className: function() {
-		var classes = 'elementor-section',
+		var classes = 'wroter-section',
 			type = this.isInner() ? 'inner' : 'top';
 
-		classes += ' elementor-' + type + '-section';
+		classes += ' wroter-' + type + '-section';
 
 		return classes;
 	},
 
 	tagName: 'section',
 
-	childViewContainer: '> .elementor-container > .elementor-row',
+	childViewContainer: '> .wroter-container > .wroter-row',
 
 	triggers: {
-		'click .elementor-editor-section-settings-list .elementor-editor-element-edit': 'click:edit',
-		'click .elementor-editor-section-settings-list .elementor-editor-element-trigger': 'click:edit',
-		'click .elementor-editor-section-settings-list .elementor-editor-element-duplicate': 'click:duplicate'
+		'click .wroter-editor-section-settings-list .wroter-editor-element-edit': 'click:edit',
+		'click .wroter-editor-section-settings-list .wroter-editor-element-trigger': 'click:edit',
+		'click .wroter-editor-section-settings-list .wroter-editor-element-duplicate': 'click:duplicate'
 	},
 
 	elementEvents: {
-		'click .elementor-editor-section-settings-list .elementor-editor-element-remove': 'onClickRemove',
-		'click .elementor-editor-section-settings-list .elementor-editor-element-save': 'onClickSave'
+		'click .wroter-editor-section-settings-list .wroter-editor-element-remove': 'onClickRemove',
+		'click .wroter-editor-section-settings-list .wroter-editor-element-save': 'onClickSave'
 	},
 
 	behaviors: {
 		Sortable: {
-			behaviorClass: require( 'elementor-behaviors/sortable' ),
+			behaviorClass: require( 'wroter-behaviors/sortable' ),
 			elChildType: 'column'
 		},
 		HandleDuplicate: {
-			behaviorClass: require( 'elementor-behaviors/handle-duplicate' )
+			behaviorClass: require( 'wroter-behaviors/handle-duplicate' )
 		},
 		HandleEditor: {
-			behaviorClass: require( 'elementor-behaviors/handle-editor' )
+			behaviorClass: require( 'wroter-behaviors/handle-editor' )
 		},
 		HandleEditMode: {
-			behaviorClass: require( 'elementor-behaviors/handle-edit-mode' )
+			behaviorClass: require( 'wroter-behaviors/handle-edit-mode' )
 		},
 		HandleAddMode: {
-			behaviorClass: require( 'elementor-behaviors/duplicate' )
+			behaviorClass: require( 'wroter-behaviors/duplicate' )
 		},
 		HandleElementsRelation: {
-			behaviorClass: require( 'elementor-behaviors/elements-relation' )
+			behaviorClass: require( 'wroter-behaviors/elements-relation' )
 		}
 	},
 
@@ -63,7 +63,7 @@ SectionView = BaseElementView.extend( {
 
 	addEmptyColumn: function() {
 		this.addChildModel( {
-			id: elementor.helpers.getUniqueID(),
+			id: wroter.helpers.getUniqueID(),
 			elType: 'column',
 			settings: {},
 			elements: []
@@ -84,12 +84,12 @@ SectionView = BaseElementView.extend( {
 	},
 
 	getSortableOptions: function() {
-		var sectionConnectClass = this.isInner() ? '.elementor-inner-section' : '.elementor-top-section';
+		var sectionConnectClass = this.isInner() ? '.wroter-inner-section' : '.wroter-top-section';
 
 		return {
-			connectWith: sectionConnectClass + ' > .elementor-container > .elementor-row',
-			handle: '> .elementor-element-overlay .elementor-editor-column-settings-list .elementor-editor-element-trigger',
-			items: '> .elementor-column'
+			connectWith: sectionConnectClass + ' > .wroter-container > .wroter-row',
+			handle: '> .wroter-element-overlay .wroter-editor-column-settings-list .wroter-editor-element-trigger',
+			items: '> .wroter-column'
 		};
 	},
 
@@ -106,7 +106,7 @@ SectionView = BaseElementView.extend( {
 	},
 
 	setStructure: function( structure ) {
-		var parsedStructure = elementor.presetsFactory.getParsedStructure( structure );
+		var parsedStructure = wroter.presetsFactory.getParsedStructure( structure );
 
 		if ( +parsedStructure.columnsCount !== this.collection.length ) {
 			throw new TypeError( 'The provided structure doesn\'t match the columns count.' );
@@ -116,7 +116,7 @@ SectionView = BaseElementView.extend( {
 	},
 
 	redefineLayout: function() {
-		var preset = elementor.presetsFactory.getPresetByStructure( this.getStructure() );
+		var preset = wroter.presetsFactory.getPresetByStructure( this.getStructure() );
 
 		this.collection.each( function( model, index ) {
 			model.setSetting( '_column_size', preset.preset[ index ] );
@@ -146,7 +146,7 @@ SectionView = BaseElementView.extend( {
 	},
 
 	_checkIsFull: function() {
-		this.$el.toggleClass( 'elementor-section-filled', this.isCollectionFilled() );
+		this.$el.toggleClass( 'wroter-section-filled', this.isCollectionFilled() );
 	},
 
 	_checkIsEmpty: function() {
@@ -193,7 +193,7 @@ SectionView = BaseElementView.extend( {
 
 		var $iframes = childView.$el.find( 'iframe' ).add( nextChildView.$el.find( 'iframe' ) );
 
-		elementor.helpers.disableElementEvents( $iframes );
+		wroter.helpers.disableElementEvents( $iframes );
 	},
 
 	onChildviewRequestResizeStop: function( childView ) {
@@ -205,7 +205,7 @@ SectionView = BaseElementView.extend( {
 
 		var $iframes = childView.$el.find( 'iframe' ).add( nextChildView.$el.find( 'iframe' ) );
 
-		elementor.helpers.enableElementEvents( $iframes );
+		wroter.helpers.enableElementEvents( $iframes );
 	},
 
 	onChildviewRequestResize: function( childView, ui ) {
@@ -260,8 +260,8 @@ SectionView = BaseElementView.extend( {
 
 		var sectionID = this.model.get( 'id' );
 
-		elementor.templates.startModal( function() {
-			elementor.templates.getLayout().showSaveTemplateView( sectionID );
+		wroter.templates.startModal( function() {
+			wroter.templates.getLayout().showSaveTemplateView( sectionID );
 		} );
 	}
 } );

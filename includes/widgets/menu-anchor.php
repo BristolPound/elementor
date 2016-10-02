@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,7 +10,7 @@ class Widget_Menu_anchor extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Menu Anchor', 'elementor' );
+		return __( 'Menu Anchor', 'wroter' );
 	}
 
 	public function get_icon() {
@@ -21,7 +21,7 @@ class Widget_Menu_anchor extends Widget_Base {
 		$this->add_control(
 			'section_anchor',
 			[
-				'label' => __( 'Anchor', 'elementor' ),
+				'label' => __( 'Anchor', 'wroter' ),
 				'type' => Controls_Manager::SECTION,
 			]
 		);
@@ -29,19 +29,19 @@ class Widget_Menu_anchor extends Widget_Base {
 		$this->add_control(
 			'anchor_description',
 			[
-				'raw' => __( 'This ID will be the CSS ID you will have to use in your own page, Without #.', 'elementor' ),
+				'raw' => __( 'This ID will be the CSS ID you will have to use in your own page, Without #.', 'wroter' ),
 				'type' => Controls_Manager::RAW_HTML,
 				'section' => 'section_anchor',
-				'classes' => 'elementor-control-descriptor',
+				'classes' => 'wroter-control-descriptor',
 			]
 		);
 
 		$this->add_control(
 			'anchor',
 			[
-				'label' => __( 'The ID of Menu Anchor.', 'elementor' ),
+				'label' => __( 'The ID of Menu Anchor.', 'wroter' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'For Example: About', 'elementor' ),
+				'placeholder' => __( 'For Example: About', 'wroter' ),
 	            'label_block' => true,
 				'section' => 'section_anchor',
 			]
@@ -53,7 +53,7 @@ class Widget_Menu_anchor extends Widget_Base {
 			$this->add_render_attribute( 'inner', 'id', $instance['anchor'] );
 		}
 
-		$this->add_render_attribute( 'inner', 'class', 'elementor-menu-anchor' );
+		$this->add_render_attribute( 'inner', 'class', 'wroter-menu-anchor' );
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'inner' ); ?>></div>
 		<?php
@@ -61,7 +61,7 @@ class Widget_Menu_anchor extends Widget_Base {
 
 	protected function content_template() {
 		?>
-		<div class="elementor-menu-anchor"{{{ settings.anchor ? ' id="' + settings.anchor + '"' : '' }}}></div>
+		<div class="wroter-menu-anchor"{{{ settings.anchor ? ' id="' + settings.anchor + '"' : '' }}}></div>
 		<?php
 	}
 }

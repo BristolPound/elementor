@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -18,12 +18,12 @@ class Schemes_Manager {
 	];
 
 	public function init() {
-		include( ELEMENTOR_PATH . 'includes/interfaces/scheme.php' );
+		include( WROTER_PATH . 'includes/interfaces/scheme.php' );
 
-		include( ELEMENTOR_PATH . 'includes/schemes/base.php' );
+		include( WROTER_PATH . 'includes/schemes/base.php' );
 
 		foreach ( self::$_schemes_types as $schemes_type ) {
-			include( ELEMENTOR_PATH . 'includes/schemes/' . $schemes_type . '.php' );
+			include( WROTER_PATH . 'includes/schemes/' . $schemes_type . '.php' );
 
 			$this->register_scheme( __NAMESPACE__ . '\Scheme_' . ucfirst( $schemes_type ) );
 		}
@@ -111,7 +111,7 @@ class Schemes_Manager {
 	}
 
 	public function ajax_apply_scheme() {
-		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'elementor-editing' ) ) {
+		if ( empty( $_POST['_nonce'] ) || ! wp_verify_nonce( $_POST['_nonce'], 'wroter-editing' ) ) {
 			wp_send_json_error( new \WP_Error( 'token_expired' ) );
 		}
 
@@ -134,18 +134,18 @@ class Schemes_Manager {
 			$enabled_schemes = [];
 
 			foreach ( self::$_schemes_types as $schemes_type ) {
-				if ( 'yes' === get_option( 'elementor_disable_' . $schemes_type . '_schemes' ) ) {
+				if ( 'yes' === get_option( 'wroter_disable_' . $schemes_type . '_schemes' ) ) {
 					continue;
 				}
 				$enabled_schemes[] = $schemes_type;
 			}
-			self::$_enabled_schemes = apply_filters( 'elementor/schemes/enabled_schemes', $enabled_schemes );
+			self::$_enabled_schemes = apply_filters( 'wroter/schemes/enabled_schemes', $enabled_schemes );
 		}
 		return self::$_enabled_schemes;
 	}
 
 	public function __construct() {
 		add_action( 'init', [ $this, 'init' ] );
-		add_action( 'wp_ajax_elementor_apply_scheme', [ $this, 'ajax_apply_scheme' ] );
+		add_action( 'wp_ajax_wroter_apply_scheme', [ $this, 'ajax_apply_scheme' ] );
 	}
 }

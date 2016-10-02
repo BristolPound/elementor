@@ -1,8 +1,8 @@
 module.exports = function( $ ) {
 	var $this = $( this ),
-		defaultActiveTab = $this.find( '.elementor-tabs' ).data( 'active-tab' ),
-		$tabsTitles = $this.find( '.elementor-tab-title' ),
-		$tabs = $this.find( '.elementor-tab-content' ),
+		defaultActiveTab = $this.find( '.wroter-tabs' ).data( 'active-tab' ),
+		$tabsTitles = $this.find( '.wroter-tab-title' ),
+		$tabs = $this.find( '.wroter-tab-content' ),
 		$active,
 		$content;
 

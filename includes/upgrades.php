@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -10,17 +10,17 @@ class Upgrades {
 	}
 
 	public static function init() {
-		$elementor_version = get_option( 'elementor_version' );
+		$wroter_version = get_option( 'wroter_version' );
 
-		if ( ! $elementor_version ) {
+		if ( ! $wroter_version ) {
 			// 0.3.1 is the first version to use this option so we must add it
-			$elementor_version = '0.3.1';
-			update_option( 'elementor_version', $elementor_version );
+			$wroter_version = '0.3.1';
+			update_option( 'wroter_version', $wroter_version );
 		}
 
-		if ( version_compare( $elementor_version, '0.3.2', '<' ) ) {
+		if ( version_compare( $wroter_version, '0.3.2', '<' ) ) {
 			self::_upgrade_v032();
-			update_option( 'elementor_version', '0.3.2' );
+			update_option( 'wroter_version', '0.3.2' );
 		}
 	}
 
@@ -30,7 +30,7 @@ class Upgrades {
 		$post_ids = $wpdb->get_col(
 			$wpdb->prepare(
 				'SELECT `post_id` FROM %1$s
-						WHERE `meta_key` = \'_elementor_version\'
+						WHERE `meta_key` = \'_wroter_version\'
 							AND `meta_value` = \'%2$s\';',
 				$wpdb->postmeta,
 				'0.1'

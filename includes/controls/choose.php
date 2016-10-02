@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -11,13 +11,13 @@ class Control_Choose extends Control_Base {
 
 	public function content_template() {
 		?>
-		<div class="elementor-control-field">
-			<label class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
-				<div class="elementor-choices">
+		<div class="wroter-control-field">
+			<label class="wroter-control-title">{{{ data.label }}}</label>
+			<div class="wroter-control-input-wrapper">
+				<div class="wroter-choices">
 					<# _.each( data.options, function( options, value ) { #>
-					<input id="elementor-choose-{{ data._cid + data.name + value }}" type="radio" name="elementor-choose-{{ data.name }}" value="{{ value }}">
-					<label class="elementor-choices-label tooltip-target" for="elementor-choose-{{ data._cid + data.name + value }}" data-tooltip="{{ options.title }}" title="{{ options.title }}">
+					<input id="wroter-choose-{{ data._cid + data.name + value }}" type="radio" name="wroter-choose-{{ data.name }}" value="{{ value }}">
+					<label class="wroter-choices-label tooltip-target" for="wroter-choose-{{ data._cid + data.name + value }}" data-tooltip="{{ options.title }}" title="{{ options.title }}">
 						<i class="fa fa-{{ options.icon }}"></i>
 					</label>
 					<# } ); #>
@@ -26,7 +26,7 @@ class Control_Choose extends Control_Base {
 		</div>
 
 		<# if ( data.description ) { #>
-		<div class="elementor-control-description">{{{ data.description }}}</div>
+		<div class="wroter-control-description">{{{ data.description }}}</div>
 		<# } #>
 		<?php
 	}

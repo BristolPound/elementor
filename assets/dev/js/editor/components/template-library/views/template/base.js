@@ -2,13 +2,13 @@ var TemplateLibraryTemplateView;
 
 TemplateLibraryTemplateView = Marionette.ItemView.extend( {
 	className: function() {
-		return 'elementor-template-library-template elementor-template-library-template-' + this.model.get( 'source' );
+		return 'wroter-template-library-template wroter-template-library-template-' + this.model.get( 'source' );
 	},
 
 	ui: function() {
 		return {
-			insertButton: '.elementor-template-library-template-insert',
-			previewButton: '.elementor-template-library-template-preview'
+			insertButton: '.wroter-template-library-template-insert',
+			previewButton: '.wroter-template-library-template-preview'
 		};
 	},
 
@@ -20,7 +20,7 @@ TemplateLibraryTemplateView = Marionette.ItemView.extend( {
 	},
 
 	onInsertButtonClick: function() {
-		elementor.templates.importTemplate( this.model );
+		wroter.templates.importTemplate( this.model );
 	}
 } );
 

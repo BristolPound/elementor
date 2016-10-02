@@ -1,13 +1,13 @@
-var ControlMultipleBaseItemView = require( 'elementor-views/controls/base-multiple' ),
+var ControlMultipleBaseItemView = require( 'wroter-views/controls/base-multiple' ),
 	ControlMediaItemView;
 
 ControlMediaItemView = ControlMultipleBaseItemView.extend( {
 	ui: function() {
 		var ui = ControlMultipleBaseItemView.prototype.ui.apply( this, arguments );
 
-		ui.controlMedia = '.elementor-control-media';
-		ui.frameOpeners = '.elementor-control-media-upload-button, .elementor-control-media-image';
-		ui.deleteButton = '.elementor-control-media-delete';
+		ui.controlMedia = '.wroter-control-media';
+		ui.frameOpeners = '.wroter-control-media-upload-button, .wroter-control-media-image';
+		ui.deleteButton = '.wroter-control-media-delete';
 
 		return ui;
 	},

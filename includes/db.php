@@ -1,5 +1,5 @@
 <?php
-namespace Elementor;
+namespace Wroter;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -30,13 +30,13 @@ class DB {
 
 		if ( self::REVISION_PUBLISH === $revision ) {
 			$this->remove_draft( $post_id );
-			update_post_meta( $post_id, '_elementor_data', $builder_data );
+			update_post_meta( $post_id, '_wroter_data', $builder_data );
 			$this->_save_plain_text( $post_id );
 		} else {
-			update_post_meta( $post_id, '_elementor_draft_data', $builder_data );
+			update_post_meta( $post_id, '_wroter_draft_data', $builder_data );
 		}
 
-		update_post_meta( $post_id, '_elementor_version', self::DB_VERSION );
+		update_post_meta( $post_id, '_wroter_version', self::DB_VERSION );
 	}
 
 	/**
@@ -59,9 +59,9 @@ class DB {
 	}
 
 	public function get_plain_builder( $post_id, $revision = self::REVISION_PUBLISH ) {
-		$data = get_post_meta( $post_id, '_elementor_data', true );
+		$data = get_post_meta( $post_id, '_wroter_data', true );
 		if ( self::REVISION_DRAFT === $revision ) {
-			$draft_data = get_post_meta( $post_id, '_elementor_draft_data', true );
+			$draft_data = get_post_meta( $post_id, '_wroter_draft_data', true );
 
 			if ( ! empty( $draft_data ) ) {
 				$data = $draft_data;
@@ -116,7 +116,7 @@ class DB {
 	 * @return void
 	 */
 	public function remove_draft( $post_id ) {
-		delete_post_meta( $post_id, '_elementor_draft_data' );
+		delete_post_meta( $post_id, '_wroter_draft_data' );
 	}
 
 	/**
@@ -128,7 +128,7 @@ class DB {
 	 * @return mixed
 	 */
 	public function get_edit_mode( $post_id ) {
-		return get_post_meta( $post_id, '_elementor_edit_mode', true );
+		return get_post_meta( $post_id, '_wroter_edit_mode', true );
 	}
 
 	/**
@@ -142,9 +142,9 @@ class DB {
 	 */
 	public function set_edit_mode( $post_id, $mode = 'builder' ) {
 		if ( 'builder' === $mode ) {
-			update_post_meta( $post_id, '_elementor_edit_mode', $mode );
+			update_post_meta( $post_id, '_wroter_edit_mode', $mode );
 		} else {
-			delete_post_meta( $post_id, '_elementor_edit_mode' );
+			delete_post_meta( $post_id, '_wroter_edit_mode' );
 		}
 	}
 

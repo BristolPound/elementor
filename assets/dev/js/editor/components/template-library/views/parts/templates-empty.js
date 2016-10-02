@@ -1,9 +1,9 @@
 var TemplateLibraryTemplatesEmptyView;
 
 TemplateLibraryTemplatesEmptyView = Marionette.ItemView.extend( {
-	id: 'elementor-template-library-templates-empty',
+	id: 'wroter-template-library-templates-empty',
 
-	template: '#tmpl-elementor-template-library-templates-empty'
+	template: '#tmpl-wroter-template-library-templates-empty'
 } );
 
 module.exports = TemplateLibraryTemplatesEmptyView;

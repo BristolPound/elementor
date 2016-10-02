@@ -17,10 +17,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.eicon-elementor:before {
+.eicon-wroter:before {
   content: '\e800'; }
 
-.eicon-elementor-square:before {
+.eicon-wroter-square:before {
   content: '\e801'; }
 
 .eicon-pojome:before {
@@ -371,4 +371,4 @@
 .eicon-device-mobile:before {
   content: '\e917'; }
 
-/*# sourceMappingURL=elementor-icons.css.map */
+/*# sourceMappingURL=wroter-icons.css.map */
