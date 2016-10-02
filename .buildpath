@@ -2,4 +2,5 @@
 <buildpath>
 	<buildpathentry kind="src" path=""/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry external="true" kind="lib" path="B:/@Projekte/bristolpound.org/website-2016-bedrock/web/wp/wp-includes"/>
 </buildpath>
